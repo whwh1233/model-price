@@ -1,6 +1,6 @@
 {
   "provider": "aws_bedrock",
-  "last_updated": "2026-02-06T22:36:52.734734",
+  "last_updated": "2026-02-06T23:07:04.100669",
   "models": [
     {
       "id": "aws_bedrock:nova-2.0-pro",
@@ -22,8 +22,8 @@
         "input": 0.6875,
         "output": 5.0
       },
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 1000000,
+      "max_output_tokens": 64000,
       "is_open_source": null,
       "capabilities": [
         "text",
@@ -35,7 +35,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.726506"
+      "last_updated": "2026-02-06T23:07:04.084561"
     },
     {
       "id": "aws_bedrock:nova-2.0-omni",
@@ -57,8 +57,8 @@
         "input": 0.2,
         "output": 1.4
       },
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 1000000,
+      "max_output_tokens": 64000,
       "is_open_source": null,
       "capabilities": [
         "text",
@@ -70,7 +70,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.726598"
+      "last_updated": "2026-02-06T23:07:04.084654"
     },
     {
       "id": "aws_bedrock:llama-3-8b",
@@ -89,7 +89,7 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": 8192,
+      "context_length": 128000,
       "max_output_tokens": 8192,
       "is_open_source": true,
       "capabilities": [
@@ -102,7 +102,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.726655"
+      "last_updated": "2026-02-06T23:07:04.084705"
     },
     {
       "id": "aws_bedrock:ministral-8b-3.0",
@@ -136,7 +136,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.726709"
+      "last_updated": "2026-02-06T23:07:04.084751"
     },
     {
       "id": "aws_bedrock:mixtral-8x7b",
@@ -167,7 +167,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.726817"
+      "last_updated": "2026-02-06T23:07:04.084835"
     },
     {
       "id": "aws_bedrock:nemotron-nano-3-30b",
@@ -201,7 +201,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.726873"
+      "last_updated": "2026-02-06T23:07:04.084888"
     },
     {
       "id": "aws_bedrock:nova-sonic",
@@ -236,7 +236,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-02-06T22:36:52.726964"
+      "last_updated": "2026-02-06T23:07:04.084962"
     },
     {
       "id": "aws_bedrock:nova-2.0-lite",
@@ -258,8 +258,8 @@
         "input": 0.15,
         "output": 1.375
       },
-      "context_length": 300000,
-      "max_output_tokens": 10000,
+      "context_length": 1000000,
+      "max_output_tokens": 64000,
       "is_open_source": null,
       "capabilities": [
         "text",
@@ -271,7 +271,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727016"
+      "last_updated": "2026-02-06T23:07:04.085006"
     },
     {
       "id": "aws_bedrock:kimi-k2-thinking",
@@ -305,7 +305,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727171"
+      "last_updated": "2026-02-06T23:07:04.085084"
     },
     {
       "id": "aws_bedrock:llama-3.1-8b",
@@ -340,7 +340,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727220"
+      "last_updated": "2026-02-06T23:07:04.085129"
     },
     {
       "id": "aws_bedrock:gpt-oss-120b",
@@ -374,7 +374,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727257"
+      "last_updated": "2026-02-06T23:07:04.085173"
     },
     {
       "id": "aws_bedrock:llama-3.2-1b",
@@ -406,7 +406,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727291"
+      "last_updated": "2026-02-06T23:07:04.085213"
     },
     {
       "id": "aws_bedrock:pixtral-large-25.02",
@@ -425,7 +425,7 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": 1000000,
+      "context_length": null,
       "max_output_tokens": 64000,
       "is_open_source": null,
       "capabilities": [
@@ -439,7 +439,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727352"
+      "last_updated": "2026-02-06T23:07:04.085289"
     },
     {
       "id": "aws_bedrock:ministral-3b-3.0",
@@ -473,7 +473,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727397"
+      "last_updated": "2026-02-06T23:07:04.085350"
     },
     {
       "id": "aws_bedrock:claude-2.1",
@@ -492,8 +492,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 200000,
+      "max_output_tokens": 32000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -505,7 +505,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727434"
+      "last_updated": "2026-02-06T23:07:04.085401"
     },
     {
       "id": "aws_bedrock:gpt-oss-safeguard-20b",
@@ -539,7 +539,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727470"
+      "last_updated": "2026-02-06T23:07:04.085443"
     },
     {
       "id": "aws_bedrock:llama-4-scout-17b",
@@ -576,7 +576,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727505"
+      "last_updated": "2026-02-06T23:07:04.085492"
     },
     {
       "id": "aws_bedrock:qwen3-32b",
@@ -610,7 +610,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727534"
+      "last_updated": "2026-02-06T23:07:04.085531"
     },
     {
       "id": "aws_bedrock:llama-3.2-3b",
@@ -629,7 +629,7 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": 4096,
+      "context_length": 128000,
       "max_output_tokens": 4096,
       "is_open_source": true,
       "capabilities": [
@@ -642,7 +642,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727564"
+      "last_updated": "2026-02-06T23:07:04.085572"
     },
     {
       "id": "aws_bedrock:mistral-small",
@@ -677,7 +677,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727620"
+      "last_updated": "2026-02-06T23:07:04.085664"
     },
     {
       "id": "aws_bedrock:nova-canvas",
@@ -709,7 +709,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727658"
+      "last_updated": "2026-02-06T23:07:04.085713"
     },
     {
       "id": "aws_bedrock:llama-3.1-405b",
@@ -744,7 +744,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727690"
+      "last_updated": "2026-02-06T23:07:04.085761"
     },
     {
       "id": "aws_bedrock:gemma-3-12b",
@@ -778,7 +778,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727721"
+      "last_updated": "2026-02-06T23:07:04.085804"
     },
     {
       "id": "aws_bedrock:llama-4-maverick-17b",
@@ -815,7 +815,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727792"
+      "last_updated": "2026-02-06T23:07:04.085886"
     },
     {
       "id": "aws_bedrock:deepseek-r1",
@@ -848,7 +848,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727821"
+      "last_updated": "2026-02-06T23:07:04.085925"
     },
     {
       "id": "aws_bedrock:llama-3.1-70b",
@@ -883,7 +883,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727853"
+      "last_updated": "2026-02-06T23:07:04.085978"
     },
     {
       "id": "aws_bedrock:voxtral-small-1.0",
@@ -920,7 +920,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-02-06T22:36:52.727893"
+      "last_updated": "2026-02-06T23:07:04.086048"
     },
     {
       "id": "aws_bedrock:nova-premier",
@@ -955,7 +955,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727927"
+      "last_updated": "2026-02-06T23:07:04.086110"
     },
     {
       "id": "aws_bedrock:nova-micro",
@@ -990,7 +990,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727968"
+      "last_updated": "2026-02-06T23:07:04.086182"
     },
     {
       "id": "aws_bedrock:llama-3.2-11b",
@@ -1022,7 +1022,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.727999"
+      "last_updated": "2026-02-06T23:07:04.086320"
     },
     {
       "id": "aws_bedrock:nova-pro",
@@ -1057,7 +1057,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728082"
+      "last_updated": "2026-02-06T23:07:04.086595"
     },
     {
       "id": "aws_bedrock:gpt-oss-safeguard-120b",
@@ -1091,7 +1091,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728118"
+      "last_updated": "2026-02-06T23:07:04.086687"
     },
     {
       "id": "aws_bedrock:qwen3-vl-235b-a22b",
@@ -1127,7 +1127,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728151"
+      "last_updated": "2026-02-06T23:07:04.086747"
     },
     {
       "id": "aws_bedrock:nova-reel",
@@ -1159,7 +1159,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728216"
+      "last_updated": "2026-02-06T23:07:04.086862"
     },
     {
       "id": "aws_bedrock:gpt-oss-20b",
@@ -1193,7 +1193,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728258"
+      "last_updated": "2026-02-06T23:07:04.086933"
     },
     {
       "id": "aws_bedrock:mistral-large",
@@ -1225,7 +1225,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728293"
+      "last_updated": "2026-02-06T23:07:04.087008"
     },
     {
       "id": "aws_bedrock:voxtral-mini-1.0",
@@ -1247,8 +1247,8 @@
         "input": 0.02,
         "output": 0.02
       },
-      "context_length": 128000,
-      "max_output_tokens": 8192,
+      "context_length": 256000,
+      "max_output_tokens": 256000,
       "is_open_source": null,
       "capabilities": [
         "text",
@@ -1262,7 +1262,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-02-06T22:36:52.728372"
+      "last_updated": "2026-02-06T23:07:04.087167"
     },
     {
       "id": "aws_bedrock:ministral-14b-3.0",
@@ -1296,7 +1296,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728405"
+      "last_updated": "2026-02-06T23:07:04.087224"
     },
     {
       "id": "aws_bedrock:gemma-3-27b",
@@ -1330,7 +1330,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728475"
+      "last_updated": "2026-02-06T23:07:04.087352"
     },
     {
       "id": "aws_bedrock:nvidia-nemotron-nano-2",
@@ -1364,7 +1364,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728511"
+      "last_updated": "2026-02-06T23:07:04.087500"
     },
     {
       "id": "aws_bedrock:nova-sonic-2.0",
@@ -1383,8 +1383,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 1000000,
+      "max_output_tokens": 64000,
       "is_open_source": null,
       "capabilities": [
         "text",
@@ -1399,7 +1399,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-02-06T22:36:52.728545"
+      "last_updated": "2026-02-06T23:07:04.087612"
     },
     {
       "id": "aws_bedrock:gemma-3-4b",
@@ -1433,7 +1433,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728576"
+      "last_updated": "2026-02-06T23:07:04.087663"
     },
     {
       "id": "aws_bedrock:nova-lite",
@@ -1468,7 +1468,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728623"
+      "last_updated": "2026-02-06T23:07:04.087735"
     },
     {
       "id": "aws_bedrock:nvidia-nemotron-nano-2-vl",
@@ -1504,7 +1504,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728686"
+      "last_updated": "2026-02-06T23:07:04.087829"
     },
     {
       "id": "aws_bedrock:minimax-m2",
@@ -1538,7 +1538,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728755"
+      "last_updated": "2026-02-06T23:07:04.087965"
     },
     {
       "id": "aws_bedrock:claude-3-sonnet",
@@ -1575,7 +1575,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.728961"
+      "last_updated": "2026-02-06T23:07:04.088231"
     },
     {
       "id": "aws_bedrock:llama-3.2-90b",
@@ -1607,7 +1607,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.729142"
+      "last_updated": "2026-02-06T23:07:04.088368"
     },
     {
       "id": "aws_bedrock:claude-2.0",
@@ -1639,7 +1639,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.729183"
+      "last_updated": "2026-02-06T23:07:04.088416"
     },
     {
       "id": "aws_bedrock:magistral-small-1.2",
@@ -1673,7 +1673,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.729277"
+      "last_updated": "2026-02-06T23:07:04.088558"
     },
     {
       "id": "aws_bedrock:claude-3-haiku",
@@ -1710,7 +1710,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.729330"
+      "last_updated": "2026-02-06T23:07:04.088671"
     },
     {
       "id": "aws_bedrock:llama-3-70b",
@@ -1729,8 +1729,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": 8192,
-      "max_output_tokens": 8192,
+      "context_length": 128000,
+      "max_output_tokens": 4096,
       "is_open_source": true,
       "capabilities": [
         "text",
@@ -1742,7 +1742,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.729631"
+      "last_updated": "2026-02-06T23:07:04.089327"
     },
     {
       "id": "aws_bedrock:llama-3.3-70b",
@@ -1764,8 +1764,8 @@
         "input": 0.36000000000000004,
         "output": 0.36000000000000004
       },
-      "context_length": 8192,
-      "max_output_tokens": 8192,
+      "context_length": 128000,
+      "max_output_tokens": 4096,
       "is_open_source": true,
       "capabilities": [
         "text",
@@ -1777,7 +1777,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.729926"
+      "last_updated": "2026-02-06T23:07:04.090045"
     },
     {
       "id": "aws_bedrock:mistral-large-3",
@@ -1799,8 +1799,8 @@
         "input": 0.25,
         "output": 0.75
       },
-      "context_length": 32000,
-      "max_output_tokens": 8191,
+      "context_length": 128000,
+      "max_output_tokens": 8192,
       "is_open_source": true,
       "capabilities": [
         "text",
@@ -1814,7 +1814,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.730172"
+      "last_updated": "2026-02-06T23:07:04.090430"
     },
     {
       "id": "aws_bedrock:mistral-7b",
@@ -1846,7 +1846,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.730243"
+      "last_updated": "2026-02-06T23:07:04.090553"
     },
     {
       "id": "aws_bedrock:qwen3-coder-30b-a3b",
@@ -1880,7 +1880,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.730582"
+      "last_updated": "2026-02-06T23:07:04.090933"
     },
     {
       "id": "aws_bedrock:claude-instant",
@@ -1912,7 +1912,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.730689"
+      "last_updated": "2026-02-06T23:07:04.091160"
     },
     {
       "id": "aws_bedrock:claude-sonnet-4.5",
@@ -1934,8 +1934,8 @@
         "input": 1.5,
         "output": 8.25
       },
-      "context_length": 1000000,
-      "max_output_tokens": 4096,
+      "context_length": 200000,
+      "max_output_tokens": 64000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -1950,7 +1950,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731748"
+      "last_updated": "2026-02-06T23:07:04.094321"
     },
     {
       "id": "aws_bedrock:claude-opus-4.6",
@@ -1972,8 +1972,8 @@
         "input": 2.5,
         "output": 12.5
       },
-      "context_length": 200000,
-      "max_output_tokens": 4096,
+      "context_length": 1000000,
+      "max_output_tokens": 128000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -1988,7 +1988,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731791"
+      "last_updated": "2026-02-06T23:07:04.094428"
     },
     {
       "id": "aws_bedrock:claude-haiku-4.5",
@@ -2011,7 +2011,7 @@
         "output": 2.75
       },
       "context_length": 200000,
-      "max_output_tokens": 8192,
+      "max_output_tokens": 64000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -2026,7 +2026,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731835"
+      "last_updated": "2026-02-06T23:07:04.094598"
     },
     {
       "id": "aws_bedrock:claude-opus-4.5",
@@ -2049,7 +2049,7 @@
         "output": 13.75
       },
       "context_length": 200000,
-      "max_output_tokens": 4096,
+      "max_output_tokens": 64000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -2064,7 +2064,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731885"
+      "last_updated": "2026-02-06T23:07:04.094794"
     },
     {
       "id": "aws_bedrock:meta-llama-2-chat-70b",
@@ -2096,7 +2096,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731922"
+      "last_updated": "2026-02-06T23:07:04.095048"
     },
     {
       "id": "aws_bedrock:claude-3.5-sonnet-v2",
@@ -2134,7 +2134,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731954"
+      "last_updated": "2026-02-06T23:07:04.095218"
     },
     {
       "id": "aws_bedrock:claude-3.5-sonnet",
@@ -2172,7 +2172,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.731987"
+      "last_updated": "2026-02-06T23:07:04.095362"
     },
     {
       "id": "aws_bedrock:claude-3-opus",
@@ -2209,7 +2209,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732029"
+      "last_updated": "2026-02-06T23:07:04.095549"
     },
     {
       "id": "aws_bedrock:meta-llama-2-chat-13b",
@@ -2241,7 +2241,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732065"
+      "last_updated": "2026-02-06T23:07:04.095744"
     },
     {
       "id": "aws_bedrock:jamba-1.5-large",
@@ -2272,7 +2272,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732094"
+      "last_updated": "2026-02-06T23:07:04.095859"
     },
     {
       "id": "aws_bedrock:twelvelabs-marengo-embed-3.0",
@@ -2303,7 +2303,7 @@
       "output_modalities": [
         "embedding"
       ],
-      "last_updated": "2026-02-06T22:36:52.732147"
+      "last_updated": "2026-02-06T23:07:04.096061"
     },
     {
       "id": "aws_bedrock:stable-image-ultra",
@@ -2336,7 +2336,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732190"
+      "last_updated": "2026-02-06T23:07:04.096135"
     },
     {
       "id": "aws_bedrock:cohere-command-r",
@@ -2368,7 +2368,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732231"
+      "last_updated": "2026-02-06T23:07:04.096234"
     },
     {
       "id": "aws_bedrock:twelvelabs-pegasus-1.2",
@@ -2399,7 +2399,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732286"
+      "last_updated": "2026-02-06T23:07:04.096408"
     },
     {
       "id": "aws_bedrock:palmyra-x4",
@@ -2430,7 +2430,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732371"
+      "last_updated": "2026-02-06T23:07:04.096610"
     },
     {
       "id": "aws_bedrock:stable-diffusion-3.5-large-v1.0",
@@ -2461,7 +2461,7 @@
       "output_modalities": [
         "image"
       ],
-      "last_updated": "2026-02-06T22:36:52.732436"
+      "last_updated": "2026-02-06T23:07:04.096700"
     },
     {
       "id": "aws_bedrock:claude-instant-100k",
@@ -2493,7 +2493,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732475"
+      "last_updated": "2026-02-06T23:07:04.096759"
     },
     {
       "id": "aws_bedrock:cohere-embed-4-model",
@@ -2524,7 +2524,7 @@
       "output_modalities": [
         "embedding"
       ],
-      "last_updated": "2026-02-06T22:36:52.732542"
+      "last_updated": "2026-02-06T23:07:04.096822"
     },
     {
       "id": "aws_bedrock:claude-opus-4",
@@ -2547,7 +2547,7 @@
         "output": 37.5
       },
       "context_length": 200000,
-      "max_output_tokens": 4096,
+      "max_output_tokens": 32000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -2562,7 +2562,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732580"
+      "last_updated": "2026-02-06T23:07:04.096935"
     },
     {
       "id": "aws_bedrock:claude-3.7-sonnet",
@@ -2584,8 +2584,8 @@
         "input": 1.5,
         "output": 7.5
       },
-      "context_length": 1000000,
-      "max_output_tokens": 4096,
+      "context_length": 200000,
+      "max_output_tokens": 8192,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -2600,7 +2600,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732634"
+      "last_updated": "2026-02-06T23:07:04.097015"
     },
     {
       "id": "aws_bedrock:palmyra-x5",
@@ -2631,7 +2631,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732707"
+      "last_updated": "2026-02-06T23:07:04.097125"
     },
     {
       "id": "aws_bedrock:stable-image-core",
@@ -2664,7 +2664,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732763"
+      "last_updated": "2026-02-06T23:07:04.097263"
     },
     {
       "id": "aws_bedrock:cohere-generate-model---command",
@@ -2696,7 +2696,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732795"
+      "last_updated": "2026-02-06T23:07:04.097327"
     },
     {
       "id": "aws_bedrock:cohere-embed-3-model---english",
@@ -2727,7 +2727,7 @@
       "output_modalities": [
         "embedding"
       ],
-      "last_updated": "2026-02-06T22:36:52.732833"
+      "last_updated": "2026-02-06T23:07:04.097380"
     },
     {
       "id": "aws_bedrock:jamba-1.5-mini",
@@ -2758,7 +2758,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.732884"
+      "last_updated": "2026-02-06T23:07:04.097652"
     },
     {
       "id": "aws_bedrock:cohere-embed-model-3---multilingual",
@@ -2789,7 +2789,7 @@
       "output_modalities": [
         "embedding"
       ],
-      "last_updated": "2026-02-06T22:36:52.732944"
+      "last_updated": "2026-02-06T23:07:04.097847"
     },
     {
       "id": "aws_bedrock:claude-opus-4.1",
@@ -2824,7 +2824,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733048"
+      "last_updated": "2026-02-06T23:07:04.098020"
     },
     {
       "id": "aws_bedrock:claude-sonnet-4",
@@ -2847,7 +2847,7 @@
         "output": 7.5
       },
       "context_length": 1000000,
-      "max_output_tokens": 4096,
+      "max_output_tokens": 64000,
       "is_open_source": false,
       "capabilities": [
         "text",
@@ -2862,7 +2862,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733087"
+      "last_updated": "2026-02-06T23:07:04.098080"
     },
     {
       "id": "aws_bedrock:claude-3.5-haiku",
@@ -2899,7 +2899,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733118"
+      "last_updated": "2026-02-06T23:07:04.098134"
     },
     {
       "id": "aws_bedrock:twelvelabs-marengo-embed-2.7",
@@ -2930,7 +2930,7 @@
       "output_modalities": [
         "embedding"
       ],
-      "last_updated": "2026-02-06T22:36:52.733197"
+      "last_updated": "2026-02-06T23:07:04.098300"
     },
     {
       "id": "aws_bedrock:jurassic-2-ultra",
@@ -2961,7 +2961,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733250"
+      "last_updated": "2026-02-06T23:07:04.098370"
     },
     {
       "id": "aws_bedrock:cohere-rerank-v3.5",
@@ -2992,7 +2992,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733284"
+      "last_updated": "2026-02-06T23:07:04.098423"
     },
     {
       "id": "aws_bedrock:cohere-generate-model---command-light",
@@ -3024,7 +3024,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733528"
+      "last_updated": "2026-02-06T23:07:04.098655"
     },
     {
       "id": "aws_bedrock:stable-diffusion-3-large-v1.0",
@@ -3055,7 +3055,7 @@
       "output_modalities": [
         "image"
       ],
-      "last_updated": "2026-02-06T22:36:52.733634"
+      "last_updated": "2026-02-06T23:07:04.098959"
     },
     {
       "id": "aws_bedrock:claude-100k",
@@ -3087,7 +3087,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733748"
+      "last_updated": "2026-02-06T23:07:04.099280"
     },
     {
       "id": "aws_bedrock:jurassic-2-mid",
@@ -3118,7 +3118,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.733790"
+      "last_updated": "2026-02-06T23:07:04.099359"
     },
     {
       "id": "aws_bedrock:jamba-instruct",
@@ -3149,7 +3149,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.734660"
+      "last_updated": "2026-02-06T23:07:04.100570"
     },
     {
       "id": "aws_bedrock:claude",
@@ -3181,7 +3181,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-02-06T22:36:52.734734"
+      "last_updated": "2026-02-06T23:07:04.100669"
     }
   ]
 }

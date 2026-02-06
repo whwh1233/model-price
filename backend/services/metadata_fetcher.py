@@ -150,10 +150,17 @@ class MetadataFetcher:
     @classmethod
     def normalize_model_key(cls, provider: str, model_id: str) -> List[str]:
         """Generate possible LiteLLM keys for a model."""
-        keys = []
+        keys: List[str] = []
 
-        # Direct model_id
-        keys.append(model_id)
+        # Generate ID variants to handle mixed separators in upstream data
+        # (e.g., our `claude-opus-4.6` vs LiteLLM's `claude-opus-4-6`).
+        model_id_variants = [model_id]
+        dashed_variant = model_id.replace(".", "-")
+        if dashed_variant not in model_id_variants:
+            model_id_variants.append(dashed_variant)
+
+        # Direct model_id variants
+        keys.extend(model_id_variants)
 
         # With provider prefix
         provider_prefixes = {
@@ -168,9 +175,11 @@ class MetadataFetcher:
 
         prefixes = provider_prefixes.get(provider, [""])
         for prefix in prefixes:
-            keys.append(f"{prefix}{model_id}")
+            for variant in model_id_variants:
+                keys.append(f"{prefix}{variant}")
 
-        return keys
+        # Deduplicate while preserving insertion order
+        return list(dict.fromkeys(keys))
 
     @classmethod
     def fuzzy_match_litellm_key(
@@ -183,7 +192,7 @@ class MetadataFetcher:
         # Normalize our model_id for comparison
         model_parts = model_id.lower().replace(".", "-").split("-")
         # Filter out version indicators
-        model_parts = [p for p in model_parts if p not in ["v1", "v2", "v3", "instruct"]]
+        model_parts = [p for p in model_parts if p and p not in ["v1", "v2", "v3", "instruct"]]
 
         # Provider-specific model prefixes in LiteLLM
         provider_patterns = {
@@ -213,10 +222,13 @@ class MetadataFetcher:
 
             # Score based on how many model parts match
             key_normalized = key_lower.replace("-", " ").replace(".", " ").replace("/", " ").replace("_", " ")
+            key_tokens = set(key_normalized.split())
 
             score = 0
             for part in model_parts:
-                if len(part) >= 2 and part in key_normalized:
+                # Include numeric version parts (e.g., 4/5/6) to avoid mismatching
+                # models like Claude 4.x to Claude 3.x.
+                if (len(part) >= 2 or part.isdigit()) and part in key_tokens:
                     score += 1
 
             # Bonus for exact version match
