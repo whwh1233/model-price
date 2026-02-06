@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from config import settings
 from models import ModelPricing, ProviderInfo
-from services import PricingService, Fetcher
+from services import PricingService, Fetcher, RefreshScheduler
 
 # Configure logging from settings
 logging.basicConfig(
@@ -47,8 +47,21 @@ async def lifespan(app: FastAPI):
     logger.info(f"Starting up with cached data: {stats['total_models']} models")
     if stats['total_models'] == 0:
         logger.warning("No cached data available. Use /api/refresh to fetch data.")
+
+    scheduler: Optional[RefreshScheduler] = None
+    if settings.auto_refresh_enabled:
+        scheduler = RefreshScheduler(
+            interval_seconds=settings.auto_refresh_interval_seconds,
+            include_metadata=settings.auto_refresh_include_metadata,
+        )
+        scheduler.start()
+
     yield
+
     # Shutdown
+    if scheduler:
+        await scheduler.stop()
+
     logger.info("Shutting down...")
 
 

@@ -78,6 +78,7 @@ backend/
 ├── services/            # 业务逻辑
 │   ├── pricing.py       # 定价服务
 │   ├── fetcher.py       # 刷新调度
+│   ├── refresh_scheduler.py    # 定时全量刷新任务
 │   ├── metadata_fetcher.py      # 元数据获取
 │   ├── openai_scraper.py        # OpenAI 爬虫
 │   └── google_gemini_scraper.py # Gemini 爬虫
@@ -100,6 +101,9 @@ backend/
 | `CORS_ORIGINS` | `["http://localhost:5173"]` | 允许的跨域来源 |
 | `LOG_LEVEL` | `INFO` | 日志级别 |
 | `HTTP_TIMEOUT` | `60.0` | HTTP 请求超时（秒） |
+| `AUTO_REFRESH_ENABLED` | `true` | 是否启用后台定时全量刷新 |
+| `AUTO_REFRESH_INTERVAL_SECONDS` | `3600` | 定时刷新间隔（秒），默认每小时 |
+| `AUTO_REFRESH_INCLUDE_METADATA` | `true` | 定时刷新时是否同步更新模型元数据 |
 
 完整配置见 `.env.example`
 
