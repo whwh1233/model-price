@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-14T18:12:14.791131",
+  "generated_at": "2026-04-14T18:36:07.252566",
   "counts": {
     "entities_total": 650,
-    "entities_new": 1,
-    "entities_removed": 1,
-    "offerings_total": 756,
+    "entities_new": 2,
+    "entities_removed": 2,
+    "offerings_total": 755,
     "unmatched_provider_models": 293,
-    "orphan_entities": 193,
-    "price_drift_items": 108
+    "orphan_entities": 192,
+    "price_drift_items": 109
   },
   "unmatched_provider_models": [
     {
@@ -2382,20 +2382,36 @@
       "delta_pct": 6.0
     },
     {
-      "entity": "claude-haiku-4-5",
+      "entity": "claude-3-7-sonnet",
       "provider": "aws_bedrock",
       "field": "input",
       "provider_value": 8.0,
-      "litellm_value": 1.0,
-      "delta_pct": 700.0
+      "litellm_value": 3.0,
+      "delta_pct": 166.67
     },
     {
-      "entity": "claude-haiku-4-5",
+      "entity": "claude-3-7-sonnet",
       "provider": "aws_bedrock",
       "field": "output",
       "provider_value": 24.0,
-      "litellm_value": 5.0,
-      "delta_pct": 380.0
+      "litellm_value": 15.0,
+      "delta_pct": 60.0
+    },
+    {
+      "entity": "codex-mini",
+      "provider": "openai",
+      "field": "input",
+      "provider_value": 5.3,
+      "litellm_value": 1.5,
+      "delta_pct": 253.33
+    },
+    {
+      "entity": "codex-mini",
+      "provider": "openai",
+      "field": "output",
+      "provider_value": 0.175,
+      "litellm_value": 6.0,
+      "delta_pct": -97.08
     },
     {
       "entity": "command",
@@ -2646,14 +2662,6 @@
       "delta_pct": 100.0
     },
     {
-      "entity": "gemini-embedding-2",
-      "provider": "google_gemini",
-      "field": "input",
-      "provider_value": 0.15,
-      "litellm_value": 0.2,
-      "delta_pct": -25.0
-    },
-    {
       "entity": "gemini-gemma-2-27b-it",
       "provider": "openrouter",
       "field": "input",
@@ -2886,6 +2894,22 @@
       "delta_pct": -60.0
     },
     {
+      "entity": "kimi-k2-0711",
+      "provider": "openrouter",
+      "field": "input",
+      "provider_value": 0.57,
+      "litellm_value": 0.6,
+      "delta_pct": -5.0
+    },
+    {
+      "entity": "kimi-k2-0711",
+      "provider": "openrouter",
+      "field": "output",
+      "provider_value": 2.3,
+      "litellm_value": 2.5,
+      "delta_pct": -8.0
+    },
+    {
       "entity": "kimi-k2-0905",
       "provider": "openrouter",
       "field": "input",
@@ -2900,22 +2924,6 @@
       "provider_value": 2.0,
       "litellm_value": 2.5,
       "delta_pct": -20.0
-    },
-    {
-      "entity": "kimi-k2-0905",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.57,
-      "litellm_value": 0.6,
-      "delta_pct": -5.0
-    },
-    {
-      "entity": "kimi-k2-0905",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 2.3,
-      "litellm_value": 2.5,
-      "delta_pct": -8.0
     },
     {
       "entity": "kimi-k2-5",
@@ -3223,10 +3231,12 @@
     }
   ],
   "new_entities": [
-    "imagen-4-0-fast-generate-001"
+    "imagen-4-0-generate-001",
+    "veo-3-1-fast-generate-001"
   ],
   "removed_entities": [
-    "imagen-4-0-ultra-generate-001"
+    "imagen-4-0-fast-generate-001",
+    "veo-3-1-generate"
   ],
   "orphan_entities": [
     "chat-bison",
@@ -3282,7 +3292,6 @@
     "gemini-2-5-flash-native-audio-preview-12-2025",
     "gemini-2-5-flash-preview-09-2025",
     "gemini-3-pro",
-    "gemini-embedding-001",
     "gemini-exp-1114",
     "gemini-exp-1206",
     "gemini-flash",
@@ -3316,6 +3325,7 @@
     "grok-3-fast-beta",
     "grok-3-mini-fast",
     "grok-3-mini-fast-beta",
+    "grok-4-20-beta-0309-non-reasoning",
     "grok-4-20-beta-0309-reasoning",
     "grok-beta",
     "grok-code-fast",
@@ -3332,7 +3342,6 @@
     "jamba-mini-1-7",
     "jina-reranker-v2-base-multilingual",
     "kimi",
-    "kimi-k2-0711",
     "kimi-k2-thinking-251104",
     "kimi-k2-thinking-turbo",
     "kimi-k2-turbo",
@@ -3734,7 +3743,7 @@
     "hermes-4-405b",
     "hermes-4-70b",
     "hunyuan-a13b-instruct",
-    "imagen-4-0-fast-generate-001",
+    "imagen-4-0-generate-001",
     "inception-mercury",
     "inflection-3-pi",
     "inflection-3-productivity",
@@ -4053,7 +4062,7 @@
     "ui-tars-1-5-7b",
     "unslopnemo-12b",
     "veo-2-0-generate-001",
-    "veo-3-1-generate",
+    "veo-3-1-fast-generate-001",
     "virtuoso-large",
     "voxtral-mini-1-0",
     "voxtral-small-1-0",

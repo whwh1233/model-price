@@ -1,8 +1,9 @@
 .v2-table {
   background: var(--bg-1);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
   border-radius: var(--rad-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .v2-table-head,
@@ -33,6 +34,10 @@
   cursor: pointer;
   transition: background var(--dur-fast) var(--ease);
   position: relative;
+}
+
+:root[data-theme="light"] .v2-row {
+  border-bottom-color: var(--border-default);
 }
 
 .v2-row:last-child {

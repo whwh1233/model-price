@@ -129,53 +129,91 @@
   --ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
 }
 
-/* ─── Light theme ─── applied when <html data-theme="light"> */
+/* ─── Light theme ─── applied when <html data-theme="light">
+ *
+ * Design intent: structure comes from borders + shadows, not glow.
+ * Page sits on a cool gray so white cards visibly float on top.
+ * Border tokens are boosted ~2× vs. dark mode so "subtle" means
+ * "barely but visible", not "invisible". Text uses deep slate
+ * instead of pure black to soften mono-number walls in the table. */
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg-0: #fafbfc;
-  --bg-1: #ffffff;
-  --bg-2: #f3f5f9;
-  --bg-3: #e8ebf2;
-  --bg-4: #dce0ea;
-  --bg-hover: rgba(10, 11, 13, 0.035);
-  --bg-active: rgba(10, 11, 13, 0.06);
-  --bg-glow: radial-gradient(
-    ellipse 60% 80% at 50% 0%,
-    rgba(100, 130, 255, 0.08),
-    transparent 70%
-  );
+  /* Page vs. card: a real 5-10 brightness step so cards float. */
+  --bg-0: #eef0f6;         /* page */
+  --bg-1: #ffffff;         /* cards / panels */
+  --bg-2: #f4f5fa;         /* inputs, selects, header rows */
+  --bg-3: #e6e9f2;         /* hover */
+  --bg-4: #d4d8e4;         /* pressed */
+  --bg-hover: rgba(20, 24, 40, 0.045);
+  --bg-active: rgba(20, 24, 40, 0.08);
+  --bg-glow: none;         /* no aurora glow in light mode */
 
-  --border-subtle: rgba(10, 11, 13, 0.06);
-  --border-default: rgba(10, 11, 13, 0.1);
-  --border-strong: rgba(10, 11, 13, 0.18);
+  /* Borders carry structure — must be visibly present on white. */
+  --border-subtle: rgba(20, 24, 40, 0.1);
+  --border-default: rgba(20, 24, 40, 0.16);
+  --border-strong: rgba(20, 24, 40, 0.26);
 
-  --fg-0: #0a0b0d;
-  --fg-1: #1f2230;
-  --fg-2: #55596a;
-  --fg-3: #858a9b;
-  --fg-4: #b4b9c7;
+  /* Text: deep slate rather than pure black, keeps monos comfortable. */
+  --fg-0: #14182a;
+  --fg-1: #2a3046;
+  --fg-2: #555b72;
+  --fg-3: #7f8598;
+  --fg-4: #b0b5c3;
 
-  --accent: #4566e0;
-  --accent-strong: #2b4ecf;
-  --accent-soft: rgba(69, 102, 224, 0.14);
-  --accent-glow: rgba(69, 102, 224, 0.25);
+  /* Indigo accent that reads well on white with a strong hover. */
+  --accent: #4f46e5;
+  --accent-strong: #3b33c4;
+  --accent-soft: rgba(79, 70, 229, 0.12);
+  --accent-glow: rgba(79, 70, 229, 0.32);
 
-  --shadow-sm: 0 1px 2px rgba(10, 11, 13, 0.08);
-  --shadow-md: 0 4px 12px rgba(10, 11, 13, 0.08);
-  --shadow-lg: 0 12px 32px rgba(10, 11, 13, 0.12);
-  --shadow-xl: 0 24px 64px rgba(10, 11, 13, 0.16);
+  --success: #16a67a;
+  --warning: #d4810f;
+  --danger: #e04a5c;
+  --info: #1b6fd0;
 
-  /* Maker colors tuned for light background */
-  --maker-anthropic: #c45a32;
-  --maker-openai: #0b8a67;
-  --maker-google: #1a73e8;
-  --maker-xai: #3a3e48;
-  --maker-deepseek: #3b55e0;
-  --maker-meta: #0357bd;
-  --maker-mistral: #d94c1a;
-  --maker-cohere: #d35232;
-  --maker-default: #4566e0;
+  /* Real card shadows: critical for depth in light mode. */
+  --shadow-sm: 0 1px 2px rgba(20, 24, 40, 0.06);
+  --shadow-md: 0 4px 14px rgba(20, 24, 40, 0.08), 0 1px 3px rgba(20, 24, 40, 0.04);
+  --shadow-lg: 0 12px 32px rgba(20, 24, 40, 0.12), 0 4px 12px rgba(20, 24, 40, 0.06);
+  --shadow-xl: 0 24px 64px rgba(20, 24, 40, 0.14), 0 8px 20px rgba(20, 24, 40, 0.08);
+
+  /* Maker colors tuned for contrast on white backgrounds. */
+  --maker-anthropic: #c4571f;
+  --maker-openai: #0d8268;
+  --maker-google: #1558d6;
+  --maker-xai: #2b3040;
+  --maker-deepseek: #4038d3;
+  --maker-meta: #0255a8;
+  --maker-mistral: #d4411a;
+  --maker-cohere: #bf4526;
+  --maker-default: #4f46e5;
+
+  /* Capability labels: saturated for legibility on light chips. */
+  --cap-text: #555b72;
+  --cap-vision: #16734d;
+  --cap-audio: #b55a0e;
+  --cap-tool: #3a43c4;
+  --cap-reason: #7536c0;
+  --cap-function: #2066c2;
+  --cap-image-gen: #b8348c;
+
+  --ring: 0 0 0 2px var(--bg-1), 0 0 0 4px var(--accent);
+}
+
+/* Light-mode overrides for components that rely on dark-only glow. */
+:root[data-theme="light"] .v2-hero-title .num {
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .v2-brand-mark {
+  text-shadow: none;
+}
+
+/* Light-mode body scrim: drop the aurora glow so the page reads flat
+ * and the shadow-based card structure carries the visual weight. */
+:root[data-theme="light"] body::before {
+  display: none;
 }
 
 /* ─── Base reset ─── */

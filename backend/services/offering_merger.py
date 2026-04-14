@@ -411,6 +411,13 @@ class OfferingMerger:
         )
 
         display_name = (base.model_name or base.model_id).strip()
+        # OpenRouter and similar aggregators prefix display names with the
+        # maker ("AionLabs: Aion-1.0"). Strip it so the UI shows a clean
+        # product name — the maker already renders alongside.
+        if ": " in display_name:
+            _prefix, _rest = display_name.split(": ", 1)
+            if _prefix and _rest:
+                display_name = _rest.strip()
         family, maker = detect_family_maker(slug, display_name)
 
         # When detect_family_maker can't place this model, fall back to the

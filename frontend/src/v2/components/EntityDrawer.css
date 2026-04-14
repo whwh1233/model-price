@@ -256,7 +256,7 @@
 .v2-offerings {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
   border-radius: var(--rad-md);
   overflow: hidden;
 }
@@ -278,12 +278,16 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-size: var(--text-2xs);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-default);
 }
 
 .v2-offer {
   border-bottom: 1px solid var(--border-subtle);
   color: var(--fg-1);
+}
+
+:root[data-theme="light"] .v2-offer {
+  border-bottom-color: var(--border-default);
 }
 
 .v2-offer:last-child {

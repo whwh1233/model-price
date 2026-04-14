@@ -10,7 +10,7 @@
   gap: var(--sp-3);
   padding: var(--sp-3) var(--sp-4);
   background: var(--bg-2);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
   border-radius: var(--rad-md);
   text-align: left;
   transition: all var(--dur-fast) var(--ease);
