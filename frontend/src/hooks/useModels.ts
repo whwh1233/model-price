@@ -11,10 +11,11 @@ import type {
 } from '../types/pricing';
 import { API_BASE } from '../config';
 
-const REQUEST_TIMEOUT_MS = 2000;
+const REQUEST_TIMEOUT_MS = 20000;
 const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const CACHE_SYNC_INTERVAL_MS = 60 * 1000;
 const CACHE_PREFIX = 'model-price-cache:v1';
+const LOCAL_FALLBACK_URL = `${import.meta.env.BASE_URL ?? '/'}fallback.json`.replace('//', '/');
 
 const MODELS_BASE_CACHE_KEY = `${CACHE_PREFIX}:models:base`;
 const PROVIDERS_BASE_CACHE_KEY = `${CACHE_PREFIX}:providers:base`;
@@ -22,6 +23,15 @@ const FAMILIES_BASE_CACHE_KEY = `${CACHE_PREFIX}:families:base`;
 const STATS_CACHE_KEY = `${CACHE_PREFIX}:stats`;
 const BACKEND_REFRESH_KEY = `${CACHE_PREFIX}:backend:last_refresh`;
 const DEFAULT_MODELS_QUERY = 'sort_by=model_name&sort_order=asc';
+
+interface LocalFallbackSnapshot {
+  generated_at: string;
+  source_last_refresh: string | null;
+  models: ModelPricing[];
+  providers: ProviderInfo[];
+  families: ModelFamily[];
+  stats: Stats;
+}
 
 interface CacheEntry<T> {
   savedAt: number;
@@ -110,9 +120,9 @@ function writeCache<T>(key: string, data: T): void {
   }
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
+async function fetchJson<T>(url: string, timeoutMs: number = REQUEST_TIMEOUT_MS): Promise<T> {
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
     const response = await fetch(url, { signal: controller.signal });
@@ -123,6 +133,25 @@ async function fetchJson<T>(url: string): Promise<T> {
   } finally {
     clearTimeout(timeoutId);
   }
+}
+
+async function loadLocalFallback(): Promise<LocalFallbackSnapshot | null> {
+  try {
+    return await fetchJson<LocalFallbackSnapshot>(LOCAL_FALLBACK_URL, 5000);
+  } catch (err) {
+    console.warn('Local fallback snapshot unavailable:', err);
+    return null;
+  }
+}
+
+function seedCachesFromSnapshot(snapshot: LocalFallbackSnapshot): void {
+  writeCache(MODELS_BASE_CACHE_KEY, snapshot.models);
+  writeCache(buildCacheKey('models', DEFAULT_MODELS_QUERY), snapshot.models);
+  writeCache(PROVIDERS_BASE_CACHE_KEY, snapshot.providers);
+  writeCache(buildCacheKey('providers', ''), snapshot.providers);
+  writeCache(FAMILIES_BASE_CACHE_KEY, snapshot.families);
+  writeCache(buildCacheKey('families', ''), snapshot.families);
+  writeCache(STATS_CACHE_KEY, snapshot.stats);
 }
 
 function isDefaultModelQuery(filters: Filters, sortConfig: SortConfig): boolean {
@@ -265,7 +294,7 @@ export function useModels() {
         setError(null);
         return;
       }
-      setError('无法连接到后端服务，请确保后端已启动 (port 8000)');
+      setError('暂时无法连接数据服务，请稍后再试');
       console.error(err);
     }
   }, [buildQueryString, filters, sortConfig]);
@@ -461,12 +490,51 @@ export function useModels() {
   };
 
   useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
-      await Promise.all([fetchModels(), fetchProviders(), fetchFamilies(), fetchStats()]);
-      setLoading(false);
+    let cancelled = false;
+
+    const primeFromCache = (): boolean => {
+      const cachedModels = readCache<ModelPricing[]>(MODELS_BASE_CACHE_KEY);
+      if (!cachedModels || cachedModels.length === 0) {
+        return false;
+      }
+      const cachedProviders = readCache<ProviderInfo[]>(PROVIDERS_BASE_CACHE_KEY) ?? [];
+      const cachedFamilies = readCache<ModelFamily[]>(FAMILIES_BASE_CACHE_KEY) ?? [];
+      const cachedStats = readCache<Stats>(STATS_CACHE_KEY);
+
+      setModels(applyFiltersAndSort(cachedModels, filters, sortConfig));
+      setProviders(cachedProviders);
+      setFamilies(cachedFamilies);
+      if (cachedStats) setStats(cachedStats);
+      setError(null);
+      return true;
     };
+
+    const loadData = async () => {
+      const primed = primeFromCache();
+      if (primed) {
+        setLoading(false);
+      } else {
+        const snapshot = await loadLocalFallback();
+        if (cancelled) return;
+        if (snapshot) {
+          seedCachesFromSnapshot(snapshot);
+          setModels(applyFiltersAndSort(snapshot.models, filters, sortConfig));
+          setProviders(snapshot.providers);
+          setFamilies(snapshot.families);
+          setStats(snapshot.stats);
+          setError(null);
+          setLoading(false);
+        }
+      }
+
+      await Promise.all([fetchModels(), fetchProviders(), fetchFamilies(), fetchStats()]);
+      if (!cancelled) setLoading(false);
+    };
+
     loadData();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
