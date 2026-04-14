@@ -1,6 +1,6 @@
 {
   "version": "v2.0",
-  "generated_at": "2026-04-14T17:53:06.618843",
+  "generated_at": "2026-04-14T18:12:14.634004",
   "entities": [
     {
       "canonical_id": "aion-1-0",
@@ -26,7 +26,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "aion-1-0-mini",
@@ -52,7 +52,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "aion-2-0",
@@ -78,7 +78,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "aion-rp-llama-3-1-8b",
@@ -105,7 +105,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "arcee-ai-spotlight",
@@ -131,7 +131,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "babbage-002",
@@ -157,7 +157,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "body-builder-beta",
@@ -183,7 +183,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "chat-bison",
@@ -208,7 +208,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "chat-bison-001",
@@ -233,7 +233,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "chatgpt-4o",
@@ -258,12 +258,11 @@
       ],
       "mode": "chat",
       "is_open_source": false,
-      "primary_offering_provider": "openai",
+      "primary_offering_provider": "litellm",
       "sources": [
-        "litellm",
-        "openai"
+        "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "chatgpt-image",
@@ -285,11 +284,12 @@
       ],
       "mode": "image_generation",
       "is_open_source": false,
-      "primary_offering_provider": "litellm",
+      "primary_offering_provider": "openai",
       "sources": [
-        "litellm"
+        "litellm",
+        "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-100k",
@@ -316,7 +316,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-2-0",
@@ -343,7 +343,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-2-1",
@@ -370,7 +370,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-5-haiku",
@@ -400,7 +400,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-5-sonnet",
@@ -430,7 +430,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-5-sonnet-v2",
@@ -460,7 +460,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-7-sonnet",
@@ -492,7 +492,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-7-sonnet-thinking",
@@ -522,7 +522,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-haiku",
@@ -553,7 +553,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-opus",
@@ -583,7 +583,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-3-sonnet",
@@ -612,7 +612,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-4-opus",
@@ -642,7 +642,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-4-sonnet",
@@ -672,7 +672,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-haiku-4-5",
@@ -704,7 +704,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-instant",
@@ -731,7 +731,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-instant-100k",
@@ -758,7 +758,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-opus-4",
@@ -790,7 +790,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-opus-4-1",
@@ -822,7 +822,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-opus-4-5",
@@ -854,7 +854,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-opus-4-6",
@@ -886,7 +886,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-opus-4-6-fast",
@@ -916,7 +916,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-sonnet-4",
@@ -948,7 +948,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-sonnet-4-5",
@@ -980,7 +980,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "claude-sonnet-4-6",
@@ -1012,7 +1012,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codellama-7b-instruct-solidity",
@@ -1038,7 +1038,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "coder-large",
@@ -1064,7 +1064,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codestral",
@@ -1090,7 +1090,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codestral-2405",
@@ -1116,7 +1116,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codestral-2508",
@@ -1144,7 +1144,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codestral-embed",
@@ -1169,7 +1169,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codestral-embed-2505",
@@ -1194,7 +1194,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codestral-mamba",
@@ -1220,7 +1220,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "codex-mini",
@@ -1251,7 +1251,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cogito-v2-1-671b",
@@ -1277,7 +1277,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cohere-embed-3-model-english",
@@ -1303,7 +1303,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cohere-embed-4-model",
@@ -1329,7 +1329,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cohere-embed-model-3-multilingual",
@@ -1355,7 +1355,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cohere-generate-model-command",
@@ -1382,7 +1382,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cohere-generate-model-command-light",
@@ -1409,7 +1409,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command",
@@ -1435,7 +1435,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-a-03-2025",
@@ -1463,7 +1463,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-light",
@@ -1489,7 +1489,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-nightly",
@@ -1514,7 +1514,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-r",
@@ -1542,7 +1542,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-r-08-2024",
@@ -1570,7 +1570,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-r-plus",
@@ -1597,7 +1597,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-r-plus-08-2024",
@@ -1625,7 +1625,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "command-r7b-12-2024",
@@ -1653,7 +1653,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "computer-use-preview",
@@ -1679,7 +1679,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "cydonia-24b-v4-1",
@@ -1705,7 +1705,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "davinci-002",
@@ -1731,7 +1731,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deep-research-pro-preview-12-2025",
@@ -1759,7 +1759,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek",
@@ -1788,7 +1788,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-chat",
@@ -1816,7 +1816,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-coder",
@@ -1843,7 +1843,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-r1",
@@ -1873,7 +1873,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-r1-0528",
@@ -1901,7 +1901,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-r1-distill-llama-70b",
@@ -1929,7 +1929,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-r1-distill-qwen-32b",
@@ -1957,7 +1957,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-r1t2-chimera",
@@ -1985,7 +1985,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-reasoner",
@@ -2012,7 +2012,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-v3",
@@ -2040,7 +2040,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-v3-1-nex-n1",
@@ -2068,7 +2068,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-v3-1-terminus",
@@ -2096,7 +2096,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-v3-2-251201",
@@ -2124,7 +2124,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "deepseek-v3-2-speciale",
@@ -2151,7 +2151,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral",
@@ -2179,7 +2179,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral-2512",
@@ -2207,7 +2207,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral-medium",
@@ -2235,7 +2235,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral-medium-2507",
@@ -2262,7 +2262,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral-small",
@@ -2290,7 +2290,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral-small-2505",
@@ -2317,7 +2317,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "devstral-small-2507",
@@ -2344,7 +2344,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "dolphin-mistral-24b-venice-edition-free",
@@ -2371,7 +2371,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "doubao-embedding",
@@ -2396,7 +2396,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "doubao-embedding-large",
@@ -2421,7 +2421,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "doubao-embedding-large-text-240915",
@@ -2446,7 +2446,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "doubao-embedding-large-text-250515",
@@ -2471,7 +2471,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "doubao-embedding-text-240715",
@@ -2496,7 +2496,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "elephant-alpha",
@@ -2523,7 +2523,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embed",
@@ -2549,7 +2549,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embed-english",
@@ -2574,7 +2574,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embed-english-light",
@@ -2599,7 +2599,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embed-multilingual",
@@ -2624,7 +2624,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embed-multilingual-light",
@@ -2650,7 +2650,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embeddings",
@@ -2675,7 +2675,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embeddings-2",
@@ -2700,7 +2700,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "embeddingsgigar",
@@ -2725,7 +2725,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ernie-4-5-21b-a3b",
@@ -2752,7 +2752,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ernie-4-5-21b-a3b-thinking",
@@ -2779,7 +2779,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ernie-4-5-300b-a47b",
@@ -2805,7 +2805,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ernie-4-5-vl-28b-a3b",
@@ -2832,7 +2832,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ernie-4-5-vl-424b-a47b",
@@ -2858,7 +2858,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "free-models-router",
@@ -2885,7 +2885,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-babbage-002",
@@ -2910,7 +2910,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-davinci-002",
@@ -2935,7 +2935,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-3-5-turbo",
@@ -2961,7 +2961,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-3-5-turbo-0125",
@@ -2987,7 +2987,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-3-5-turbo-0613",
@@ -3013,7 +3013,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-3-5-turbo-1106",
@@ -3039,7 +3039,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-4-0613",
@@ -3066,7 +3066,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-4-1",
@@ -3093,7 +3093,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-4-1-mini",
@@ -3120,7 +3120,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-4-1-nano",
@@ -3147,7 +3147,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-4o",
@@ -3176,7 +3176,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-gpt-4o-mini",
@@ -3205,7 +3205,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ft-o4-mini",
@@ -3233,7 +3233,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-1-5-flash",
@@ -3258,7 +3258,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-0-flash",
@@ -3291,7 +3291,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-0-flash-001",
@@ -3323,7 +3323,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-0-flash-exp-image-generation",
@@ -3350,7 +3350,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-0-flash-lite",
@@ -3382,7 +3382,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-0-flash-lite-001",
@@ -3414,7 +3414,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-computer-use-preview-10-2025",
@@ -3444,7 +3444,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash",
@@ -3476,7 +3476,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-image",
@@ -3507,7 +3507,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-lite",
@@ -3539,7 +3539,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-lite-preview-06-17",
@@ -3569,7 +3569,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-lite-preview-09-2025",
@@ -3600,7 +3600,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-native-audio",
@@ -3629,7 +3629,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-native-audio-preview-09-2025",
@@ -3657,7 +3657,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-native-audio-preview-12-2025",
@@ -3685,7 +3685,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-preview-09-2025",
@@ -3715,7 +3715,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-flash-preview-tts",
@@ -3742,7 +3742,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-pro",
@@ -3777,7 +3777,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-pro-preview-05-06",
@@ -3810,7 +3810,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-2-5-pro-preview-tts",
@@ -3840,7 +3840,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-1-flash-image",
@@ -3870,7 +3870,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-1-flash-lite",
@@ -3905,7 +3905,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-1-flash-live",
@@ -3937,7 +3937,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-1-pro",
@@ -3972,7 +3972,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-1-pro-preview-customtools",
@@ -4006,7 +4006,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-flash",
@@ -4038,7 +4038,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-pro",
@@ -4071,7 +4071,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-3-pro-image",
@@ -4101,7 +4101,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-embedding-001",
@@ -4122,12 +4122,11 @@
       ],
       "mode": "embedding",
       "is_open_source": false,
-      "primary_offering_provider": "google_gemini",
+      "primary_offering_provider": "litellm",
       "sources": [
-        "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-embedding-2",
@@ -4153,7 +4152,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-exp-1114",
@@ -4182,7 +4181,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-exp-1206",
@@ -4211,7 +4210,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-flash",
@@ -4236,7 +4235,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-flash-lite",
@@ -4266,7 +4265,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-gemma-2-27b-it",
@@ -4296,7 +4295,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-gemma-2-9b-it",
@@ -4325,7 +4324,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-live-2-5-flash-preview-native-audio-09-2025",
@@ -4357,7 +4356,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-pro",
@@ -4390,7 +4389,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-robotics-er-1-5",
@@ -4421,7 +4420,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemini-robotics-er-1-6-preview",
@@ -4450,7 +4449,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-12b",
@@ -4476,7 +4475,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-12b-it",
@@ -4502,7 +4501,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-12b-it-free",
@@ -4528,7 +4527,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-27b-it",
@@ -4559,7 +4558,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-27b-it-free",
@@ -4585,7 +4584,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-4b",
@@ -4611,7 +4610,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-4b-it",
@@ -4637,7 +4636,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3-4b-it-free",
@@ -4663,7 +4662,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3n-e2b-it-free",
@@ -4689,7 +4688,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3n-e4b-it",
@@ -4715,7 +4714,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-3n-e4b-it-free",
@@ -4741,7 +4740,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-4",
@@ -4767,7 +4766,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-4-26b-a4b-it",
@@ -4794,7 +4793,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-4-26b-a4b-it-free",
@@ -4821,7 +4820,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-4-31b-it",
@@ -4848,7 +4847,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gemma-4-31b-it-free",
@@ -4875,7 +4874,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gigachat-2-lite",
@@ -4901,7 +4900,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gigachat-2-max",
@@ -4929,7 +4928,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gigachat-2-pro",
@@ -4957,7 +4956,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-32b-0414-128k",
@@ -4985,7 +4984,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5",
@@ -5013,7 +5012,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5-air",
@@ -5041,7 +5040,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5-air-free",
@@ -5068,7 +5067,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5-airx",
@@ -5095,7 +5094,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5-flash",
@@ -5122,7 +5121,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5-x",
@@ -5149,7 +5148,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-5v",
@@ -5179,7 +5178,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-6",
@@ -5208,7 +5207,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-6v",
@@ -5235,7 +5234,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-7",
@@ -5265,7 +5264,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-7-251222",
@@ -5293,7 +5292,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-4-7-flash",
@@ -5321,7 +5320,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-5",
@@ -5351,7 +5350,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-5-1",
@@ -5378,7 +5377,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-5-code",
@@ -5406,7 +5405,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-5-turbo",
@@ -5433,7 +5432,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "glm-5v-turbo",
@@ -5460,7 +5459,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "goliath-120b",
@@ -5486,7 +5485,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-3-5-turbo",
@@ -5515,7 +5514,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-3-5-turbo-0125",
@@ -5542,7 +5541,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-3-5-turbo-0613",
@@ -5569,7 +5568,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-3-5-turbo-1106",
@@ -5596,7 +5595,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-3-5-turbo-16k",
@@ -5623,7 +5622,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-3-5-turbo-instruct-0914",
@@ -5648,7 +5647,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4",
@@ -5677,7 +5676,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-0125",
@@ -5704,7 +5703,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-0314",
@@ -5731,7 +5730,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-0613",
@@ -5758,7 +5757,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-1",
@@ -5789,7 +5788,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-1-mini",
@@ -5820,7 +5819,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-1-nano",
@@ -5851,7 +5850,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-1106",
@@ -5879,7 +5878,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-32k",
@@ -5906,7 +5905,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-turbo",
@@ -5937,7 +5936,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4-turbo-vision",
@@ -5966,7 +5965,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o",
@@ -5997,7 +5996,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-audio",
@@ -6029,7 +6028,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-extended",
@@ -6058,7 +6057,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini",
@@ -6089,7 +6088,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini-audio",
@@ -6120,7 +6119,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini-realtime",
@@ -6151,7 +6150,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini-realtime-audio",
@@ -6181,7 +6180,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini-search",
@@ -6211,7 +6210,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini-transcribe",
@@ -6239,7 +6238,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-mini-tts",
@@ -6265,7 +6264,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-realtime",
@@ -6296,7 +6295,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-realtime-audio",
@@ -6326,7 +6325,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-search",
@@ -6356,7 +6355,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-transcribe",
@@ -6384,7 +6383,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-4o-transcribe-diarize",
@@ -6410,7 +6409,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5",
@@ -6442,7 +6441,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-1",
@@ -6474,7 +6473,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-1-chat",
@@ -6504,13 +6503,13 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-1-codex",
       "slug": "gpt-5-1-codex",
       "name": "GPT 5.1 Codex",
-      "family": "GPT",
+      "family": "Codex",
       "maker": "OpenAI",
       "context_length": 272000,
       "max_output_tokens": 128000,
@@ -6536,13 +6535,13 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-1-codex-max",
       "slug": "gpt-5-1-codex-max",
       "name": "GPT 5.1 Codex MAX",
-      "family": "GPT",
+      "family": "Codex",
       "maker": "OpenAI",
       "context_length": 128000,
       "max_output_tokens": 128000,
@@ -6566,13 +6565,13 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-1-codex-mini",
       "slug": "gpt-5-1-codex-mini",
       "name": "GPT 5.1 Codex Mini",
-      "family": "GPT",
+      "family": "Codex",
       "maker": "OpenAI",
       "context_length": 128000,
       "max_output_tokens": 64000,
@@ -6596,7 +6595,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-2",
@@ -6627,7 +6626,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-2-chat",
@@ -6659,13 +6658,13 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-2-codex",
       "slug": "gpt-5-2-codex",
       "name": "GPT 5.2 Codex",
-      "family": "GPT",
+      "family": "Codex",
       "maker": "OpenAI",
       "context_length": 128000,
       "max_output_tokens": 128000,
@@ -6689,7 +6688,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-2-pro",
@@ -6721,7 +6720,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-3-chat",
@@ -6751,13 +6750,13 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-3-codex",
       "slug": "gpt-5-3-codex",
       "name": "GPT 5.3 Codex",
-      "family": "GPT",
+      "family": "Codex",
       "maker": "OpenAI",
       "context_length": 128000,
       "max_output_tokens": 128000,
@@ -6776,12 +6775,13 @@
       ],
       "mode": "responses",
       "is_open_source": false,
-      "primary_offering_provider": "openrouter",
+      "primary_offering_provider": "openai",
       "sources": [
         "litellm",
+        "openai",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-4",
@@ -6811,7 +6811,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-4-mini",
@@ -6842,7 +6842,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-4-nano",
@@ -6873,7 +6873,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-4-pro",
@@ -6903,7 +6903,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-chat",
@@ -6933,13 +6933,13 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-codex",
       "slug": "gpt-5-codex",
       "name": "GPT 5 Codex",
-      "family": "GPT",
+      "family": "Codex",
       "maker": "OpenAI",
       "context_length": 272000,
       "max_output_tokens": 128000,
@@ -6959,14 +6959,13 @@
       ],
       "mode": "responses",
       "is_open_source": false,
-      "primary_offering_provider": "openai",
+      "primary_offering_provider": "azure_openai",
       "sources": [
         "azure_openai",
         "litellm",
-        "openai",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-image",
@@ -6996,7 +6995,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-image-mini",
@@ -7026,7 +7025,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-mini",
@@ -7058,7 +7057,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-nano",
@@ -7090,7 +7089,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-pro",
@@ -7122,7 +7121,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-5-search-api",
@@ -7151,7 +7150,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-54",
@@ -7181,7 +7180,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-54-mini",
@@ -7211,7 +7210,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-54-nano",
@@ -7241,7 +7240,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-54-pro",
@@ -7271,7 +7270,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-audio",
@@ -7302,7 +7301,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-audio-1-5",
@@ -7332,7 +7331,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-audio-mini",
@@ -7363,7 +7362,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-image-1",
@@ -7390,7 +7389,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-image-1-5",
@@ -7418,7 +7417,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-image-1-mini",
@@ -7445,7 +7444,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-image-15",
@@ -7471,7 +7470,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-oss-120b",
@@ -7499,7 +7498,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-oss-120b-free",
@@ -7526,7 +7525,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-oss-20b",
@@ -7554,7 +7553,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-oss-20b-free",
@@ -7581,7 +7580,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-oss-safeguard-120b",
@@ -7607,7 +7606,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-oss-safeguard-20b",
@@ -7635,7 +7634,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-realtime",
@@ -7665,7 +7664,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-realtime-1-5",
@@ -7695,7 +7694,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-realtime-15",
@@ -7724,7 +7723,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "gpt-realtime-mini",
@@ -7755,7 +7754,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "granite-4-0-h-micro",
@@ -7781,7 +7780,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-2",
@@ -7808,7 +7807,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-2-1212",
@@ -7835,7 +7834,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-2-image-1212",
@@ -7861,7 +7860,7 @@
         "litellm",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-2-vision",
@@ -7890,7 +7889,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-2-vision-1212",
@@ -7920,7 +7919,7 @@
         "litellm",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3",
@@ -7950,7 +7949,7 @@
         "openrouter",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-beta",
@@ -7978,7 +7977,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-fast",
@@ -8005,7 +8004,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-fast-beta",
@@ -8032,7 +8031,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-mini",
@@ -8063,7 +8062,7 @@
         "openrouter",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-mini-beta",
@@ -8092,7 +8091,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-mini-fast",
@@ -8120,7 +8119,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-3-mini-fast-beta",
@@ -8148,7 +8147,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4",
@@ -8177,7 +8176,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-0709",
@@ -8205,7 +8204,7 @@
         "litellm",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-1-fast",
@@ -8235,11 +8234,10 @@
       "is_open_source": false,
       "primary_offering_provider": "openrouter",
       "sources": [
-        "azure_openai",
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-1-fast-non-reasoning",
@@ -8271,7 +8269,7 @@
         "litellm",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-1-fast-reasoning",
@@ -8301,10 +8299,11 @@
       "is_open_source": false,
       "primary_offering_provider": "xai",
       "sources": [
+        "azure_openai",
         "litellm",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-20-beta-0309-non-reasoning",
@@ -8334,7 +8333,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-20-beta-0309-reasoning",
@@ -8364,7 +8363,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-20-multi-agent-beta-0309",
@@ -8395,7 +8394,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-fast-non-reasoning",
@@ -8420,12 +8419,10 @@
       "is_open_source": false,
       "primary_offering_provider": "xai",
       "sources": [
-        "azure_openai",
         "litellm",
-        "openrouter",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-4-fast-reasoning",
@@ -8450,10 +8447,12 @@
       "is_open_source": false,
       "primary_offering_provider": "xai",
       "sources": [
+        "azure_openai",
         "litellm",
+        "openrouter",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-beta",
@@ -8482,7 +8481,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-code-fast",
@@ -8510,7 +8509,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-code-fast-1",
@@ -8540,7 +8539,7 @@
         "openrouter",
         "xai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-code-fast-1-0825",
@@ -8568,7 +8567,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "grok-vision-beta",
@@ -8597,7 +8596,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hermes-2-pro-llama-3-8b",
@@ -8624,7 +8623,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hermes-3-llama-3-1-405b",
@@ -8651,7 +8650,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hermes-3-llama-3-1-405b-free",
@@ -8678,7 +8677,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hermes-3-llama-3-1-70b",
@@ -8705,7 +8704,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hermes-4-405b",
@@ -8731,7 +8730,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hermes-4-70b",
@@ -8757,7 +8756,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "hunyuan-a13b-instruct",
@@ -8783,12 +8782,12 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
-      "canonical_id": "imagen-4-0-ultra-generate-001",
-      "slug": "imagen-4-0-ultra-generate-001",
-      "name": "Imagen 4.0 Ultra Generate 001",
+      "canonical_id": "imagen-4-0-fast-generate-001",
+      "slug": "imagen-4-0-fast-generate-001",
+      "name": "Imagen 4.0 Fast Generate 001",
       "family": "Imagen",
       "maker": "Google",
       "context_length": null,
@@ -8810,7 +8809,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "inception-mercury",
@@ -8837,7 +8836,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "inflection-3-pi",
@@ -8863,7 +8862,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "inflection-3-productivity",
@@ -8889,7 +8888,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "intellect-3",
@@ -8916,7 +8915,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "j2-light",
@@ -8941,7 +8940,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "j2-mid",
@@ -8966,7 +8965,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "j2-ultra",
@@ -8991,7 +8990,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-1-5",
@@ -9017,7 +9016,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-1-5-large",
@@ -9044,7 +9043,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-1-5-large-001",
@@ -9070,7 +9069,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-1-5-mini",
@@ -9097,7 +9096,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-1-5-mini-001",
@@ -9123,7 +9122,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-instruct",
@@ -9149,7 +9148,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-large-1-6",
@@ -9175,7 +9174,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-large-1-7",
@@ -9202,7 +9201,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-mini-1-6",
@@ -9228,7 +9227,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jamba-mini-1-7",
@@ -9254,7 +9253,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jina-reranker-v2-base-multilingual",
@@ -9279,7 +9278,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jurassic-2-mid",
@@ -9305,7 +9304,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "jurassic-2-ultra",
@@ -9331,7 +9330,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kat-coder-pro-v2",
@@ -9358,7 +9357,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi",
@@ -9387,7 +9386,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-0711",
@@ -9414,7 +9413,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-0905",
@@ -9437,12 +9436,13 @@
       ],
       "mode": "chat",
       "is_open_source": null,
-      "primary_offering_provider": "openrouter",
+      "primary_offering_provider": "azure_openai",
       "sources": [
+        "azure_openai",
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-5",
@@ -9475,7 +9475,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-thinking",
@@ -9502,11 +9502,10 @@
       "primary_offering_provider": "aws_bedrock",
       "sources": [
         "aws_bedrock",
-        "azure_openai",
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-thinking-251104",
@@ -9534,7 +9533,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-thinking-turbo",
@@ -9562,7 +9561,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-k2-turbo",
@@ -9589,7 +9588,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-latest-128k",
@@ -9618,7 +9617,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-latest-32k",
@@ -9647,7 +9646,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-latest-8k",
@@ -9676,7 +9675,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "kimi-thinking",
@@ -9703,7 +9702,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "l3-1-70b-hanami-x1",
@@ -9733,7 +9732,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "l3-1-euryale-70b",
@@ -9763,7 +9762,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "l3-3-euryale-70b",
@@ -9793,7 +9792,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "l3-euryale-70b",
@@ -9823,7 +9822,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "l3-lunaris-8b",
@@ -9853,7 +9852,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "labs-devstral-small-2512",
@@ -9880,7 +9879,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "learnlm-1-5-pro",
@@ -9909,7 +9908,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "lfm-2-24b-a2b",
@@ -9935,7 +9934,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "lfm-2-5-1-2b-instruct-free",
@@ -9961,7 +9960,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "lfm-2-5-1-2b-thinking-free",
@@ -9988,7 +9987,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-1-405b",
@@ -10015,7 +10014,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-1-70b",
@@ -10042,7 +10041,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-1-70b-instruct",
@@ -10069,7 +10068,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-1-8b",
@@ -10096,7 +10095,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-1-8b-instruct",
@@ -10123,7 +10122,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-1-nemotron-70b-instruct",
@@ -10150,7 +10149,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-11b",
@@ -10177,7 +10176,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-11b-vision-instruct",
@@ -10204,7 +10203,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-1b",
@@ -10231,7 +10230,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-1b-instruct",
@@ -10258,7 +10257,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-3b",
@@ -10285,7 +10284,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-3b-instruct",
@@ -10312,7 +10311,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-3b-instruct-free",
@@ -10339,7 +10338,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-2-90b",
@@ -10366,7 +10365,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-3-70b",
@@ -10396,7 +10395,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-3-70b-instruct-free",
@@ -10423,7 +10422,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-3-nemotron-super-49b-v1-5",
@@ -10450,7 +10449,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-70b",
@@ -10477,7 +10476,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-70b-instruct",
@@ -10504,7 +10503,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-8b",
@@ -10531,7 +10530,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-3-8b-instruct",
@@ -10558,7 +10557,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-4-maverick-17b",
@@ -10588,7 +10587,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-4-scout-17b",
@@ -10617,7 +10616,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-guard-3-8b",
@@ -10643,7 +10642,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "llama-guard-4-12b",
@@ -10669,7 +10668,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "luminous-base",
@@ -10694,7 +10693,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "luminous-base-control",
@@ -10719,7 +10718,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "luminous-extended",
@@ -10744,7 +10743,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "luminous-extended-control",
@@ -10769,7 +10768,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "luminous-supreme",
@@ -10794,7 +10793,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "luminous-supreme-control",
@@ -10819,7 +10818,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "lyria-3-clip",
@@ -10847,7 +10846,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "lyria-3-pro",
@@ -10875,7 +10874,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "maestro-reasoning",
@@ -10901,7 +10900,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-medium",
@@ -10929,7 +10928,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-medium-1-2-2509",
@@ -10957,7 +10956,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-medium-2506",
@@ -10985,7 +10984,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-medium-2509",
@@ -11013,7 +11012,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-small",
@@ -11041,7 +11040,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-small-1-2-2509",
@@ -11070,7 +11069,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magistral-small-2506",
@@ -11098,7 +11097,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "magnum-v4-72b",
@@ -11124,7 +11123,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mancer-weaver-alpha",
@@ -11150,7 +11149,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mercury-2",
@@ -11177,7 +11176,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mercury-coder",
@@ -11204,7 +11203,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "meta-llama-2-chat-13b",
@@ -11231,7 +11230,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "meta-llama-2-chat-70b",
@@ -11258,7 +11257,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mimo-v2-flash",
@@ -11285,7 +11284,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mimo-v2-omni",
@@ -11312,7 +11311,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mimo-v2-pro",
@@ -11339,7 +11338,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-01",
@@ -11365,7 +11364,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m1",
@@ -11392,7 +11391,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2",
@@ -11422,7 +11421,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-1",
@@ -11452,7 +11451,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-1-lightning",
@@ -11480,7 +11479,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-5",
@@ -11510,7 +11509,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-5-free",
@@ -11537,7 +11536,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-5-lightning",
@@ -11565,7 +11564,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-7",
@@ -11592,7 +11591,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "minimax-m2-her",
@@ -11618,7 +11617,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-14b-2512",
@@ -11647,7 +11646,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-14b-3-0",
@@ -11673,7 +11672,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-3-14b-2512",
@@ -11702,7 +11701,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-3-3b-2512",
@@ -11731,7 +11730,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-3-8b-2512",
@@ -11760,7 +11759,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-3b-2512",
@@ -11789,7 +11788,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-3b-3-0",
@@ -11815,7 +11814,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-8b-2512",
@@ -11844,7 +11843,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ministral-8b-3-0",
@@ -11870,7 +11869,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-7b",
@@ -11897,7 +11896,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-7b-instruct-v0-1",
@@ -11924,7 +11923,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-embed",
@@ -11949,7 +11948,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-large",
@@ -11980,7 +11979,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-large-2402",
@@ -12007,7 +12006,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-large-2407",
@@ -12035,7 +12034,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-large-2411",
@@ -12063,7 +12062,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-large-2512",
@@ -12093,7 +12092,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-large-3",
@@ -12123,7 +12122,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-medium",
@@ -12150,7 +12149,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-medium-2312",
@@ -12177,7 +12176,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-medium-2505",
@@ -12204,7 +12203,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-medium-3",
@@ -12231,7 +12230,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-medium-3-1-2508",
@@ -12261,7 +12260,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-nemo",
@@ -12288,7 +12287,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-saba",
@@ -12315,7 +12314,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small",
@@ -12343,7 +12342,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small-24b-instruct-2501",
@@ -12370,7 +12369,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small-2603",
@@ -12397,7 +12396,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small-3-1-24b-instruct",
@@ -12424,7 +12423,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small-3-2-24b-instruct",
@@ -12451,7 +12450,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small-3-2-2506",
@@ -12480,7 +12479,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-small-creative",
@@ -12507,7 +12506,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mistral-tiny",
@@ -12534,7 +12533,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mixtral-8x22b-instruct",
@@ -12561,7 +12560,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mixtral-8x7b",
@@ -12587,7 +12586,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mixtral-8x7b-instruct",
@@ -12614,7 +12613,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-128k",
@@ -12641,7 +12640,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-128k-0430",
@@ -12668,7 +12667,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-128k-vision",
@@ -12697,7 +12696,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-32k",
@@ -12724,7 +12723,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-32k-0430",
@@ -12751,7 +12750,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-32k-vision",
@@ -12780,7 +12779,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-8k",
@@ -12807,7 +12806,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-8k-0430",
@@ -12834,7 +12833,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-8k-vision",
@@ -12863,7 +12862,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "moonshot-v1-auto",
@@ -12891,7 +12890,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "morph-v3-fast",
@@ -12917,7 +12916,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "morph-v3-large",
@@ -12943,7 +12942,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "mythomax-l2-13b",
@@ -12969,7 +12968,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-3-nano-30b-a3b",
@@ -12996,7 +12995,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-3-nano-30b-a3b-free",
@@ -13023,7 +13022,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-3-super-120b-a12b",
@@ -13050,7 +13049,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-3-super-120b-a12b-free",
@@ -13077,7 +13076,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-nano-12b-v2-vl",
@@ -13103,7 +13102,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-nano-12b-v2-vl-free",
@@ -13130,7 +13129,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-nano-3-30b",
@@ -13156,7 +13155,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-nano-9b-v2",
@@ -13183,7 +13182,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nemotron-nano-9b-v2-free",
@@ -13210,7 +13209,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-2-0-lite",
@@ -13237,7 +13236,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-2-0-omni",
@@ -13264,7 +13263,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-2-0-pro",
@@ -13291,7 +13290,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-2-lite-v1",
@@ -13318,7 +13317,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-canvas",
@@ -13345,7 +13344,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-lite",
@@ -13372,7 +13371,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-lite-v1",
@@ -13399,7 +13398,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-micro",
@@ -13426,7 +13425,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-micro-v1",
@@ -13453,7 +13452,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-premier",
@@ -13480,7 +13479,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-premier-v1",
@@ -13507,7 +13506,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-pro",
@@ -13534,7 +13533,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-pro-v1",
@@ -13561,7 +13560,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-reel",
@@ -13588,7 +13587,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-sonic",
@@ -13618,7 +13617,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nova-sonic-2-0",
@@ -13648,7 +13647,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nvidia-llama-3-2-nv-rerankqa-1b-v2",
@@ -13673,7 +13672,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nvidia-nemotron-3-super-120b-a12b",
@@ -13699,7 +13698,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nvidia-nemotron-nano-2",
@@ -13725,7 +13724,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nvidia-nemotron-nano-2-vl",
@@ -13753,7 +13752,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "nvidia-nv-rerankqa-mistral-4b-v3",
@@ -13778,7 +13777,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o1",
@@ -13810,7 +13809,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o1-mini",
@@ -13837,7 +13836,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o1-pro",
@@ -13869,7 +13868,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o3",
@@ -13901,7 +13900,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o3-deep-research",
@@ -13932,7 +13931,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o3-mini",
@@ -13962,7 +13961,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o3-mini-high",
@@ -13990,7 +13989,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o3-pro",
@@ -14022,7 +14021,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o4-mini",
@@ -14055,7 +14054,7 @@
         "openai",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o4-mini-deep-research",
@@ -14086,7 +14085,7 @@
         "openai",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "o4-mini-high",
@@ -14116,7 +14115,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "olmo-2-0325-32b-instruct",
@@ -14142,7 +14141,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "olmo-3-1-32b-instruct",
@@ -14169,7 +14168,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "olmo-3-32b-think",
@@ -14196,7 +14195,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "omni-moderation",
@@ -14221,7 +14220,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "open-codestral-mamba",
@@ -14247,7 +14246,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "open-mistral-7b",
@@ -14274,7 +14273,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "open-mistral-nemo",
@@ -14301,7 +14300,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "open-mistral-nemo-2407",
@@ -14328,7 +14327,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "open-mixtral-8x22b",
@@ -14355,7 +14354,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "open-mixtral-8x7b",
@@ -14382,7 +14381,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "palmyra-x4",
@@ -14408,7 +14407,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "palmyra-x5",
@@ -14435,7 +14434,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "perplexity-sonar",
@@ -14461,7 +14460,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "phi-3",
@@ -14487,7 +14486,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "phi-3-5",
@@ -14513,7 +14512,7 @@
         "azure_openai",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "phi-4",
@@ -14540,7 +14539,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "pixtral-12b-2409",
@@ -14569,7 +14568,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "pixtral-large",
@@ -14598,7 +14597,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "pixtral-large-2411",
@@ -14628,7 +14627,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "pixtral-large-25-02",
@@ -14656,7 +14655,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-2-5-72b-instruct",
@@ -14683,7 +14682,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-2-5-7b-instruct",
@@ -14710,7 +14709,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-2-5-coder-32b-instruct",
@@ -14737,7 +14736,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-coder",
@@ -14765,7 +14764,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-max",
@@ -14794,7 +14793,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-plus",
@@ -14823,7 +14822,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-plus-2025-07-28-thinking",
@@ -14851,7 +14850,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-turbo",
@@ -14880,7 +14879,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-vl-max",
@@ -14907,7 +14906,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen-vl-plus",
@@ -14934,7 +14933,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen2-5-vl-32b-instruct",
@@ -14961,7 +14960,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen2-5-vl-72b-instruct",
@@ -14988,7 +14987,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-14b",
@@ -15015,7 +15014,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-235b-a22b",
@@ -15042,7 +15041,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-235b-a22b-2507",
@@ -15070,7 +15069,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-235b-a22b-thinking-2507",
@@ -15098,7 +15097,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-30b-a3b",
@@ -15127,7 +15126,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-30b-a3b-instruct-2507",
@@ -15154,7 +15153,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-30b-a3b-thinking-2507",
@@ -15182,7 +15181,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-32b",
@@ -15210,7 +15209,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-122b-a10b",
@@ -15237,7 +15236,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-27b",
@@ -15264,7 +15263,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-35b-a3b",
@@ -15291,7 +15290,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-397b-a17b",
@@ -15318,7 +15317,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-9b",
@@ -15345,7 +15344,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-flash-02-23",
@@ -15372,7 +15371,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-5-plus-02-15",
@@ -15399,7 +15398,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-6-plus",
@@ -15426,7 +15425,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-8b",
@@ -15453,7 +15452,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-30b-a3b",
@@ -15479,7 +15478,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-30b-a3b-instruct",
@@ -15506,7 +15505,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-480b-a35b",
@@ -15532,7 +15531,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-flash",
@@ -15561,7 +15560,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-free",
@@ -15588,7 +15587,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-next",
@@ -15616,7 +15615,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-coder-plus",
@@ -15645,7 +15644,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-max",
@@ -15674,7 +15673,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-max-thinking",
@@ -15702,7 +15701,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-next-80b-a3b",
@@ -15731,7 +15730,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-next-80b-a3b-instruct-free",
@@ -15758,7 +15757,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-next-80b-a3b-thinking",
@@ -15787,7 +15786,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-235b-a22b",
@@ -15818,7 +15817,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-235b-a22b-thinking",
@@ -15849,7 +15848,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-30b-a3b-instruct",
@@ -15876,7 +15875,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-30b-a3b-thinking",
@@ -15904,7 +15903,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-32b",
@@ -15934,7 +15933,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-32b-thinking",
@@ -15964,7 +15963,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-8b-instruct",
@@ -15991,7 +15990,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwen3-vl-8b-thinking",
@@ -16019,7 +16018,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwq-32b",
@@ -16047,7 +16046,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "qwq-plus",
@@ -16075,7 +16074,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ranking-nvidia-llama-3-2-nv-rerankqa-1b-v2",
@@ -16100,7 +16099,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "reka-edge",
@@ -16127,7 +16126,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "reka-flash-3",
@@ -16153,7 +16152,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "relace-apply-3",
@@ -16179,7 +16178,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "relace-search",
@@ -16206,7 +16205,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "remm-slerp-l2-13b",
@@ -16232,7 +16231,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank",
@@ -16258,7 +16257,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank-2",
@@ -16283,7 +16282,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank-2-5",
@@ -16308,7 +16307,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank-2-5-lite",
@@ -16333,7 +16332,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank-2-lite",
@@ -16358,7 +16357,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank-english",
@@ -16383,7 +16382,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rerank-multilingual",
@@ -16408,7 +16407,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rnj-1-instruct",
@@ -16435,7 +16434,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "rocinante-12b",
@@ -16462,7 +16461,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "seed-1-6",
@@ -16489,7 +16488,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "seed-1-6-flash",
@@ -16516,7 +16515,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "seed-2-0-lite",
@@ -16543,7 +16542,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "seed-2-0-mini",
@@ -16570,7 +16569,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "skyfall-36b-v2",
@@ -16596,7 +16595,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "solar-pro-3",
@@ -16623,7 +16622,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "sonar-deep-research",
@@ -16650,7 +16649,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "sonar-pro",
@@ -16676,7 +16675,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "sonar-pro-search",
@@ -16702,7 +16701,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "sonar-reasoning-pro",
@@ -16728,7 +16727,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "sora-2",
@@ -16754,7 +16753,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "sora-2-pro",
@@ -16780,7 +16779,7 @@
         "litellm",
         "openai"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "stable-diffusion-3-5-large-v1-0",
@@ -16806,7 +16805,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "stable-diffusion-3-large-v1-0",
@@ -16832,7 +16831,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "stable-image-core",
@@ -16859,7 +16858,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "stable-image-ultra",
@@ -16886,7 +16885,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "step-3-5-flash",
@@ -16913,7 +16912,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "switchpoint-router",
@@ -16939,7 +16938,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-bison",
@@ -16964,7 +16963,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-bison-001",
@@ -16989,7 +16988,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-bison-safety-off",
@@ -17014,7 +17013,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-bison-safety-recitation-off",
@@ -17039,7 +17038,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-embedding-3-large",
@@ -17064,7 +17063,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-embedding-3-small",
@@ -17089,7 +17088,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-embedding-ada-002",
@@ -17114,7 +17113,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-embedding-ada-002-v2",
@@ -17139,7 +17138,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-moderation",
@@ -17164,7 +17163,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-moderation-007",
@@ -17189,7 +17188,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "text-moderation-stable",
@@ -17214,7 +17213,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "tongyi-deepresearch-30b-a3b",
@@ -17241,7 +17240,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "trinity-large-preview-free",
@@ -17268,7 +17267,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "trinity-large-thinking",
@@ -17296,7 +17295,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "trinity-mini",
@@ -17323,7 +17322,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "twelvelabs-marengo-embed-2-7",
@@ -17349,7 +17348,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "twelvelabs-marengo-embed-3-0",
@@ -17375,7 +17374,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "twelvelabs-pegasus-1-2",
@@ -17401,7 +17400,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "ui-tars-1-5-7b",
@@ -17427,7 +17426,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "unslopnemo-12b",
@@ -17454,7 +17453,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "veo-2-0-generate-001",
@@ -17480,7 +17479,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "veo-3-1-generate",
@@ -17506,7 +17505,7 @@
         "google_gemini",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "virtuoso-large",
@@ -17533,7 +17532,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voxtral-mini-1-0",
@@ -17562,7 +17561,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voxtral-small-1-0",
@@ -17591,7 +17590,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voxtral-small-24b-2507",
@@ -17618,7 +17617,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-2",
@@ -17643,7 +17642,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-3",
@@ -17668,7 +17667,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-3-5",
@@ -17693,7 +17692,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-3-5-lite",
@@ -17718,7 +17717,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-3-large",
@@ -17743,7 +17742,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-3-lite",
@@ -17768,7 +17767,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-code-2",
@@ -17793,7 +17792,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-code-3",
@@ -17818,7 +17817,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-context-3",
@@ -17843,7 +17842,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-finance-2",
@@ -17868,7 +17867,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-large-2",
@@ -17893,7 +17892,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-law-2",
@@ -17918,7 +17917,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-lite-01",
@@ -17943,7 +17942,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-lite-02",
@@ -17968,7 +17967,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "voyage-multimodal-3",
@@ -17993,7 +17992,7 @@
       "sources": [
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "wizardlm-2-8x22b",
@@ -18019,7 +18018,7 @@
         "litellm",
         "openrouter"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     },
     {
       "canonical_id": "writer-palmyra-vision-7b",
@@ -18047,7 +18046,7 @@
         "aws_bedrock",
         "litellm"
       ],
-      "last_refreshed": "2026-04-14T17:53:06.618843"
+      "last_refreshed": "2026-04-14T18:12:14.634004"
     }
   ]
 }

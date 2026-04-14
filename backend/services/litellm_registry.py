@@ -164,6 +164,10 @@ FAMILY_PATTERNS: List[tuple[str, str, List[str]]] = [
     ("Imagen", "Google", ["imagen"]),
     ("Veo", "Google", ["veo-"]),
     ("LearnLM", "Google", ["learnlm"]),
+    # Codex must be checked BEFORE GPT because model names like
+    # "gpt-5-codex" and "gpt-5.1-codex-max" contain the "gpt-" needle
+    # and would otherwise collapse into the GPT family.
+    ("Codex", "OpenAI", ["codex"]),
     ("OpenAI O-Series", "OpenAI", ["o1-", "o3-", "o4-", "o1 ", "o3 ", "o4 ", "o1,", "o3,", "o4,"]),
     ("GPT", "OpenAI", [
         "gpt-", "gpt4", "gpt3", "gpt5", "chatgpt",
@@ -174,7 +178,6 @@ FAMILY_PATTERNS: List[tuple[str, str, List[str]]] = [
     ("DALL-E", "OpenAI", ["dall-e"]),
     ("OpenAI TTS", "OpenAI", ["tts-"]),
     ("OpenAI Embedding", "OpenAI", ["text-embedding"]),
-    ("Codex", "OpenAI", ["codex"]),
     ("Sora", "OpenAI", ["sora"]),
     ("Llama", "Meta", ["llama", "llama-guard"]),
     ("Mistral", "Mistral", ["mistral", "mixtral", "codestral", "ministral", "pixtral", "devstral", "voxtral", "magistral"]),
