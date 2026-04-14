@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-fallback.mjs && tsc -b && vite build",
-    "build:fallback": "node scripts/build-fallback.mjs",
+    "build": "node scripts/build-v2-fallback.mjs && tsc -b && vite build",
+    "build:fallback": "node scripts/build-v2-fallback.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
