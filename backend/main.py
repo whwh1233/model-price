@@ -8,6 +8,7 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
+from api_v2 import router as api_v2_router
 from config import settings
 from models import ModelPricing, ProviderInfo
 from services import PricingService, Fetcher, RefreshScheduler
@@ -80,6 +81,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(api_v2_router)
 
 
 @app.get("/")

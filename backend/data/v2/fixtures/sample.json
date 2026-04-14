@@ -1,0 +1,754 @@
+{
+  "$schema_note": "Phase 0 fixture — shared contract anchor for frontend and backend parallel tracks. All prices are per 1M tokens. Shape matches design doc §4.3, §4.4, §5.3.",
+  "generated_at": "2026-04-15T00:00:00Z",
+  "source_version": "fixture-v0",
+  "entities": [
+    {
+      "canonical_id": "claude-sonnet-4-5",
+      "slug": "claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5",
+      "family": "Claude",
+      "maker": "Anthropic",
+      "context_length": 200000,
+      "max_output_tokens": 64000,
+      "capabilities": ["text", "vision", "tool_use", "reasoning", "function_calling"],
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "anthropic",
+      "sources": ["litellm", "anthropic", "aws_bedrock", "azure_openai", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "anthropic",
+          "provider_model_id": "claude-sonnet-4-5-20250929",
+          "pricing": {
+            "input": 3.0,
+            "output": 15.0,
+            "cache_read": 0.3,
+            "cache_write": 3.75,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 1.5, "output": 7.5 },
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "aws_bedrock",
+          "provider_model_id": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "pricing": {
+            "input": 3.0,
+            "output": 15.0,
+            "cache_read": 0.3,
+            "cache_write": 3.75,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 1.5, "output": 7.5 },
+          "availability": "ga",
+          "region": "us-east-1",
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "azure_openai",
+          "provider_model_id": "claude-sonnet-4-5",
+          "pricing": {
+            "input": 3.0,
+            "output": 15.0,
+            "cache_read": 0.3,
+            "cache_write": 3.75,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "anthropic/claude-sonnet-4.5",
+          "pricing": {
+            "input": 3.3,
+            "output": 16.5,
+            "cache_read": 0.33,
+            "cache_write": 4.125,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "deepseek-chat-v3",
+          "name": "DeepSeek V3",
+          "delta_input_pct": -91.0,
+          "delta_output_pct": -92.7,
+          "capability_overlap": 0.8
+        },
+        {
+          "canonical_id": "gpt-4o-mini",
+          "name": "GPT-4o mini",
+          "delta_input_pct": -95.0,
+          "delta_output_pct": -96.0,
+          "capability_overlap": 0.75
+        },
+        {
+          "canonical_id": "gemini-2-5-flash",
+          "name": "Gemini 2.5 Flash",
+          "delta_input_pct": -95.0,
+          "delta_output_pct": -96.0,
+          "capability_overlap": 0.8
+        }
+      ]
+    },
+    {
+      "canonical_id": "claude-haiku-4-5",
+      "slug": "claude-haiku-4-5",
+      "name": "Claude Haiku 4.5",
+      "family": "Claude",
+      "maker": "Anthropic",
+      "context_length": 200000,
+      "max_output_tokens": 16000,
+      "capabilities": ["text", "vision", "tool_use", "function_calling"],
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "anthropic",
+      "sources": ["litellm", "anthropic", "aws_bedrock", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "anthropic",
+          "provider_model_id": "claude-haiku-4-5-20251001",
+          "pricing": {
+            "input": 1.0,
+            "output": 5.0,
+            "cache_read": 0.1,
+            "cache_write": 1.25,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 0.5, "output": 2.5 },
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "aws_bedrock",
+          "provider_model_id": "anthropic.claude-haiku-4-5-20251001-v1:0",
+          "pricing": {
+            "input": 1.0,
+            "output": 5.0,
+            "cache_read": 0.1,
+            "cache_write": 1.25,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 0.5, "output": 2.5 },
+          "availability": "ga",
+          "region": "us-east-1",
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "anthropic/claude-haiku-4.5",
+          "pricing": {
+            "input": 1.1,
+            "output": 5.5,
+            "cache_read": 0.11,
+            "cache_write": 1.375,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "gpt-4o-mini",
+          "name": "GPT-4o mini",
+          "delta_input_pct": -85.0,
+          "delta_output_pct": -88.0,
+          "capability_overlap": 0.85
+        },
+        {
+          "canonical_id": "gemini-2-5-flash",
+          "name": "Gemini 2.5 Flash",
+          "delta_input_pct": -85.0,
+          "delta_output_pct": -88.0,
+          "capability_overlap": 0.9
+        },
+        {
+          "canonical_id": "deepseek-chat-v3",
+          "name": "DeepSeek V3",
+          "delta_input_pct": -73.0,
+          "delta_output_pct": -78.0,
+          "capability_overlap": 0.75
+        }
+      ]
+    },
+    {
+      "canonical_id": "gpt-4o",
+      "slug": "gpt-4o",
+      "name": "GPT-4o",
+      "family": "GPT",
+      "maker": "OpenAI",
+      "context_length": 128000,
+      "max_output_tokens": 16384,
+      "capabilities": ["text", "vision", "audio", "tool_use", "function_calling"],
+      "input_modalities": ["text", "image", "audio"],
+      "output_modalities": ["text", "audio"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "openai",
+      "sources": ["litellm", "openai", "azure_openai", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "openai",
+          "provider_model_id": "gpt-4o-2024-11-20",
+          "pricing": {
+            "input": 2.5,
+            "output": 10.0,
+            "cache_read": 1.25,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": 100.0,
+            "audio_output": 200.0,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 1.25, "output": 5.0 },
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "azure_openai",
+          "provider_model_id": "gpt-4o",
+          "pricing": {
+            "input": 2.5,
+            "output": 10.0,
+            "cache_read": 1.25,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": 100.0,
+            "audio_output": 200.0,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 1.25, "output": 5.0 },
+          "availability": "ga",
+          "region": "eastus",
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "openai/gpt-4o",
+          "pricing": {
+            "input": 2.75,
+            "output": 11.0,
+            "cache_read": 1.375,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "gpt-4o-mini",
+          "name": "GPT-4o mini",
+          "delta_input_pct": -94.0,
+          "delta_output_pct": -94.0,
+          "capability_overlap": 0.9
+        },
+        {
+          "canonical_id": "deepseek-chat-v3",
+          "name": "DeepSeek V3",
+          "delta_input_pct": -89.2,
+          "delta_output_pct": -89.0,
+          "capability_overlap": 0.7
+        },
+        {
+          "canonical_id": "gemini-2-5-flash",
+          "name": "Gemini 2.5 Flash",
+          "delta_input_pct": -94.0,
+          "delta_output_pct": -94.0,
+          "capability_overlap": 0.85
+        }
+      ]
+    },
+    {
+      "canonical_id": "gpt-4o-mini",
+      "slug": "gpt-4o-mini",
+      "name": "GPT-4o mini",
+      "family": "GPT",
+      "maker": "OpenAI",
+      "context_length": 128000,
+      "max_output_tokens": 16384,
+      "capabilities": ["text", "vision", "tool_use", "function_calling"],
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "openai",
+      "sources": ["litellm", "openai", "azure_openai", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "openai",
+          "provider_model_id": "gpt-4o-mini-2024-07-18",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6,
+            "cache_read": 0.075,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 0.075, "output": 0.3 },
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "azure_openai",
+          "provider_model_id": "gpt-4o-mini",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6,
+            "cache_read": 0.075,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 0.075, "output": 0.3 },
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "openai/gpt-4o-mini",
+          "pricing": {
+            "input": 0.165,
+            "output": 0.66,
+            "cache_read": 0.0825,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "gemini-2-5-flash",
+          "name": "Gemini 2.5 Flash",
+          "delta_input_pct": 0.0,
+          "delta_output_pct": -50.0,
+          "capability_overlap": 0.9
+        },
+        {
+          "canonical_id": "claude-haiku-4-5",
+          "name": "Claude Haiku 4.5",
+          "delta_input_pct": 566.0,
+          "delta_output_pct": 733.0,
+          "capability_overlap": 0.85
+        }
+      ]
+    },
+    {
+      "canonical_id": "gemini-2-5-pro",
+      "slug": "gemini-2-5-pro",
+      "name": "Gemini 2.5 Pro",
+      "family": "Gemini",
+      "maker": "Google",
+      "context_length": 2000000,
+      "max_output_tokens": 64000,
+      "capabilities": ["text", "vision", "audio", "tool_use", "reasoning", "function_calling"],
+      "input_modalities": ["text", "image", "audio", "video"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "google_gemini",
+      "sources": ["litellm", "google_gemini", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "google_gemini",
+          "provider_model_id": "gemini-2.5-pro",
+          "pricing": {
+            "input": 1.25,
+            "output": 10.0,
+            "cache_read": 0.31,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 0.625, "output": 5.0 },
+          "availability": "ga",
+          "region": null,
+          "notes": "pricing shown for prompts <=200K tokens; >200K doubles",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "google/gemini-2.5-pro",
+          "pricing": {
+            "input": 1.375,
+            "output": 11.0,
+            "cache_read": 0.341,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "gemini-2-5-flash",
+          "name": "Gemini 2.5 Flash",
+          "delta_input_pct": -88.0,
+          "delta_output_pct": -94.0,
+          "capability_overlap": 0.9
+        },
+        {
+          "canonical_id": "deepseek-chat-v3",
+          "name": "DeepSeek V3",
+          "delta_input_pct": -78.4,
+          "delta_output_pct": -89.0,
+          "capability_overlap": 0.65
+        }
+      ]
+    },
+    {
+      "canonical_id": "gemini-2-5-flash",
+      "slug": "gemini-2-5-flash",
+      "name": "Gemini 2.5 Flash",
+      "family": "Gemini",
+      "maker": "Google",
+      "context_length": 1000000,
+      "max_output_tokens": 64000,
+      "capabilities": ["text", "vision", "audio", "tool_use", "function_calling"],
+      "input_modalities": ["text", "image", "audio", "video"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "google_gemini",
+      "sources": ["litellm", "google_gemini", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "google_gemini",
+          "provider_model_id": "gemini-2.5-flash",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6,
+            "cache_read": 0.0375,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": 1.0,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": { "input": 0.075, "output": 0.3 },
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "google/gemini-2.5-flash",
+          "pricing": {
+            "input": 0.165,
+            "output": 0.66,
+            "cache_read": 0.0413,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "gpt-4o-mini",
+          "name": "GPT-4o mini",
+          "delta_input_pct": 0.0,
+          "delta_output_pct": 0.0,
+          "capability_overlap": 0.9
+        },
+        {
+          "canonical_id": "deepseek-chat-v3",
+          "name": "DeepSeek V3",
+          "delta_input_pct": 80.0,
+          "delta_output_pct": 83.3,
+          "capability_overlap": 0.75
+        }
+      ]
+    },
+    {
+      "canonical_id": "deepseek-chat-v3",
+      "slug": "deepseek-chat-v3",
+      "name": "DeepSeek V3",
+      "family": "DeepSeek",
+      "maker": "DeepSeek",
+      "context_length": 128000,
+      "max_output_tokens": 8192,
+      "capabilities": ["text", "tool_use", "reasoning", "function_calling"],
+      "input_modalities": ["text"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": true,
+      "primary_offering_provider": "openrouter",
+      "sources": ["litellm", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "openrouter",
+          "provider_model_id": "deepseek/deepseek-chat-v3",
+          "pricing": {
+            "input": 0.27,
+            "output": 1.1,
+            "cache_read": 0.07,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "litellm_fallback",
+          "provider_model_id": "deepseek-chat",
+          "pricing": {
+            "input": 0.27,
+            "output": 1.1,
+            "cache_read": 0.07,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "price inherited from LiteLLM registry; provider not fetched locally",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "litellm_fallback"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "gemini-2-5-flash",
+          "name": "Gemini 2.5 Flash",
+          "delta_input_pct": -44.4,
+          "delta_output_pct": -45.5,
+          "capability_overlap": 0.75
+        },
+        {
+          "canonical_id": "gpt-4o-mini",
+          "name": "GPT-4o mini",
+          "delta_input_pct": -44.4,
+          "delta_output_pct": -45.5,
+          "capability_overlap": 0.8
+        }
+      ]
+    },
+    {
+      "canonical_id": "grok-4",
+      "slug": "grok-4",
+      "name": "Grok 4",
+      "family": "Grok",
+      "maker": "xAI",
+      "context_length": 2000000,
+      "max_output_tokens": 8192,
+      "capabilities": ["text", "vision", "tool_use", "reasoning", "function_calling"],
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"],
+      "mode": "chat",
+      "is_open_source": false,
+      "primary_offering_provider": "xai",
+      "sources": ["litellm", "xai", "openrouter"],
+      "last_refreshed": "2026-04-15T00:00:00Z",
+      "offerings": [
+        {
+          "provider": "xai",
+          "provider_model_id": "grok-4",
+          "pricing": {
+            "input": 3.0,
+            "output": 15.0,
+            "cache_read": 0.75,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": null,
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        },
+        {
+          "provider": "openrouter",
+          "provider_model_id": "x-ai/grok-4",
+          "pricing": {
+            "input": 3.3,
+            "output": 16.5,
+            "cache_read": 0.825,
+            "cache_write": null,
+            "image_input": null,
+            "audio_input": null,
+            "audio_output": null,
+            "embedding": null
+          },
+          "batch_pricing": null,
+          "availability": "ga",
+          "region": null,
+          "notes": "+10% aggregator markup",
+          "last_updated": "2026-04-15T00:00:00Z",
+          "source": "provider_api"
+        }
+      ],
+      "alternatives": [
+        {
+          "canonical_id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "delta_input_pct": 0.0,
+          "delta_output_pct": 0.0,
+          "capability_overlap": 0.95
+        },
+        {
+          "canonical_id": "deepseek-chat-v3",
+          "name": "DeepSeek V3",
+          "delta_input_pct": -91.0,
+          "delta_output_pct": -92.7,
+          "capability_overlap": 0.75
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "total_entities": 8,
+    "total_offerings": 21,
+    "makers": 5,
+    "families": 5,
+    "last_refresh": "2026-04-15T00:00:00Z",
+    "fixture": true
+  },
+  "drift": {
+    "generated_at": "2026-04-15T00:00:00Z",
+    "counts": {
+      "entities_total": 8,
+      "entities_new": 0,
+      "entities_removed": 0,
+      "offerings_total": 21,
+      "unmatched_provider_models": 0,
+      "orphan_entities": 1,
+      "price_drift_items": 0
+    },
+    "unmatched_provider_models": [],
+    "price_drift": [],
+    "new_entities": [],
+    "removed_entities": [],
+    "orphan_entities": ["deepseek-chat-v3"],
+    "note": "Phase 0 fixture; real drift data populated in Phase 1 after litellm_registry + offering_merger are implemented."
+  }
+}
