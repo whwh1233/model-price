@@ -45,8 +45,9 @@ export const en = {
   'table.col.output': 'Output / M',
   'table.col.capabilities': 'Capabilities',
   'table.empty': 'No models match your filters.',
-  'table.add_to_compare': 'Add to compare',
+  'table.add_to_compare_fmt': 'Add to compare ({count}/{max})',
   'table.remove_from_compare': 'Remove from compare',
+  'table.compare_full_fmt': 'Compare is full — max {max} models',
 
   // Drawer / detail
   'detail.open_full_page': 'Open full page ↗',
@@ -101,6 +102,8 @@ export const en = {
 
   // Basket
   'basket.in_compare': 'in compare',
+  'basket.count_fmt': '{count}/{max} in compare',
+  'basket.hint_fmt': 'Up to {max} models',
   'basket.clear': 'Clear',
   'basket.go': 'Compare →',
   'basket.remove_fmt': 'Remove {slug}',
@@ -168,8 +171,9 @@ export const zh: Record<MessageKey, string> = {
   'table.col.output': '输出 / M',
   'table.col.capabilities': '能力',
   'table.empty': '没有模型匹配当前筛选条件。',
-  'table.add_to_compare': '加入对比',
+  'table.add_to_compare_fmt': '加入对比 ({count}/{max})',
   'table.remove_from_compare': '移出对比',
+  'table.compare_full_fmt': '对比已满 — 最多 {max} 个模型',
 
   'detail.open_full_page': '打开独立页 ↗',
   'detail.back_to_home': '← 返回列表',
@@ -220,6 +224,8 @@ export const zh: Record<MessageKey, string> = {
   'compare.failed_fmt': '加载对比失败。{error}',
 
   'basket.in_compare': '在对比中',
+  'basket.count_fmt': '对比中 · {count}/{max}',
+  'basket.hint_fmt': '最多 {max} 个模型',
   'basket.clear': '清空',
   'basket.go': '开始对比 →',
   'basket.remove_fmt': '移除 {slug}',

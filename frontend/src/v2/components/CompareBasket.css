@@ -40,9 +40,9 @@
 
 .v2-basket-count {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
-  min-width: 22px;
+  min-width: 36px;
   height: 22px;
   padding: 0 var(--sp-2);
   background: var(--accent);
@@ -50,6 +50,13 @@
   border-radius: var(--rad-full);
   font-size: var(--text-xs);
   font-weight: var(--fw-semibold);
+}
+
+.v2-basket-max {
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-regular);
+  opacity: 0.7;
+  margin-left: 1px;
 }
 
 .v2-basket-chips {

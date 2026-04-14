@@ -106,6 +106,9 @@ export function HomePage(_props: HomePageProps) {
           selectedSlug={drawerSlug}
           isInBasket={basket.has}
           onToggleBasket={(slug) => basket.toggle(slug)}
+          basketCount={basket.count}
+          basketCapacity={basket.capacity}
+          basketFull={basket.isFull}
         />
       )}
 

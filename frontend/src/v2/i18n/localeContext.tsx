@@ -24,9 +24,8 @@ function detectInitial(): Locale {
   } catch {
     // ignore
   }
-  // Default to Chinese when the browser advertises a zh-* language.
-  const nav = window.navigator.language || '';
-  if (nav.toLowerCase().startsWith('zh')) return 'zh';
+  // Always default to English. Users toggle to Chinese explicitly
+  // via the topbar chip; the choice persists in localStorage.
   return 'en';
 }
 

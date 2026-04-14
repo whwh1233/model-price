@@ -192,6 +192,31 @@
   border-color: var(--accent-strong);
 }
 
+.v2-row-add.is-disabled,
+.v2-row-add:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.v2-row:hover .v2-row-add.is-disabled {
+  opacity: 0.5;
+}
+
+.v2-row-add.is-disabled:hover {
+  background: transparent;
+  color: var(--fg-3);
+  border-color: transparent;
+}
+
+.v2-row-cap-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--fg-3);
+  font-weight: var(--fw-regular);
+  text-align: right;
+  cursor: help;
+}
+
 .v2-empty {
   display: flex;
   flex-direction: column;

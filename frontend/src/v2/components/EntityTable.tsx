@@ -15,6 +15,9 @@ interface EntityTableProps {
   selectedSlug: string | null;
   isInBasket: (slug: string) => boolean;
   onToggleBasket: (slug: string) => void;
+  basketCount: number;
+  basketCapacity: number;
+  basketFull: boolean;
 }
 
 const CAP_ORDER = [
@@ -38,12 +41,18 @@ function Row({
   isSelected,
   inBasket,
   onToggleBasket,
+  basketCount,
+  basketCapacity,
+  basketFull,
 }: {
   entity: EntityListItemV2;
   onSelect: (slug: string) => void;
   isSelected: boolean;
   inBasket: boolean;
   onToggleBasket: (slug: string) => void;
+  basketCount: number;
+  basketCapacity: number;
+  basketFull: boolean;
 }) {
   const { t } = useI18n();
   const primary = entity.primary_offering;
@@ -94,20 +103,34 @@ function Row({
       <div className="v2-row-col v2-row-actions">
         <button
           type="button"
-          className={`v2-row-add${inBasket ? ' is-added' : ''}`}
+          className={`v2-row-add${inBasket ? ' is-added' : ''}${
+            !inBasket && basketFull ? ' is-disabled' : ''
+          }`}
+          disabled={!inBasket && basketFull}
           onClick={(e) => {
             e.stopPropagation();
+            if (!inBasket && basketFull) return;
             onToggleBasket(entity.slug);
           }}
           title={
             inBasket
               ? t('table.remove_from_compare')
-              : t('table.add_to_compare')
+              : basketFull
+              ? t('table.compare_full_fmt', { max: basketCapacity })
+              : t('table.add_to_compare_fmt', {
+                  count: basketCount,
+                  max: basketCapacity,
+                })
           }
           aria-label={
             inBasket
               ? t('table.remove_from_compare')
-              : t('table.add_to_compare')
+              : basketFull
+              ? t('table.compare_full_fmt', { max: basketCapacity })
+              : t('table.add_to_compare_fmt', {
+                  count: basketCount,
+                  max: basketCapacity,
+                })
           }
         >
           {inBasket ? '✓' : '+'}
@@ -125,6 +148,9 @@ function EntityTableImpl({
   selectedSlug,
   isInBasket,
   onToggleBasket,
+  basketCount,
+  basketCapacity,
+  basketFull,
 }: EntityTableProps) {
   const { t } = useI18n();
   if (entities.length === 0) {
@@ -144,7 +170,9 @@ function EntityTableImpl({
         <div className="v2-row-col">{t('table.col.input')}</div>
         <div className="v2-row-col">{t('table.col.output')}</div>
         <div className="v2-row-col">{t('table.col.capabilities')}</div>
-        <div className="v2-row-col" />
+        <div className="v2-row-col v2-row-cap-hint" title={t('basket.hint_fmt', { max: basketCapacity })}>
+          {basketCount}/{basketCapacity}
+        </div>
       </div>
       <div className="v2-table-body">
         {entities.map((entity) => (
@@ -155,6 +183,9 @@ function EntityTableImpl({
             isSelected={entity.slug === selectedSlug}
             inBasket={isInBasket(entity.slug)}
             onToggleBasket={onToggleBasket}
+            basketCount={basketCount}
+            basketCapacity={basketCapacity}
+            basketFull={basketFull}
           />
         ))}
       </div>

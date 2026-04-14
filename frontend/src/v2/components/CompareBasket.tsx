@@ -14,7 +14,10 @@ export function CompareBasket() {
   return (
     <div className="v2-basket" role="region" aria-label={t('basket.in_compare')}>
       <div className="v2-basket-label">
-        <span className="v2-basket-count num">{basket.count}</span>
+        <span className="v2-basket-count num">
+          {basket.count}
+          <span className="v2-basket-max">/{basket.capacity}</span>
+        </span>
         <span>{t('basket.in_compare')}</span>
       </div>
       <div className="v2-basket-chips">
