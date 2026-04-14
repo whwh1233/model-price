@@ -33,9 +33,13 @@ from .canonical import CanonicalResolver, build_resolver
 from .drift_reporter import DriftReporter
 from .litellm_registry import (
     APP_PROVIDER_TO_LITELLM,
+    DISPLAY_CAPABILITIES,
     LiteLLMEntry,
     LiteLLMRegistry,
+    detect_family_maker,
     get_registry,
+    slugify,
+    strip_version_suffix,
 )
 
 logger = logging.getLogger(__name__)
@@ -54,6 +58,116 @@ def _round_price(value: Optional[float]) -> Optional[float]:
         return round(float(value), 4)
     except (TypeError, ValueError):
         return None
+
+
+AUTHOR_PREFIX_TO_MAKER = {
+    "aionlabs": "AionLabs",
+    "allenai": "AllenAI",
+    "alibaba": "Alibaba",
+    "qwen": "Alibaba",
+    "anthropic": "Anthropic",
+    "arcee-ai": "Arcee AI",
+    "arcee": "Arcee AI",
+    "baidu": "Baidu",
+    "bytedance": "ByteDance",
+    "bytedance-research": "ByteDance",
+    "cognitivecomputations": "Cognitive Computations",
+    "cohere": "Cohere",
+    "deepcogito": "Deep Cogito",
+    "deepseek": "DeepSeek",
+    "deepseek-ai": "DeepSeek",
+    "deepseek-v3": "DeepSeek",
+    "eleutherai": "EleutherAI",
+    "fireworks": "Fireworks",
+    "google": "Google",
+    "inflection": "Inflection",
+    "liquid": "Liquid AI",
+    "meta": "Meta",
+    "meta-llama": "Meta",
+    "microsoft": "Microsoft",
+    "minimax": "MiniMax",
+    "mistralai": "Mistral",
+    "mistral": "Mistral",
+    "moonshotai": "Moonshot AI",
+    "moonshot": "Moonshot AI",
+    "neversleep": "NeverSleep",
+    "nousresearch": "Nous Research",
+    "nous": "Nous Research",
+    "nvidia": "NVIDIA",
+    "openai": "OpenAI",
+    "openchat": "OpenChat",
+    "opengvlab": "OpenGVLab",
+    "perplexity": "Perplexity",
+    "qwen": "Alibaba",
+    "reka": "Reka",
+    "sao10k": "Sao10k",
+    "snowflake": "Snowflake",
+    "stabilityai": "Stability AI",
+    "stepfun-ai": "StepFun",
+    "tencent": "Tencent",
+    "thedrummer": "TheDrummer",
+    "thudm": "THUDM",
+    "together": "Together",
+    "upstage": "Upstage",
+    "venice": "Venice",
+    "xai": "xAI",
+    "x-ai": "xAI",
+    "z-ai": "Z.AI",
+    "zai": "Z.AI",
+    "01-ai": "01.AI",
+    "01.ai": "01.AI",
+    "ai21": "AI21",
+    "amazon": "Amazon",
+}
+
+
+def _maker_from_model_id(model_id: Optional[str]) -> Optional[str]:
+    if not model_id:
+        return None
+    lowered = model_id.lower()
+    for sep in ("/", "."):
+        if sep in lowered:
+            head = lowered.split(sep, 1)[0].strip()
+            mapped = AUTHOR_PREFIX_TO_MAKER.get(head)
+            if mapped:
+                return mapped
+            # Fall back to simple title case of the prefix itself
+            if len(head) >= 2 and head.replace("-", "").replace("_", "").isalnum():
+                return head.replace("-", " ").replace("_", " ").title()
+    return None
+
+
+def _family_from_model_name(name: Optional[str]) -> Optional[str]:
+    if not name:
+        return None
+    cleaned = name.strip()
+    # Drop author prefix if present ("allenai/OLMo 3 32b" → "OLMo 3 32b")
+    if "/" in cleaned:
+        cleaned = cleaned.split("/", 1)[1]
+    # Take the first token as family hint
+    token = cleaned.split(" ", 1)[0]
+    token = token.split("-", 1)[0]
+    if token and token[0].isalpha() and len(token) >= 2:
+        return token.capitalize()
+    return None
+
+
+def _unmatched_cluster_key(model: ModelPricing) -> str:
+    """Derive a stable cluster key from an unmatched v1 record so that
+    the same underlying model from different providers ends up in one
+    synthetic entity.
+
+    Priority: display name (if meaningfully different from model_id) →
+    stripped model_id.
+    """
+    name_candidate = slugify(model.model_name or "")
+    id_candidate = slugify(model.model_id or "")
+    # Prefer the name-based key when it's informative, since the same
+    # physical model often has very different provider-specific ids
+    # ("anthropic.claude-sonnet-4-5-v1:0" vs "anthropic/claude-sonnet-4.5")
+    # but a shared display name like "Claude Sonnet 4.5".
+    key = name_candidate if len(name_candidate) >= 4 else id_candidate
+    return strip_version_suffix(key)
 
 # When multiple canonical providers offer the same entity, the UI needs
 # one "primary" to show. We derive it from the entity's maker, falling
@@ -101,10 +215,19 @@ class OfferingMerger:
 
         # ─── Pass 2: attach provider offerings
         attach_counts: Dict[str, int] = {}
+        unmatched_buckets: Dict[str, List[Tuple[str, ModelPricing]]] = {}
+
         for provider_name, models in v1_models_by_provider.items():
             for model in models:
                 resolution = self.resolver.resolve(provider_name, model.model_id)
                 if not resolution.matched():
+                    # Don't drop it — cluster by model_name so multiple
+                    # providers serving the same new model still end up
+                    # as one synthetic entity with multiple offerings.
+                    cluster_key = _unmatched_cluster_key(model)
+                    unmatched_buckets.setdefault(cluster_key, []).append(
+                        (provider_name, model)
+                    )
                     self.drift.record_unmatched(
                         provider=provider_name,
                         model_id=model.model_id,
@@ -128,6 +251,24 @@ class OfferingMerger:
                     f"{provider_name}:{model.model_id}", canonical_id
                 )
                 attach_counts[provider_name] = attach_counts.get(provider_name, 0) + 1
+
+        # ─── Pass 2b: promote unmatched clusters to synthetic entities
+        synthetic_count = 0
+        for cluster_key, bucket in unmatched_buckets.items():
+            if not cluster_key:
+                continue
+            slug = f"v1-{cluster_key}"
+            # Avoid colliding with a LiteLLM canonical slug
+            if slug in entities:
+                slug = f"v1-{cluster_key}-{bucket[0][0]}"
+            synthetic_entity = self._synthetic_entity_from_v1(slug, bucket, now)
+            if synthetic_entity is None:
+                continue
+            entities[slug] = synthetic_entity
+            offerings_by_entity[slug] = [
+                self._offering_from_v1(m, p, now) for p, m in bucket
+            ]
+            synthetic_count += 1
 
         # ─── Pass 3: synthesize LiteLLM-fallback offerings
         synthesized = 0
@@ -166,11 +307,12 @@ class OfferingMerger:
 
         logger.info(
             "OfferingMerger: %s entities kept (of %s canonical); "
-            "provider attach counts: %s; synthesized: %s",
+            "provider attach: %s; litellm_fallback: %s; v1_synthetic: %s",
             len(pruned_entities),
             len(entities),
             attach_counts,
             synthesized,
+            synthetic_count,
         )
 
         snapshot = EntityStoreSnapshot(
@@ -235,6 +377,90 @@ class OfferingMerger:
             notes=None,
             last_updated=model.last_updated or now,
             source="provider_api",
+        )
+
+    def _synthetic_entity_from_v1(
+        self,
+        slug: str,
+        bucket: List[Tuple[str, ModelPricing]],
+        now: datetime,
+    ) -> Optional[EntityCoreV2]:
+        """Build an entity from v1 records that didn't match any LiteLLM
+        canonical entry. Picks a representative record for the base fields
+        and merges capabilities / modalities across the cluster.
+        """
+        if not bucket:
+            return None
+
+        # Pick the record with the richest metadata as the base
+        base_provider, base = max(
+            bucket,
+            key=lambda pair: (
+                (pair[1].context_length or 0),
+                len(pair[1].capabilities or []),
+                -len(pair[1].model_id),
+            ),
+        )
+
+        display_name = (base.model_name or base.model_id).strip()
+        family, maker = detect_family_maker(slug, display_name)
+
+        # When detect_family_maker can't place this model, fall back to the
+        # author prefix from the v1 model_id (OpenRouter-style: "allenai/olmo-…").
+        if maker == "Unknown":
+            maker = _maker_from_model_id(base.model_id) or "Unknown"
+        if family == "Other":
+            family = _family_from_model_name(display_name) or "Other"
+
+        caps: set[str] = set()
+        in_mods: set[str] = set()
+        out_mods: set[str] = set()
+        ctx = 0
+        max_out = 0
+        for _provider, model in bucket:
+            for cap in model.capabilities or []:
+                if cap in DISPLAY_CAPABILITIES:
+                    caps.add(cap)
+            for m in model.input_modalities or []:
+                in_mods.add(m)
+            for m in model.output_modalities or []:
+                out_mods.add(m)
+            if (model.context_length or 0) > ctx:
+                ctx = model.context_length or 0
+            if (model.max_output_tokens or 0) > max_out:
+                max_out = model.max_output_tokens or 0
+
+        if not caps:
+            caps.add("text")
+        if not in_mods:
+            in_mods = {"text"}
+        if not out_mods:
+            out_mods = {"text"}
+
+        # Primary offering follows authority order, or first bucket entry
+        provider_order = AUTHORITY_BY_MAKER.get(maker, [])
+        providers_present = {p for p, _ in bucket}
+        primary_provider = next(
+            (p for p in provider_order if p in providers_present),
+            base_provider,
+        )
+
+        return EntityCoreV2(
+            canonical_id=slug,
+            slug=slug,
+            name=display_name,
+            family=family,
+            maker=maker,
+            context_length=ctx or None,
+            max_output_tokens=max_out or None,
+            capabilities=sorted(caps),
+            input_modalities=sorted(in_mods),
+            output_modalities=sorted(out_mods),
+            mode="chat",
+            is_open_source=self._guess_open_source(maker),
+            primary_offering_provider=primary_provider,
+            sources=sorted({"v1_synthetic", *[p for p, _ in bucket]}),
+            last_refreshed=now,
         )
 
     def _offering_from_litellm(

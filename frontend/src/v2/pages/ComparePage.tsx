@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { API_V2_BASE } from '../../config';
 import type { CompareResultV2 } from '../../types/v2';
-import { useCompareBasket } from '../../hooks/useCompareBasket';
+import { useCompareBasket } from '../compareBasketContext';
 import {
   capabilityLabel,
   formatContext,

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { CommandPalette } from './components/CommandPalette';
+import { CompareBasketProvider } from './compareBasketContext';
 import { HomePage } from './pages/HomePage';
 import { EntityPage } from './pages/EntityPage';
 import { ComparePage } from './pages/ComparePage';
@@ -31,7 +32,7 @@ export function AppV2() {
   }, [paletteOpen]);
 
   return (
-    <>
+    <CompareBasketProvider>
       <Layout onOpenPalette={() => setPaletteOpen(true)}>
         <Routes>
           <Route path="/" element={<HomePage onOpenPalette={() => setPaletteOpen(true)} />} />
@@ -44,6 +45,6 @@ export function AppV2() {
         open={paletteOpen}
         onClose={() => setPaletteOpen(false)}
       />
-    </>
+    </CompareBasketProvider>
   );
 }

@@ -63,6 +63,25 @@
   transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
 }
 
+.v2-topbar-palette-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  padding: 6px 10px;
+  color: var(--fg-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--rad-md);
+  background: var(--bg-2);
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.v2-topbar-palette-mini:hover {
+  color: var(--fg-1);
+  border-color: var(--border-strong);
+  background: var(--bg-3);
+}
+
 .v2-topbar-search:hover {
   border-color: var(--border-strong);
   background: var(--bg-3);

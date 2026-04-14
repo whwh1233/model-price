@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSearchV2 } from '../../hooks/useSearchV2';
-import { useCompareBasket } from '../../hooks/useCompareBasket';
+import { useCompareBasket } from '../compareBasketContext';
 import { formatPrice, makerColor } from '../utils/format';
 import './CommandPalette.css';
 

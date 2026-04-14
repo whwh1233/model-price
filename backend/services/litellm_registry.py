@@ -110,6 +110,11 @@ APP_PROVIDER_TO_LITELLM = {
     "deepseek": ["deepseek"],
 }
 
+# Only the 7 capabilities users actually care about when shopping for
+# a model. Internal LiteLLM flags like prompt_caching / pdf / web_search
+# are derived but NOT surfaced — they clutter list rows and don't drive
+# decisions. If a user needs pdf or web search they'll find it on the
+# provider page; pricing comparison isn't the place.
 CAPABILITY_FLAGS = [
     ("supports_vision", "vision"),
     ("supports_audio_input", "audio"),
@@ -119,11 +124,20 @@ CAPABILITY_FLAGS = [
     ("supports_parallel_function_calling", "tool_use"),
     ("supports_response_schema", "function_calling"),
     ("supports_reasoning", "reasoning"),
-    ("supports_prompt_caching", "prompt_cache"),
-    ("supports_pdf_input", "pdf"),
-    ("supports_web_search", "web_search"),
     ("supports_embedding_image_input", "vision"),
+    ("supports_pdf_input", "vision"),  # PDFs read as vision
 ]
+
+DISPLAY_CAPABILITIES = {
+    "text",
+    "vision",
+    "audio",
+    "tool_use",
+    "reasoning",
+    "function_calling",
+    "image_generation",
+    "embedding",
+}
 
 FAMILY_PATTERNS: List[tuple[str, str, List[str]]] = [
     # (family, maker, list of lowercase substrings in canonical id/name)
@@ -204,15 +218,17 @@ def derive_capabilities(raw_entry: Dict[str, Any]) -> List[str]:
         if raw_entry.get(flag):
             caps.add(cap)
     mode = raw_entry.get("mode") or ""
-    if mode in ("image_generation",):
+    if mode == "image_generation":
         caps.add("image_generation")
+        caps.discard("text")  # image models rarely output text
     if mode in ("audio_transcription", "audio_speech"):
         caps.add("audio")
-    if mode in ("embedding",):
+    if mode == "embedding":
         caps.add("embedding")
-    if mode in ("rerank",):
-        caps.add("rerank")
-    return sorted(caps)
+        caps.discard("text")
+    # Restrict to the user-facing whitelist so list and detail pages
+    # always display the same set.
+    return sorted(caps & DISPLAY_CAPABILITIES)
 
 
 def derive_modalities(raw_entry: Dict[str, Any]) -> tuple[List[str], List[str]]:

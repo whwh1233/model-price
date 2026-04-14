@@ -2,7 +2,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import type { EntitiesListQuery } from '../../types/v2';
 import { useEntitiesV2 } from '../../hooks/useEntitiesV2';
-import { useCompareBasket } from '../../hooks/useCompareBasket';
+import { useCompareBasket } from '../compareBasketContext';
 import { HeroSearch } from '../components/HeroSearch';
 import { FilterBar } from '../components/FilterBar';
 import { EntityTable } from '../components/EntityTable';

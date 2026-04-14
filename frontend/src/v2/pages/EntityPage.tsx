@@ -1,6 +1,6 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEntityV2 } from '../../hooks/useEntityV2';
-import { useCompareBasket } from '../../hooks/useCompareBasket';
+import { useCompareBasket } from '../compareBasketContext';
 import { AlternativesList } from '../components/AlternativesList';
 import {
   capabilityLabel,

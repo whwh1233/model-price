@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useCompareBasket } from '../../hooks/useCompareBasket';
+import { useCompareBasket } from '../compareBasketContext';
 import './CompareBasket.css';
 
 export function CompareBasket() {

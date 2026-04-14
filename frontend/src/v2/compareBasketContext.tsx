@@ -1,7 +1,22 @@
-import { useCallback, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 
 const STORAGE_KEY = 'model-price-v2:compare-basket';
 const MAX_ITEMS = 4;
+
+interface BasketValue {
+  slugs: string[];
+  count: number;
+  capacity: number;
+  isFull: boolean;
+  toggle: (slug: string) => { added: boolean; full: boolean };
+  add: (slug: string) => void;
+  remove: (slug: string) => void;
+  clear: () => void;
+  has: (slug: string) => boolean;
+}
+
+const CompareBasketContext = createContext<BasketValue | null>(null);
 
 function readInitial(): string[] {
   if (typeof window === 'undefined') return [];
@@ -15,7 +30,7 @@ function readInitial(): string[] {
   }
 }
 
-export function useCompareBasket() {
+export function CompareBasketProvider({ children }: { children: ReactNode }) {
   const [slugs, setSlugs] = useState<string[]>(readInitial);
 
   useEffect(() => {
@@ -23,11 +38,11 @@ export function useCompareBasket() {
     try {
       window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(slugs));
     } catch {
-      // Ignore storage failures silently.
+      // ignore storage quota errors
     }
   }, [slugs]);
 
-  const toggle = useCallback((slug: string): { added: boolean; full: boolean } => {
+  const toggle = useCallback((slug: string) => {
     let outcome: { added: boolean; full: boolean } = { added: false, full: false };
     setSlugs((prev) => {
       if (prev.includes(slug)) {
@@ -59,7 +74,7 @@ export function useCompareBasket() {
 
   const has = useCallback((slug: string) => slugs.includes(slug), [slugs]);
 
-  return {
+  const value: BasketValue = {
     slugs,
     count: slugs.length,
     capacity: MAX_ITEMS,
@@ -70,4 +85,18 @@ export function useCompareBasket() {
     clear,
     has,
   };
+
+  return (
+    <CompareBasketContext.Provider value={value}>
+      {children}
+    </CompareBasketContext.Provider>
+  );
+}
+
+export function useCompareBasket(): BasketValue {
+  const ctx = useContext(CompareBasketContext);
+  if (!ctx) {
+    throw new Error('useCompareBasket must be used within CompareBasketProvider');
+  }
+  return ctx;
 }
