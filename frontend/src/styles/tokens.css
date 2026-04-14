@@ -129,23 +129,53 @@
   --ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
 }
 
-/* ─── Light theme override (stub, reserved) ─── */
-@media (prefers-color-scheme: light) {
-  :root.light-enabled {
-    color-scheme: light;
-    --bg-0: #fafbfc;
-    --bg-1: #ffffff;
-    --bg-2: #f5f6f9;
-    --bg-3: #edeff4;
-    --bg-4: #e2e5ec;
-    --fg-0: #0a0b0d;
-    --fg-1: #232530;
-    --fg-2: #5a6071;
-    --fg-3: #8a90a0;
-    --border-subtle: rgba(0, 0, 0, 0.04);
-    --border-default: rgba(0, 0, 0, 0.08);
-    --border-strong: rgba(0, 0, 0, 0.14);
-  }
+/* ─── Light theme ─── applied when <html data-theme="light"> */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-0: #fafbfc;
+  --bg-1: #ffffff;
+  --bg-2: #f3f5f9;
+  --bg-3: #e8ebf2;
+  --bg-4: #dce0ea;
+  --bg-hover: rgba(10, 11, 13, 0.035);
+  --bg-active: rgba(10, 11, 13, 0.06);
+  --bg-glow: radial-gradient(
+    ellipse 60% 80% at 50% 0%,
+    rgba(100, 130, 255, 0.08),
+    transparent 70%
+  );
+
+  --border-subtle: rgba(10, 11, 13, 0.06);
+  --border-default: rgba(10, 11, 13, 0.1);
+  --border-strong: rgba(10, 11, 13, 0.18);
+
+  --fg-0: #0a0b0d;
+  --fg-1: #1f2230;
+  --fg-2: #55596a;
+  --fg-3: #858a9b;
+  --fg-4: #b4b9c7;
+
+  --accent: #4566e0;
+  --accent-strong: #2b4ecf;
+  --accent-soft: rgba(69, 102, 224, 0.14);
+  --accent-glow: rgba(69, 102, 224, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(10, 11, 13, 0.08);
+  --shadow-md: 0 4px 12px rgba(10, 11, 13, 0.08);
+  --shadow-lg: 0 12px 32px rgba(10, 11, 13, 0.12);
+  --shadow-xl: 0 24px 64px rgba(10, 11, 13, 0.16);
+
+  /* Maker colors tuned for light background */
+  --maker-anthropic: #c45a32;
+  --maker-openai: #0b8a67;
+  --maker-google: #1a73e8;
+  --maker-xai: #3a3e48;
+  --maker-deepseek: #3b55e0;
+  --maker-meta: #0357bd;
+  --maker-mistral: #d94c1a;
+  --maker-cohere: #d35232;
+  --maker-default: #4566e0;
 }
 
 /* ─── Base reset ─── */

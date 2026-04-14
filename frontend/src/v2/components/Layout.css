@@ -49,11 +49,17 @@
   letter-spacing: 0.04em;
 }
 
+.v2-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: auto;
+}
+
 .v2-topbar-search {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  margin-left: auto;
   padding: var(--sp-2) var(--sp-3);
   min-width: 260px;
   background: var(--bg-2);

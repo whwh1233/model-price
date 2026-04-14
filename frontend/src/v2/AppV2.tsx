@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { CommandPalette } from './components/CommandPalette';
 import { CompareBasketProvider } from './compareBasketContext';
+import { ThemeProvider } from './themeContext';
 import { HomePage } from './pages/HomePage';
 import { EntityPage } from './pages/EntityPage';
 import { ComparePage } from './pages/ComparePage';
@@ -32,19 +33,21 @@ export function AppV2() {
   }, [paletteOpen]);
 
   return (
-    <CompareBasketProvider>
-      <Layout onOpenPalette={() => setPaletteOpen(true)}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/m/:slug" element={<EntityPage />} />
-          <Route path="/compare/:ids" element={<ComparePage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Layout>
-      <CommandPalette
-        open={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-      />
-    </CompareBasketProvider>
+    <ThemeProvider>
+      <CompareBasketProvider>
+        <Layout onOpenPalette={() => setPaletteOpen(true)}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/m/:slug" element={<EntityPage />} />
+            <Route path="/compare/:ids" element={<ComparePage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Layout>
+        <CommandPalette
+          open={paletteOpen}
+          onClose={() => setPaletteOpen(false)}
+        />
+      </CompareBasketProvider>
+    </ThemeProvider>
   );
 }

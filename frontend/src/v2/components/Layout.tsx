@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { CompareBasket } from './CompareBasket';
+import { ThemeToggle } from './ThemeToggle';
 import './Layout.css';
 
 interface LayoutProps {
@@ -23,18 +24,21 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
           <span className="v2-brand-name">Model Price</span>
           <span className="v2-brand-tag">v2 preview</span>
         </Link>
-        {!isHome && (
-          <button
-            type="button"
-            className="v2-topbar-search"
-            onClick={onOpenPalette}
-            aria-label="Open command palette"
-          >
-            <span className="v2-topbar-search-icon">⌕</span>
-            <span className="v2-topbar-search-label">Search models…</span>
-            <kbd>⌘K</kbd>
-          </button>
-        )}
+        <div className="v2-topbar-right">
+          {!isHome && (
+            <button
+              type="button"
+              className="v2-topbar-search"
+              onClick={onOpenPalette}
+              aria-label="Open command palette"
+            >
+              <span className="v2-topbar-search-icon">⌕</span>
+              <span className="v2-topbar-search-label">Search models…</span>
+              <kbd>⌘K</kbd>
+            </button>
+          )}
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className="v2-main">{children}</main>
