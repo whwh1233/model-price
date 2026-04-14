@@ -19,10 +19,15 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
   return (
     <div className="v2-shell">
       <header className="v2-topbar">
-        <Link to="/" className="v2-brand">
-          <span className="v2-brand-mark">⬡</span>
+        <Link to="/" className="v2-brand" aria-label="Model Price — home">
+          <img
+            src="/logo.png"
+            alt=""
+            className="v2-brand-logo"
+            width={28}
+            height={28}
+          />
           <span className="v2-brand-name">Model Price</span>
-          <span className="v2-brand-tag">{t('brand.tagline')}</span>
         </Link>
         <div className="v2-topbar-right">
           {!isHome && (

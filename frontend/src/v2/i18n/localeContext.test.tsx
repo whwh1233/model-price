@@ -8,7 +8,7 @@ function Probe() {
   return (
     <div>
       <span data-testid="locale">{locale}</span>
-      <span data-testid="brand">{t('brand.tagline')}</span>
+      <span data-testid="sample">{t('nav.search_placeholder')}</span>
       <span data-testid="hero">
         {t('hero.meta_matching_fmt', { count: 3, query: 'gpt', total: 10 })}
       </span>
@@ -25,7 +25,7 @@ describe('LocaleProvider', () => {
       </LocaleProvider>,
     );
     expect(screen.getByTestId('locale').textContent).toBe('en');
-    expect(screen.getByTestId('brand').textContent).toBe('v2 preview');
+    expect(screen.getByTestId('sample').textContent).toBe('Search models…');
   });
 
   it('toggles to Chinese and persists', async () => {
@@ -37,7 +37,7 @@ describe('LocaleProvider', () => {
     );
     await user.click(screen.getByText('toggle'));
     expect(screen.getByTestId('locale').textContent).toBe('zh');
-    expect(screen.getByTestId('brand').textContent).toBe('v2 预览');
+    expect(screen.getByTestId('sample').textContent).toBe('搜索模型…');
     expect(localStorage.getItem('model-price-v2:locale')).toBe('zh');
   });
 

@@ -5,7 +5,6 @@
 
 export const en = {
   // Brand / chrome
-  'brand.tagline': 'v2 preview',
   'nav.search_placeholder': 'Search models…',
   'nav.open_palette': 'Open command palette',
   'footer.tagline': 'Model Price · compare 600+ LLMs from 6 providers',
@@ -141,7 +140,6 @@ export const en = {
 export type MessageKey = keyof typeof en;
 
 export const zh: Record<MessageKey, string> = {
-  'brand.tagline': 'v2 预览',
   'nav.search_placeholder': '搜索模型…',
   'nav.open_palette': '打开命令面板',
   'footer.tagline': 'Model Price · 对比 600+ LLM,覆盖 6 大提供商',
