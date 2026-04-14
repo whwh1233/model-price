@@ -9,6 +9,7 @@ import {
   makerColor,
   providerLabel,
 } from '../utils/format';
+import { LITELLM_REGISTRY_URL, officialLinkForMaker } from '../utils/officialLinks';
 import './EntityDrawer.css';
 
 interface EntityDrawerProps {
@@ -154,6 +155,8 @@ function DrawerContent({
         </button>
       </div>
 
+      <OfficialLinks maker={entity.maker} />
+
       <section className="v2-drawer-section">
         <h3>Capabilities</h3>
         <div className="v2-caps-grid">
@@ -222,6 +225,30 @@ function DrawerContent({
           />
         </section>
       ) : null}
+    </div>
+  );
+}
+
+function OfficialLinks({ maker }: { maker: string }) {
+  const link = officialLinkForMaker(maker);
+  return (
+    <div className="v2-official-links">
+      <span className="v2-official-label">For full details:</span>
+      {link ? (
+        <>
+          <a href={link.pricing} target="_blank" rel="noreferrer" className="v2-official-link">
+            {maker} pricing ↗
+          </a>
+          {link.docs ? (
+            <a href={link.docs} target="_blank" rel="noreferrer" className="v2-official-link">
+              {maker} docs ↗
+            </a>
+          ) : null}
+        </>
+      ) : null}
+      <a href={LITELLM_REGISTRY_URL} target="_blank" rel="noreferrer" className="v2-official-link v2-official-link-muted">
+        source: LiteLLM ↗
+      </a>
     </div>
   );
 }

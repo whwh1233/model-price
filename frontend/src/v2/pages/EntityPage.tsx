@@ -10,6 +10,7 @@ import {
   makerColor,
   providerLabel,
 } from '../utils/format';
+import { LITELLM_REGISTRY_URL, officialLinkForMaker } from '../utils/officialLinks';
 import './EntityPage.css';
 
 export function EntityPage() {
@@ -94,6 +95,8 @@ export function EntityPage() {
             {inBasket ? '✓ In compare' : '+ Add to compare'}
           </button>
         </div>
+
+        <OfficialLinksStrip maker={entity.maker} />
       </header>
 
       <section className="v2-drawer-section">
@@ -165,5 +168,34 @@ export function EntityPage() {
         </section>
       ) : null}
     </article>
+  );
+}
+
+function OfficialLinksStrip({ maker }: { maker: string }) {
+  const link = officialLinkForMaker(maker);
+  return (
+    <div className="v2-official-links">
+      <span className="v2-official-label">For full details:</span>
+      {link ? (
+        <>
+          <a href={link.pricing} target="_blank" rel="noreferrer" className="v2-official-link">
+            {maker} pricing ↗
+          </a>
+          {link.docs ? (
+            <a href={link.docs} target="_blank" rel="noreferrer" className="v2-official-link">
+              {maker} docs ↗
+            </a>
+          ) : null}
+        </>
+      ) : null}
+      <a
+        href={LITELLM_REGISTRY_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="v2-official-link v2-official-link-muted"
+      >
+        source: LiteLLM ↗
+      </a>
+    </div>
   );
 }
