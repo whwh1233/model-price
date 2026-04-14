@@ -263,17 +263,13 @@
   background: var(--accent-strong);
 }
 
-/* Topbar mini controls in light: no hard border, rely on bg + shadow. */
-:root[data-theme="light"] .v2-topbar-github,
-:root[data-theme="light"] .v2-theme-toggle,
-:root[data-theme="light"] .v2-locale-toggle {
+/* Topbar chip controls in light: no hard border, rely on bg + shadow. */
+:root[data-theme="light"] .v2-topbar-chip {
   border-color: transparent;
   background: var(--bg-2);
 }
 
-:root[data-theme="light"] .v2-topbar-github:hover,
-:root[data-theme="light"] .v2-theme-toggle:hover,
-:root[data-theme="light"] .v2-locale-toggle:hover {
+:root[data-theme="light"] .v2-topbar-chip:hover {
   background: var(--bg-3);
 }
 

@@ -60,23 +60,38 @@
   margin-left: auto;
 }
 
-.v2-topbar-github {
+/* Shared style for every single-purpose action in the topbar
+ * (locale, theme, GitHub). All three are 32×32 pill buttons with
+ * identical visual weight so the row reads as one row of chips. */
+.v2-topbar-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: 32px;
   height: 32px;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
   color: var(--fg-3);
+  background: var(--bg-2);
   border: 1px solid var(--border-default);
   border-radius: var(--rad-md);
-  background: var(--bg-2);
+  cursor: pointer;
   transition: all var(--dur-fast) var(--ease);
+  user-select: none;
 }
 
-.v2-topbar-github:hover {
+.v2-topbar-chip:hover {
   color: var(--fg-0);
-  border-color: var(--border-strong);
   background: var(--bg-3);
+  border-color: var(--border-strong);
+}
+
+.v2-topbar-chip svg {
+  display: block;
 }
 
 .v2-topbar-search {

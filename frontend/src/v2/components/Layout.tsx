@@ -45,14 +45,14 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
             href="https://github.com/xiaobox/model-price"
             target="_blank"
             rel="noreferrer"
-            className="v2-topbar-github"
+            className="v2-topbar-chip"
             aria-label="GitHub"
             title="GitHub"
           >
             <svg
               viewBox="0 0 16 16"
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               aria-hidden
               fill="currentColor"
             >
