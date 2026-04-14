@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEntityV2 } from '../../hooks/useEntityV2';
 import { useCompareBasket } from '../compareBasketContext';
@@ -35,11 +36,14 @@ export function EntityPage() {
   const { entity, offerings, alternatives } = detail;
   const inBasket = basket.has(entity.slug);
   const primary = offerings.find((o) => o.provider === entity.primary_offering_provider);
+  const [copied, setCopied] = useState(false);
 
   const copyModelId = async () => {
     if (!primary) return;
     try {
       await navigator.clipboard.writeText(primary.provider_model_id);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     } catch {
       // ignore
     }
@@ -72,11 +76,11 @@ export function EntityPage() {
         <div className="v2-entity-actions">
           <button
             type="button"
-            className="v2-btn v2-btn-primary"
+            className={`v2-btn v2-btn-primary${copied ? ' is-copied' : ''}`}
             onClick={copyModelId}
             disabled={!primary}
           >
-            Copy model_id
+            {copied ? '✓ Copied!' : 'Copy model_id'}
             <span className="v2-btn-sub mono">
               {primary?.provider_model_id ?? ''}
             </span>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEntityV2 } from '../../hooks/useEntityV2';
 import { AlternativesList } from './AlternativesList';
@@ -95,12 +95,14 @@ function DrawerContent({
   const inBasket = isInBasket(entity.slug);
   const primary = offerings.find((o) => o.provider === entity.primary_offering_provider)
     ?? offerings[0];
+  const [copied, setCopied] = useState(false);
 
   const copyModelId = async () => {
     if (!primary) return;
-    const id = primary.provider_model_id;
     try {
-      await navigator.clipboard.writeText(id);
+      await navigator.clipboard.writeText(primary.provider_model_id);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     } catch {
       // ignore
     }
@@ -134,11 +136,11 @@ function DrawerContent({
       <div className="v2-drawer-actions">
         <button
           type="button"
-          className="v2-btn v2-btn-primary"
+          className={`v2-btn v2-btn-primary${copied ? ' is-copied' : ''}`}
           onClick={copyModelId}
           disabled={!primary}
         >
-          Copy model_id
+          {copied ? '✓ Copied!' : 'Copy model_id'}
           <span className="v2-btn-sub mono">
             {primary?.provider_model_id ?? ''}
           </span>

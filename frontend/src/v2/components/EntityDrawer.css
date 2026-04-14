@@ -157,6 +157,13 @@
   background: var(--accent-strong);
 }
 
+.v2-btn.is-copied {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--bg-0);
+  transition: background var(--dur-fast) var(--ease);
+}
+
 .v2-btn-sub {
   font-size: var(--text-2xs);
   font-weight: var(--fw-regular);

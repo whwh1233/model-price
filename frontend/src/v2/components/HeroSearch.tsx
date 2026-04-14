@@ -4,7 +4,6 @@ import './HeroSearch.css';
 interface HeroSearchProps {
   value: string;
   onChange: (next: string) => void;
-  onOpenPalette: () => void;
   resultCount: number;
   totalCount: number;
 }
@@ -12,7 +11,6 @@ interface HeroSearchProps {
 export function HeroSearch({
   value,
   onChange,
-  onOpenPalette,
   resultCount,
   totalCount,
 }: HeroSearchProps) {
@@ -49,15 +47,6 @@ export function HeroSearch({
           autoCapitalize="off"
           spellCheck={false}
         />
-        <button
-          type="button"
-          className="v2-hero-search-kbd"
-          onClick={onOpenPalette}
-          title="Open command palette"
-        >
-          <kbd>⌘</kbd>
-          <kbd>K</kbd>
-        </button>
       </div>
 
       <div className="v2-hero-meta">

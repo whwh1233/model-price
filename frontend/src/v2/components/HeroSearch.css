@@ -63,12 +63,6 @@
   color: var(--fg-3);
 }
 
-.v2-hero-search-kbd {
-  display: inline-flex;
-  gap: 4px;
-  color: var(--fg-3);
-}
-
 .v2-hero-meta {
   margin-top: var(--sp-3);
   font-size: var(--text-xs);

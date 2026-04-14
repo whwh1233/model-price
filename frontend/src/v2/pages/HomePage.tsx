@@ -18,10 +18,10 @@ function cleanLabel(raw: string | null | undefined): string {
 }
 
 interface HomePageProps {
-  onOpenPalette: () => void;
+  onOpenPalette?: () => void;
 }
 
-export function HomePage({ onOpenPalette }: HomePageProps) {
+export function HomePage(_props: HomePageProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const basket = useCompareBasket();
@@ -81,7 +81,6 @@ export function HomePage({ onOpenPalette }: HomePageProps) {
       <HeroSearch
         value={query.q ?? ''}
         onChange={(next) => setQuery((prev) => ({ ...prev, q: next || undefined }))}
-        onOpenPalette={onOpenPalette}
         resultCount={entities.length}
         totalCount={totalEntities}
       />

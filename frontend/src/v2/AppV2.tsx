@@ -35,7 +35,7 @@ export function AppV2() {
     <CompareBasketProvider>
       <Layout onOpenPalette={() => setPaletteOpen(true)}>
         <Routes>
-          <Route path="/" element={<HomePage onOpenPalette={() => setPaletteOpen(true)} />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/m/:slug" element={<EntityPage />} />
           <Route path="/compare/:ids" element={<ComparePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

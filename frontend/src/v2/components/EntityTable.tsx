@@ -48,7 +48,6 @@ function Row({
   const pricing = primary?.pricing;
   const input = pricing?.input ?? null;
   const output = pricing?.output ?? null;
-  const cacheRead = pricing?.cache_read ?? null;
   const context = entity.context_length;
   const caps = orderedCaps(entity.capabilities);
 
@@ -78,14 +77,7 @@ function Row({
         <div className="v2-row-maker">{entity.maker}</div>
       </div>
       <div className="v2-row-col num">{formatContext(context)}</div>
-      <div className="v2-row-col num v2-row-price">
-        {formatPrice(input)}
-        {cacheRead !== null ? (
-          <span className="v2-row-cache" title="cache read hit">
-            {formatPrice(cacheRead)}
-          </span>
-        ) : null}
-      </div>
+      <div className="v2-row-col num v2-row-price">{formatPrice(input)}</div>
       <div className="v2-row-col num v2-row-price">{formatPrice(output)}</div>
       <div className="v2-row-col v2-row-caps">
         {caps.slice(0, 5).map((cap) => (
