@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEntityV2 } from '../../hooks/useEntityV2';
 import { AlternativesList } from './AlternativesList';
+import { ShareActions } from './ShareActions';
 import {
   formatContext,
   formatPrice,
@@ -165,6 +166,11 @@ function DrawerContent({
       </div>
 
       <OfficialLinks maker={entity.maker} />
+      <ShareActions
+        url={`${window.location.origin}/m/${entity.slug}`}
+        name={entity.name}
+        maker={entity.maker}
+      />
 
       <section className="v2-drawer-section">
         <h3>{t('detail.capabilities')}</h3>

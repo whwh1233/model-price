@@ -276,8 +276,10 @@ def strip_version_suffix(slug: str) -> str:
     prev = None
     while s != prev:
         prev = s
-        # Bedrock / Azure style: "-v1:0" or "-v1-0"
-        s = re.sub(r"-v\d+[-:]\d+$", "", s)
+        # Bedrock / Azure style: "-v1:0" or "-v1-0". Bedrock always
+        # publishes the sub-revision as literal 0, so we anchor on that
+        # — this keeps "deepseek-v3-2" (a real product name) intact.
+        s = re.sub(r"-v\d+[-:]0$", "", s)
         # 8-digit date: -20250929
         s = re.sub(r"-\d{8}$", "", s)
         # YYYY-MM-DD

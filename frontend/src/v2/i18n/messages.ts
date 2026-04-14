@@ -129,6 +129,15 @@ export const en = {
   'locale.en': 'EN',
   'locale.zh': '中',
   'locale.switch_tooltip': 'Switch language',
+
+  // Share
+  'share.label': 'Share',
+  'share.copy_link': 'Copy link',
+  'share.link_copied': '✓ Link copied',
+  'share.x_button': 'Share on X',
+  'share.x_text_fmt': '{name} — {maker}. Compare LLM pricing at',
+  'share.weixin_button': 'WeChat',
+  'share.weixin_hint': 'Copy link and paste in WeChat',
 } as const;
 
 export type MessageKey = keyof typeof en;
@@ -247,6 +256,14 @@ export const zh: Record<MessageKey, string> = {
   'locale.en': 'EN',
   'locale.zh': '中',
   'locale.switch_tooltip': '切换语言',
+
+  'share.label': '分享',
+  'share.copy_link': '复制链接',
+  'share.link_copied': '✓ 链接已复制',
+  'share.x_button': '分享到 X',
+  'share.x_text_fmt': '{name} — {maker}。对比 LLM 价格',
+  'share.weixin_button': '微信',
+  'share.weixin_hint': '复制链接后粘贴到微信',
 };
 
 export const MESSAGES = { en, zh } as const;

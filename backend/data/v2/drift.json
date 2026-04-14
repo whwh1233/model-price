@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-14T18:36:07.252566",
+  "generated_at": "2026-04-14T18:59:41.104667",
   "counts": {
-    "entities_total": 650,
-    "entities_new": 2,
-    "entities_removed": 2,
+    "entities_total": 652,
+    "entities_new": 5,
+    "entities_removed": 3,
     "offerings_total": 755,
-    "unmatched_provider_models": 293,
+    "unmatched_provider_models": 295,
     "orphan_entities": 192,
-    "price_drift_items": 109
+    "price_drift_items": 104
   },
   "unmatched_provider_models": [
     {
@@ -1282,7 +1282,6 @@
       "tried_aliases": [
         "nvidia/llama-3.3-nemotron-super-49b-v1.5",
         "llama-3-3-nemotron-super-49b-v1-5",
-        "llama-3-3-nemotron-super-49b",
         "llama-3.3-nemotron-super-49b-v1.5"
       ]
     },
@@ -1318,7 +1317,6 @@
       "tried_aliases": [
         "thedrummer/cydonia-24b-v4.1",
         "cydonia-24b-v4-1",
-        "cydonia-24b",
         "cydonia-24b-v4.1"
       ]
     },
@@ -1404,6 +1402,15 @@
       "tried_aliases": [
         "nousresearch/hermes-4-405b",
         "hermes-4-405b"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "deepseek/deepseek-chat-v3.1",
+      "tried_aliases": [
+        "deepseek/deepseek-chat-v3.1",
+        "deepseek-chat-v3-1",
+        "deepseek-chat-v3.1"
       ]
     },
     {
@@ -1759,6 +1766,14 @@
         "qwen2-5-vl-32b-instruct",
         "qwen2-5-vl-32b",
         "qwen2.5-vl-32b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "deepseek/deepseek-chat-v3-0324",
+      "tried_aliases": [
+        "deepseek/deepseek-chat-v3-0324",
+        "deepseek-chat-v3-0324"
       ]
     },
     {
@@ -2122,6 +2137,22 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "meta-llama/llama-3.2-3b-instruct:free",
+      "tried_aliases": [
+        "meta-llama/llama-3.2-3b-instruct:free",
+        "llama-3-2-3b-instruct-free",
+        "llama-3.2-3b-instruct:free"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "meta-llama/llama-3.2-3b-instruct",
+      "tried_aliases": [
+        "meta-llama/llama-3.2-3b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "meta-llama/llama-3.2-1b-instruct",
       "tried_aliases": [
         "meta-llama/llama-3.2-1b-instruct",
@@ -2135,22 +2166,6 @@
       "model_id": "meta-llama/llama-3.2-11b-vision-instruct",
       "tried_aliases": [
         "meta-llama/llama-3.2-11b-vision-instruct"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "meta-llama/llama-3.2-3b-instruct:free",
-      "tried_aliases": [
-        "meta-llama/llama-3.2-3b-instruct:free",
-        "llama-3-2-3b-instruct-free",
-        "llama-3.2-3b-instruct:free"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "meta-llama/llama-3.2-3b-instruct",
-      "tried_aliases": [
-        "meta-llama/llama-3.2-3b-instruct"
       ]
     },
     {
@@ -2275,7 +2290,9 @@
       "provider": "openrouter",
       "model_id": "mistralai/mixtral-8x22b-instruct",
       "tried_aliases": [
-        "mistralai/mixtral-8x22b-instruct"
+        "mistralai/mixtral-8x22b-instruct",
+        "mixtral-8x22b-instruct",
+        "mixtral-8x22b"
       ]
     },
     {
@@ -2382,36 +2399,20 @@
       "delta_pct": 6.0
     },
     {
-      "entity": "claude-3-7-sonnet",
+      "entity": "claude-haiku-4-5",
       "provider": "aws_bedrock",
       "field": "input",
       "provider_value": 8.0,
-      "litellm_value": 3.0,
-      "delta_pct": 166.67
+      "litellm_value": 1.0,
+      "delta_pct": 700.0
     },
     {
-      "entity": "claude-3-7-sonnet",
+      "entity": "claude-haiku-4-5",
       "provider": "aws_bedrock",
       "field": "output",
       "provider_value": 24.0,
-      "litellm_value": 15.0,
-      "delta_pct": 60.0
-    },
-    {
-      "entity": "codex-mini",
-      "provider": "openai",
-      "field": "input",
-      "provider_value": 5.3,
-      "litellm_value": 1.5,
-      "delta_pct": 253.33
-    },
-    {
-      "entity": "codex-mini",
-      "provider": "openai",
-      "field": "output",
-      "provider_value": 0.175,
-      "litellm_value": 6.0,
-      "delta_pct": -97.08
+      "litellm_value": 5.0,
+      "delta_pct": 380.0
     },
     {
       "entity": "command",
@@ -2478,54 +2479,6 @@
       "delta_pct": 25.0
     },
     {
-      "entity": "deepseek",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.26,
-      "litellm_value": 0.28,
-      "delta_pct": -7.14
-    },
-    {
-      "entity": "deepseek",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 0.38,
-      "litellm_value": 0.4,
-      "delta_pct": -5.0
-    },
-    {
-      "entity": "deepseek-chat",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.15,
-      "litellm_value": 0.28,
-      "delta_pct": -46.43
-    },
-    {
-      "entity": "deepseek-chat",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 0.75,
-      "litellm_value": 0.42,
-      "delta_pct": 78.57
-    },
-    {
-      "entity": "deepseek-chat",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.2,
-      "litellm_value": 0.28,
-      "delta_pct": -28.57
-    },
-    {
-      "entity": "deepseek-chat",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 0.77,
-      "litellm_value": 0.42,
-      "delta_pct": 83.33
-    },
-    {
       "entity": "deepseek-chat",
       "provider": "openrouter",
       "field": "input",
@@ -2588,6 +2541,22 @@
       "provider_value": 1.85,
       "litellm_value": 1.1,
       "delta_pct": 68.18
+    },
+    {
+      "entity": "deepseek-v3-2",
+      "provider": "openrouter",
+      "field": "input",
+      "provider_value": 0.26,
+      "litellm_value": 0.28,
+      "delta_pct": -7.14
+    },
+    {
+      "entity": "deepseek-v3-2",
+      "provider": "openrouter",
+      "field": "output",
+      "provider_value": 0.38,
+      "litellm_value": 0.4,
+      "delta_pct": -5.0
     },
     {
       "entity": "gemini-2-0-flash-001",
@@ -2894,22 +2863,6 @@
       "delta_pct": -60.0
     },
     {
-      "entity": "kimi-k2-0711",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.57,
-      "litellm_value": 0.6,
-      "delta_pct": -5.0
-    },
-    {
-      "entity": "kimi-k2-0711",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 2.3,
-      "litellm_value": 2.5,
-      "delta_pct": -8.0
-    },
-    {
       "entity": "kimi-k2-0905",
       "provider": "openrouter",
       "field": "input",
@@ -2927,6 +2880,14 @@
     },
     {
       "entity": "kimi-k2-5",
+      "provider": "azure_openai",
+      "field": "output",
+      "provider_value": 2.5,
+      "litellm_value": 3.0,
+      "delta_pct": -16.67
+    },
+    {
+      "entity": "kimi-k2-5",
       "provider": "openrouter",
       "field": "input",
       "provider_value": 0.3827,
@@ -2940,6 +2901,22 @@
       "provider_value": 1.72,
       "litellm_value": 3.0,
       "delta_pct": -42.67
+    },
+    {
+      "entity": "kimi-k2-5",
+      "provider": "openrouter",
+      "field": "input",
+      "provider_value": 0.57,
+      "litellm_value": 0.6,
+      "delta_pct": -5.0
+    },
+    {
+      "entity": "kimi-k2-5",
+      "provider": "openrouter",
+      "field": "output",
+      "provider_value": 2.3,
+      "litellm_value": 3.0,
+      "delta_pct": -23.33
     },
     {
       "entity": "minimax-m2",
@@ -3231,12 +3208,16 @@
     }
   ],
   "new_entities": [
-    "imagen-4-0-generate-001",
-    "veo-3-1-fast-generate-001"
+    "deepseek-chat-v3-0324",
+    "deepseek-chat-v3-1",
+    "deepseek-v3-2",
+    "imagen-4-0-ultra-generate-001",
+    "rerank-v3-5"
   ],
   "removed_entities": [
-    "imagen-4-0-fast-generate-001",
-    "veo-3-1-generate"
+    "deepseek",
+    "imagen-4-0-generate-001",
+    "rerank"
   ],
   "orphan_entities": [
     "chat-bison",
@@ -3325,7 +3306,6 @@
     "grok-3-fast-beta",
     "grok-3-mini-fast",
     "grok-3-mini-fast-beta",
-    "grok-4-20-beta-0309-non-reasoning",
     "grok-4-20-beta-0309-reasoning",
     "grok-beta",
     "grok-code-fast",
@@ -3342,6 +3322,7 @@
     "jamba-mini-1-7",
     "jina-reranker-v2-base-multilingual",
     "kimi",
+    "kimi-k2-0711",
     "kimi-k2-thinking-251104",
     "kimi-k2-thinking-turbo",
     "kimi-k2-turbo",
@@ -3497,8 +3478,9 @@
     "cydonia-24b-v4-1",
     "davinci-002",
     "deep-research-pro-preview-12-2025",
-    "deepseek",
     "deepseek-chat",
+    "deepseek-chat-v3-0324",
+    "deepseek-chat-v3-1",
     "deepseek-coder",
     "deepseek-r1",
     "deepseek-r1-0528",
@@ -3509,6 +3491,7 @@
     "deepseek-v3",
     "deepseek-v3-1-nex-n1",
     "deepseek-v3-1-terminus",
+    "deepseek-v3-2",
     "deepseek-v3-2-251201",
     "deepseek-v3-2-speciale",
     "devstral",
@@ -3743,7 +3726,7 @@
     "hermes-4-405b",
     "hermes-4-70b",
     "hunyuan-a13b-instruct",
-    "imagen-4-0-generate-001",
+    "imagen-4-0-ultra-generate-001",
     "inception-mercury",
     "inflection-3-pi",
     "inflection-3-productivity",
@@ -4014,13 +3997,13 @@
     "relace-apply-3",
     "relace-search",
     "remm-slerp-l2-13b",
-    "rerank",
     "rerank-2",
     "rerank-2-5",
     "rerank-2-5-lite",
     "rerank-2-lite",
     "rerank-english",
     "rerank-multilingual",
+    "rerank-v3-5",
     "rnj-1-instruct",
     "rocinante-12b",
     "seed-1-6",

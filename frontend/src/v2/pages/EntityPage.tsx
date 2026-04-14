@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEntityV2 } from '../../hooks/useEntityV2';
 import { useCompareBasket } from '../compareBasketContext';
 import { AlternativesList } from '../components/AlternativesList';
+import { ShareActions } from '../components/ShareActions';
 import {
   formatContext,
   formatPrice,
@@ -103,6 +104,11 @@ export function EntityPage() {
         </div>
 
         <OfficialLinksStrip maker={entity.maker} />
+        <ShareActions
+          url={`${window.location.origin}/m/${entity.slug}`}
+          name={entity.name}
+          maker={entity.maker}
+        />
       </header>
 
       <section className="v2-drawer-section">
