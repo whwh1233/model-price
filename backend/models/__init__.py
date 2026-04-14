@@ -8,6 +8,23 @@ from .pricing import (
     ProviderIndexEntry,
     IndexFile,
 )
+from .v2 import (
+    AlternativeV2,
+    BatchPricingV2,
+    CompareResultV2,
+    DriftCountsV2,
+    DriftReportV2,
+    EntityCoreV2,
+    EntityDetailV2,
+    EntityListItemV2,
+    EntityStoreSnapshot,
+    OfferingV2,
+    PriceDriftItem,
+    PricingV2,
+    SearchResultV2,
+    StatsV2,
+    UnmatchedProviderModel,
+)
 
 __all__ = [
     "Pricing",
@@ -18,4 +35,19 @@ __all__ = [
     "ProviderFile",
     "ProviderIndexEntry",
     "IndexFile",
+    "AlternativeV2",
+    "BatchPricingV2",
+    "CompareResultV2",
+    "DriftCountsV2",
+    "DriftReportV2",
+    "EntityCoreV2",
+    "EntityDetailV2",
+    "EntityListItemV2",
+    "EntityStoreSnapshot",
+    "OfferingV2",
+    "PriceDriftItem",
+    "PricingV2",
+    "SearchResultV2",
+    "StatsV2",
+    "UnmatchedProviderModel",
 ]
