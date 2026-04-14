@@ -29,3 +29,6 @@ dist/
 # Claude settings (local only)
 .claude/
 CLAUDE.md
+
+# Git worktrees (isolated dev workspaces)
+.worktrees/
