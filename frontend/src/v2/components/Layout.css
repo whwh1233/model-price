@@ -1,0 +1,127 @@
+.v2-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.v2-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  height: var(--header-h);
+  padding: 0 var(--sp-6);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(10, 11, 13, 0.72);
+  backdrop-filter: saturate(150%) blur(12px);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.v2-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  color: var(--fg-0);
+  font-weight: var(--fw-semibold);
+}
+
+.v2-brand-mark {
+  font-size: var(--text-lg);
+  color: var(--accent);
+  text-shadow: 0 0 18px var(--accent-glow);
+}
+
+.v2-brand-name {
+  font-size: var(--text-md);
+  letter-spacing: -0.01em;
+}
+
+.v2-brand-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--fg-3);
+  padding: 2px var(--sp-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--rad-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.v2-topbar-search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: auto;
+  padding: var(--sp-2) var(--sp-3);
+  min-width: 260px;
+  background: var(--bg-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--rad-md);
+  color: var(--fg-3);
+  transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+
+.v2-topbar-search:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-3);
+  color: var(--fg-1);
+}
+
+.v2-topbar-search-icon {
+  color: var(--fg-3);
+  font-size: var(--text-md);
+}
+
+.v2-topbar-search-label {
+  flex: 1;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.v2-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--sp-8) var(--sp-6) var(--sp-20);
+}
+
+.v2-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-6);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--fg-3);
+  font-size: var(--text-xs);
+}
+
+.v2-footer-sep {
+  opacity: 0.5;
+}
+
+.v2-footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .v2-topbar {
+    padding: 0 var(--sp-4);
+  }
+  .v2-brand-tag {
+    display: none;
+  }
+  .v2-topbar-search {
+    min-width: 0;
+    padding: var(--sp-2);
+  }
+  .v2-topbar-search-label {
+    display: none;
+  }
+  .v2-main {
+    padding: var(--sp-6) var(--sp-4) var(--sp-16);
+  }
+}

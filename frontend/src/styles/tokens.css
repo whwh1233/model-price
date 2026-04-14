@@ -1,0 +1,279 @@
+/* Model Price v2 — design tokens
+ * Dark-first, linear/raycast/stripe-inspired.
+ * Numbers in mono, UI in sans, both kept tight. */
+
+:root {
+  /* ─── Typography scale ─── */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text',
+    'Helvetica Neue', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 15px;
+  --text-lg: 17px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 44px;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ─── Spacing (4px grid) ─── */
+  --sp-0: 0px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ─── Radius ─── */
+  --rad-sm: 4px;
+  --rad-md: 6px;
+  --rad-lg: 10px;
+  --rad-xl: 14px;
+  --rad-2xl: 20px;
+  --rad-full: 999px;
+
+  /* ─── Elevation ─── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.65);
+
+  /* ─── Motion ─── */
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-normal: 180ms;
+  --dur-slow: 260ms;
+
+  /* ─── Density ─── */
+  --row-h: 36px;
+  --row-h-compact: 30px;
+  --header-h: 52px;
+
+  /* ─── Dark theme colors (default) ─── */
+  color-scheme: dark;
+
+  --bg-0: #0a0b0d;
+  --bg-1: #111216;
+  --bg-2: #171920;
+  --bg-3: #1e2028;
+  --bg-4: #262933;
+  --bg-hover: rgba(255, 255, 255, 0.035);
+  --bg-active: rgba(255, 255, 255, 0.06);
+  --bg-glow: radial-gradient(
+    ellipse 60% 80% at 50% 0%,
+    rgba(100, 130, 255, 0.12),
+    transparent 70%
+  );
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --fg-0: #f5f6f8;
+  --fg-1: #dcdee4;
+  --fg-2: #9aa0ad;
+  --fg-3: #6a7180;
+  --fg-4: #474c58;
+
+  --accent: #7c9bff;
+  --accent-strong: #5e82ff;
+  --accent-soft: rgba(124, 155, 255, 0.15);
+  --accent-glow: rgba(124, 155, 255, 0.35);
+
+  --success: #4fd39a;
+  --warning: #f4a14c;
+  --danger: #ff6e7f;
+  --info: #64b5f6;
+
+  /* ─── Maker colors (low saturation, dark-friendly) ─── */
+  --maker-anthropic: #d97757;
+  --maker-openai: #10a37f;
+  --maker-google: #4285f4;
+  --maker-xai: #cfd2d6;
+  --maker-deepseek: #4e6bff;
+  --maker-meta: #0468e1;
+  --maker-mistral: #fa5c1f;
+  --maker-cohere: #ff7757;
+  --maker-default: #7c9bff;
+
+  /* ─── Capability colors ─── */
+  --cap-text: #8a94a6;
+  --cap-vision: #9ae6b4;
+  --cap-audio: #f6ad55;
+  --cap-tool: #7c9bff;
+  --cap-reason: #d6bcfa;
+  --cap-function: #63b3ed;
+  --cap-image-gen: #ff80c0;
+
+  /* ─── Focus ring ─── */
+  --ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
+}
+
+/* ─── Light theme override (stub, reserved) ─── */
+@media (prefers-color-scheme: light) {
+  :root.light-enabled {
+    color-scheme: light;
+    --bg-0: #fafbfc;
+    --bg-1: #ffffff;
+    --bg-2: #f5f6f9;
+    --bg-3: #edeff4;
+    --bg-4: #e2e5ec;
+    --fg-0: #0a0b0d;
+    --fg-1: #232530;
+    --fg-2: #5a6071;
+    --fg-3: #8a90a0;
+    --border-subtle: rgba(0, 0, 0, 0.04);
+    --border-default: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.14);
+  }
+}
+
+/* ─── Base reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  background: var(--bg-0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: var(--bg-glow);
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--fg-0);
+}
+
+kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  min-width: 20px;
+  height: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-medium);
+  color: var(--fg-2);
+  background: var(--bg-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--rad-sm);
+  line-height: 1;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'zero';
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'zero';
+  letter-spacing: -0.01em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--rad-full);
+  border: 2px solid var(--bg-0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--fg-0);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: var(--rad-sm);
+}
