@@ -59,8 +59,27 @@
   outline: none;
 }
 
+/* Suppress the global :focus-visible ring so the input doesn't paint
+   a second blue outline inside the container's own focus ring. */
+.v2-hero-search input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 .v2-hero-search input::placeholder {
   color: var(--fg-3);
+}
+
+.v2-hero-search-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-3);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  user-select: none;
+  padding: 4px 10px;
+  border-radius: var(--rad-md);
+  background: var(--bg-2);
 }
 
 .v2-hero-meta {

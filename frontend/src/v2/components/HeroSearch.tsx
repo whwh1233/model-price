@@ -47,6 +47,9 @@ export function HeroSearch({
           autoCapitalize="off"
           spellCheck={false}
         />
+        <span className="v2-hero-search-hint" aria-hidden>
+          ⌘K
+        </span>
       </div>
 
       <div className="v2-hero-meta">

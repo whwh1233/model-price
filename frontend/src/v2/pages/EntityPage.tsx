@@ -17,6 +17,8 @@ export function EntityPage() {
   const { detail, loading, notFound } = useEntityV2(slug);
   const basket = useCompareBasket();
   const navigate = useNavigate();
+  // All hooks must run unconditionally — early returns come AFTER.
+  const [copied, setCopied] = useState(false);
 
   if (loading) return <div className="v2-loading">Loading…</div>;
   if (notFound) {
@@ -36,7 +38,6 @@ export function EntityPage() {
   const { entity, offerings, alternatives } = detail;
   const inBasket = basket.has(entity.slug);
   const primary = offerings.find((o) => o.provider === entity.primary_offering_provider);
-  const [copied, setCopied] = useState(false);
 
   const copyModelId = async () => {
     if (!primary) return;
