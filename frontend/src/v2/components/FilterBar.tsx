@@ -1,5 +1,6 @@
 import type { EntitiesListQuery } from '../../types/v2';
-import { capabilityLabel } from '../utils/format';
+import { useI18n } from '../i18n/localeContext';
+import type { MessageKey } from '../i18n/messages';
 import './FilterBar.css';
 
 const CAPABILITIES = [
@@ -13,11 +14,11 @@ const CAPABILITIES = [
   'embedding',
 ] as const;
 
-const SORTS: { value: NonNullable<EntitiesListQuery['sort']>; label: string }[] = [
-  { value: 'name', label: 'Name' },
-  { value: 'input', label: 'Input $' },
-  { value: 'output', label: 'Output $' },
-  { value: 'context', label: 'Context' },
+const SORTS: { value: NonNullable<EntitiesListQuery['sort']>; labelKey: MessageKey }[] = [
+  { value: 'name', labelKey: 'filter.sort.name' },
+  { value: 'input', labelKey: 'filter.sort.input' },
+  { value: 'output', labelKey: 'filter.sort.output' },
+  { value: 'context', labelKey: 'filter.sort.context' },
 ];
 
 interface FilterBarProps {
@@ -28,6 +29,7 @@ interface FilterBarProps {
 }
 
 export function FilterBar({ query, onChange, makers, families }: FilterBarProps) {
+  const { t } = useI18n();
   const patch = (diff: Partial<EntitiesListQuery>) => {
     onChange({ ...query, ...diff });
   };
@@ -52,7 +54,7 @@ export function FilterBar({ query, onChange, makers, families }: FilterBarProps)
           value={query.maker ?? ''}
           onChange={(e) => patch({ maker: e.target.value || undefined })}
         >
-          <option value="">All makers</option>
+          <option value="">{t('filter.all_makers')}</option>
           {makers.map((m) => (
             <option key={m} value={m}>
               {m}
@@ -64,7 +66,7 @@ export function FilterBar({ query, onChange, makers, families }: FilterBarProps)
           value={query.family ?? ''}
           onChange={(e) => patch({ family: e.target.value || undefined })}
         >
-          <option value="">All families</option>
+          <option value="">{t('filter.all_families')}</option>
           {families.map((f) => (
             <option key={f} value={f}>
               {f}
@@ -82,7 +84,7 @@ export function FilterBar({ query, onChange, makers, families }: FilterBarProps)
                 className={`v2-sort-btn${active ? ' is-active' : ''}`}
                 onClick={() => toggleSort(s.value)}
               >
-                {s.label} <span className="v2-sort-arrow">{arrow}</span>
+                {t(s.labelKey)} <span className="v2-sort-arrow">{arrow}</span>
               </button>
             );
           })}
@@ -94,7 +96,7 @@ export function FilterBar({ query, onChange, makers, families }: FilterBarProps)
           className={`v2-chip${!query.capability ? ' is-active' : ''}`}
           onClick={() => patch({ capability: undefined })}
         >
-          All
+          {t('filter.cap.all')}
         </button>
         {CAPABILITIES.map((cap) => (
           <button
@@ -103,7 +105,7 @@ export function FilterBar({ query, onChange, makers, families }: FilterBarProps)
             className={`v2-chip${query.capability === cap ? ' is-active' : ''}`}
             onClick={() => toggleCapability(cap)}
           >
-            {capabilityLabel(cap)}
+            {t(`cap.${cap}` as MessageKey)}
           </button>
         ))}
       </div>

@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { useEntityV2 } from '../../hooks/useEntityV2';
 import { AlternativesList } from './AlternativesList';
 import {
-  capabilityLabel,
   formatContext,
   formatPrice,
   makerColor,
   providerLabel,
 } from '../utils/format';
+import { useI18n } from '../i18n/localeContext';
+import type { MessageKey } from '../i18n/messages';
 import { LITELLM_REGISTRY_URL, officialLinkForMaker } from '../utils/officialLinks';
 import './EntityDrawer.css';
 
@@ -28,6 +29,7 @@ export function EntityDrawer({
   onNavigateSlug,
 }: EntityDrawerProps) {
   const { detail, loading, notFound } = useEntityV2(slug);
+  const { t } = useI18n();
 
   useEffect(() => {
     if (!slug) return;
@@ -56,16 +58,18 @@ export function EntityDrawer({
           <Link
             to={`/m/${slug}`}
             className="v2-drawer-expand"
-            title="Open full page"
+            title={t('detail.open_full_page')}
           >
-            Open full page ↗
+            {t('detail.open_full_page')}
           </Link>
         </header>
 
         {loading ? (
-          <div className="v2-drawer-loading">Loading…</div>
+          <div className="v2-drawer-loading">{t('detail.loading')}</div>
         ) : notFound ? (
-          <div className="v2-drawer-empty">Model "{slug}" not found.</div>
+          <div className="v2-drawer-empty">
+            {t('detail.not_found_fmt', { slug: slug ?? '' })}
+          </div>
         ) : detail ? (
           <DrawerContent
             detail={detail}
@@ -92,6 +96,7 @@ function DrawerContent({
   isInBasket: (slug: string) => boolean;
   onNavigateSlug: (slug: string) => void;
 }) {
+  const { t } = useI18n();
   const { entity, offerings, alternatives } = detail;
   const inBasket = isInBasket(entity.slug);
   const primary = offerings.find((o) => o.provider === entity.primary_offering_provider)
@@ -125,11 +130,15 @@ function DrawerContent({
         <span className="v2-drawer-sep">·</span>
         <span>{entity.family}</span>
         <span className="v2-drawer-sep">·</span>
-        <span>{formatContext(entity.context_length)} context</span>
+        <span>
+          {formatContext(entity.context_length)} {t('detail.context_suffix')}
+        </span>
         {entity.max_output_tokens ? (
           <>
             <span className="v2-drawer-sep">·</span>
-            <span>{formatContext(entity.max_output_tokens)} max output</span>
+            <span>
+              {formatContext(entity.max_output_tokens)} {t('detail.max_output_suffix')}
+            </span>
           </>
         ) : null}
       </div>
@@ -141,7 +150,7 @@ function DrawerContent({
           onClick={copyModelId}
           disabled={!primary}
         >
-          {copied ? '✓ Copied!' : 'Copy model_id'}
+          {copied ? t('detail.copied') : t('detail.copy_model_id')}
           <span className="v2-btn-sub mono">
             {primary?.provider_model_id ?? ''}
           </span>
@@ -151,42 +160,42 @@ function DrawerContent({
           className={`v2-btn${inBasket ? ' is-active' : ''}`}
           onClick={() => onToggleBasket(entity.slug)}
         >
-          {inBasket ? '✓ In compare' : '+ Add to compare'}
+          {inBasket ? t('detail.in_compare') : t('detail.add_to_compare')}
         </button>
       </div>
 
       <OfficialLinks maker={entity.maker} />
 
       <section className="v2-drawer-section">
-        <h3>Capabilities</h3>
+        <h3>{t('detail.capabilities')}</h3>
         <div className="v2-caps-grid">
           {entity.capabilities.map((cap) => (
             <span key={cap} className={`v2-cap v2-cap-${cap}`}>
-              {capabilityLabel(cap)}
+              {t(`cap.${cap}` as MessageKey)}
             </span>
           ))}
         </div>
         <div className="v2-drawer-modality">
           <div>
-            <span className="v2-drawer-label">Input</span>
+            <span className="v2-drawer-label">{t('detail.modality_input')}</span>
             <span>{entity.input_modalities.join(', ')}</span>
           </div>
           <div>
-            <span className="v2-drawer-label">Output</span>
+            <span className="v2-drawer-label">{t('detail.modality_output')}</span>
             <span>{entity.output_modalities.join(', ')}</span>
           </div>
         </div>
       </section>
 
       <section className="v2-drawer-section">
-        <h3>Pricing across providers</h3>
+        <h3>{t('detail.pricing_across_providers')}</h3>
         <div className="v2-offerings">
           <div className="v2-offer-head">
-            <span>Provider</span>
-            <span>Input</span>
-            <span>Output</span>
-            <span>Cache read</span>
-            <span>Batch in</span>
+            <span>{t('detail.col.provider')}</span>
+            <span>{t('detail.col.input')}</span>
+            <span>{t('detail.col.output')}</span>
+            <span>{t('detail.col.cache_read')}</span>
+            <span>{t('detail.col.batch_in')}</span>
           </div>
           {offerings.map((o) => {
             const isPrimary = o.provider === entity.primary_offering_provider;
@@ -197,7 +206,9 @@ function DrawerContent({
               >
                 <div className="v2-offer-provider">
                   <span>{providerLabel(o.provider)}</span>
-                  {isPrimary ? <span className="v2-offer-tag">primary</span> : null}
+                  {isPrimary ? (
+                    <span className="v2-offer-tag">{t('detail.primary_tag')}</span>
+                  ) : null}
                   {o.notes ? (
                     <span className="v2-offer-note" title={o.notes}>
                       ⓘ
@@ -218,7 +229,7 @@ function DrawerContent({
 
       {alternatives.length > 0 ? (
         <section className="v2-drawer-section">
-          <h3>Same tier, cheaper</h3>
+          <h3>{t('detail.alternatives')}</h3>
           <AlternativesList
             alternatives={alternatives}
             onNavigate={onNavigateSlug}
@@ -230,24 +241,25 @@ function DrawerContent({
 }
 
 function OfficialLinks({ maker }: { maker: string }) {
+  const { t } = useI18n();
   const link = officialLinkForMaker(maker);
   return (
     <div className="v2-official-links">
-      <span className="v2-official-label">For full details:</span>
+      <span className="v2-official-label">{t('detail.official_label')}</span>
       {link ? (
         <>
           <a href={link.pricing} target="_blank" rel="noreferrer" className="v2-official-link">
-            {maker} pricing ↗
+            {t('detail.official_pricing_fmt', { maker })}
           </a>
           {link.docs ? (
             <a href={link.docs} target="_blank" rel="noreferrer" className="v2-official-link">
-              {maker} docs ↗
+              {t('detail.official_docs_fmt', { maker })}
             </a>
           ) : null}
         </>
       ) : null}
       <a href={LITELLM_REGISTRY_URL} target="_blank" rel="noreferrer" className="v2-official-link v2-official-link-muted">
-        source: LiteLLM ↗
+        {t('detail.litellm_source')}
       </a>
     </div>
   );

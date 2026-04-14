@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useI18n } from '../i18n/localeContext';
 import './HeroSearch.css';
 
 interface HeroSearchProps {
@@ -15,6 +16,7 @@ export function HeroSearch({
   totalCount,
 }: HeroSearchProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const el = inputRef.current;
@@ -25,22 +27,29 @@ export function HeroSearch({
     }
   }, []);
 
+  const meta = value
+    ? t('hero.meta_matching_fmt', {
+        count: resultCount,
+        query: value,
+        total: totalCount,
+      })
+    : t('hero.meta_shown_fmt', { count: resultCount, total: totalCount });
+
   return (
     <section className="v2-hero">
       <h1 className="v2-hero-title">
-        Compare <span className="num">{totalCount}</span> LLMs from every major provider.
+        {t('hero.title_prefix')}
+        <span className="num">{totalCount}</span>
+        {t('hero.title_suffix')}
       </h1>
-      <p className="v2-hero-sub">
-        Real pricing, real capabilities. Keyboard-first. Shareable links. Built for devs
-        who read configs more than marketing pages.
-      </p>
+      <p className="v2-hero-sub">{t('hero.subtitle')}</p>
 
       <div className="v2-hero-search">
         <span className="v2-hero-search-icon">⌕</span>
         <input
           ref={inputRef}
           type="text"
-          placeholder="Search by name, family, or model_id…"
+          placeholder={t('hero.search_placeholder')}
           value={value}
           onChange={(e) => onChange(e.target.value)}
           autoCorrect="off"
@@ -52,12 +61,7 @@ export function HeroSearch({
         </span>
       </div>
 
-      <div className="v2-hero-meta">
-        <span className="num">{resultCount}</span>
-        {value
-          ? ` matching "${value}" of ${totalCount}`
-          : ` of ${totalCount} shown`}
-      </div>
+      <div className="v2-hero-meta">{meta}</div>
     </section>
   );
 }

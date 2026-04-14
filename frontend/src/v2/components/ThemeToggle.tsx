@@ -1,30 +1,35 @@
 import { useTheme } from '../themeContext';
 import type { ThemeMode } from '../themeContext';
+import { useI18n } from '../i18n/localeContext';
 import './ThemeToggle.css';
 
-const LABELS: Record<ThemeMode, string> = {
-  dark: '● Dark',
-  light: '○ Light',
-  system: '◐ System',
+const ICONS: Record<ThemeMode, string> = {
+  dark: '●',
+  light: '○',
+  system: '◐',
 };
 
-const NEXT_HINT: Record<ThemeMode, string> = {
-  dark: 'Switch to Light',
-  light: 'Switch to System',
-  system: 'Switch to Dark',
+const NEXT: Record<ThemeMode, ThemeMode> = {
+  dark: 'light',
+  light: 'system',
+  system: 'dark',
 };
 
 export function ThemeToggle() {
   const { mode, cycle } = useTheme();
+  const { t } = useI18n();
+  const currentLabel = t(`theme.${mode}` as 'theme.dark' | 'theme.light' | 'theme.system');
+  const nextLabel = t(`theme.${NEXT[mode]}` as 'theme.dark' | 'theme.light' | 'theme.system');
+  const title = t('theme.next_fmt', { next: nextLabel });
   return (
     <button
       type="button"
       className="v2-theme-toggle"
       onClick={cycle}
-      title={NEXT_HINT[mode]}
-      aria-label={`Theme: ${mode}. ${NEXT_HINT[mode]}`}
+      title={title}
+      aria-label={title}
     >
-      {LABELS[mode]}
+      {ICONS[mode]} {currentLabel}
     </button>
   );
 }

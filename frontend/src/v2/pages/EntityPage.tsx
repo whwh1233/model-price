@@ -4,12 +4,13 @@ import { useEntityV2 } from '../../hooks/useEntityV2';
 import { useCompareBasket } from '../compareBasketContext';
 import { AlternativesList } from '../components/AlternativesList';
 import {
-  capabilityLabel,
   formatContext,
   formatPrice,
   makerColor,
   providerLabel,
 } from '../utils/format';
+import { useI18n } from '../i18n/localeContext';
+import type { MessageKey } from '../i18n/messages';
 import { LITELLM_REGISTRY_URL, officialLinkForMaker } from '../utils/officialLinks';
 import './EntityPage.css';
 
@@ -18,17 +19,18 @@ export function EntityPage() {
   const { detail, loading, notFound } = useEntityV2(slug);
   const basket = useCompareBasket();
   const navigate = useNavigate();
+  const { t } = useI18n();
   // All hooks must run unconditionally — early returns come AFTER.
   const [copied, setCopied] = useState(false);
 
-  if (loading) return <div className="v2-loading">Loading…</div>;
+  if (loading) return <div className="v2-loading">{t('detail.loading')}</div>;
   if (notFound) {
     return (
       <div className="v2-error">
         <p>
-          Model "{slug}" not found.{' '}
+          {t('detail.not_found_fmt', { slug: slug ?? '' })}{' '}
           <Link to="/" className="v2-link-accent">
-            Back to home
+            {t('detail.back_to_home')}
           </Link>
         </p>
       </div>
@@ -54,7 +56,7 @@ export function EntityPage() {
   return (
     <article className="v2-entity-page">
       <Link to="/" className="v2-entity-back">
-        ← All models
+        {t('detail.back_to_home')}
       </Link>
 
       <header className="v2-entity-head">
@@ -69,9 +71,13 @@ export function EntityPage() {
         </div>
         <p className="v2-entity-meta">
           {entity.maker} · {entity.family} · {formatContext(entity.context_length)}{' '}
-          context
+          {t('detail.context_suffix')}
           {entity.max_output_tokens ? (
-            <> · {formatContext(entity.max_output_tokens)} max output</>
+            <>
+              {' '}
+              · {formatContext(entity.max_output_tokens)}{' '}
+              {t('detail.max_output_suffix')}
+            </>
           ) : null}
         </p>
 
@@ -82,7 +88,7 @@ export function EntityPage() {
             onClick={copyModelId}
             disabled={!primary}
           >
-            {copied ? '✓ Copied!' : 'Copy model_id'}
+            {copied ? t('detail.copied') : t('detail.copy_model_id')}
             <span className="v2-btn-sub mono">
               {primary?.provider_model_id ?? ''}
             </span>
@@ -92,7 +98,7 @@ export function EntityPage() {
             className={`v2-btn${inBasket ? ' is-active' : ''}`}
             onClick={() => basket.toggle(entity.slug)}
           >
-            {inBasket ? '✓ In compare' : '+ Add to compare'}
+            {inBasket ? t('detail.in_compare') : t('detail.add_to_compare')}
           </button>
         </div>
 
@@ -100,35 +106,35 @@ export function EntityPage() {
       </header>
 
       <section className="v2-drawer-section">
-        <h3>Capabilities</h3>
+        <h3>{t('detail.capabilities')}</h3>
         <div className="v2-caps-grid">
           {entity.capabilities.map((cap) => (
             <span key={cap} className={`v2-cap v2-cap-${cap}`}>
-              {capabilityLabel(cap)}
+              {t(`cap.${cap}` as MessageKey)}
             </span>
           ))}
         </div>
         <div className="v2-drawer-modality">
           <div>
-            <span className="v2-drawer-label">Input</span>
+            <span className="v2-drawer-label">{t('detail.modality_input')}</span>
             <span>{entity.input_modalities.join(', ')}</span>
           </div>
           <div>
-            <span className="v2-drawer-label">Output</span>
+            <span className="v2-drawer-label">{t('detail.modality_output')}</span>
             <span>{entity.output_modalities.join(', ')}</span>
           </div>
         </div>
       </section>
 
       <section className="v2-drawer-section">
-        <h3>Pricing across providers</h3>
+        <h3>{t('detail.pricing_across_providers')}</h3>
         <div className="v2-offerings">
           <div className="v2-offer-head">
-            <span>Provider</span>
-            <span>Input</span>
-            <span>Output</span>
-            <span>Cache read</span>
-            <span>Batch in</span>
+            <span>{t('detail.col.provider')}</span>
+            <span>{t('detail.col.input')}</span>
+            <span>{t('detail.col.output')}</span>
+            <span>{t('detail.col.cache_read')}</span>
+            <span>{t('detail.col.batch_in')}</span>
           </div>
           {offerings.map((o) => {
             const isPrimary = o.provider === entity.primary_offering_provider;
@@ -139,7 +145,9 @@ export function EntityPage() {
               >
                 <div className="v2-offer-provider">
                   <span>{providerLabel(o.provider)}</span>
-                  {isPrimary ? <span className="v2-offer-tag">primary</span> : null}
+                  {isPrimary ? (
+                    <span className="v2-offer-tag">{t('detail.primary_tag')}</span>
+                  ) : null}
                   {o.notes ? (
                     <span className="v2-offer-note" title={o.notes}>
                       ⓘ
@@ -160,7 +168,7 @@ export function EntityPage() {
 
       {alternatives.length > 0 ? (
         <section className="v2-drawer-section">
-          <h3>Same tier, cheaper</h3>
+          <h3>{t('detail.alternatives')}</h3>
           <AlternativesList
             alternatives={alternatives}
             onNavigate={(s) => navigate(`/m/${s}`)}
@@ -172,18 +180,19 @@ export function EntityPage() {
 }
 
 function OfficialLinksStrip({ maker }: { maker: string }) {
+  const { t } = useI18n();
   const link = officialLinkForMaker(maker);
   return (
     <div className="v2-official-links">
-      <span className="v2-official-label">For full details:</span>
+      <span className="v2-official-label">{t('detail.official_label')}</span>
       {link ? (
         <>
           <a href={link.pricing} target="_blank" rel="noreferrer" className="v2-official-link">
-            {maker} pricing ↗
+            {t('detail.official_pricing_fmt', { maker })}
           </a>
           {link.docs ? (
             <a href={link.docs} target="_blank" rel="noreferrer" className="v2-official-link">
-              {maker} docs ↗
+              {t('detail.official_docs_fmt', { maker })}
             </a>
           ) : null}
         </>
@@ -194,7 +203,7 @@ function OfficialLinksStrip({ maker }: { maker: string }) {
         rel="noreferrer"
         className="v2-official-link v2-official-link-muted"
       >
-        source: LiteLLM ↗
+        {t('detail.litellm_source')}
       </a>
     </div>
   );

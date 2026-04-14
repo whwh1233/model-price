@@ -1,7 +1,8 @@
 import { memo } from 'react';
 import type { EntityListItemV2 } from '../../types/v2';
+import { useI18n } from '../i18n/localeContext';
+import type { MessageKey } from '../i18n/messages';
 import {
-  capabilityLabel,
   formatContext,
   formatPrice,
   makerColor,
@@ -44,6 +45,7 @@ function Row({
   inBasket: boolean;
   onToggleBasket: (slug: string) => void;
 }) {
+  const { t } = useI18n();
   const primary = entity.primary_offering;
   const pricing = primary?.pricing;
   const input = pricing?.input ?? null;
@@ -80,11 +82,14 @@ function Row({
       <div className="v2-row-col num v2-row-price">{formatPrice(input)}</div>
       <div className="v2-row-col num v2-row-price">{formatPrice(output)}</div>
       <div className="v2-row-col v2-row-caps">
-        {caps.slice(0, 5).map((cap) => (
-          <span key={cap} className={`v2-cap v2-cap-${cap}`} title={capabilityLabel(cap)}>
-            {capabilityLabel(cap)}
-          </span>
-        ))}
+        {caps.slice(0, 5).map((cap) => {
+          const label = t(`cap.${cap}` as MessageKey);
+          return (
+            <span key={cap} className={`v2-cap v2-cap-${cap}`} title={label}>
+              {label}
+            </span>
+          );
+        })}
       </div>
       <div className="v2-row-col v2-row-actions">
         <button
@@ -94,8 +99,16 @@ function Row({
             e.stopPropagation();
             onToggleBasket(entity.slug);
           }}
-          title={inBasket ? 'Remove from compare' : 'Add to compare'}
-          aria-label={inBasket ? 'Remove from compare' : 'Add to compare'}
+          title={
+            inBasket
+              ? t('table.remove_from_compare')
+              : t('table.add_to_compare')
+          }
+          aria-label={
+            inBasket
+              ? t('table.remove_from_compare')
+              : t('table.add_to_compare')
+          }
         >
           {inBasket ? '✓' : '+'}
         </button>
@@ -113,23 +126,24 @@ function EntityTableImpl({
   isInBasket,
   onToggleBasket,
 }: EntityTableProps) {
+  const { t } = useI18n();
   if (entities.length === 0) {
     return (
       <div className="v2-empty">
         <span className="v2-empty-icon">∅</span>
-        <p>No models match your filters.</p>
+        <p>{t('table.empty')}</p>
       </div>
     );
   }
 
   return (
-    <div className="v2-table" role="table" aria-label="Model list">
+    <div className="v2-table" role="table" aria-label={t('table.col.model')}>
       <div className="v2-table-head" role="row">
-        <div className="v2-row-main">Model</div>
-        <div className="v2-row-col">Context</div>
-        <div className="v2-row-col">Input / M</div>
-        <div className="v2-row-col">Output / M</div>
-        <div className="v2-row-col">Capabilities</div>
+        <div className="v2-row-main">{t('table.col.model')}</div>
+        <div className="v2-row-col">{t('table.col.context')}</div>
+        <div className="v2-row-col">{t('table.col.input')}</div>
+        <div className="v2-row-col">{t('table.col.output')}</div>
+        <div className="v2-row-col">{t('table.col.capabilities')}</div>
         <div className="v2-row-col" />
       </div>
       <div className="v2-table-body">

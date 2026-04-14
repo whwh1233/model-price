@@ -2,6 +2,8 @@ import { Link, useLocation } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import { CompareBasket } from './CompareBasket';
 import { ThemeToggle } from './ThemeToggle';
+import { LocaleToggle } from './LocaleToggle';
+import { useI18n } from '../i18n/localeContext';
 import './Layout.css';
 
 interface LayoutProps {
@@ -11,9 +13,7 @@ interface LayoutProps {
 
 export function Layout({ children, onOpenPalette }: LayoutProps) {
   const location = useLocation();
-  // Home page has its own hero search with an embedded ⌘K hint — any
-  // extra topbar entry would duplicate it. Detail / compare routes
-  // lose the hero so we put the full topbar search back there.
+  const { t } = useI18n();
   const isHome = location.pathname === '/';
 
   return (
@@ -22,7 +22,7 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
         <Link to="/" className="v2-brand">
           <span className="v2-brand-mark">⬡</span>
           <span className="v2-brand-name">Model Price</span>
-          <span className="v2-brand-tag">v2 preview</span>
+          <span className="v2-brand-tag">{t('brand.tagline')}</span>
         </Link>
         <div className="v2-topbar-right">
           {!isHome && (
@@ -30,13 +30,16 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
               type="button"
               className="v2-topbar-search"
               onClick={onOpenPalette}
-              aria-label="Open command palette"
+              aria-label={t('nav.open_palette')}
             >
               <span className="v2-topbar-search-icon">⌕</span>
-              <span className="v2-topbar-search-label">Search models…</span>
+              <span className="v2-topbar-search-label">
+                {t('nav.search_placeholder')}
+              </span>
               <kbd>⌘K</kbd>
             </button>
           )}
+          <LocaleToggle />
           <ThemeToggle />
         </div>
       </header>
@@ -44,12 +47,12 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
       <main className="v2-main">{children}</main>
 
       <footer className="v2-footer">
-        <span>Model Price · compare 600+ LLMs from 6 providers</span>
+        <span>{t('footer.tagline')}</span>
         <span className="v2-footer-sep">·</span>
-        <span>Prices per 1M tokens</span>
+        <span>{t('footer.unit')}</span>
         <span className="v2-footer-sep">·</span>
         <a href="https://github.com/xiaobox/model-price" target="_blank" rel="noreferrer">
-          GitHub
+          {t('footer.github')}
         </a>
       </footer>
 

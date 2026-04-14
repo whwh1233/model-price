@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSearchV2 } from '../../hooks/useSearchV2';
 import { useCompareBasket } from '../compareBasketContext';
+import { useI18n } from '../i18n/localeContext';
 import { formatPrice, makerColor } from '../utils/format';
 import './CommandPalette.css';
 
@@ -16,6 +17,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
   const basket = useCompareBasket();
+  const { t } = useI18n();
   const { results } = useSearchV2(query, 12);
 
   useEffect(() => {
@@ -86,7 +88,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
           <input
             ref={inputRef}
             type="text"
-            placeholder="Type a model name…"
+            placeholder={t('palette.placeholder')}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoCorrect="off"
@@ -98,7 +100,7 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
 
         <div className="v2-palette-results">
           {query && results.length === 0 ? (
-            <div className="v2-palette-empty">No matches. Try a family name.</div>
+            <div className="v2-palette-empty">{t('palette.empty')}</div>
           ) : (
             results.map((r, idx) => {
               const active = idx === cursor;
@@ -135,18 +137,18 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
         <div className="v2-palette-footer">
           <span>
             <kbd>↑</kbd>
-            <kbd>↓</kbd> navigate
+            <kbd>↓</kbd> {t('palette.nav')}
           </span>
           <span>
-            <kbd>⏎</kbd> open
-          </span>
-          <span>
-            <kbd>⌘</kbd>
-            <kbd>C</kbd> copy id
+            <kbd>⏎</kbd> {t('palette.open')}
           </span>
           <span>
             <kbd>⌘</kbd>
-            <kbd>D</kbd> compare
+            <kbd>C</kbd> {t('palette.copy_id')}
+          </span>
+          <span>
+            <kbd>⌘</kbd>
+            <kbd>D</kbd> {t('palette.compare')}
           </span>
         </div>
       </div>

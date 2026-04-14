@@ -3,8 +3,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { API_V2_BASE } from '../../config';
 import type { CompareResultV2 } from '../../types/v2';
 import { useCompareBasket } from '../compareBasketContext';
+import { useI18n } from '../i18n/localeContext';
+import type { MessageKey } from '../i18n/messages';
 import {
-  capabilityLabel,
   formatContext,
   formatPrice,
   makerColor,
@@ -21,6 +22,7 @@ export function ComparePage() {
   }>({ data: null, loading: true, error: null });
   const basket = useCompareBasket();
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   useEffect(() => {
     if (!ids) return;
@@ -46,13 +48,13 @@ export function ComparePage() {
     };
   }, [ids]);
 
-  if (state.loading) return <div className="v2-loading">Loading…</div>;
+  if (state.loading) return <div className="v2-loading">{t('detail.loading')}</div>;
   if (state.error)
     return (
       <div className="v2-error">
-        <p>Failed to load comparison. {state.error}</p>
+        <p>{t('compare.failed_fmt', { error: state.error })}</p>
         <Link to="/" className="v2-link-accent">
-          Back to home
+          {t('detail.back_to_home')}
         </Link>
       </div>
     );
@@ -63,9 +65,9 @@ export function ComparePage() {
   if (entities.length === 0) {
     return (
       <div className="v2-error">
-        <p>No valid models in the comparison. Try selecting some again.</p>
+        <p>{t('compare.none_valid')}</p>
         <Link to="/" className="v2-link-accent">
-          Back to home
+          {t('detail.back_to_home')}
         </Link>
       </div>
     );
@@ -87,11 +89,13 @@ export function ComparePage() {
     <div className="v2-compare">
       <header className="v2-compare-head">
         <Link to="/" className="v2-entity-back">
-          ← All models
+          {t('compare.back_to_home')}
         </Link>
-        <h1>Compare {entities.length} models</h1>
+        <h1>{t('compare.heading_fmt', { count: entities.length })}</h1>
         {missing_ids.length > 0 ? (
-          <p className="v2-compare-missing">Missing: {missing_ids.join(', ')}</p>
+          <p className="v2-compare-missing">
+            {t('compare.missing_fmt', { ids: missing_ids.join(', ') })}
+          </p>
         ) : null}
       </header>
 
@@ -113,8 +117,8 @@ export function ComparePage() {
                 type="button"
                 className="v2-compare-remove"
                 onClick={() => removeAndNav(entity.slug)}
-                aria-label="Remove"
-                title="Remove from comparison"
+                aria-label={t('compare.remove')}
+                title={t('compare.remove_tooltip')}
               >
                 ×
               </button>
@@ -123,26 +127,26 @@ export function ComparePage() {
           </div>
         ))}
 
-        <Row label="Family">
+        <Row label={t('compare.row.family')}>
           {entities.map(({ entity }) => (
             <span key={entity.slug}>{entity.family}</span>
           ))}
         </Row>
-        <Row label="Context">
+        <Row label={t('compare.row.context')}>
           {entities.map(({ entity }) => (
             <span key={entity.slug} className="num">
               {formatContext(entity.context_length)}
             </span>
           ))}
         </Row>
-        <Row label="Max output">
+        <Row label={t('compare.row.max_output')}>
           {entities.map(({ entity }) => (
             <span key={entity.slug} className="num">
               {formatContext(entity.max_output_tokens)}
             </span>
           ))}
         </Row>
-        <Row label="Input / M">
+        <Row label={t('compare.row.input')}>
           {entities.map(({ entity, offerings }) => {
             const p = primary(offerings, entity.primary_offering_provider);
             return (
@@ -152,7 +156,7 @@ export function ComparePage() {
             );
           })}
         </Row>
-        <Row label="Output / M">
+        <Row label={t('compare.row.output')}>
           {entities.map(({ entity, offerings }) => {
             const p = primary(offerings, entity.primary_offering_provider);
             return (
@@ -162,7 +166,7 @@ export function ComparePage() {
             );
           })}
         </Row>
-        <Row label="Cache read">
+        <Row label={t('compare.row.cache_read')}>
           {entities.map(({ entity, offerings }) => {
             const p = primary(offerings, entity.primary_offering_provider);
             return (
@@ -172,7 +176,7 @@ export function ComparePage() {
             );
           })}
         </Row>
-        <Row label="Batch input">
+        <Row label={t('compare.row.batch_in')}>
           {entities.map(({ entity, offerings }) => {
             const p = primary(offerings, entity.primary_offering_provider);
             return (
@@ -182,14 +186,14 @@ export function ComparePage() {
             );
           })}
         </Row>
-        <Row label="Primary provider">
+        <Row label={t('compare.row.primary_provider')}>
           {entities.map(({ entity }) => (
             <span key={entity.slug}>
               {providerLabel(entity.primary_offering_provider)}
             </span>
           ))}
         </Row>
-        <Row label="Capabilities">
+        <Row label={t('compare.row.capabilities')}>
           {entities.map(({ entity }) => (
             <div key={entity.slug} className="v2-compare-caps">
               {entity.capabilities.map((cap) => (
@@ -199,7 +203,7 @@ export function ComparePage() {
                     common_capabilities.includes(cap) ? ' is-shared' : ''
                   }`}
                 >
-                  {capabilityLabel(cap)}
+                  {t(`cap.${cap}` as MessageKey)}
                 </span>
               ))}
             </div>
@@ -209,8 +213,9 @@ export function ComparePage() {
 
       {common_capabilities.length > 0 ? (
         <p className="v2-compare-common">
-          Shared capabilities:{' '}
-          {common_capabilities.map((c) => capabilityLabel(c)).join(', ')}
+          {t('compare.shared_fmt', {
+            caps: common_capabilities.map((c) => t(`cap.${c}` as MessageKey)).join(', '),
+          })}
         </p>
       ) : null}
     </div>
