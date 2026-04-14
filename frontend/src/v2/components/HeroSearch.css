@@ -1,0 +1,94 @@
+.v2-hero {
+  margin-bottom: var(--sp-8);
+}
+
+.v2-hero-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: var(--fw-semibold);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--fg-0);
+  margin-bottom: var(--sp-3);
+}
+
+.v2-hero-title .num {
+  color: var(--accent);
+  text-shadow: 0 0 32px var(--accent-glow);
+}
+
+.v2-hero-sub {
+  font-size: var(--text-md);
+  color: var(--fg-2);
+  max-width: 640px;
+  margin-bottom: var(--sp-6);
+}
+
+.v2-hero-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  max-width: 760px;
+  background: var(--bg-1);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--rad-xl);
+  transition: border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+  box-shadow: var(--shadow-md);
+}
+
+.v2-hero-search:focus-within {
+  border-color: var(--accent-strong);
+  box-shadow: var(--shadow-md), 0 0 0 4px var(--accent-soft);
+}
+
+.v2-hero-search-icon {
+  font-size: var(--text-xl);
+  color: var(--fg-2);
+}
+
+.v2-hero-search input {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--fw-regular);
+  color: var(--fg-0);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Suppress the global :focus-visible ring so the input doesn't paint
+   a second blue outline inside the container's own focus ring. */
+.v2-hero-search input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.v2-hero-search input::placeholder {
+  color: var(--fg-3);
+}
+
+.v2-hero-search-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-3);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  user-select: none;
+  padding: 4px 10px;
+  border-radius: var(--rad-md);
+  background: var(--bg-2);
+}
+
+.v2-hero-meta {
+  margin-top: var(--sp-3);
+  font-size: var(--text-xs);
+  color: var(--fg-3);
+}
+
+.v2-hero-meta .num {
+  color: var(--fg-1);
+  font-weight: var(--fw-semibold);
+}

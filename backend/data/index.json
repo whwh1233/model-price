@@ -1,37 +1,37 @@
 {
   "version": "2.0",
-  "last_refresh": "2026-01-19T22:30:03.238079",
+  "last_refresh": "2026-02-06T23:07:21.797201",
   "providers": {
     "aws_bedrock": {
       "file": "providers/aws_bedrock.json",
-      "model_count": 93,
-      "last_updated": "2026-01-19T22:29:01.943514"
+      "model_count": 94,
+      "last_updated": "2026-02-06T23:07:04.100669"
     },
     "azure_openai": {
       "file": "providers/azure_openai.json",
       "model_count": 56,
-      "last_updated": "2026-01-19T22:29:05.214227"
+      "last_updated": "2026-02-06T23:07:10.354181"
     },
     "openai": {
       "file": "providers/openai.json",
-      "model_count": 53,
-      "last_updated": "2026-01-19T22:30:00.842996"
+      "model_count": 83,
+      "last_updated": "2026-02-06T23:07:18.680351"
     },
     "xai": {
       "file": "providers/xai.json",
       "model_count": 10,
-      "last_updated": "2026-01-19T22:28:59.075326"
+      "last_updated": "2026-02-06T23:07:01.337474"
     },
     "openrouter": {
       "file": "providers/openrouter.json",
-      "model_count": 339,
-      "last_updated": "2026-01-19T22:29:00.464141"
+      "model_count": 344,
+      "last_updated": "2026-02-06T23:07:03.488605"
     },
     "google_gemini": {
       "file": "providers/google_gemini.json",
-      "model_count": 24,
-      "last_updated": "2026-01-19T22:29:09.353179"
+      "model_count": 23,
+      "last_updated": "2026-02-06T23:07:17.439029"
     }
   },
-  "total_models": 575
+  "total_models": 610
 }

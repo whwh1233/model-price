@@ -1,0 +1,545 @@
+/* Model Price v2 — design tokens
+ * Dark-first, linear/raycast/stripe-inspired.
+ * Numbers in mono, UI in sans, both kept tight. */
+
+:root {
+  /* ─── Typography scale ─── */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text',
+    'Helvetica Neue', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  --text-2xs: 11px;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 15px;
+  --text-lg: 17px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 44px;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ─── Spacing (4px grid) ─── */
+  --sp-0: 0px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* ─── Radius ─── */
+  --rad-sm: 4px;
+  --rad-md: 6px;
+  --rad-lg: 10px;
+  --rad-xl: 14px;
+  --rad-2xl: 20px;
+  --rad-full: 999px;
+
+  /* ─── Elevation ─── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.65);
+
+  /* ─── Motion ─── */
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-normal: 180ms;
+  --dur-slow: 260ms;
+
+  /* ─── Density ─── */
+  --row-h: 36px;
+  --row-h-compact: 30px;
+  --header-h: 52px;
+
+  /* ─── Dark theme colors (default) ─── */
+  color-scheme: dark;
+
+  --bg-0: #0a0b0d;
+  --bg-1: #111216;
+  --bg-2: #171920;
+  --bg-3: #1e2028;
+  --bg-4: #262933;
+  --bg-hover: rgba(255, 255, 255, 0.035);
+  --bg-active: rgba(255, 255, 255, 0.06);
+  --bg-glow: radial-gradient(
+    ellipse 60% 80% at 50% 0%,
+    rgba(100, 130, 255, 0.12),
+    transparent 70%
+  );
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --fg-0: #f5f6f8;
+  --fg-1: #dcdee4;
+  --fg-2: #9aa0ad;
+  --fg-3: #6a7180;
+  --fg-4: #474c58;
+
+  --accent: #7c9bff;
+  --accent-strong: #5e82ff;
+  --accent-soft: rgba(124, 155, 255, 0.15);
+  --accent-glow: rgba(124, 155, 255, 0.35);
+
+  --success: #4fd39a;
+  --warning: #f4a14c;
+  --danger: #ff6e7f;
+  --info: #64b5f6;
+
+  /* ─── Maker colors (low saturation, dark-friendly) ─── */
+  --maker-anthropic: #d97757;
+  --maker-openai: #10a37f;
+  --maker-google: #4285f4;
+  --maker-xai: #cfd2d6;
+  --maker-deepseek: #4e6bff;
+  --maker-meta: #0468e1;
+  --maker-mistral: #fa5c1f;
+  --maker-cohere: #ff7757;
+  --maker-default: #7c9bff;
+
+  /* ─── Capability colors ─── */
+  --cap-text: #8a94a6;
+  --cap-vision: #9ae6b4;
+  --cap-audio: #f6ad55;
+  --cap-tool: #7c9bff;
+  --cap-reason: #d6bcfa;
+  --cap-function: #63b3ed;
+  --cap-image-gen: #ff80c0;
+
+  /* ─── Focus ring ─── */
+  --ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
+}
+
+/* ─── Light theme ─── applied when <html data-theme="light">
+ *
+ * Design intent: warm off-white page, pure-white cards, very subtle
+ * borders, and soft multi-layer shadows carrying elevation. Styled
+ * after Linear / Vercel / Stripe / Notion — the weight comes from
+ * typography and whitespace, NOT from hard borders. If it feels
+ * tempting to bump a border value, bump a shadow instead. */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Warm off-white page so white cards gently lift above it. */
+  --bg-0: #fafaf8;          /* page */
+  --bg-1: #ffffff;          /* cards / panels */
+  --bg-2: #f5f5f3;          /* chrome surfaces (chips, selects, header rows) */
+  --bg-3: #ececea;          /* hover */
+  --bg-4: #dededb;          /* pressed */
+  --bg-hover: rgba(24, 24, 27, 0.045);
+  --bg-active: rgba(24, 24, 27, 0.075);
+  --bg-glow: none;          /* no aurora in light mode */
+
+  /* Borders are WHISPER-subtle. Shadows carry weight, not lines. */
+  --border-subtle: rgba(24, 24, 27, 0.06);
+  --border-default: rgba(24, 24, 27, 0.09);
+  --border-strong: rgba(24, 24, 27, 0.14);
+
+  /* Warm near-black text — softer than pure black for long reads. */
+  --fg-0: #18181b;
+  --fg-1: #27272a;
+  --fg-2: #52525b;
+  --fg-3: #71717a;
+  --fg-4: #a1a1aa;
+
+  /* Restrained Tailwind blue-600 accent. */
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.09);
+  --accent-glow: rgba(37, 99, 235, 0.22);
+
+  --success: #0f9b6e;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --info: #2563eb;
+
+  /* Layered soft shadows — Stripe/Linear-style depth. */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md:
+    0 1px 3px rgba(16, 24, 40, 0.05),
+    0 6px 16px rgba(16, 24, 40, 0.06);
+  --shadow-lg:
+    0 4px 6px rgba(16, 24, 40, 0.05),
+    0 12px 28px rgba(16, 24, 40, 0.09);
+  --shadow-xl:
+    0 6px 10px rgba(16, 24, 40, 0.05),
+    0 28px 56px rgba(16, 24, 40, 0.14);
+
+  /* Maker dots: balanced saturation on white. */
+  --maker-anthropic: #cc785c;
+  --maker-openai: #10a37f;
+  --maker-google: #4285f4;
+  --maker-xai: #27272a;
+  --maker-deepseek: #4f46e5;
+  --maker-meta: #0467df;
+  --maker-mistral: #f04e23;
+  --maker-cohere: #d25d00;
+  --maker-default: #2563eb;
+
+  /* Capability label hues: saturated for legibility on light chips. */
+  --cap-text: #52525b;
+  --cap-vision: #0e7c4e;
+  --cap-audio: #b45309;
+  --cap-tool: #2563eb;
+  --cap-reason: #7c3aed;
+  --cap-function: #0284c7;
+  --cap-image-gen: #be185d;
+
+  --ring: 0 0 0 2px var(--bg-1), 0 0 0 4px var(--accent);
+}
+
+/* Light-mode component tweaks. Kept in one place so we don't litter
+ * component CSS files with [data-theme="light"] blocks. */
+:root[data-theme="light"] .v2-hero-title .num {
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .v2-brand-mark {
+  text-shadow: none;
+}
+
+:root[data-theme="light"] body::before {
+  display: none;
+}
+
+/* Chips: flatter, no fake border — rely on soft bg against card white. */
+:root[data-theme="light"] .v2-chip,
+:root[data-theme="light"] .v2-select,
+:root[data-theme="light"] .v2-filters-sort {
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+:root[data-theme="light"] .v2-chip:hover,
+:root[data-theme="light"] .v2-select:hover {
+  background: var(--bg-3);
+}
+
+:root[data-theme="light"] .v2-chip.is-active {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-color: transparent;
+}
+
+/* Buttons in light: subtle gray fill, no border, accent for primary. */
+:root[data-theme="light"] .v2-btn {
+  background: var(--bg-2);
+  border-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .v2-btn:hover:not(:disabled) {
+  background: var(--bg-3);
+  border-color: transparent;
+}
+
+:root[data-theme="light"] .v2-btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .v2-btn-primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+/* Topbar chip controls in light: no hard border, rely on bg + shadow. */
+:root[data-theme="light"] .v2-topbar-chip {
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+:root[data-theme="light"] .v2-topbar-chip:hover {
+  background: var(--bg-3);
+}
+
+:root[data-theme="light"] .v2-topbar-search {
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+:root[data-theme="light"] .v2-topbar-search:hover {
+  background: var(--bg-3);
+}
+
+/* Tables / panels in light: lean on shadow, keep borders invisible. */
+:root[data-theme="light"] .v2-table,
+:root[data-theme="light"] .v2-compare-grid,
+:root[data-theme="light"] .v2-offerings,
+:root[data-theme="light"] .v2-alt {
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .v2-row {
+  border-bottom-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-table-head,
+:root[data-theme="light"] .v2-offer-head,
+:root[data-theme="light"] .v2-compare-label,
+:root[data-theme="light"] .v2-compare-col-head {
+  background: var(--bg-2);
+  border-bottom-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-compare-grid > * {
+  border-bottom-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-offer {
+  border-bottom-color: var(--border-subtle);
+}
+
+/* Hero search in light: pure white, whisper border, strong shadow. */
+:root[data-theme="light"] .v2-hero-search {
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+}
+
+:root[data-theme="light"] .v2-hero-search:focus-within {
+  box-shadow: var(--shadow-lg), 0 0 0 4px var(--accent-soft);
+}
+
+/* Drawer / palette / basket in light: white surface + real shadow. */
+:root[data-theme="light"] .v2-drawer {
+  border-left-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-drawer-scrim {
+  background: rgba(24, 24, 27, 0.35);
+}
+
+:root[data-theme="light"] .v2-palette,
+:root[data-theme="light"] .v2-basket {
+  border-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-basket-chip {
+  background: var(--bg-2);
+  border-color: transparent;
+}
+
+:root[data-theme="light"] .v2-basket-chip:hover {
+  background: var(--bg-3);
+}
+
+/* Capability pills in light: use soft tinted backgrounds. */
+:root[data-theme="light"] .v2-cap {
+  background: var(--bg-2);
+  color: var(--fg-2);
+}
+
+:root[data-theme="light"] .v2-cap-vision {
+  background: rgba(14, 124, 78, 0.1);
+  color: #0e7c4e;
+}
+
+:root[data-theme="light"] .v2-cap-audio {
+  background: rgba(180, 83, 9, 0.1);
+  color: #b45309;
+}
+
+:root[data-theme="light"] .v2-cap-reasoning {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+
+:root[data-theme="light"] .v2-cap-tool_use {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+:root[data-theme="light"] .v2-cap-function_calling {
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+}
+
+:root[data-theme="light"] .v2-cap-image_generation {
+  background: rgba(190, 24, 93, 0.1);
+  color: #be185d;
+}
+
+/* Primary offering row in light: soft tinted highlight instead of deep. */
+:root[data-theme="light"] .v2-offer.is-primary {
+  background: var(--accent-soft);
+  color: var(--fg-0);
+}
+
+/* Selected table row in light: accent-soft tint. */
+:root[data-theme="light"] .v2-row.is-selected {
+  background: var(--accent-soft);
+}
+
+:root[data-theme="light"] .v2-row:hover {
+  background: var(--bg-hover);
+}
+
+/* Offer primary tag: contrasting pill on accent. */
+:root[data-theme="light"] .v2-offer-tag {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Official links strip: soft warm panel. */
+:root[data-theme="light"] .v2-official-links {
+  background: var(--bg-2);
+  border-color: var(--border-subtle);
+}
+
+/* OSS badge in light: green tint. */
+:root[data-theme="light"] .v2-row-oss {
+  background: rgba(15, 155, 110, 0.1);
+  border-color: rgba(15, 155, 110, 0.3);
+  color: #0f9b6e;
+}
+
+/* ─── Base reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  background: var(--bg-0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: var(--bg-glow);
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--fg-0);
+}
+
+kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  min-width: 20px;
+  height: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-medium);
+  color: var(--fg-2);
+  background: var(--bg-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--rad-sm);
+  line-height: 1;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'zero';
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'zero';
+  letter-spacing: -0.01em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--rad-full);
+  border: 2px solid var(--bg-0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--fg-0);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: var(--rad-sm);
+}

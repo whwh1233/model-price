@@ -8,9 +8,11 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
+from api_v2 import router as api_v2_router
 from config import settings
 from models import ModelPricing, ProviderInfo
-from services import PricingService, Fetcher
+from services import PricingService, Fetcher, RefreshScheduler
+from services.entity_store import get_store
 
 # Configure logging from settings
 logging.basicConfig(
@@ -41,14 +43,40 @@ class ModelUpdate(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup and shutdown events."""
-    # Startup: use existing static data for fast cold start
-    # No network calls on startup - user can manually refresh
+    # v1 startup: load cached flat data
     stats = PricingService.get_stats()
-    logger.info(f"Starting up with cached data: {stats['total_models']} models")
+    logger.info(f"v1 cached: {stats['total_models']} models")
     if stats['total_models'] == 0:
-        logger.warning("No cached data available. Use /api/refresh to fetch data.")
+        logger.warning("v1 has no cached data. Use /api/refresh to fetch.")
+
+    # v2 startup: load EntityStore from disk snapshot, falling back to the
+    # Phase 0 fixture if the snapshot is absent. No network on boot.
+    try:
+        get_store().load_from_disk_or_fixture()
+        v2_stats = get_store().stats()
+        logger.info(
+            "v2 cached: %s entities, %s offerings (fixture=%s)",
+            v2_stats.total_entities,
+            v2_stats.total_offerings,
+            v2_stats.fixture,
+        )
+    except Exception as exc:  # pragma: no cover - startup must not crash
+        logger.exception("v2 EntityStore load failed: %s", exc)
+
+    scheduler: Optional[RefreshScheduler] = None
+    if settings.auto_refresh_enabled:
+        scheduler = RefreshScheduler(
+            interval_seconds=settings.auto_refresh_interval_seconds,
+            include_metadata=settings.auto_refresh_include_metadata,
+        )
+        scheduler.start()
+
     yield
+
     # Shutdown
+    if scheduler:
+        await scheduler.stop()
+
     logger.info("Shutting down...")
 
 
@@ -67,6 +95,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(api_v2_router)
 
 
 @app.get("/")

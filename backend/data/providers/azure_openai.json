@@ -1,6 +1,6 @@
 {
   "provider": "azure_openai",
-  "last_updated": "2026-01-19T22:29:05.214227",
+  "last_updated": "2026-02-06T23:07:10.354181",
   "models": [
     {
       "id": "azure_openai:gpt-5.1-codex",
@@ -33,7 +33,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.810795"
+      "last_updated": "2026-02-06T23:07:03.775762"
     },
     {
       "id": "azure_openai:gpt-5",
@@ -71,7 +71,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.811214"
+      "last_updated": "2026-02-06T23:07:03.776104"
     },
     {
       "id": "azure_openai:gpt-4",
@@ -106,7 +106,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.811280"
+      "last_updated": "2026-02-06T23:07:03.776158"
     },
     {
       "id": "azure_openai:gpt-4o-realtime",
@@ -138,7 +138,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.811343"
+      "last_updated": "2026-02-06T23:07:03.776216"
     },
     {
       "id": "azure_openai:gpt-4o-mini-realtime-audio",
@@ -173,7 +173,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-01-19T22:29:00.814642"
+      "last_updated": "2026-02-06T23:07:03.778477"
     },
     {
       "id": "azure_openai:phi-4",
@@ -192,8 +192,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 16384,
+      "max_output_tokens": 16384,
       "is_open_source": true,
       "capabilities": [
         "text"
@@ -204,7 +204,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.814801"
+      "last_updated": "2026-02-06T23:07:03.778549"
     },
     {
       "id": "azure_openai:o4-mini",
@@ -242,7 +242,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.814905"
+      "last_updated": "2026-02-06T23:07:03.778602"
     },
     {
       "id": "azure_openai:phi-3.5",
@@ -261,8 +261,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 128000,
+      "max_output_tokens": 4096,
       "is_open_source": true,
       "capabilities": [
         "text"
@@ -273,7 +273,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.815343"
+      "last_updated": "2026-02-06T23:07:03.778727"
     },
     {
       "id": "azure_openai:gpt-4-turbo",
@@ -308,7 +308,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.815399"
+      "last_updated": "2026-02-06T23:07:03.778766"
     },
     {
       "id": "azure_openai:o1",
@@ -346,7 +346,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.815587"
+      "last_updated": "2026-02-06T23:07:03.778826"
     },
     {
       "id": "azure_openai:gpt-4.1-nano",
@@ -383,7 +383,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.815728"
+      "last_updated": "2026-02-06T23:07:03.778895"
     },
     {
       "id": "azure_openai:gpt-4o-transcribe",
@@ -416,7 +416,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.815827"
+      "last_updated": "2026-02-06T23:07:03.778942"
     },
     {
       "id": "azure_openai:gpt-4o-mini-realtime",
@@ -448,7 +448,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.815922"
+      "last_updated": "2026-02-06T23:07:03.778980"
     },
     {
       "id": "azure_openai:gpt-4o-audio",
@@ -483,7 +483,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-01-19T22:29:00.816419"
+      "last_updated": "2026-02-06T23:07:03.779225"
     },
     {
       "id": "azure_openai:gpt-4o",
@@ -520,7 +520,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.816660"
+      "last_updated": "2026-02-06T23:07:03.779315"
     },
     {
       "id": "azure_openai:o3-pro",
@@ -558,7 +558,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.817065"
+      "last_updated": "2026-02-06T23:07:03.779456"
     },
     {
       "id": "azure_openai:o3-deep-research",
@@ -593,7 +593,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.817295"
+      "last_updated": "2026-02-06T23:07:03.779534"
     },
     {
       "id": "azure_openai:gpt-image-1",
@@ -624,7 +624,7 @@
       "output_modalities": [
         "image"
       ],
-      "last_updated": "2026-01-19T22:29:00.817474"
+      "last_updated": "2026-02-06T23:07:03.779616"
     },
     {
       "id": "azure_openai:gpt-4o-realtime-audio",
@@ -659,7 +659,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-01-19T22:29:00.818008"
+      "last_updated": "2026-02-06T23:07:03.779908"
     },
     {
       "id": "azure_openai:o3",
@@ -697,7 +697,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818153"
+      "last_updated": "2026-02-06T23:07:03.780003"
     },
     {
       "id": "azure_openai:gpt-5-mini",
@@ -735,7 +735,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818275"
+      "last_updated": "2026-02-06T23:07:03.780119"
     },
     {
       "id": "azure_openai:grok-3-mini",
@@ -769,7 +769,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818439"
+      "last_updated": "2026-02-06T23:07:03.780251"
     },
     {
       "id": "azure_openai:command",
@@ -801,7 +801,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818518"
+      "last_updated": "2026-02-06T23:07:03.780317"
     },
     {
       "id": "azure_openai:phi-3",
@@ -820,8 +820,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 128000,
+      "max_output_tokens": 4096,
       "is_open_source": true,
       "capabilities": [
         "text"
@@ -832,7 +832,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818653"
+      "last_updated": "2026-02-06T23:07:03.780426"
     },
     {
       "id": "azure_openai:grok-4.1",
@@ -851,8 +851,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": null,
-      "max_output_tokens": null,
+      "context_length": 2000000.0,
+      "max_output_tokens": 2000000.0,
       "is_open_source": null,
       "capabilities": [
         "text",
@@ -864,7 +864,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818784"
+      "last_updated": "2026-02-06T23:07:03.780538"
     },
     {
       "id": "azure_openai:gpt-5.1",
@@ -902,7 +902,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818835"
+      "last_updated": "2026-02-06T23:07:03.780577"
     },
     {
       "id": "azure_openai:o3-mini",
@@ -937,7 +937,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.818889"
+      "last_updated": "2026-02-06T23:07:03.780625"
     },
     {
       "id": "azure_openai:gpt-5.2-pro",
@@ -975,7 +975,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.819060"
+      "last_updated": "2026-02-06T23:07:03.780763"
     },
     {
       "id": "azure_openai:codex-mini",
@@ -1006,7 +1006,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.819120"
+      "last_updated": "2026-02-06T23:07:03.780860"
     },
     {
       "id": "azure_openai:gpt-5.2-chat",
@@ -1041,7 +1041,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.819166"
+      "last_updated": "2026-02-06T23:07:03.780901"
     },
     {
       "id": "azure_openai:o1-mini",
@@ -1076,7 +1076,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.819370"
+      "last_updated": "2026-02-06T23:07:03.781074"
     },
     {
       "id": "azure_openai:kimi-k2",
@@ -1109,7 +1109,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.819601"
+      "last_updated": "2026-02-06T23:07:03.781258"
     },
     {
       "id": "azure_openai:gpt-image-1.5",
@@ -1140,7 +1140,7 @@
       "output_modalities": [
         "image"
       ],
-      "last_updated": "2026-01-19T22:29:00.819660"
+      "last_updated": "2026-02-06T23:07:03.781298"
     },
     {
       "id": "azure_openai:llama-3.3-70b",
@@ -1159,8 +1159,8 @@
         "embedding": null
       },
       "batch_pricing": null,
-      "context_length": 4096,
-      "max_output_tokens": 4096,
+      "context_length": 8192,
+      "max_output_tokens": 8192,
       "is_open_source": true,
       "capabilities": [
         "text",
@@ -1172,7 +1172,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.820219"
+      "last_updated": "2026-02-06T23:07:03.781740"
     },
     {
       "id": "azure_openai:grok-3",
@@ -1206,7 +1206,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.820658"
+      "last_updated": "2026-02-06T23:07:03.782010"
     },
     {
       "id": "azure_openai:gpt-5-nano",
@@ -1242,7 +1242,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.820807"
+      "last_updated": "2026-02-06T23:07:03.782205"
     },
     {
       "id": "azure_openai:llama-4-maverick",
@@ -1276,7 +1276,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.821315"
+      "last_updated": "2026-02-06T23:07:03.782502"
     },
     {
       "id": "azure_openai:gpt-4.1",
@@ -1313,7 +1313,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.821860"
+      "last_updated": "2026-02-06T23:07:03.782645"
     },
     {
       "id": "azure_openai:grok-4",
@@ -1345,7 +1345,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.822015"
+      "last_updated": "2026-02-06T23:07:03.782710"
     },
     {
       "id": "azure_openai:gpt-4.1-mini",
@@ -1382,7 +1382,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.822189"
+      "last_updated": "2026-02-06T23:07:03.782810"
     },
     {
       "id": "azure_openai:gpt-5-pro",
@@ -1420,7 +1420,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.822837"
+      "last_updated": "2026-02-06T23:07:03.783153"
     },
     {
       "id": "azure_openai:gpt-5.2",
@@ -1458,7 +1458,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.823122"
+      "last_updated": "2026-02-06T23:07:03.783297"
     },
     {
       "id": "azure_openai:grok-4-fast",
@@ -1490,7 +1490,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.824657"
+      "last_updated": "2026-02-06T23:07:03.784204"
     },
     {
       "id": "azure_openai:o1-pro",
@@ -1525,7 +1525,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.824789"
+      "last_updated": "2026-02-06T23:07:03.784306"
     },
     {
       "id": "azure_openai:gpt-4o-mini",
@@ -1562,7 +1562,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.825936"
+      "last_updated": "2026-02-06T23:07:03.785143"
     },
     {
       "id": "azure_openai:computer-use-preview",
@@ -1593,7 +1593,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.826008"
+      "last_updated": "2026-02-06T23:07:03.785196"
     },
     {
       "id": "azure_openai:gpt-4o-mini-transcribe",
@@ -1626,7 +1626,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.828523"
+      "last_updated": "2026-02-06T23:07:03.787146"
     },
     {
       "id": "azure_openai:gpt-4o-mini-audio",
@@ -1661,7 +1661,7 @@
         "text",
         "audio"
       ],
-      "last_updated": "2026-01-19T22:29:00.836998"
+      "last_updated": "2026-02-06T23:07:03.790876"
     },
     {
       "id": "azure_openai:gpt-4-turbo-vision",
@@ -1695,7 +1695,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.838380"
+      "last_updated": "2026-02-06T23:07:03.791935"
     },
     {
       "id": "azure_openai:gpt-5-codex",
@@ -1728,7 +1728,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:00.838506"
+      "last_updated": "2026-02-06T23:07:03.792035"
     },
     {
       "id": "azure_openai:o1-preview",
@@ -1763,7 +1763,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:01.220291"
+      "last_updated": "2026-02-06T23:07:04.282666"
     },
     {
       "id": "azure_openai:babbage-002",
@@ -1794,7 +1794,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:01.576475"
+      "last_updated": "2026-02-06T23:07:04.835229"
     },
     {
       "id": "azure_openai:gpt-3.5-turbo",
@@ -1829,7 +1829,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:02.414380"
+      "last_updated": "2026-02-06T23:07:05.876535"
     },
     {
       "id": "azure_openai:gpt-4-32k",
@@ -1861,7 +1861,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:02.788345"
+      "last_updated": "2026-02-06T23:07:06.302163"
     },
     {
       "id": "azure_openai:davinci-002",
@@ -1892,7 +1892,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:04.463778"
+      "last_updated": "2026-02-06T23:07:08.999380"
     },
     {
       "id": "azure_openai:gpt-3.5-turbo-instruct",
@@ -1924,7 +1924,7 @@
       "output_modalities": [
         "text"
       ],
-      "last_updated": "2026-01-19T22:29:05.214227"
+      "last_updated": "2026-02-06T23:07:10.354181"
     }
   ]
 }

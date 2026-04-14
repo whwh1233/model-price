@@ -1,0 +1,117 @@
+.v2-basket {
+  position: fixed;
+  bottom: var(--sp-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--rad-full);
+  box-shadow: var(--shadow-lg);
+  z-index: 25;
+  animation: v2-basket-in var(--dur-slow) var(--ease-out);
+  max-width: min(calc(100vw - var(--sp-6)), 960px);
+}
+
+@keyframes v2-basket-in {
+  from {
+    transform: translate(-50%, 16px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.v2-basket-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--text-xs);
+  color: var(--fg-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.v2-basket-count {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  min-width: 36px;
+  height: 22px;
+  padding: 0 var(--sp-2);
+  background: var(--accent);
+  color: var(--bg-0);
+  border-radius: var(--rad-full);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.v2-basket-max {
+  font-size: var(--text-2xs);
+  font-weight: var(--fw-regular);
+  opacity: 0.7;
+  margin-left: 1px;
+}
+
+.v2-basket-chips {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  max-width: 460px;
+}
+
+.v2-basket-chips::-webkit-scrollbar {
+  height: 4px;
+}
+
+.v2-basket-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px var(--sp-3);
+  background: var(--bg-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--rad-full);
+  color: var(--fg-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  white-space: nowrap;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.v2-basket-chip:hover {
+  background: var(--bg-4);
+  color: var(--fg-0);
+  border-color: var(--border-strong);
+}
+
+.v2-basket-chip-x {
+  color: var(--fg-3);
+}
+
+.v2-basket-chip:hover .v2-basket-chip-x {
+  color: var(--danger);
+}
+
+.v2-basket-actions {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+@media (max-width: 720px) {
+  .v2-basket {
+    left: var(--sp-3);
+    right: var(--sp-3);
+    transform: none;
+    border-radius: var(--rad-lg);
+  }
+  .v2-basket-chips {
+    max-width: 100%;
+  }
+}

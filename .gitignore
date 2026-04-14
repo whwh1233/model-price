@@ -11,6 +11,7 @@ __pycache__/
 
 # Data files - only ignore cache, keep JSON data
 backend/data/__pycache__/
+backend/data/v2/cache/
 
 # IDE
 .idea/
@@ -29,3 +30,6 @@ dist/
 # Claude settings (local only)
 .claude/
 CLAUDE.md
+
+# Git worktrees (isolated dev workspaces)
+.worktrees/

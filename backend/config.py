@@ -61,6 +61,11 @@ class Settings(BaseSettings):
     scraper_wait_timeout: int = 2000  # milliseconds
     gemini_scraper_wait_timeout: int = 3000  # milliseconds
 
+    # Background refresh scheduler
+    auto_refresh_enabled: bool = True
+    auto_refresh_interval_seconds: int = 3600
+    auto_refresh_include_metadata: bool = True
+
 
 @lru_cache
 def get_settings() -> Settings:
