@@ -235,15 +235,55 @@ def slugify(raw: str) -> str:
     return s
 
 
+_VARIANT_TAGS = (
+    "-instruct",
+    "-rlhf",
+    "-fp8",
+    "-fp16",
+    "-bf16",
+    "-int8",
+    "-int4",
+    "-128e",
+    "-64e",
+    "-32e",
+    "-16e",
+    "-8e",
+    "-latest",
+    "-preview",
+    "-experimental",
+    "-exp",
+)
+# -chat / -base are NOT stripped: they are legitimate product names
+# (deepseek-chat, qwen-base) rather than packaging variants.
+
+
 def strip_version_suffix(slug: str) -> str:
-    """Strip common provider version suffixes from a slug."""
-    # v1:0, v1-0, -v1, -v2, -v3
-    s = re.sub(r"-v\d+([-:]\d+)?$", "", slug)
-    # date suffix like -20250929 or -2024-11-20
-    s = re.sub(r"-\d{8}$", "", s)
-    s = re.sub(r"-\d{4}-\d{2}-\d{2}$", "", s)
-    # latest tag
-    s = re.sub(r"-latest$", "", s)
+    """Strip provider/version/variant suffixes that do NOT carry identity.
+
+    Conservative about version markers in model names: we don't strip
+    bare "-v\\d+" (would break "deepseek-v3"), but we do strip Bedrock
+    style "-v1:0" / "-v1-0", 8-digit date stamps, and a whitelist of
+    variant / quantization tags that simply describe how the same
+    logical model is packaged (instruct / fp8 / 128e experts / preview).
+
+    Applied iteratively so chained suffixes collapse in one pass:
+    llama-4-maverick-17b-128e-instruct-v1-0 → llama-4-maverick-17b
+    """
+    s = slug
+    prev = None
+    while s != prev:
+        prev = s
+        # Bedrock / Azure style: "-v1:0" or "-v1-0"
+        s = re.sub(r"-v\d+[-:]\d+$", "", s)
+        # 8-digit date: -20250929
+        s = re.sub(r"-\d{8}$", "", s)
+        # YYYY-MM-DD
+        s = re.sub(r"-\d{4}-\d{2}-\d{2}$", "", s)
+        # Variant tags
+        for tag in _VARIANT_TAGS:
+            if s.endswith(tag):
+                s = s[: -len(tag)]
+                break
     return s
 
 

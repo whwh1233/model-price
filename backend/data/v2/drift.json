@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-14T17:36:57.031429",
+  "generated_at": "2026-04-14T17:53:06.725626",
   "counts": {
-    "entities_total": 604,
-    "entities_new": 243,
-    "entities_removed": 176,
-    "offerings_total": 701,
-    "unmatched_provider_models": 241,
-    "orphan_entities": 194,
-    "price_drift_items": 103
+    "entities_total": 650,
+    "entities_new": 6,
+    "entities_removed": 2,
+    "offerings_total": 755,
+    "unmatched_provider_models": 293,
+    "orphan_entities": 192,
+    "price_drift_items": 110
   },
   "unmatched_provider_models": [
     {
@@ -53,6 +53,13 @@
       "model_id": "nemotron-nano-3-30b",
       "tried_aliases": [
         "nemotron-nano-3-30b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "gpt-oss-120b",
+      "tried_aliases": [
+        "gpt-oss-120b"
       ]
     },
     {
@@ -104,6 +111,20 @@
     },
     {
       "provider": "aws_bedrock",
+      "model_id": "qwen3-32b",
+      "tried_aliases": [
+        "qwen3-32b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "llama-3.2-3b",
+      "tried_aliases": [
+        "llama-3.2-3b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
       "model_id": "nova-canvas",
       "tried_aliases": [
         "nova-canvas"
@@ -141,10 +162,23 @@
     },
     {
       "provider": "aws_bedrock",
+      "model_id": "gpt-oss-20b",
+      "tried_aliases": [
+        "gpt-oss-20b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
       "model_id": "llama-3.1-70b",
       "tried_aliases": [
-        "llama-3.1-70b",
-        "llama-3-1-70b"
+        "llama-3.1-70b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "nova-premier",
+      "tried_aliases": [
+        "nova-premier"
       ]
     },
     {
@@ -161,6 +195,13 @@
       "tried_aliases": [
         "ministral-14b-3.0",
         "ministral-14b-3-0"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "nova-pro",
+      "tried_aliases": [
+        "nova-pro"
       ]
     },
     {
@@ -194,6 +235,13 @@
     },
     {
       "provider": "aws_bedrock",
+      "model_id": "nova-lite",
+      "tried_aliases": [
+        "nova-lite"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
       "model_id": "nvidia-nemotron-3-super-120b-a12b",
       "tried_aliases": [
         "nvidia-nemotron-3-super-120b-a12b"
@@ -212,6 +260,13 @@
       "model_id": "qwen3-coder-30b-a3b",
       "tried_aliases": [
         "qwen3-coder-30b-a3b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "nova-micro",
+      "tried_aliases": [
+        "nova-micro"
       ]
     },
     {
@@ -253,9 +308,30 @@
     },
     {
       "provider": "aws_bedrock",
+      "model_id": "mixtral-8x7b",
+      "tried_aliases": [
+        "mixtral-8x7b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
       "model_id": "nvidia-nemotron-nano-2-vl",
       "tried_aliases": [
         "nvidia-nemotron-nano-2-vl"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "llama-3.1-8b",
+      "tried_aliases": [
+        "llama-3.1-8b"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "mistral-7b",
+      "tried_aliases": [
+        "mistral-7b"
       ]
     },
     {
@@ -271,6 +347,13 @@
       "tried_aliases": [
         "pixtral-large-25.02",
         "pixtral-large-25-02"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "claude-3-sonnet",
+      "tried_aliases": [
+        "claude-3-sonnet"
       ]
     },
     {
@@ -296,6 +379,21 @@
     },
     {
       "provider": "aws_bedrock",
+      "model_id": "claude-3.5-sonnet-v2",
+      "tried_aliases": [
+        "claude-3.5-sonnet-v2",
+        "claude-3-5-sonnet-v2"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "claude-3.5-sonnet",
+      "tried_aliases": [
+        "claude-3.5-sonnet"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
       "model_id": "meta-llama-2-chat-13b",
       "tried_aliases": [
         "meta-llama-2-chat-13b"
@@ -307,6 +405,13 @@
       "tried_aliases": [
         "twelvelabs-marengo-embed-3.0",
         "twelvelabs-marengo-embed-3-0"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "twelvelabs-pegasus-1.2",
+      "tried_aliases": [
+        "twelvelabs-pegasus-1.2"
       ]
     },
     {
@@ -372,6 +477,20 @@
     },
     {
       "provider": "aws_bedrock",
+      "model_id": "claude-3.5-haiku",
+      "tried_aliases": [
+        "claude-3.5-haiku"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
+      "model_id": "twelvelabs-marengo-embed-2.7",
+      "tried_aliases": [
+        "twelvelabs-marengo-embed-2.7"
+      ]
+    },
+    {
+      "provider": "aws_bedrock",
       "model_id": "jurassic-2-ultra",
       "tried_aliases": [
         "jurassic-2-ultra"
@@ -409,10 +528,24 @@
       ]
     },
     {
+      "provider": "aws_bedrock",
+      "model_id": "jamba-instruct",
+      "tried_aliases": [
+        "jamba-instruct"
+      ]
+    },
+    {
       "provider": "azure_openai",
       "model_id": "gpt-4o-mini-realtime-audio",
       "tried_aliases": [
         "gpt-4o-mini-realtime-audio"
+      ]
+    },
+    {
+      "provider": "azure_openai",
+      "model_id": "phi-4",
+      "tried_aliases": [
+        "phi-4"
       ]
     },
     {
@@ -439,9 +572,30 @@
     },
     {
       "provider": "azure_openai",
+      "model_id": "o1-mini",
+      "tried_aliases": [
+        "o1-mini"
+      ]
+    },
+    {
+      "provider": "azure_openai",
+      "model_id": "computer-use-preview",
+      "tried_aliases": [
+        "computer-use-preview"
+      ]
+    },
+    {
+      "provider": "azure_openai",
       "model_id": "gpt-4-turbo-vision",
       "tried_aliases": [
         "gpt-4-turbo-vision"
+      ]
+    },
+    {
+      "provider": "azure_openai",
+      "model_id": "gpt-4-32k",
+      "tried_aliases": [
+        "gpt-4-32k"
       ]
     },
     {
@@ -499,6 +653,13 @@
       "tried_aliases": [
         "openrouter/elephant-alpha",
         "elephant-alpha"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "anthropic/claude-opus-4.6-fast",
+      "tried_aliases": [
+        "anthropic/claude-opus-4.6-fast"
       ]
     },
     {
@@ -574,8 +735,7 @@
       "model_id": "kwaipilot/kat-coder-pro-v2",
       "tried_aliases": [
         "kwaipilot/kat-coder-pro-v2",
-        "kat-coder-pro-v2",
-        "kat-coder-pro"
+        "kat-coder-pro-v2"
       ]
     },
     {
@@ -858,6 +1018,7 @@
       "tried_aliases": [
         "allenai/olmo-3.1-32b-instruct",
         "olmo-3-1-32b-instruct",
+        "olmo-3-1-32b",
         "olmo-3.1-32b-instruct"
       ]
     },
@@ -943,7 +1104,8 @@
       "model_id": "essentialai/rnj-1-instruct",
       "tried_aliases": [
         "essentialai/rnj-1-instruct",
-        "rnj-1-instruct"
+        "rnj-1-instruct",
+        "rnj-1"
       ]
     },
     {
@@ -959,8 +1121,7 @@
       "model_id": "amazon/nova-2-lite-v1",
       "tried_aliases": [
         "amazon/nova-2-lite-v1",
-        "nova-2-lite-v1",
-        "nova-2-lite"
+        "nova-2-lite-v1"
       ]
     },
     {
@@ -997,6 +1158,13 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "deepseek/deepseek-v3.2-speciale",
+      "tried_aliases": [
+        "deepseek/deepseek-v3.2-speciale"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "prime-intellect/intellect-3",
       "tried_aliases": [
         "prime-intellect/intellect-3",
@@ -1018,6 +1186,13 @@
         "deepcogito/cogito-v2.1-671b",
         "cogito-v2-1-671b",
         "cogito-v2.1-671b"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "amazon/nova-premier-v1",
+      "tried_aliases": [
+        "amazon/nova-premier-v1"
       ]
     },
     {
@@ -1090,8 +1265,7 @@
       "provider": "openrouter",
       "model_id": "qwen/qwen3-vl-8b-instruct",
       "tried_aliases": [
-        "qwen/qwen3-vl-8b-instruct",
-        "qwen3-vl-8b-instruct"
+        "qwen/qwen3-vl-8b-instruct"
       ]
     },
     {
@@ -1134,16 +1308,8 @@
       "model_id": "qwen/qwen3-vl-30b-a3b-instruct",
       "tried_aliases": [
         "qwen/qwen3-vl-30b-a3b-instruct",
-        "qwen3-vl-30b-a3b-instruct"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "deepseek/deepseek-v3.2-exp",
-      "tried_aliases": [
-        "deepseek/deepseek-v3.2-exp",
-        "deepseek-v3-2-exp",
-        "deepseek-v3.2-exp"
+        "qwen3-vl-30b-a3b-instruct",
+        "qwen3-vl-30b-a3b"
       ]
     },
     {
@@ -1213,8 +1379,7 @@
       "model_id": "nvidia/nemotron-nano-9b-v2",
       "tried_aliases": [
         "nvidia/nemotron-nano-9b-v2",
-        "nemotron-nano-9b-v2",
-        "nemotron-nano-9b"
+        "nemotron-nano-9b-v2"
       ]
     },
     {
@@ -1270,6 +1435,13 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "openai/gpt-oss-120b",
+      "tried_aliases": [
+        "openai/gpt-oss-120b"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "openai/gpt-oss-20b:free",
       "tried_aliases": [
         "openai/gpt-oss-20b:free",
@@ -1279,10 +1451,18 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "openai/gpt-oss-20b",
+      "tried_aliases": [
+        "openai/gpt-oss-20b"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "qwen/qwen3-coder-30b-a3b-instruct",
       "tried_aliases": [
         "qwen/qwen3-coder-30b-a3b-instruct",
-        "qwen3-coder-30b-a3b-instruct"
+        "qwen3-coder-30b-a3b-instruct",
+        "qwen3-coder-30b-a3b"
       ]
     },
     {
@@ -1367,7 +1547,8 @@
       "model_id": "tencent/hunyuan-a13b-instruct",
       "tried_aliases": [
         "tencent/hunyuan-a13b-instruct",
-        "hunyuan-a13b-instruct"
+        "hunyuan-a13b-instruct",
+        "hunyuan-a13b"
       ]
     },
     {
@@ -1376,6 +1557,20 @@
       "tried_aliases": [
         "tngtech/deepseek-r1t2-chimera",
         "deepseek-r1t2-chimera"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "morph/morph-v3-large",
+      "tried_aliases": [
+        "morph/morph-v3-large"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "morph/morph-v3-fast",
+      "tried_aliases": [
+        "morph/morph-v3-fast"
       ]
     },
     {
@@ -1410,6 +1605,7 @@
       "tried_aliases": [
         "mistralai/mistral-small-3.2-24b-instruct",
         "mistral-small-3-2-24b-instruct",
+        "mistral-small-3-2-24b",
         "mistral-small-3.2-24b-instruct"
       ]
     },
@@ -1419,6 +1615,13 @@
       "tried_aliases": [
         "minimax/minimax-m1",
         "minimax-m1"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "deepseek/deepseek-r1-0528",
+      "tried_aliases": [
+        "deepseek/deepseek-r1-0528"
       ]
     },
     {
@@ -1436,6 +1639,13 @@
       "tried_aliases": [
         "google/gemma-3n-e4b-it",
         "gemma-3n-e4b-it"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "mistralai/mistral-medium-3",
+      "tried_aliases": [
+        "mistralai/mistral-medium-3"
       ]
     },
     {
@@ -1497,10 +1707,24 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "qwen/qwen3-8b",
+      "tried_aliases": [
+        "qwen/qwen3-8b"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "qwen/qwen3-14b",
       "tried_aliases": [
         "qwen/qwen3-14b",
         "qwen3-14b"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "qwen/qwen3-32b",
+      "tried_aliases": [
+        "qwen/qwen3-32b"
       ]
     },
     {
@@ -1533,6 +1757,7 @@
       "tried_aliases": [
         "qwen/qwen2.5-vl-32b-instruct",
         "qwen2-5-vl-32b-instruct",
+        "qwen2-5-vl-32b",
         "qwen2.5-vl-32b-instruct"
       ]
     },
@@ -1542,6 +1767,7 @@
       "tried_aliases": [
         "mistralai/mistral-small-3.1-24b-instruct",
         "mistral-small-3-1-24b-instruct",
+        "mistral-small-3-1-24b",
         "mistral-small-3.1-24b-instruct"
       ]
     },
@@ -1550,7 +1776,8 @@
       "model_id": "allenai/olmo-2-0325-32b-instruct",
       "tried_aliases": [
         "allenai/olmo-2-0325-32b-instruct",
-        "olmo-2-0325-32b-instruct"
+        "olmo-2-0325-32b-instruct",
+        "olmo-2-0325-32b"
       ]
     },
     {
@@ -1609,8 +1836,35 @@
       "model_id": "thedrummer/skyfall-36b-v2",
       "tried_aliases": [
         "thedrummer/skyfall-36b-v2",
-        "skyfall-36b-v2",
-        "skyfall-36b"
+        "skyfall-36b-v2"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "perplexity/sonar-reasoning-pro",
+      "tried_aliases": [
+        "perplexity/sonar-reasoning-pro"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "perplexity/sonar-pro",
+      "tried_aliases": [
+        "perplexity/sonar-pro"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "perplexity/sonar-deep-research",
+      "tried_aliases": [
+        "perplexity/sonar-deep-research"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "qwen/qwq-32b",
+      "tried_aliases": [
+        "qwen/qwq-32b"
       ]
     },
     {
@@ -1691,6 +1945,13 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "qwen/qwen2.5-vl-72b-instruct",
+      "tried_aliases": [
+        "qwen/qwen2.5-vl-72b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "mistralai/mistral-small-24b-instruct-2501",
       "tried_aliases": [
         "mistralai/mistral-small-24b-instruct-2501",
@@ -1707,10 +1968,31 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "perplexity/sonar",
+      "tried_aliases": [
+        "perplexity/sonar"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "deepseek/deepseek-r1-distill-llama-70b",
+      "tried_aliases": [
+        "deepseek/deepseek-r1-distill-llama-70b"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "minimax/minimax-01",
       "tried_aliases": [
         "minimax/minimax-01",
         "minimax-01"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "microsoft/phi-4",
+      "tried_aliases": [
+        "microsoft/phi-4"
       ]
     },
     {
@@ -1742,10 +2024,32 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "amazon/nova-lite-v1",
+      "tried_aliases": [
+        "amazon/nova-lite-v1"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "amazon/nova-micro-v1",
+      "tried_aliases": [
+        "amazon/nova-micro-v1"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "amazon/nova-pro-v1",
+      "tried_aliases": [
+        "amazon/nova-pro-v1"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "qwen/qwen-2.5-coder-32b-instruct",
       "tried_aliases": [
         "qwen/qwen-2.5-coder-32b-instruct",
         "qwen-2-5-coder-32b-instruct",
+        "qwen-2-5-coder-32b",
         "qwen-2.5-coder-32b-instruct"
       ]
     },
@@ -1755,6 +2059,13 @@
       "tried_aliases": [
         "thedrummer/unslopnemo-12b",
         "unslopnemo-12b"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "anthropic/claude-3.5-haiku",
+      "tried_aliases": [
+        "anthropic/claude-3.5-haiku"
       ]
     },
     {
@@ -1771,6 +2082,7 @@
       "tried_aliases": [
         "qwen/qwen-2.5-7b-instruct",
         "qwen-2-5-7b-instruct",
+        "qwen-2-5-7b",
         "qwen-2.5-7b-instruct"
       ]
     },
@@ -1780,6 +2092,7 @@
       "tried_aliases": [
         "nvidia/llama-3.1-nemotron-70b-instruct",
         "llama-3-1-nemotron-70b-instruct",
+        "llama-3-1-nemotron-70b",
         "llama-3.1-nemotron-70b-instruct"
       ]
     },
@@ -1813,7 +2126,15 @@
       "tried_aliases": [
         "meta-llama/llama-3.2-1b-instruct",
         "llama-3-2-1b-instruct",
+        "llama-3-2-1b",
         "llama-3.2-1b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "meta-llama/llama-3.2-11b-vision-instruct",
+      "tried_aliases": [
+        "meta-llama/llama-3.2-11b-vision-instruct"
       ]
     },
     {
@@ -1829,9 +2150,7 @@
       "provider": "openrouter",
       "model_id": "meta-llama/llama-3.2-3b-instruct",
       "tried_aliases": [
-        "meta-llama/llama-3.2-3b-instruct",
-        "llama-3-2-3b-instruct",
-        "llama-3.2-3b-instruct"
+        "meta-llama/llama-3.2-3b-instruct"
       ]
     },
     {
@@ -1840,6 +2159,7 @@
       "tried_aliases": [
         "qwen/qwen-2.5-72b-instruct",
         "qwen-2-5-72b-instruct",
+        "qwen-2-5-72b",
         "qwen-2.5-72b-instruct"
       ]
     },
@@ -1889,6 +2209,27 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "meta-llama/llama-3.1-8b-instruct",
+      "tried_aliases": [
+        "meta-llama/llama-3.1-8b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "meta-llama/llama-3.1-70b-instruct",
+      "tried_aliases": [
+        "meta-llama/llama-3.1-70b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "mistralai/mistral-nemo",
+      "tried_aliases": [
+        "mistralai/mistral-nemo"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "sao10k/l3-euryale-70b",
       "tried_aliases": [
         "sao10k/l3-euryale-70b",
@@ -1917,7 +2258,8 @@
       "model_id": "meta-llama/llama-3-8b-instruct",
       "tried_aliases": [
         "meta-llama/llama-3-8b-instruct",
-        "llama-3-8b-instruct"
+        "llama-3-8b-instruct",
+        "llama-3-8b"
       ]
     },
     {
@@ -1925,7 +2267,15 @@
       "model_id": "meta-llama/llama-3-70b-instruct",
       "tried_aliases": [
         "meta-llama/llama-3-70b-instruct",
-        "llama-3-70b-instruct"
+        "llama-3-70b-instruct",
+        "llama-3-70b"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "mistralai/mixtral-8x22b-instruct",
+      "tried_aliases": [
+        "mistralai/mixtral-8x22b-instruct"
       ]
     },
     {
@@ -1938,10 +2288,31 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "openai/gpt-3.5-turbo-0613",
+      "tried_aliases": [
+        "openai/gpt-3.5-turbo-0613"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "mistralai/mixtral-8x7b-instruct",
+      "tried_aliases": [
+        "mistralai/mixtral-8x7b-instruct"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "alpindale/goliath-120b",
       "tried_aliases": [
         "alpindale/goliath-120b",
         "goliath-120b"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "mistralai/mistral-7b-instruct-v0.1",
+      "tried_aliases": [
+        "mistralai/mistral-7b-instruct-v0.1"
       ]
     },
     {
@@ -1973,7 +2344,8 @@
       "model_id": "gemini-robotics-er-1.6-preview",
       "tried_aliases": [
         "gemini-robotics-er-1.6-preview",
-        "gemini-robotics-er-1-6-preview"
+        "gemini-robotics-er-1-6-preview",
+        "gemini-robotics-er-1-6"
       ]
     },
     {
@@ -2002,12 +2374,20 @@
       "delta_pct": 25.0
     },
     {
-      "entity": "chatgpt-image",
+      "entity": "chatgpt-4o",
       "provider": "openai",
       "field": "input",
       "provider_value": 5.3,
       "litellm_value": 5.0,
       "delta_pct": 6.0
+    },
+    {
+      "entity": "chatgpt-4o",
+      "provider": "openai",
+      "field": "output",
+      "provider_value": 0.175,
+      "litellm_value": 15.0,
+      "delta_pct": -98.83
     },
     {
       "entity": "claude-opus-4",
@@ -2091,27 +2471,19 @@
     },
     {
       "entity": "deepseek",
-      "provider": "aws_bedrock",
+      "provider": "openrouter",
       "field": "input",
-      "provider_value": 0.62,
-      "litellm_value": 0.27,
-      "delta_pct": 129.63
-    },
-    {
-      "entity": "deepseek",
-      "provider": "aws_bedrock",
-      "field": "output",
-      "provider_value": 1.85,
-      "litellm_value": 1.1,
-      "delta_pct": 68.18
+      "provider_value": 0.26,
+      "litellm_value": 0.28,
+      "delta_pct": -7.14
     },
     {
       "entity": "deepseek",
       "provider": "openrouter",
       "field": "output",
       "provider_value": 0.38,
-      "litellm_value": 1.1,
-      "delta_pct": -65.45
+      "litellm_value": 0.4,
+      "delta_pct": -5.0
     },
     {
       "entity": "deepseek-chat",
@@ -2194,6 +2566,22 @@
       "delta_pct": 14.16
     },
     {
+      "entity": "deepseek-v3",
+      "provider": "aws_bedrock",
+      "field": "input",
+      "provider_value": 0.62,
+      "litellm_value": 0.27,
+      "delta_pct": 129.63
+    },
+    {
+      "entity": "deepseek-v3",
+      "provider": "aws_bedrock",
+      "field": "output",
+      "provider_value": 1.85,
+      "litellm_value": 1.1,
+      "delta_pct": 68.18
+    },
+    {
       "entity": "gemini-2-0-flash-001",
       "provider": "openrouter",
       "field": "input",
@@ -2264,14 +2652,6 @@
       "provider_value": 20.0,
       "litellm_value": 10.0,
       "delta_pct": 100.0
-    },
-    {
-      "entity": "gemini-embedding-2-preview",
-      "provider": "google_gemini",
-      "field": "input",
-      "provider_value": 0.15,
-      "litellm_value": 0.2,
-      "delta_pct": -25.0
     },
     {
       "entity": "gemini-gemma-2-27b-it",
@@ -2370,6 +2750,38 @@
       "delta_pct": 166.67
     },
     {
+      "entity": "gpt-3-5-turbo",
+      "provider": "azure_openai",
+      "field": "input",
+      "provider_value": 1.5,
+      "litellm_value": 0.5,
+      "delta_pct": 200.0
+    },
+    {
+      "entity": "gpt-3-5-turbo",
+      "provider": "azure_openai",
+      "field": "output",
+      "provider_value": 2.0,
+      "litellm_value": 1.5,
+      "delta_pct": 33.33
+    },
+    {
+      "entity": "gpt-3-5-turbo",
+      "provider": "openrouter",
+      "field": "input",
+      "provider_value": 1.5,
+      "litellm_value": 0.5,
+      "delta_pct": 200.0
+    },
+    {
+      "entity": "gpt-3-5-turbo",
+      "provider": "openrouter",
+      "field": "output",
+      "provider_value": 2.0,
+      "litellm_value": 1.5,
+      "delta_pct": 33.33
+    },
+    {
       "entity": "gpt-4o",
       "provider": "openrouter",
       "field": "input",
@@ -2386,7 +2798,7 @@
       "delta_pct": 50.0
     },
     {
-      "entity": "gpt-4o-audio-preview",
+      "entity": "gpt-4o-audio",
       "provider": "azure_openai",
       "field": "input",
       "provider_value": 0.6,
@@ -2394,7 +2806,7 @@
       "delta_pct": -76.0
     },
     {
-      "entity": "gpt-4o-audio-preview",
+      "entity": "gpt-4o-audio",
       "provider": "azure_openai",
       "field": "output",
       "provider_value": 80.0,
@@ -2402,7 +2814,7 @@
       "delta_pct": 700.0
     },
     {
-      "entity": "gpt-4o-mini-audio-preview",
+      "entity": "gpt-4o-mini-audio",
       "provider": "azure_openai",
       "field": "output",
       "provider_value": 20.0,
@@ -2416,6 +2828,22 @@
       "provider_value": 5.0,
       "litellm_value": 10.0,
       "delta_pct": -50.0
+    },
+    {
+      "entity": "gpt-5-codex",
+      "provider": "openai",
+      "field": "input",
+      "provider_value": 5.3,
+      "litellm_value": 1.25,
+      "delta_pct": 324.0
+    },
+    {
+      "entity": "gpt-5-codex",
+      "provider": "openai",
+      "field": "output",
+      "provider_value": 0.175,
+      "litellm_value": 10.0,
+      "delta_pct": -98.25
     },
     {
       "entity": "gpt-image-1",
@@ -2474,7 +2902,7 @@
       "delta_pct": -60.0
     },
     {
-      "entity": "kimi-k2-0905-preview",
+      "entity": "kimi-k2-0905",
       "provider": "openrouter",
       "field": "input",
       "provider_value": 0.4,
@@ -2482,28 +2910,12 @@
       "delta_pct": -33.33
     },
     {
-      "entity": "kimi-k2-0905-preview",
+      "entity": "kimi-k2-0905",
       "provider": "openrouter",
       "field": "output",
       "provider_value": 2.0,
       "litellm_value": 2.5,
       "delta_pct": -20.0
-    },
-    {
-      "entity": "kimi-k2-0905-preview",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.57,
-      "litellm_value": 0.6,
-      "delta_pct": -5.0
-    },
-    {
-      "entity": "kimi-k2-0905-preview",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 2.3,
-      "litellm_value": 2.5,
-      "delta_pct": -8.0
     },
     {
       "entity": "kimi-k2-5",
@@ -2520,6 +2932,22 @@
       "provider_value": 1.72,
       "litellm_value": 3.0,
       "delta_pct": -42.67
+    },
+    {
+      "entity": "kimi-k2-thinking",
+      "provider": "openrouter",
+      "field": "input",
+      "provider_value": 0.57,
+      "litellm_value": 0.6,
+      "delta_pct": -5.0
+    },
+    {
+      "entity": "kimi-k2-thinking",
+      "provider": "openrouter",
+      "field": "output",
+      "provider_value": 2.3,
+      "litellm_value": 2.5,
+      "delta_pct": -8.0
     },
     {
       "entity": "minimax-m2",
@@ -2706,7 +3134,7 @@
       "delta_pct": -35.0
     },
     {
-      "entity": "qwen3-next-80b-a3b-instruct",
+      "entity": "qwen3-next-80b-a3b",
       "provider": "aws_bedrock",
       "field": "input",
       "provider_value": 0.14,
@@ -2714,7 +3142,7 @@
       "delta_pct": -6.67
     },
     {
-      "entity": "qwen3-next-80b-a3b-instruct",
+      "entity": "qwen3-next-80b-a3b",
       "provider": "openrouter",
       "field": "input",
       "provider_value": 0.09,
@@ -2722,7 +3150,7 @@
       "delta_pct": -40.0
     },
     {
-      "entity": "qwen3-next-80b-a3b-instruct",
+      "entity": "qwen3-next-80b-a3b",
       "provider": "openrouter",
       "field": "output",
       "provider_value": 1.1,
@@ -2746,7 +3174,7 @@
       "delta_pct": -35.0
     },
     {
-      "entity": "qwen3-vl-235b-a22b-instruct",
+      "entity": "qwen3-vl-235b-a22b",
       "provider": "aws_bedrock",
       "field": "input",
       "provider_value": 0.53,
@@ -2754,7 +3182,7 @@
       "delta_pct": 32.5
     },
     {
-      "entity": "qwen3-vl-235b-a22b-instruct",
+      "entity": "qwen3-vl-235b-a22b",
       "provider": "aws_bedrock",
       "field": "output",
       "provider_value": 2.66,
@@ -2762,7 +3190,7 @@
       "delta_pct": 66.25
     },
     {
-      "entity": "qwen3-vl-235b-a22b-instruct",
+      "entity": "qwen3-vl-235b-a22b",
       "provider": "openrouter",
       "field": "input",
       "provider_value": 0.2,
@@ -2770,7 +3198,7 @@
       "delta_pct": -50.0
     },
     {
-      "entity": "qwen3-vl-235b-a22b-instruct",
+      "entity": "qwen3-vl-235b-a22b",
       "provider": "openrouter",
       "field": "output",
       "provider_value": 0.88,
@@ -2794,7 +3222,7 @@
       "delta_pct": -35.0
     },
     {
-      "entity": "qwen3-vl-32b-instruct",
+      "entity": "qwen3-vl-32b",
       "provider": "openrouter",
       "field": "input",
       "provider_value": 0.104,
@@ -2802,7 +3230,7 @@
       "delta_pct": -35.0
     },
     {
-      "entity": "qwen3-vl-32b-instruct",
+      "entity": "qwen3-vl-32b",
       "provider": "openrouter",
       "field": "output",
       "provider_value": 0.416,
@@ -2811,432 +3239,21 @@
     }
   ],
   "new_entities": [
-    "chat-bison",
-    "chat-bison-001",
-    "deepseek-v3-2-251201",
-    "doubao-embedding",
-    "doubao-embedding-large",
-    "doubao-embedding-large-text-240915",
-    "doubao-embedding-large-text-250515",
-    "doubao-embedding-text-240715",
-    "embeddings",
-    "embeddings-2",
-    "embeddingsgigar",
-    "gigachat-2-lite",
-    "gigachat-2-max",
-    "gigachat-2-pro",
-    "glm-4-32b-0414-128k",
-    "glm-4-5",
-    "glm-4-5-air",
-    "glm-4-5-airx",
-    "glm-4-5-flash",
-    "glm-4-5-x",
-    "glm-4-5v",
-    "glm-4-6",
-    "glm-4-7",
-    "glm-4-7-251222",
-    "glm-5",
-    "glm-5-code",
-    "kimi",
-    "kimi-k2-0711-preview",
-    "kimi-k2-0905-preview",
-    "kimi-k2-5",
-    "kimi-k2-thinking",
-    "kimi-k2-thinking-251104",
-    "kimi-k2-thinking-turbo",
-    "kimi-k2-turbo-preview",
-    "kimi-latest-128k",
-    "kimi-latest-32k",
-    "kimi-latest-8k",
-    "kimi-thinking-preview",
-    "luminous-base",
-    "luminous-base-control",
-    "luminous-extended",
-    "luminous-extended-control",
-    "luminous-supreme",
-    "luminous-supreme-control",
-    "minimax-m2",
-    "minimax-m2-1",
-    "minimax-m2-1-lightning",
-    "minimax-m2-5",
-    "minimax-m2-5-lightning",
-    "moonshot-v1-128k",
-    "moonshot-v1-128k-0430",
-    "moonshot-v1-128k-vision-preview",
-    "moonshot-v1-32k",
-    "moonshot-v1-32k-0430",
-    "moonshot-v1-32k-vision-preview",
-    "moonshot-v1-8k",
-    "moonshot-v1-8k-0430",
-    "moonshot-v1-8k-vision-preview",
-    "moonshot-v1-auto",
-    "qwen-coder",
-    "qwen-max",
-    "qwen-plus",
-    "qwen-turbo",
-    "qwen3-30b-a3b",
-    "qwen3-coder-flash",
-    "qwen3-coder-plus",
-    "qwen3-max",
-    "qwen3-next-80b-a3b-instruct",
-    "qwen3-next-80b-a3b-thinking",
-    "qwen3-vl-235b-a22b-instruct",
-    "qwen3-vl-235b-a22b-thinking",
-    "qwen3-vl-32b-instruct",
-    "qwen3-vl-32b-thinking",
-    "qwq-plus",
-    "stable-image-core",
-    "stable-image-ultra",
-    "text-bison",
-    "text-bison-001",
-    "text-bison-safety-off",
-    "text-bison-safety-recitation-off",
-    "v1-aion-1-0",
-    "v1-aion-1-0-mini",
-    "v1-aion-2-0",
-    "v1-aion-rp-llama-3-1-8b",
-    "v1-claude-3-7-sonnet-thinking",
-    "v1-codellama-7b-instruct-solidity",
-    "v1-coder-large",
-    "v1-cogito-v2-1-671b",
-    "v1-cydonia-24b-v4-1",
-    "v1-deepseek-r1t2-chimera",
-    "v1-deepseek-v3-1-nex-n1",
-    "v1-deepseek-v3-1-terminus",
-    "v1-deepseek-v3-2-exp",
-    "v1-dolphin-mistral-24b-venice-edition-free",
-    "v1-elephant-alpha",
-    "v1-ernie-4-5-21b-a3b",
-    "v1-ernie-4-5-21b-a3b-thinking",
-    "v1-ernie-4-5-300b-a47b",
-    "v1-ernie-4-5-vl-28b-a3b",
-    "v1-ernie-4-5-vl-424b-a47b",
-    "v1-gemini-2-5-pro-preview-05-06",
-    "v1-gemma-3-12b-it",
-    "v1-gemma-3-12b-it-free",
-    "v1-gemma-3-27b-it-free",
-    "v1-gemma-3-4b-it",
-    "v1-gemma-3-4b-it-free",
-    "v1-gemma-3n-e2b-it-free",
-    "v1-gemma-3n-e4b-it",
-    "v1-gemma-3n-e4b-it-free",
-    "v1-gemma-4-26b-a4b-it",
-    "v1-gemma-4-26b-a4b-it-free",
-    "v1-gemma-4-31b-it",
-    "v1-gemma-4-31b-it-free",
-    "v1-glm-4-5-air-free",
-    "v1-glm-4-6v",
-    "v1-glm-5-1",
-    "v1-glm-5-turbo",
-    "v1-glm-5v-turbo",
-    "v1-gpt-4o-extended",
-    "v1-gpt-5-image",
-    "v1-gpt-5-image-mini",
-    "v1-gpt-54",
-    "v1-gpt-54-mini",
-    "v1-gpt-54-nano",
-    "v1-gpt-54-pro",
-    "v1-gpt-image-15",
-    "v1-gpt-oss-120b-free",
-    "v1-gpt-oss-20b-free",
-    "v1-gpt-realtime-15",
-    "v1-granite-4-0-h-micro",
-    "v1-hermes-2-pro-llama-3-8b",
-    "v1-hermes-3-llama-3-1-405b",
-    "v1-hermes-3-llama-3-1-405b-free",
-    "v1-hermes-3-llama-3-1-70b",
-    "v1-hermes-4-405b",
-    "v1-hermes-4-70b",
-    "v1-hunyuan-a13b-instruct",
-    "v1-inflection-3-pi",
-    "v1-inflection-3-productivity",
-    "v1-intellect-3",
-    "v1-kat-coder-pro-v2",
-    "v1-l3-1-70b-hanami-x1",
-    "v1-l3-1-euryale-70b",
-    "v1-l3-3-euryale-70b",
-    "v1-l3-euryale-70b",
-    "v1-l3-lunaris-8b",
-    "v1-lfm-2-24b-a2b",
-    "v1-lfm-2-5-1-2b-instruct-free",
-    "v1-lfm-2-5-1-2b-thinking-free",
-    "v1-llama-3-1-nemotron-70b-instruct",
-    "v1-llama-3-2-1b-instruct",
-    "v1-llama-3-2-3b-instruct",
-    "v1-llama-3-2-3b-instruct-free",
-    "v1-llama-3-3-70b-instruct-free",
-    "v1-llama-3-3-nemotron-super-49b-v1-5",
-    "v1-llama-3-70b-instruct",
-    "v1-llama-3-8b-instruct",
-    "v1-llama-guard-4-12b",
-    "v1-maestro-reasoning",
-    "v1-mercury-2",
-    "v1-mercury-coder",
-    "v1-mimo-v2-flash",
-    "v1-mimo-v2-omni",
-    "v1-mimo-v2-pro",
-    "v1-minimax-01",
-    "v1-minimax-m1",
-    "v1-minimax-m2-5-free",
-    "v1-minimax-m2-7",
-    "v1-minimax-m2-her",
-    "v1-ministral-14b-2512",
-    "v1-ministral-3b-2512",
-    "v1-ministral-8b-2512",
-    "v1-mistral-small-24b-instruct-2501",
-    "v1-mistral-small-2603",
-    "v1-mistral-small-3-1-24b-instruct",
-    "v1-mistral-small-3-2-24b-instruct",
-    "v1-mistral-small-creative",
-    "v1-mythomax-l2-13b",
-    "v1-nemotron-3-nano-30b-a3b",
-    "v1-nemotron-3-nano-30b-a3b-free",
-    "v1-nemotron-3-super-120b-a12b",
-    "v1-nemotron-3-super-120b-a12b-free",
-    "v1-nemotron-nano-12b-v2-vl",
-    "v1-nemotron-nano-12b-v2-vl-free",
-    "v1-nemotron-nano-9b-v2",
-    "v1-nemotron-nano-9b-v2-free",
-    "v1-nova-2-lite-v1",
-    "v1-o3-mini-high",
-    "v1-o4-mini-high",
-    "v1-olmo-2-0325-32b-instruct",
-    "v1-olmo-3-1-32b-instruct",
-    "v1-olmo-3-32b-think",
-    "v1-qwen-2-5-72b-instruct",
-    "v1-qwen-2-5-7b-instruct",
-    "v1-qwen-2-5-coder-32b-instruct",
-    "v1-qwen-plus-2025-07-28-thinking",
-    "v1-qwen-vl-max",
-    "v1-qwen-vl-plus",
-    "v1-qwen2-5-vl-32b-instruct",
-    "v1-qwen3-14b",
-    "v1-qwen3-235b-a22b",
-    "v1-qwen3-235b-a22b-thinking-2507",
-    "v1-qwen3-30b-a3b-instruct-2507",
-    "v1-qwen3-30b-a3b-thinking-2507",
-    "v1-qwen3-5-122b-a10b",
-    "v1-qwen3-5-27b",
-    "v1-qwen3-5-35b-a3b",
-    "v1-qwen3-5-397b-a17b",
-    "v1-qwen3-5-9b",
-    "v1-qwen3-5-flash-02-23",
-    "v1-qwen3-5-plus-02-15",
-    "v1-qwen3-6-plus",
-    "v1-qwen3-coder-30b-a3b-instruct",
-    "v1-qwen3-coder-free",
-    "v1-qwen3-max-thinking",
-    "v1-qwen3-next-80b-a3b-instruct-free",
-    "v1-qwen3-vl-30b-a3b-instruct",
-    "v1-qwen3-vl-30b-a3b-thinking",
-    "v1-qwen3-vl-8b-instruct",
-    "v1-qwen3-vl-8b-thinking",
-    "v1-relace-apply-3",
-    "v1-relace-search",
-    "v1-remm-slerp-l2-13b",
-    "v1-rnj-1-instruct",
-    "v1-rocinante-12b",
-    "v1-seed-1-6",
-    "v1-seed-1-6-flash",
-    "v1-seed-2-0-lite",
-    "v1-seed-2-0-mini",
-    "v1-skyfall-36b-v2",
-    "v1-solar-pro-3",
-    "v1-sonar-pro-search",
-    "v1-stable-diffusion-3-5-large-v1-0",
-    "v1-stable-diffusion-3-large-v1-0",
-    "v1-step-3-5-flash",
-    "v1-trinity-large-preview-free",
-    "v1-trinity-large-thinking",
-    "v1-trinity-mini",
-    "v1-ui-tars-1-5-7b",
-    "v1-unslopnemo-12b",
-    "v1-virtuoso-large",
-    "v1-voxtral-small-24b-2507",
-    "veo-3-1-generate-preview"
+    "deepseek-chat",
+    "gpt-5-1-chat",
+    "gpt-5-2-chat",
+    "gpt-5-3-chat",
+    "gpt-5-chat",
+    "luminous-base"
   ],
   "removed_entities": [
-    "v1-aionlabs-aion-1-0",
-    "v1-aionlabs-aion-1-0-mini",
-    "v1-aionlabs-aion-2-0",
-    "v1-aionlabs-aion-rp-1-0-8b",
-    "v1-alfredpros-codellama-7b-instruct-solidity",
-    "v1-allenai-olmo-2-32b-instruct",
-    "v1-allenai-olmo-3-1-32b-instruct",
-    "v1-allenai-olmo-3-32b-think",
-    "v1-amazon-nova-2-lite",
-    "v1-anthropic-claude-3-7-sonnet-thinking",
-    "v1-arcee-ai-coder-large",
-    "v1-arcee-ai-maestro-reasoning",
-    "v1-arcee-ai-trinity-large-preview-free",
-    "v1-arcee-ai-trinity-large-thinking",
-    "v1-arcee-ai-trinity-mini",
-    "v1-arcee-ai-virtuoso-large",
-    "v1-auto-router",
-    "v1-baidu-ernie-4-5-21b-a3b",
-    "v1-baidu-ernie-4-5-21b-a3b-thinking",
-    "v1-baidu-ernie-4-5-300b-a47b",
-    "v1-baidu-ernie-4-5-vl-28b-a3b",
-    "v1-baidu-ernie-4-5-vl-424b-a47b",
-    "v1-bytedance-seed-seed-1-6",
-    "v1-bytedance-seed-seed-1-6-flash",
-    "v1-bytedance-seed-seed-2-0-lite",
-    "v1-bytedance-seed-seed-2-0-mini",
-    "v1-bytedance-ui-tars-7b",
-    "v1-deep-cogito-cogito-v2-1-671b",
-    "v1-deepseek-deepseek-v3-1-terminus",
-    "v1-deepseek-deepseek-v3-2-exp",
-    "v1-elephant",
-    "v1-essentialai-rnj-1-instruct",
-    "v1-google-gemini-2-5-pro-preview-05-06",
-    "v1-google-gemma-3-12b",
-    "v1-google-gemma-3-12b-free",
-    "v1-google-gemma-3-27b-free",
-    "v1-google-gemma-3-4b",
-    "v1-google-gemma-3-4b-free",
-    "v1-google-gemma-3n-2b-free",
-    "v1-google-gemma-3n-4b",
-    "v1-google-gemma-3n-4b-free",
-    "v1-google-gemma-4-26b-a4b",
-    "v1-google-gemma-4-26b-a4b-free",
-    "v1-google-gemma-4-31b",
-    "v1-google-gemma-4-31b-free",
-    "v1-gpt-5-4",
-    "v1-gpt-5-4-mini",
-    "v1-gpt-5-4-nano",
-    "v1-gpt-5-4-pro",
-    "v1-gpt-image-1-5",
-    "v1-gpt-realtime-1-5",
-    "v1-ibm-granite-4-0-micro",
-    "v1-inception-mercury-2",
-    "v1-inception-mercury-coder",
-    "v1-inflection-inflection-3-pi",
-    "v1-inflection-inflection-3-productivity",
-    "v1-kimi-k2",
-    "v1-kwaipilot-kat-coder-pro",
-    "v1-liquidai-lfm2-24b-a2b",
-    "v1-liquidai-lfm2-5-1-2b-instruct-free",
-    "v1-liquidai-lfm2-5-1-2b-thinking-free",
-    "v1-meta-llama-3-2-1b-instruct",
-    "v1-meta-llama-3-2-3b-instruct",
-    "v1-meta-llama-3-2-3b-instruct-free",
-    "v1-meta-llama-3-3-70b-instruct-free",
-    "v1-meta-llama-3-70b-instruct",
-    "v1-meta-llama-3-8b-instruct",
-    "v1-meta-llama-guard-4-12b",
-    "v1-minimax-minimax-01",
-    "v1-minimax-minimax-m1",
-    "v1-minimax-minimax-m2-5-free",
-    "v1-minimax-minimax-m2-7",
-    "v1-minimax-minimax-m2-her",
-    "v1-mistral-ministral-3-14b-2512",
-    "v1-mistral-ministral-3-3b-2512",
-    "v1-mistral-ministral-3-8b-2512",
-    "v1-mistral-mistral-small-3",
-    "v1-mistral-mistral-small-3-1-24b",
-    "v1-mistral-mistral-small-3-2-24b",
-    "v1-mistral-mistral-small-4",
-    "v1-mistral-mistral-small-creative",
-    "v1-mistral-voxtral-small-24b-2507",
-    "v1-moonshotai-kimi-k2-0711",
-    "v1-moonshotai-kimi-k2-0905",
-    "v1-mythomax-13b",
-    "v1-nex-agi-deepseek-v3-1-nex-n1",
-    "v1-nous-hermes-3-405b-instruct",
-    "v1-nous-hermes-3-405b-instruct-free",
-    "v1-nous-hermes-3-70b-instruct",
-    "v1-nous-hermes-4-405b",
-    "v1-nous-hermes-4-70b",
-    "v1-nousresearch-hermes-2-pro-llama-3-8b",
-    "v1-nvidia-llama-3-1-nemotron-70b-instruct",
-    "v1-nvidia-llama-3-3-nemotron-super-49b",
-    "v1-nvidia-nemotron-3-nano-30b-a3b",
-    "v1-nvidia-nemotron-3-nano-30b-a3b-free",
-    "v1-nvidia-nemotron-3-super",
-    "v1-nvidia-nemotron-3-super-free",
-    "v1-nvidia-nemotron-nano-12b-2-vl",
-    "v1-nvidia-nemotron-nano-12b-2-vl-free",
-    "v1-nvidia-nemotron-nano-9b",
-    "v1-nvidia-nemotron-nano-9b-v2-free",
-    "v1-openai-gpt-4o-extended",
-    "v1-openai-gpt-5-image",
-    "v1-openai-gpt-5-image-mini",
-    "v1-openai-gpt-oss-120b-free",
-    "v1-openai-gpt-oss-20b-free",
-    "v1-openai-gpt-oss-safeguard-20b",
-    "v1-openai-o3-mini-high",
-    "v1-openai-o4-mini-high",
-    "v1-perplexity-sonar-pro-search",
-    "v1-prime-intellect-intellect-3",
-    "v1-qwen-qwen-plus-0728-thinking",
-    "v1-qwen-qwen-vl-max",
-    "v1-qwen-qwen-vl-plus",
-    "v1-qwen-qwen2-5-7b-instruct",
-    "v1-qwen-qwen2-5-vl-32b-instruct",
-    "v1-qwen-qwen3-14b",
-    "v1-qwen-qwen3-235b-a22b",
-    "v1-qwen-qwen3-235b-a22b-instruct-2507",
-    "v1-qwen-qwen3-235b-a22b-thinking-2507",
-    "v1-qwen-qwen3-30b-a3b-instruct-2507",
-    "v1-qwen-qwen3-30b-a3b-thinking-2507",
-    "v1-qwen-qwen3-5-122b-a10b",
-    "v1-qwen-qwen3-5-27b",
-    "v1-qwen-qwen3-5-35b-a3b",
-    "v1-qwen-qwen3-5-397b-a17b",
-    "v1-qwen-qwen3-5-9b",
-    "v1-qwen-qwen3-5-flash",
-    "v1-qwen-qwen3-5-plus",
-    "v1-qwen-qwen3-6-plus",
-    "v1-qwen-qwen3-coder-30b-a3b-instruct",
-    "v1-qwen-qwen3-coder-480b-a35b",
-    "v1-qwen-qwen3-coder-480b-a35b-free",
-    "v1-qwen-qwen3-coder-next",
-    "v1-qwen-qwen3-max-thinking",
-    "v1-qwen-qwen3-next-80b-a3b-instruct-free",
-    "v1-qwen-qwen3-vl-30b-a3b-instruct",
-    "v1-qwen-qwen3-vl-30b-a3b-thinking",
-    "v1-qwen-qwen3-vl-8b-instruct",
-    "v1-qwen-qwen3-vl-8b-thinking",
-    "v1-qwen2-5-72b-instruct",
-    "v1-qwen2-5-coder-32b-instruct",
-    "v1-qwen3-next-80b-a3b",
-    "v1-qwen3-vl-235b-a22b",
-    "v1-relace-relace-apply-3",
-    "v1-relace-relace-search",
-    "v1-remm-slerp-13b",
-    "v1-sao10k-llama-3-1-70b-hanami-x1",
-    "v1-sao10k-llama-3-1-euryale-70b",
-    "v1-sao10k-llama-3-3-euryale-70b",
-    "v1-sao10k-llama-3-8b-lunaris",
-    "v1-sao10k-llama-3-euryale-70b",
-    "v1-stable-diffusion-3-5-large",
-    "v1-stable-diffusion-3-large",
-    "v1-stepfun-step-3-5-flash",
-    "v1-tencent-hunyuan-a13b-instruct",
-    "v1-thedrummer-cydonia-24b",
-    "v1-thedrummer-rocinante-12b",
-    "v1-thedrummer-skyfall-36b",
-    "v1-thedrummer-unslopnemo-12b",
-    "v1-tng-deepseek-r1t2-chimera",
-    "v1-upstage-solar-pro-3",
-    "v1-venice-uncensored-free",
-    "v1-writer-palmyra-x5",
-    "v1-xiaomi-mimo-v2-flash",
-    "v1-xiaomi-mimo-v2-omni",
-    "v1-xiaomi-mimo-v2-pro",
-    "v1-z-ai-glm-4-32b",
-    "v1-z-ai-glm-4-5-air-free",
-    "v1-z-ai-glm-4-6v",
-    "v1-z-ai-glm-4-7-flash",
-    "v1-z-ai-glm-5-1",
-    "v1-z-ai-glm-5-turbo",
-    "v1-z-ai-glm-5v-turbo",
-    "veo-3-1-fast-generate-001"
+    "gpt-5-3",
+    "luminous"
   ],
   "orphan_entities": [
     "chat-bison",
     "chat-bison-001",
-    "chatgpt-4o",
+    "chatgpt-image",
     "claude-4-opus",
     "claude-4-sonnet",
     "codestral",
@@ -3286,12 +3303,10 @@
     "gemini-2-5-flash-native-audio-preview-09-2025",
     "gemini-2-5-flash-native-audio-preview-12-2025",
     "gemini-2-5-flash-preview-09-2025",
-    "gemini-3-pro-preview",
-    "gemini-embedding-001",
+    "gemini-3-pro",
     "gemini-exp-1114",
     "gemini-exp-1206",
     "gemini-flash",
-    "gemini-flash-experimental",
     "gemini-flash-lite",
     "gemini-gemma-2-9b-it",
     "gemini-live-2-5-flash-preview-native-audio-09-2025",
@@ -3307,7 +3322,7 @@
     "gpt-3-5-turbo-0125",
     "gpt-3-5-turbo-1106",
     "gpt-3-5-turbo-instruct-0914",
-    "gpt-4-0125-preview",
+    "gpt-4-0125",
     "gpt-4-0613",
     "gpt-4o-mini-tts",
     "gpt-4o-transcribe-diarize",
@@ -3322,7 +3337,6 @@
     "grok-3-fast-beta",
     "grok-3-mini-fast",
     "grok-3-mini-fast-beta",
-    "grok-4-20-beta-0309-non-reasoning",
     "grok-4-20-beta-0309-reasoning",
     "grok-beta",
     "grok-code-fast",
@@ -3339,16 +3353,16 @@
     "jamba-mini-1-7",
     "jina-reranker-v2-base-multilingual",
     "kimi",
-    "kimi-k2-0711-preview",
+    "kimi-k2-0711",
     "kimi-k2-thinking-251104",
     "kimi-k2-thinking-turbo",
-    "kimi-k2-turbo-preview",
+    "kimi-k2-turbo",
     "kimi-latest-128k",
     "kimi-latest-32k",
     "kimi-latest-8k",
-    "kimi-thinking-preview",
+    "kimi-thinking",
     "labs-devstral-small-2512",
-    "learnlm-1-5-pro-experimental",
+    "learnlm-1-5-pro",
     "luminous-base",
     "luminous-base-control",
     "luminous-extended",
@@ -3375,15 +3389,15 @@
     "mistral-tiny",
     "moonshot-v1-128k",
     "moonshot-v1-128k-0430",
-    "moonshot-v1-128k-vision-preview",
+    "moonshot-v1-128k-vision",
     "moonshot-v1-32k",
     "moonshot-v1-32k-0430",
-    "moonshot-v1-32k-vision-preview",
+    "moonshot-v1-32k-vision",
     "moonshot-v1-8k",
     "moonshot-v1-8k-0430",
-    "moonshot-v1-8k-vision-preview",
-    "nvidia-llama-3-2-nv-rerankqa-1b",
-    "nvidia-nv-rerankqa-mistral-4b",
+    "moonshot-v1-8k-vision",
+    "nvidia-llama-3-2-nv-rerankqa-1b-v2",
+    "nvidia-nv-rerankqa-mistral-4b-v3",
     "omni-moderation",
     "open-codestral-mamba",
     "open-mistral-7b",
@@ -3396,7 +3410,7 @@
     "qwen-coder",
     "qwen3-vl-32b-thinking",
     "qwq-plus",
-    "ranking-nvidia-llama-3-2-nv-rerankqa-1b",
+    "ranking-nvidia-llama-3-2-nv-rerankqa-1b-v2",
     "rerank-2",
     "rerank-2-5",
     "rerank-2-5-lite",
@@ -3410,6 +3424,7 @@
     "text-embedding-3-large",
     "text-embedding-3-small",
     "text-embedding-ada-002",
+    "text-embedding-ada-002-v2",
     "text-moderation",
     "text-moderation-007",
     "text-moderation-stable",
@@ -3426,29 +3441,48 @@
     "voyage-large-2",
     "voyage-law-2",
     "voyage-lite-01",
-    "voyage-lite-02-instruct",
+    "voyage-lite-02",
     "voyage-multimodal-3"
   ],
   "note": null,
   "_snapshot_slugs": [
+    "aion-1-0",
+    "aion-1-0-mini",
+    "aion-2-0",
+    "aion-rp-llama-3-1-8b",
+    "arcee-ai-spotlight",
     "babbage-002",
+    "body-builder-beta",
     "chat-bison",
     "chat-bison-001",
     "chatgpt-4o",
     "chatgpt-image",
+    "claude-100k",
+    "claude-2-0",
+    "claude-2-1",
+    "claude-3-5-haiku",
+    "claude-3-5-sonnet",
+    "claude-3-5-sonnet-v2",
     "claude-3-7-sonnet",
+    "claude-3-7-sonnet-thinking",
     "claude-3-haiku",
     "claude-3-opus",
+    "claude-3-sonnet",
     "claude-4-opus",
     "claude-4-sonnet",
     "claude-haiku-4-5",
+    "claude-instant",
+    "claude-instant-100k",
     "claude-opus-4",
     "claude-opus-4-1",
     "claude-opus-4-5",
     "claude-opus-4-6",
+    "claude-opus-4-6-fast",
     "claude-sonnet-4",
     "claude-sonnet-4-5",
     "claude-sonnet-4-6",
+    "codellama-7b-instruct-solidity",
+    "coder-large",
     "codestral",
     "codestral-2405",
     "codestral-2508",
@@ -3456,6 +3490,12 @@
     "codestral-embed-2505",
     "codestral-mamba",
     "codex-mini",
+    "cogito-v2-1-671b",
+    "cohere-embed-3-model-english",
+    "cohere-embed-4-model",
+    "cohere-embed-model-3-multilingual",
+    "cohere-generate-model-command",
+    "cohere-generate-model-command-light",
     "command",
     "command-a-03-2025",
     "command-light",
@@ -3465,14 +3505,24 @@
     "command-r-plus",
     "command-r-plus-08-2024",
     "command-r7b-12-2024",
+    "computer-use-preview",
+    "cydonia-24b-v4-1",
     "davinci-002",
     "deep-research-pro-preview-12-2025",
     "deepseek",
     "deepseek-chat",
     "deepseek-coder",
     "deepseek-r1",
+    "deepseek-r1-0528",
+    "deepseek-r1-distill-llama-70b",
+    "deepseek-r1-distill-qwen-32b",
+    "deepseek-r1t2-chimera",
     "deepseek-reasoner",
+    "deepseek-v3",
+    "deepseek-v3-1-nex-n1",
+    "deepseek-v3-1-terminus",
     "deepseek-v3-2-251201",
+    "deepseek-v3-2-speciale",
     "devstral",
     "devstral-2512",
     "devstral-medium",
@@ -3480,11 +3530,13 @@
     "devstral-small",
     "devstral-small-2505",
     "devstral-small-2507",
+    "dolphin-mistral-24b-venice-edition-free",
     "doubao-embedding",
     "doubao-embedding-large",
     "doubao-embedding-large-text-240915",
     "doubao-embedding-large-text-250515",
     "doubao-embedding-text-240715",
+    "elephant-alpha",
     "embed",
     "embed-english",
     "embed-english-light",
@@ -3493,6 +3545,12 @@
     "embeddings",
     "embeddings-2",
     "embeddingsgigar",
+    "ernie-4-5-21b-a3b",
+    "ernie-4-5-21b-a3b-thinking",
+    "ernie-4-5-300b-a47b",
+    "ernie-4-5-vl-28b-a3b",
+    "ernie-4-5-vl-424b-a47b",
+    "free-models-router",
     "ft-babbage-002",
     "ft-davinci-002",
     "ft-gpt-3-5-turbo",
@@ -3524,69 +3582,96 @@
     "gemini-2-5-flash-preview-09-2025",
     "gemini-2-5-flash-preview-tts",
     "gemini-2-5-pro",
+    "gemini-2-5-pro-preview-05-06",
     "gemini-2-5-pro-preview-tts",
-    "gemini-3-1-flash-image-preview",
-    "gemini-3-1-flash-lite-preview",
-    "gemini-3-1-flash-live-preview",
-    "gemini-3-1-pro-preview",
+    "gemini-3-1-flash-image",
+    "gemini-3-1-flash-lite",
+    "gemini-3-1-flash-live",
+    "gemini-3-1-pro",
     "gemini-3-1-pro-preview-customtools",
-    "gemini-3-flash-preview",
-    "gemini-3-pro-image-preview",
-    "gemini-3-pro-preview",
+    "gemini-3-flash",
+    "gemini-3-pro",
+    "gemini-3-pro-image",
     "gemini-embedding-001",
-    "gemini-embedding-2-preview",
+    "gemini-embedding-2",
     "gemini-exp-1114",
     "gemini-exp-1206",
     "gemini-flash",
-    "gemini-flash-experimental",
     "gemini-flash-lite",
     "gemini-gemma-2-27b-it",
     "gemini-gemma-2-9b-it",
     "gemini-live-2-5-flash-preview-native-audio-09-2025",
     "gemini-pro",
-    "gemini-robotics-er-1-5-preview",
+    "gemini-robotics-er-1-5",
+    "gemini-robotics-er-1-6-preview",
+    "gemma-3-12b",
+    "gemma-3-12b-it",
+    "gemma-3-12b-it-free",
     "gemma-3-27b-it",
+    "gemma-3-27b-it-free",
+    "gemma-3-4b",
+    "gemma-3-4b-it",
+    "gemma-3-4b-it-free",
+    "gemma-3n-e2b-it-free",
+    "gemma-3n-e4b-it",
+    "gemma-3n-e4b-it-free",
+    "gemma-4",
+    "gemma-4-26b-a4b-it",
+    "gemma-4-26b-a4b-it-free",
+    "gemma-4-31b-it",
+    "gemma-4-31b-it-free",
     "gigachat-2-lite",
     "gigachat-2-max",
     "gigachat-2-pro",
     "glm-4-32b-0414-128k",
     "glm-4-5",
     "glm-4-5-air",
+    "glm-4-5-air-free",
     "glm-4-5-airx",
     "glm-4-5-flash",
     "glm-4-5-x",
     "glm-4-5v",
     "glm-4-6",
+    "glm-4-6v",
     "glm-4-7",
     "glm-4-7-251222",
+    "glm-4-7-flash",
     "glm-5",
+    "glm-5-1",
     "glm-5-code",
+    "glm-5-turbo",
+    "glm-5v-turbo",
+    "goliath-120b",
     "gpt-3-5-turbo",
     "gpt-3-5-turbo-0125",
+    "gpt-3-5-turbo-0613",
     "gpt-3-5-turbo-1106",
     "gpt-3-5-turbo-16k",
-    "gpt-3-5-turbo-instruct",
     "gpt-3-5-turbo-instruct-0914",
     "gpt-4",
-    "gpt-4-0125-preview",
+    "gpt-4-0125",
     "gpt-4-0314",
     "gpt-4-0613",
     "gpt-4-1",
     "gpt-4-1-mini",
     "gpt-4-1-nano",
-    "gpt-4-1106-preview",
+    "gpt-4-1106",
+    "gpt-4-32k",
     "gpt-4-turbo",
-    "gpt-4-turbo-preview",
+    "gpt-4-turbo-vision",
     "gpt-4o",
-    "gpt-4o-audio-preview",
+    "gpt-4o-audio",
+    "gpt-4o-extended",
     "gpt-4o-mini",
-    "gpt-4o-mini-audio-preview",
-    "gpt-4o-mini-realtime-preview",
-    "gpt-4o-mini-search-preview",
+    "gpt-4o-mini-audio",
+    "gpt-4o-mini-realtime",
+    "gpt-4o-mini-realtime-audio",
+    "gpt-4o-mini-search",
     "gpt-4o-mini-transcribe",
     "gpt-4o-mini-tts",
-    "gpt-4o-realtime-preview",
-    "gpt-4o-search-preview",
+    "gpt-4o-realtime",
+    "gpt-4o-realtime-audio",
+    "gpt-4o-search",
     "gpt-4o-transcribe",
     "gpt-4o-transcribe-diarize",
     "gpt-5",
@@ -3607,21 +3692,37 @@
     "gpt-5-4-pro",
     "gpt-5-chat",
     "gpt-5-codex",
+    "gpt-5-image",
+    "gpt-5-image-mini",
     "gpt-5-mini",
     "gpt-5-nano",
     "gpt-5-pro",
     "gpt-5-search-api",
+    "gpt-54",
+    "gpt-54-mini",
+    "gpt-54-nano",
+    "gpt-54-pro",
     "gpt-audio",
     "gpt-audio-1-5",
     "gpt-audio-mini",
     "gpt-image-1",
     "gpt-image-1-5",
     "gpt-image-1-mini",
+    "gpt-image-15",
+    "gpt-oss-120b",
+    "gpt-oss-120b-free",
+    "gpt-oss-20b",
+    "gpt-oss-20b-free",
+    "gpt-oss-safeguard-120b",
+    "gpt-oss-safeguard-20b",
     "gpt-realtime",
     "gpt-realtime-1-5",
+    "gpt-realtime-15",
     "gpt-realtime-mini",
+    "granite-4-0-h-micro",
     "grok-2",
     "grok-2-1212",
+    "grok-2-image-1212",
     "grok-2-vision",
     "grok-2-vision-1212",
     "grok-3",
@@ -3647,7 +3748,18 @@
     "grok-code-fast-1",
     "grok-code-fast-1-0825",
     "grok-vision-beta",
+    "hermes-2-pro-llama-3-8b",
+    "hermes-3-llama-3-1-405b",
+    "hermes-3-llama-3-1-405b-free",
+    "hermes-3-llama-3-1-70b",
+    "hermes-4-405b",
+    "hermes-4-70b",
+    "hunyuan-a13b-instruct",
     "imagen-4-0-ultra-generate-001",
+    "inception-mercury",
+    "inflection-3-pi",
+    "inflection-3-productivity",
+    "intellect-3",
     "j2-light",
     "j2-mid",
     "j2-ultra",
@@ -3656,36 +3768,71 @@
     "jamba-1-5-large-001",
     "jamba-1-5-mini",
     "jamba-1-5-mini-001",
+    "jamba-instruct",
     "jamba-large-1-6",
     "jamba-large-1-7",
     "jamba-mini-1-6",
     "jamba-mini-1-7",
     "jina-reranker-v2-base-multilingual",
+    "jurassic-2-mid",
+    "jurassic-2-ultra",
+    "kat-coder-pro-v2",
     "kimi",
-    "kimi-k2-0711-preview",
-    "kimi-k2-0905-preview",
+    "kimi-k2-0711",
+    "kimi-k2-0905",
     "kimi-k2-5",
     "kimi-k2-thinking",
     "kimi-k2-thinking-251104",
     "kimi-k2-thinking-turbo",
-    "kimi-k2-turbo-preview",
+    "kimi-k2-turbo",
     "kimi-latest-128k",
     "kimi-latest-32k",
     "kimi-latest-8k",
-    "kimi-thinking-preview",
+    "kimi-thinking",
+    "l3-1-70b-hanami-x1",
+    "l3-1-euryale-70b",
+    "l3-3-euryale-70b",
+    "l3-euryale-70b",
+    "l3-lunaris-8b",
     "labs-devstral-small-2512",
-    "learnlm-1-5-pro-experimental",
-    "llama-3-3-70b-instruct",
-    "llama-4-maverick-17b-128e-instruct-fp8",
-    "llama-4-scout-17b-16e-instruct-fp8",
+    "learnlm-1-5-pro",
+    "lfm-2-24b-a2b",
+    "lfm-2-5-1-2b-instruct-free",
+    "lfm-2-5-1-2b-thinking-free",
+    "llama-3-1-405b",
+    "llama-3-1-70b",
+    "llama-3-1-70b-instruct",
+    "llama-3-1-8b",
+    "llama-3-1-8b-instruct",
+    "llama-3-1-nemotron-70b-instruct",
+    "llama-3-2-11b",
+    "llama-3-2-11b-vision-instruct",
+    "llama-3-2-1b",
+    "llama-3-2-1b-instruct",
+    "llama-3-2-3b",
+    "llama-3-2-3b-instruct",
+    "llama-3-2-3b-instruct-free",
+    "llama-3-2-90b",
+    "llama-3-3-70b",
+    "llama-3-3-70b-instruct-free",
+    "llama-3-3-nemotron-super-49b-v1-5",
+    "llama-3-70b",
+    "llama-3-70b-instruct",
+    "llama-3-8b",
+    "llama-3-8b-instruct",
+    "llama-4-maverick-17b",
+    "llama-4-scout-17b",
+    "llama-guard-3-8b",
+    "llama-guard-4-12b",
     "luminous-base",
     "luminous-base-control",
     "luminous-extended",
     "luminous-extended-control",
     "luminous-supreme",
     "luminous-supreme-control",
-    "lyria-3-clip-preview",
-    "lyria-3-pro-preview",
+    "lyria-3-clip",
+    "lyria-3-pro",
+    "maestro-reasoning",
     "magistral-medium",
     "magistral-medium-1-2-2509",
     "magistral-medium-2506",
@@ -3693,14 +3840,36 @@
     "magistral-small",
     "magistral-small-1-2-2509",
     "magistral-small-2506",
+    "magnum-v4-72b",
+    "mancer-weaver-alpha",
+    "mercury-2",
+    "mercury-coder",
+    "meta-llama-2-chat-13b",
+    "meta-llama-2-chat-70b",
+    "mimo-v2-flash",
+    "mimo-v2-omni",
+    "mimo-v2-pro",
+    "minimax-01",
+    "minimax-m1",
     "minimax-m2",
     "minimax-m2-1",
     "minimax-m2-1-lightning",
     "minimax-m2-5",
+    "minimax-m2-5-free",
     "minimax-m2-5-lightning",
+    "minimax-m2-7",
+    "minimax-m2-her",
+    "ministral-14b-2512",
+    "ministral-14b-3-0",
     "ministral-3-14b-2512",
     "ministral-3-3b-2512",
     "ministral-3-8b-2512",
+    "ministral-3b-2512",
+    "ministral-3b-3-0",
+    "ministral-8b-2512",
+    "ministral-8b-3-0",
+    "mistral-7b",
+    "mistral-7b-instruct-v0-1",
     "mistral-embed",
     "mistral-large",
     "mistral-large-2402",
@@ -3711,30 +3880,78 @@
     "mistral-medium",
     "mistral-medium-2312",
     "mistral-medium-2505",
+    "mistral-medium-3",
     "mistral-medium-3-1-2508",
+    "mistral-nemo",
+    "mistral-saba",
     "mistral-small",
+    "mistral-small-24b-instruct-2501",
+    "mistral-small-2603",
+    "mistral-small-3-1-24b-instruct",
+    "mistral-small-3-2-24b-instruct",
     "mistral-small-3-2-2506",
+    "mistral-small-creative",
     "mistral-tiny",
+    "mixtral-8x22b-instruct",
+    "mixtral-8x7b",
+    "mixtral-8x7b-instruct",
     "moonshot-v1-128k",
     "moonshot-v1-128k-0430",
-    "moonshot-v1-128k-vision-preview",
+    "moonshot-v1-128k-vision",
     "moonshot-v1-32k",
     "moonshot-v1-32k-0430",
-    "moonshot-v1-32k-vision-preview",
+    "moonshot-v1-32k-vision",
     "moonshot-v1-8k",
     "moonshot-v1-8k-0430",
-    "moonshot-v1-8k-vision-preview",
+    "moonshot-v1-8k-vision",
     "moonshot-v1-auto",
-    "nvidia-llama-3-2-nv-rerankqa-1b",
-    "nvidia-nv-rerankqa-mistral-4b",
+    "morph-v3-fast",
+    "morph-v3-large",
+    "mythomax-l2-13b",
+    "nemotron-3-nano-30b-a3b",
+    "nemotron-3-nano-30b-a3b-free",
+    "nemotron-3-super-120b-a12b",
+    "nemotron-3-super-120b-a12b-free",
+    "nemotron-nano-12b-v2-vl",
+    "nemotron-nano-12b-v2-vl-free",
+    "nemotron-nano-3-30b",
+    "nemotron-nano-9b-v2",
+    "nemotron-nano-9b-v2-free",
+    "nova-2-0-lite",
+    "nova-2-0-omni",
+    "nova-2-0-pro",
+    "nova-2-lite-v1",
+    "nova-canvas",
+    "nova-lite",
+    "nova-lite-v1",
+    "nova-micro",
+    "nova-micro-v1",
+    "nova-premier",
+    "nova-premier-v1",
+    "nova-pro",
+    "nova-pro-v1",
+    "nova-reel",
+    "nova-sonic",
+    "nova-sonic-2-0",
+    "nvidia-llama-3-2-nv-rerankqa-1b-v2",
+    "nvidia-nemotron-3-super-120b-a12b",
+    "nvidia-nemotron-nano-2",
+    "nvidia-nemotron-nano-2-vl",
+    "nvidia-nv-rerankqa-mistral-4b-v3",
     "o1",
+    "o1-mini",
     "o1-pro",
     "o3",
     "o3-deep-research",
     "o3-mini",
+    "o3-mini-high",
     "o3-pro",
     "o4-mini",
     "o4-mini-deep-research",
+    "o4-mini-high",
+    "olmo-2-0325-32b-instruct",
+    "olmo-3-1-32b-instruct",
+    "olmo-3-32b-think",
     "omni-moderation",
     "open-codestral-mamba",
     "open-mistral-7b",
@@ -3742,25 +3959,73 @@
     "open-mistral-nemo-2407",
     "open-mixtral-8x22b",
     "open-mixtral-8x7b",
+    "palmyra-x4",
+    "palmyra-x5",
+    "perplexity-sonar",
+    "phi-3",
+    "phi-3-5",
+    "phi-4",
     "pixtral-12b-2409",
     "pixtral-large",
     "pixtral-large-2411",
+    "pixtral-large-25-02",
+    "qwen-2-5-72b-instruct",
+    "qwen-2-5-7b-instruct",
+    "qwen-2-5-coder-32b-instruct",
     "qwen-coder",
     "qwen-max",
     "qwen-plus",
+    "qwen-plus-2025-07-28-thinking",
     "qwen-turbo",
+    "qwen-vl-max",
+    "qwen-vl-plus",
+    "qwen2-5-vl-32b-instruct",
+    "qwen2-5-vl-72b-instruct",
+    "qwen3-14b",
+    "qwen3-235b-a22b",
+    "qwen3-235b-a22b-2507",
+    "qwen3-235b-a22b-thinking-2507",
     "qwen3-30b-a3b",
+    "qwen3-30b-a3b-instruct-2507",
+    "qwen3-30b-a3b-thinking-2507",
+    "qwen3-32b",
+    "qwen3-5-122b-a10b",
+    "qwen3-5-27b",
+    "qwen3-5-35b-a3b",
+    "qwen3-5-397b-a17b",
+    "qwen3-5-9b",
+    "qwen3-5-flash-02-23",
+    "qwen3-5-plus-02-15",
+    "qwen3-6-plus",
+    "qwen3-8b",
+    "qwen3-coder-30b-a3b",
+    "qwen3-coder-30b-a3b-instruct",
+    "qwen3-coder-480b-a35b",
     "qwen3-coder-flash",
+    "qwen3-coder-free",
+    "qwen3-coder-next",
     "qwen3-coder-plus",
     "qwen3-max",
-    "qwen3-next-80b-a3b-instruct",
+    "qwen3-max-thinking",
+    "qwen3-next-80b-a3b",
+    "qwen3-next-80b-a3b-instruct-free",
     "qwen3-next-80b-a3b-thinking",
-    "qwen3-vl-235b-a22b-instruct",
+    "qwen3-vl-235b-a22b",
     "qwen3-vl-235b-a22b-thinking",
-    "qwen3-vl-32b-instruct",
+    "qwen3-vl-30b-a3b-instruct",
+    "qwen3-vl-30b-a3b-thinking",
+    "qwen3-vl-32b",
     "qwen3-vl-32b-thinking",
+    "qwen3-vl-8b-instruct",
+    "qwen3-vl-8b-thinking",
+    "qwq-32b",
     "qwq-plus",
-    "ranking-nvidia-llama-3-2-nv-rerankqa-1b",
+    "ranking-nvidia-llama-3-2-nv-rerankqa-1b-v2",
+    "reka-edge",
+    "reka-flash-3",
+    "relace-apply-3",
+    "relace-search",
+    "remm-slerp-l2-13b",
     "rerank",
     "rerank-2",
     "rerank-2-5",
@@ -3768,10 +4033,26 @@
     "rerank-2-lite",
     "rerank-english",
     "rerank-multilingual",
+    "rnj-1-instruct",
+    "rocinante-12b",
+    "seed-1-6",
+    "seed-1-6-flash",
+    "seed-2-0-lite",
+    "seed-2-0-mini",
+    "skyfall-36b-v2",
+    "solar-pro-3",
+    "sonar-deep-research",
+    "sonar-pro",
+    "sonar-pro-search",
+    "sonar-reasoning-pro",
     "sora-2",
     "sora-2-pro",
+    "stable-diffusion-3-5-large-v1-0",
+    "stable-diffusion-3-large-v1-0",
     "stable-image-core",
     "stable-image-ultra",
+    "step-3-5-flash",
+    "switchpoint-router",
     "text-bison",
     "text-bison-001",
     "text-bison-safety-off",
@@ -3779,247 +4060,25 @@
     "text-embedding-3-large",
     "text-embedding-3-small",
     "text-embedding-ada-002",
+    "text-embedding-ada-002-v2",
     "text-moderation",
     "text-moderation-007",
     "text-moderation-stable",
-    "v1-aion-1-0",
-    "v1-aion-1-0-mini",
-    "v1-aion-2-0",
-    "v1-aion-rp-llama-3-1-8b",
-    "v1-arcee-ai-spotlight",
-    "v1-body-builder-beta",
-    "v1-claude-100k",
-    "v1-claude-2-0",
-    "v1-claude-2-1",
-    "v1-claude-3-7-sonnet-thinking",
-    "v1-claude-instant",
-    "v1-claude-instant-100k",
-    "v1-codellama-7b-instruct-solidity",
-    "v1-coder-large",
-    "v1-cogito-v2-1-671b",
-    "v1-cohere-embed-3-model-english",
-    "v1-cohere-embed-4-model",
-    "v1-cohere-embed-model-3-multilingual",
-    "v1-cohere-generate-model-command",
-    "v1-cohere-generate-model-command-light",
-    "v1-cydonia-24b-v4-1",
-    "v1-deepseek-r1-distill-qwen-32b",
-    "v1-deepseek-r1t2-chimera",
-    "v1-deepseek-v3-1-nex-n1",
-    "v1-deepseek-v3-1-terminus",
-    "v1-deepseek-v3-2-exp",
-    "v1-dolphin-mistral-24b-venice-edition-free",
-    "v1-elephant-alpha",
-    "v1-ernie-4-5-21b-a3b",
-    "v1-ernie-4-5-21b-a3b-thinking",
-    "v1-ernie-4-5-300b-a47b",
-    "v1-ernie-4-5-vl-28b-a3b",
-    "v1-ernie-4-5-vl-424b-a47b",
-    "v1-free-models-router",
-    "v1-gemini-2-5-pro-preview-05-06",
-    "v1-gemini-robotics-er-1-6-preview",
-    "v1-gemma-3-12b",
-    "v1-gemma-3-12b-it",
-    "v1-gemma-3-12b-it-free",
-    "v1-gemma-3-27b-it-free",
-    "v1-gemma-3-4b",
-    "v1-gemma-3-4b-it",
-    "v1-gemma-3-4b-it-free",
-    "v1-gemma-3n-e2b-it-free",
-    "v1-gemma-3n-e4b-it",
-    "v1-gemma-3n-e4b-it-free",
-    "v1-gemma-4",
-    "v1-gemma-4-26b-a4b-it",
-    "v1-gemma-4-26b-a4b-it-free",
-    "v1-gemma-4-31b-it",
-    "v1-gemma-4-31b-it-free",
-    "v1-glm-4-5-air-free",
-    "v1-glm-4-6v",
-    "v1-glm-4-7-flash",
-    "v1-glm-5-1",
-    "v1-glm-5-turbo",
-    "v1-glm-5v-turbo",
-    "v1-goliath-120b",
-    "v1-gpt-4-turbo-vision",
-    "v1-gpt-4o-extended",
-    "v1-gpt-4o-mini-realtime-audio",
-    "v1-gpt-4o-realtime-audio",
-    "v1-gpt-5-image",
-    "v1-gpt-5-image-mini",
-    "v1-gpt-54",
-    "v1-gpt-54-mini",
-    "v1-gpt-54-nano",
-    "v1-gpt-54-pro",
-    "v1-gpt-image-15",
-    "v1-gpt-oss-120b-free",
-    "v1-gpt-oss-20b-free",
-    "v1-gpt-oss-safeguard-120b",
-    "v1-gpt-oss-safeguard-20b",
-    "v1-gpt-realtime-15",
-    "v1-granite-4-0-h-micro",
-    "v1-grok-2-image-1212",
-    "v1-hermes-2-pro-llama-3-8b",
-    "v1-hermes-3-llama-3-1-405b",
-    "v1-hermes-3-llama-3-1-405b-free",
-    "v1-hermes-3-llama-3-1-70b",
-    "v1-hermes-4-405b",
-    "v1-hermes-4-70b",
-    "v1-hunyuan-a13b-instruct",
-    "v1-inception-mercury",
-    "v1-inflection-3-pi",
-    "v1-inflection-3-productivity",
-    "v1-intellect-3",
-    "v1-jurassic-2-mid",
-    "v1-jurassic-2-ultra",
-    "v1-kat-coder-pro-v2",
-    "v1-l3-1-70b-hanami-x1",
-    "v1-l3-1-euryale-70b",
-    "v1-l3-3-euryale-70b",
-    "v1-l3-euryale-70b",
-    "v1-l3-lunaris-8b",
-    "v1-lfm-2-24b-a2b",
-    "v1-lfm-2-5-1-2b-instruct-free",
-    "v1-lfm-2-5-1-2b-thinking-free",
-    "v1-llama-3-1-405b",
-    "v1-llama-3-1-70b",
-    "v1-llama-3-1-nemotron-70b-instruct",
-    "v1-llama-3-2-11b",
-    "v1-llama-3-2-1b",
-    "v1-llama-3-2-1b-instruct",
-    "v1-llama-3-2-3b-instruct",
-    "v1-llama-3-2-3b-instruct-free",
-    "v1-llama-3-2-90b",
-    "v1-llama-3-3-70b-instruct-free",
-    "v1-llama-3-3-nemotron-super-49b-v1-5",
-    "v1-llama-3-70b",
-    "v1-llama-3-70b-instruct",
-    "v1-llama-3-8b",
-    "v1-llama-3-8b-instruct",
-    "v1-llama-guard-3-8b",
-    "v1-llama-guard-4-12b",
-    "v1-maestro-reasoning",
-    "v1-magnum-v4-72b",
-    "v1-mancer-weaver-alpha",
-    "v1-mercury-2",
-    "v1-mercury-coder",
-    "v1-meta-llama-2-chat-13b",
-    "v1-meta-llama-2-chat-70b",
-    "v1-mimo-v2-flash",
-    "v1-mimo-v2-omni",
-    "v1-mimo-v2-pro",
-    "v1-minimax-01",
-    "v1-minimax-m1",
-    "v1-minimax-m2-5-free",
-    "v1-minimax-m2-7",
-    "v1-minimax-m2-her",
-    "v1-ministral-14b-2512",
-    "v1-ministral-14b-3-0",
-    "v1-ministral-3b-2512",
-    "v1-ministral-3b-3-0",
-    "v1-ministral-8b-2512",
-    "v1-ministral-8b-3-0",
-    "v1-mistral-saba",
-    "v1-mistral-small-24b-instruct-2501",
-    "v1-mistral-small-2603",
-    "v1-mistral-small-3-1-24b-instruct",
-    "v1-mistral-small-3-2-24b-instruct",
-    "v1-mistral-small-creative",
-    "v1-mythomax-l2-13b",
-    "v1-nemotron-3-nano-30b-a3b",
-    "v1-nemotron-3-nano-30b-a3b-free",
-    "v1-nemotron-3-super-120b-a12b",
-    "v1-nemotron-3-super-120b-a12b-free",
-    "v1-nemotron-nano-12b-v2-vl",
-    "v1-nemotron-nano-12b-v2-vl-free",
-    "v1-nemotron-nano-3-30b",
-    "v1-nemotron-nano-9b-v2",
-    "v1-nemotron-nano-9b-v2-free",
-    "v1-nova-2-0-lite",
-    "v1-nova-2-0-omni",
-    "v1-nova-2-0-pro",
-    "v1-nova-2-lite-v1",
-    "v1-nova-canvas",
-    "v1-nova-reel",
-    "v1-nova-sonic",
-    "v1-nova-sonic-2-0",
-    "v1-nvidia-nemotron-3-super-120b-a12b",
-    "v1-nvidia-nemotron-nano-2",
-    "v1-nvidia-nemotron-nano-2-vl",
-    "v1-o3-mini-high",
-    "v1-o4-mini-high",
-    "v1-olmo-2-0325-32b-instruct",
-    "v1-olmo-3-1-32b-instruct",
-    "v1-olmo-3-32b-think",
-    "v1-palmyra-x4",
-    "v1-palmyra-x5",
-    "v1-phi-3",
-    "v1-phi-3-5",
-    "v1-pixtral-large-25-02",
-    "v1-qwen-2-5-72b-instruct",
-    "v1-qwen-2-5-7b-instruct",
-    "v1-qwen-2-5-coder-32b-instruct",
-    "v1-qwen-plus-2025-07-28-thinking",
-    "v1-qwen-vl-max",
-    "v1-qwen-vl-plus",
-    "v1-qwen2-5-vl-32b-instruct",
-    "v1-qwen3-14b",
-    "v1-qwen3-235b-a22b",
-    "v1-qwen3-235b-a22b-2507",
-    "v1-qwen3-235b-a22b-thinking-2507",
-    "v1-qwen3-30b-a3b-instruct-2507",
-    "v1-qwen3-30b-a3b-thinking-2507",
-    "v1-qwen3-5-122b-a10b",
-    "v1-qwen3-5-27b",
-    "v1-qwen3-5-35b-a3b",
-    "v1-qwen3-5-397b-a17b",
-    "v1-qwen3-5-9b",
-    "v1-qwen3-5-flash-02-23",
-    "v1-qwen3-5-plus-02-15",
-    "v1-qwen3-6-plus",
-    "v1-qwen3-coder-30b-a3b",
-    "v1-qwen3-coder-30b-a3b-instruct",
-    "v1-qwen3-coder-480b-a35b",
-    "v1-qwen3-coder-free",
-    "v1-qwen3-coder-next",
-    "v1-qwen3-max-thinking",
-    "v1-qwen3-next-80b-a3b-instruct-free",
-    "v1-qwen3-vl-30b-a3b-instruct",
-    "v1-qwen3-vl-30b-a3b-thinking",
-    "v1-qwen3-vl-8b-instruct",
-    "v1-qwen3-vl-8b-thinking",
-    "v1-reka-edge",
-    "v1-reka-flash-3",
-    "v1-relace-apply-3",
-    "v1-relace-search",
-    "v1-remm-slerp-l2-13b",
-    "v1-rnj-1-instruct",
-    "v1-rocinante-12b",
-    "v1-seed-1-6",
-    "v1-seed-1-6-flash",
-    "v1-seed-2-0-lite",
-    "v1-seed-2-0-mini",
-    "v1-skyfall-36b-v2",
-    "v1-solar-pro-3",
-    "v1-sonar-pro-search",
-    "v1-stable-diffusion-3-5-large-v1-0",
-    "v1-stable-diffusion-3-large-v1-0",
-    "v1-step-3-5-flash",
-    "v1-switchpoint-router",
-    "v1-tongyi-deepresearch-30b-a3b",
-    "v1-trinity-large-preview-free",
-    "v1-trinity-large-thinking",
-    "v1-trinity-mini",
-    "v1-twelvelabs-marengo-embed-3-0",
-    "v1-ui-tars-1-5-7b",
-    "v1-unslopnemo-12b",
-    "v1-virtuoso-large",
-    "v1-voxtral-mini-1-0",
-    "v1-voxtral-small-1-0",
-    "v1-voxtral-small-24b-2507",
-    "v1-wizardlm-2-8x22b",
-    "v1-writer-palmyra-vision-7b",
+    "tongyi-deepresearch-30b-a3b",
+    "trinity-large-preview-free",
+    "trinity-large-thinking",
+    "trinity-mini",
+    "twelvelabs-marengo-embed-2-7",
+    "twelvelabs-marengo-embed-3-0",
+    "twelvelabs-pegasus-1-2",
+    "ui-tars-1-5-7b",
+    "unslopnemo-12b",
     "veo-2-0-generate-001",
-    "veo-3-1-generate-preview",
+    "veo-3-1-generate",
+    "virtuoso-large",
+    "voxtral-mini-1-0",
+    "voxtral-small-1-0",
+    "voxtral-small-24b-2507",
     "voyage-2",
     "voyage-3",
     "voyage-3-5",
@@ -4033,7 +4092,9 @@
     "voyage-large-2",
     "voyage-law-2",
     "voyage-lite-01",
-    "voyage-lite-02-instruct",
-    "voyage-multimodal-3"
+    "voyage-lite-02",
+    "voyage-multimodal-3",
+    "wizardlm-2-8x22b",
+    "writer-palmyra-vision-7b"
   ]
 }

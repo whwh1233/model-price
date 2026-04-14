@@ -138,17 +138,10 @@ def _maker_from_model_id(model_id: Optional[str]) -> Optional[str]:
 
 
 def _family_from_model_name(name: Optional[str]) -> Optional[str]:
-    if not name:
-        return None
-    cleaned = name.strip()
-    # Drop author prefix if present ("allenai/OLMo 3 32b" → "OLMo 3 32b")
-    if "/" in cleaned:
-        cleaned = cleaned.split("/", 1)[1]
-    # Take the first token as family hint
-    token = cleaned.split(" ", 1)[0]
-    token = token.split("-", 1)[0]
-    if token and token[0].isalpha() and len(token) >= 2:
-        return token.capitalize()
+    """Deprecated — kept for reference. We now prefer maker-as-family
+    in the synthetic path because this function produced too many
+    ugly labels ("Aionlabs:", "Body", "Seed").
+    """
     return None
 
 
@@ -223,10 +216,18 @@ class OfferingMerger:
         for provider_name, models in v1_models_by_provider.items():
             for model in models:
                 resolution = self.resolver.resolve(provider_name, model.model_id)
-                if not resolution.matched():
-                    # Don't drop it — cluster by model_name so multiple
-                    # providers serving the same new model still end up
-                    # as one synthetic entity with multiple offerings.
+                canonical_id = resolution.canonical_id if resolution.matched() else None
+
+                # If the resolver matched an alias that points at a
+                # canonical_id with no actual registry entry behind it
+                # (a "dangling alias"), treat it as unmatched so the
+                # record can still be promoted into a synthetic entity.
+                if canonical_id is not None and canonical_id not in entities:
+                    entry = self.registry.get(canonical_id)
+                    if entry is None:
+                        canonical_id = None
+
+                if canonical_id is None:
                     cluster_key = _unmatched_cluster_key(model)
                     unmatched_buckets.setdefault(cluster_key, []).append(
                         (provider_name, model)
@@ -237,8 +238,7 @@ class OfferingMerger:
                         tried=resolution.tried,
                     )
                     continue
-                canonical_id = resolution.canonical_id
-                assert canonical_id is not None
+
                 if canonical_id not in entities:
                     entry = self.registry.get(canonical_id)
                     if entry is None:
@@ -248,7 +248,6 @@ class OfferingMerger:
 
                 offering = self._offering_from_v1(model, provider_name, now)
                 offerings_by_entity[canonical_id].append(offering)
-                # Also register the raw id as an alias for future lookups
                 self.registry.register_alias(model.model_id, canonical_id)
                 self.registry.register_alias(
                     f"{provider_name}:{model.model_id}", canonical_id
@@ -260,8 +259,14 @@ class OfferingMerger:
         for cluster_key, bucket in unmatched_buckets.items():
             if not cluster_key:
                 continue
-            slug = f"v1-{cluster_key}"
-            # Avoid colliding with a LiteLLM canonical slug
+            # Use the bare cluster_key as slug first so models like
+            # "claude-3-5-sonnet" and "llama-4-maverick" — which LiteLLM
+            # doesn't expose as first-party canonicals — still get the
+            # clean URL users expect. Only prefix with "v1-" if a slug
+            # collision would shadow a real canonical entry.
+            slug = cluster_key
+            if slug in entities:
+                slug = f"v1-{cluster_key}"
             if slug in entities:
                 slug = f"v1-{cluster_key}-{bucket[0][0]}"
             synthetic_entity = self._synthetic_entity_from_v1(slug, bucket, now)
@@ -413,7 +418,11 @@ class OfferingMerger:
         if maker == "Unknown":
             maker = _maker_from_model_id(base.model_id) or "Unknown"
         if family == "Other":
-            family = _family_from_model_name(display_name) or "Other"
+            # Prefer reusing maker as family when we can't detect a real
+            # family name — avoids junk labels like "Aionlabs:" or "Body"
+            # leaking into the dropdown.
+            if maker != "Unknown":
+                family = maker
 
         caps: set[str] = set()
         in_mods: set[str] = set()

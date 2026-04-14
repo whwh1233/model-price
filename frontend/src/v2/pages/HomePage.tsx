@@ -9,6 +9,14 @@ import { EntityTable } from '../components/EntityTable';
 import { EntityDrawer } from '../components/EntityDrawer';
 import './HomePage.css';
 
+function cleanLabel(raw: string | null | undefined): string {
+  if (!raw) return '';
+  // Strip trailing punctuation and whitespace, title-case
+  const stripped = raw.trim().replace(/[\s:;,./]+$/, '');
+  if (!stripped) return '';
+  return stripped;
+}
+
 interface HomePageProps {
   onOpenPalette: () => void;
 }
@@ -116,8 +124,22 @@ export function HomePage({ onOpenPalette }: HomePageProps) {
 function useTotals() {
   const { entities } = useEntitiesV2({});
   return useMemo(() => {
-    const makers = [...new Set(entities.map((e) => e.maker))].sort();
-    const families = [...new Set(entities.map((e) => e.family))].sort();
+    // Dedupe case-insensitively and strip trailing punctuation so
+    // "Bytedance" and "Bytedance:" don't both show up in the dropdown.
+    const makersSet = new Map<string, string>();
+    const familiesSet = new Map<string, string>();
+    for (const e of entities) {
+      const maker = cleanLabel(e.maker);
+      if (maker && maker !== 'Unknown' && maker !== 'Other') {
+        makersSet.set(maker.toLowerCase(), maker);
+      }
+      const family = cleanLabel(e.family);
+      if (family && family !== 'Unknown' && family !== 'Other') {
+        familiesSet.set(family.toLowerCase(), family);
+      }
+    }
+    const makers = [...makersSet.values()].sort();
+    const families = [...familiesSet.values()].sort();
     return {
       totalEntities: entities.length,
       makers,
