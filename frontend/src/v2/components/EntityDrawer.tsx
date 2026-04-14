@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { PUBLIC_BASE_URL } from '../../config';
 import { useEntityV2 } from '../../hooks/useEntityV2';
 import { AlternativesList } from './AlternativesList';
 import { ShareActions } from './ShareActions';
@@ -167,7 +168,7 @@ function DrawerContent({
 
       <OfficialLinks maker={entity.maker} />
       <ShareActions
-        url={`${window.location.origin}/m/${entity.slug}`}
+        url={`${PUBLIC_BASE_URL}/m/${entity.slug}`}
         name={entity.name}
         maker={entity.maker}
       />
