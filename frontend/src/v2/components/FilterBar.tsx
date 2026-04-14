@@ -9,6 +9,8 @@ const CAPABILITIES = [
   'tool_use',
   'reasoning',
   'function_calling',
+  'image_generation',
+  'embedding',
 ] as const;
 
 const SORTS: { value: NonNullable<EntitiesListQuery['sort']>; label: string }[] = [

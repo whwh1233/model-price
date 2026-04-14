@@ -10,9 +10,10 @@ interface LayoutProps {
 
 export function Layout({ children, onOpenPalette }: LayoutProps) {
   const location = useLocation();
-  // Home page has its own hero search; a second topbar input would be
-  // redundant. Detail / compare routes lose the hero, so show it there.
-  const showTopbarSearch = location.pathname !== '/';
+  // Home page has its own hero search with an embedded ⌘K hint — any
+  // extra topbar entry would duplicate it. Detail / compare routes
+  // lose the hero so we put the full topbar search back there.
+  const isHome = location.pathname === '/';
 
   return (
     <div className="v2-shell">
@@ -22,7 +23,7 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
           <span className="v2-brand-name">Model Price</span>
           <span className="v2-brand-tag">v2 preview</span>
         </Link>
-        {showTopbarSearch ? (
+        {!isHome && (
           <button
             type="button"
             className="v2-topbar-search"
@@ -31,16 +32,6 @@ export function Layout({ children, onOpenPalette }: LayoutProps) {
           >
             <span className="v2-topbar-search-icon">⌕</span>
             <span className="v2-topbar-search-label">Search models…</span>
-            <kbd>⌘K</kbd>
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="v2-topbar-palette-mini"
-            onClick={onOpenPalette}
-            aria-label="Open command palette"
-            title="Quick search (⌘K)"
-          >
             <kbd>⌘K</kbd>
           </button>
         )}

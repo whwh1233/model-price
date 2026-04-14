@@ -155,19 +155,22 @@ def _family_from_model_name(name: Optional[str]) -> Optional[str]:
 def _unmatched_cluster_key(model: ModelPricing) -> str:
     """Derive a stable cluster key from an unmatched v1 record so that
     the same underlying model from different providers ends up in one
-    synthetic entity.
+    synthetic entity, while distinct versions (K2, K2.5, K2 Thinking)
+    remain separate.
 
-    Priority: display name (if meaningfully different from model_id) →
-    stripped model_id.
+    Priority: model_id slug (most stable across providers, carries the
+    version bits like ".5" or "-thinking") → fallback to model_name slug
+    if the id isn't informative enough.
     """
-    name_candidate = slugify(model.model_name or "")
     id_candidate = slugify(model.model_id or "")
-    # Prefer the name-based key when it's informative, since the same
-    # physical model often has very different provider-specific ids
-    # ("anthropic.claude-sonnet-4-5-v1:0" vs "anthropic/claude-sonnet-4.5")
-    # but a shared display name like "Claude Sonnet 4.5".
-    key = name_candidate if len(name_candidate) >= 4 else id_candidate
-    return strip_version_suffix(key)
+    name_candidate = slugify(model.model_name or "")
+    # A good id_candidate has at least two dash-separated segments
+    # ("kimi-k2-5" good, "chat" bad).
+    if len(id_candidate) >= 4 and "-" in id_candidate:
+        return id_candidate
+    if len(name_candidate) >= 4:
+        return name_candidate
+    return id_candidate or name_candidate
 
 # When multiple canonical providers offer the same entity, the UI needs
 # one "primary" to show. We derive it from the entity's maker, falling

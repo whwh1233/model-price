@@ -46,9 +46,11 @@ PER_TOKEN_TO_PER_MTOKEN = 1_000_000.0
 CANONICAL_LITELLM_PROVIDERS = {
     "anthropic",
     "openai",
+    "chatgpt",
     "text-completion-openai",
     "google",
     "gemini",
+    "palm",
     "vertex_ai-language-models",
     "xai",
     "deepseek",
@@ -66,6 +68,19 @@ CANONICAL_LITELLM_PROVIDERS = {
     "assemblyai",
     "deepgram",
     "elevenlabs",
+    # Chinese + other first-party model labs
+    "moonshot",      # Moonshot AI — Kimi
+    "zai",           # Z.AI — GLM
+    "minimax",       # MiniMax — abab/m1
+    "dashscope",     # Alibaba — Qwen official API
+    "volcengine",    # ByteDance — Doubao
+    "gigachat",      # Sber
+    # Image / video / audio labs (first-party)
+    "black_forest_labs",  # Flux
+    "stability",     # Stable Diffusion / SDXL
+    "runwayml",      # Gen / video
+    "fal_ai",        # keep off — aggregator; stays out
+    "aleph_alpha",   # Luminous
 }
 
 # Providers whose entries are explicitly aggregators / distribution channels.
@@ -141,32 +156,61 @@ DISPLAY_CAPABILITIES = {
 
 FAMILY_PATTERNS: List[tuple[str, str, List[str]]] = [
     # (family, maker, list of lowercase substrings in canonical id/name)
+    # Order matters — more specific patterns first.
+    ("Cogito", "Deep Cogito", ["cogito"]),  # Cogito models contain "llama", must check first
     ("Claude", "Anthropic", ["claude"]),
     ("Gemini", "Google", ["gemini"]),
     ("Gemma", "Google", ["gemma"]),
     ("Imagen", "Google", ["imagen"]),
     ("Veo", "Google", ["veo-"]),
-    ("GPT", "OpenAI", ["gpt-", "gpt4", "gpt3", "gpt5", "chatgpt"]),
+    ("LearnLM", "Google", ["learnlm"]),
     ("OpenAI O-Series", "OpenAI", ["o1-", "o3-", "o4-", "o1 ", "o3 ", "o4 ", "o1,", "o3,", "o4,"]),
+    ("GPT", "OpenAI", [
+        "gpt-", "gpt4", "gpt3", "gpt5", "chatgpt",
+        "babbage", "davinci",
+        "ft:", "ft-",
+    ]),
     ("Whisper", "OpenAI", ["whisper"]),
     ("DALL-E", "OpenAI", ["dall-e"]),
     ("OpenAI TTS", "OpenAI", ["tts-"]),
     ("OpenAI Embedding", "OpenAI", ["text-embedding"]),
     ("Codex", "OpenAI", ["codex"]),
+    ("Sora", "OpenAI", ["sora"]),
     ("Llama", "Meta", ["llama", "llama-guard"]),
-    ("Mistral", "Mistral", ["mistral", "mixtral", "codestral", "ministral", "pixtral", "devstral", "voxtral"]),
+    ("Mistral", "Mistral", ["mistral", "mixtral", "codestral", "ministral", "pixtral", "devstral", "voxtral", "magistral"]),
     ("Nova", "Amazon", ["nova-"]),
     ("Titan", "Amazon", ["titan"]),
     ("Command", "Cohere", ["command"]),
-    ("Cohere Embed", "Cohere", ["embed-"]),
+    ("Cohere Embed", "Cohere", ["embed-", "cohere embed"]),
+    ("Rerank", "Cohere", ["rerank"]),
     ("Grok", "xAI", ["grok"]),
     ("DeepSeek", "DeepSeek", ["deepseek", "r1-"]),
     ("Qwen", "Alibaba", ["qwen", "qwq", "tongyi"]),
     ("Nemotron", "NVIDIA", ["nemotron"]),
     ("Jamba", "AI21", ["jamba"]),
+    ("Jurassic", "AI21", ["jurassic", "j2-"]),
     ("Phi", "Microsoft", ["phi-"]),
-    ("Stable Diffusion", "Stability AI", ["stable-diffusion"]),
-    ("Cogito", "Deep Cogito", ["cogito"]),
+    ("Stable Diffusion", "Stability AI", ["stable-diffusion", "sdxl", "sd3-", "sd-3"]),
+    # Chinese labs
+    ("Kimi", "Moonshot AI", ["kimi"]),
+    ("Moonshot", "Moonshot AI", ["moonshot-v"]),
+    ("GLM", "Z.AI", ["glm-", "glm4", "chatglm"]),
+    ("MiniMax", "MiniMax", ["minimax", "abab", "m1-"]),
+    ("Yi", "01.AI", ["yi-", "01-ai"]),
+    ("Ernie", "Baidu", ["ernie"]),
+    ("Doubao", "ByteDance", ["doubao"]),
+    ("Hunyuan", "Tencent", ["hunyuan"]),
+    ("Step", "StepFun", ["step-"]),
+    # Image / video / audio labs
+    ("Flux", "Black Forest Labs", ["flux-", "flux-1", "flux-pro"]),
+    ("Runway", "Runway", ["runway-", "gen-4", "gen-3"]),
+    ("Luminous", "Aleph Alpha", ["luminous"]),
+    # Embedding / audio service canonicals
+    ("Voyage", "Voyage AI", ["voyage-"]),
+    ("Jina", "Jina AI", ["jina-"]),
+    ("AssemblyAI", "AssemblyAI", ["assemblyai", "universal-"]),
+    ("Deepgram", "Deepgram", ["deepgram", "nova-2-"]),
+    ("ElevenLabs", "ElevenLabs", ["eleven-", "elevenlabs"]),
 ]
 
 

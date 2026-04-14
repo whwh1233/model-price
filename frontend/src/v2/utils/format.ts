@@ -47,7 +47,8 @@ const CAP_LABEL: Record<string, string> = {
   tool_use: 'Tools',
   reasoning: 'Reasoning',
   function_calling: 'Functions',
-  image_generation: 'Image gen',
+  image_generation: 'Images',
+  embedding: 'Embedding',
 };
 
 export function capabilityLabel(cap: string): string {
