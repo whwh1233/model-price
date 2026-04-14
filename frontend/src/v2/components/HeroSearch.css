@@ -31,15 +31,11 @@
   padding: var(--sp-4) var(--sp-5);
   max-width: 760px;
   background: var(--bg-1);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-strong);
   border-radius: var(--rad-xl);
   transition: border-color var(--dur-fast) var(--ease),
     box-shadow var(--dur-fast) var(--ease);
   box-shadow: var(--shadow-md);
-}
-
-:root[data-theme="light"] .v2-hero-search {
-  border-color: var(--border-strong);
 }
 
 .v2-hero-search:focus-within {

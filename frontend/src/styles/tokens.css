@@ -131,77 +131,84 @@
 
 /* ─── Light theme ─── applied when <html data-theme="light">
  *
- * Design intent: structure comes from borders + shadows, not glow.
- * Page sits on a cool gray so white cards visibly float on top.
- * Border tokens are boosted ~2× vs. dark mode so "subtle" means
- * "barely but visible", not "invisible". Text uses deep slate
- * instead of pure black to soften mono-number walls in the table. */
+ * Design intent: warm off-white page, pure-white cards, very subtle
+ * borders, and soft multi-layer shadows carrying elevation. Styled
+ * after Linear / Vercel / Stripe / Notion — the weight comes from
+ * typography and whitespace, NOT from hard borders. If it feels
+ * tempting to bump a border value, bump a shadow instead. */
 :root[data-theme="light"] {
   color-scheme: light;
 
-  /* Page vs. card: a real 5-10 brightness step so cards float. */
-  --bg-0: #eef0f6;         /* page */
-  --bg-1: #ffffff;         /* cards / panels */
-  --bg-2: #f4f5fa;         /* inputs, selects, header rows */
-  --bg-3: #e6e9f2;         /* hover */
-  --bg-4: #d4d8e4;         /* pressed */
-  --bg-hover: rgba(20, 24, 40, 0.045);
-  --bg-active: rgba(20, 24, 40, 0.08);
-  --bg-glow: none;         /* no aurora glow in light mode */
+  /* Warm off-white page so white cards gently lift above it. */
+  --bg-0: #fafaf8;          /* page */
+  --bg-1: #ffffff;          /* cards / panels */
+  --bg-2: #f5f5f3;          /* chrome surfaces (chips, selects, header rows) */
+  --bg-3: #ececea;          /* hover */
+  --bg-4: #dededb;          /* pressed */
+  --bg-hover: rgba(24, 24, 27, 0.045);
+  --bg-active: rgba(24, 24, 27, 0.075);
+  --bg-glow: none;          /* no aurora in light mode */
 
-  /* Borders carry structure — must be visibly present on white. */
-  --border-subtle: rgba(20, 24, 40, 0.1);
-  --border-default: rgba(20, 24, 40, 0.16);
-  --border-strong: rgba(20, 24, 40, 0.26);
+  /* Borders are WHISPER-subtle. Shadows carry weight, not lines. */
+  --border-subtle: rgba(24, 24, 27, 0.06);
+  --border-default: rgba(24, 24, 27, 0.09);
+  --border-strong: rgba(24, 24, 27, 0.14);
 
-  /* Text: deep slate rather than pure black, keeps monos comfortable. */
-  --fg-0: #14182a;
-  --fg-1: #2a3046;
-  --fg-2: #555b72;
-  --fg-3: #7f8598;
-  --fg-4: #b0b5c3;
+  /* Warm near-black text — softer than pure black for long reads. */
+  --fg-0: #18181b;
+  --fg-1: #27272a;
+  --fg-2: #52525b;
+  --fg-3: #71717a;
+  --fg-4: #a1a1aa;
 
-  /* Indigo accent that reads well on white with a strong hover. */
-  --accent: #4f46e5;
-  --accent-strong: #3b33c4;
-  --accent-soft: rgba(79, 70, 229, 0.12);
-  --accent-glow: rgba(79, 70, 229, 0.32);
+  /* Restrained Tailwind blue-600 accent. */
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.09);
+  --accent-glow: rgba(37, 99, 235, 0.22);
 
-  --success: #16a67a;
-  --warning: #d4810f;
-  --danger: #e04a5c;
-  --info: #1b6fd0;
+  --success: #0f9b6e;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --info: #2563eb;
 
-  /* Real card shadows: critical for depth in light mode. */
-  --shadow-sm: 0 1px 2px rgba(20, 24, 40, 0.06);
-  --shadow-md: 0 4px 14px rgba(20, 24, 40, 0.08), 0 1px 3px rgba(20, 24, 40, 0.04);
-  --shadow-lg: 0 12px 32px rgba(20, 24, 40, 0.12), 0 4px 12px rgba(20, 24, 40, 0.06);
-  --shadow-xl: 0 24px 64px rgba(20, 24, 40, 0.14), 0 8px 20px rgba(20, 24, 40, 0.08);
+  /* Layered soft shadows — Stripe/Linear-style depth. */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md:
+    0 1px 3px rgba(16, 24, 40, 0.05),
+    0 6px 16px rgba(16, 24, 40, 0.06);
+  --shadow-lg:
+    0 4px 6px rgba(16, 24, 40, 0.05),
+    0 12px 28px rgba(16, 24, 40, 0.09);
+  --shadow-xl:
+    0 6px 10px rgba(16, 24, 40, 0.05),
+    0 28px 56px rgba(16, 24, 40, 0.14);
 
-  /* Maker colors tuned for contrast on white backgrounds. */
-  --maker-anthropic: #c4571f;
-  --maker-openai: #0d8268;
-  --maker-google: #1558d6;
-  --maker-xai: #2b3040;
-  --maker-deepseek: #4038d3;
-  --maker-meta: #0255a8;
-  --maker-mistral: #d4411a;
-  --maker-cohere: #bf4526;
-  --maker-default: #4f46e5;
+  /* Maker dots: balanced saturation on white. */
+  --maker-anthropic: #cc785c;
+  --maker-openai: #10a37f;
+  --maker-google: #4285f4;
+  --maker-xai: #27272a;
+  --maker-deepseek: #4f46e5;
+  --maker-meta: #0467df;
+  --maker-mistral: #f04e23;
+  --maker-cohere: #d25d00;
+  --maker-default: #2563eb;
 
-  /* Capability labels: saturated for legibility on light chips. */
-  --cap-text: #555b72;
-  --cap-vision: #16734d;
-  --cap-audio: #b55a0e;
-  --cap-tool: #3a43c4;
-  --cap-reason: #7536c0;
-  --cap-function: #2066c2;
-  --cap-image-gen: #b8348c;
+  /* Capability label hues: saturated for legibility on light chips. */
+  --cap-text: #52525b;
+  --cap-vision: #0e7c4e;
+  --cap-audio: #b45309;
+  --cap-tool: #2563eb;
+  --cap-reason: #7c3aed;
+  --cap-function: #0284c7;
+  --cap-image-gen: #be185d;
 
   --ring: 0 0 0 2px var(--bg-1), 0 0 0 4px var(--accent);
 }
 
-/* Light-mode overrides for components that rely on dark-only glow. */
+/* Light-mode component tweaks. Kept in one place so we don't litter
+ * component CSS files with [data-theme="light"] blocks. */
 :root[data-theme="light"] .v2-hero-title .num {
   text-shadow: none;
 }
@@ -210,10 +217,205 @@
   text-shadow: none;
 }
 
-/* Light-mode body scrim: drop the aurora glow so the page reads flat
- * and the shadow-based card structure carries the visual weight. */
 :root[data-theme="light"] body::before {
   display: none;
+}
+
+/* Chips: flatter, no fake border — rely on soft bg against card white. */
+:root[data-theme="light"] .v2-chip,
+:root[data-theme="light"] .v2-select,
+:root[data-theme="light"] .v2-filters-sort {
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+:root[data-theme="light"] .v2-chip:hover,
+:root[data-theme="light"] .v2-select:hover {
+  background: var(--bg-3);
+}
+
+:root[data-theme="light"] .v2-chip.is-active {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-color: transparent;
+}
+
+/* Buttons in light: subtle gray fill, no border, accent for primary. */
+:root[data-theme="light"] .v2-btn {
+  background: var(--bg-2);
+  border-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .v2-btn:hover:not(:disabled) {
+  background: var(--bg-3);
+  border-color: transparent;
+}
+
+:root[data-theme="light"] .v2-btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .v2-btn-primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+/* Topbar mini controls in light: no hard border, rely on bg + shadow. */
+:root[data-theme="light"] .v2-topbar-github,
+:root[data-theme="light"] .v2-theme-toggle,
+:root[data-theme="light"] .v2-locale-toggle {
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+:root[data-theme="light"] .v2-topbar-github:hover,
+:root[data-theme="light"] .v2-theme-toggle:hover,
+:root[data-theme="light"] .v2-locale-toggle:hover {
+  background: var(--bg-3);
+}
+
+:root[data-theme="light"] .v2-topbar-search {
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+:root[data-theme="light"] .v2-topbar-search:hover {
+  background: var(--bg-3);
+}
+
+/* Tables / panels in light: lean on shadow, keep borders invisible. */
+:root[data-theme="light"] .v2-table,
+:root[data-theme="light"] .v2-compare-grid,
+:root[data-theme="light"] .v2-offerings,
+:root[data-theme="light"] .v2-alt {
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="light"] .v2-row {
+  border-bottom-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-table-head,
+:root[data-theme="light"] .v2-offer-head,
+:root[data-theme="light"] .v2-compare-label,
+:root[data-theme="light"] .v2-compare-col-head {
+  background: var(--bg-2);
+  border-bottom-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-compare-grid > * {
+  border-bottom-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-offer {
+  border-bottom-color: var(--border-subtle);
+}
+
+/* Hero search in light: pure white, whisper border, strong shadow. */
+:root[data-theme="light"] .v2-hero-search {
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+}
+
+:root[data-theme="light"] .v2-hero-search:focus-within {
+  box-shadow: var(--shadow-lg), 0 0 0 4px var(--accent-soft);
+}
+
+/* Drawer / palette / basket in light: white surface + real shadow. */
+:root[data-theme="light"] .v2-drawer {
+  border-left-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-drawer-scrim {
+  background: rgba(24, 24, 27, 0.35);
+}
+
+:root[data-theme="light"] .v2-palette,
+:root[data-theme="light"] .v2-basket {
+  border-color: var(--border-subtle);
+}
+
+:root[data-theme="light"] .v2-basket-chip {
+  background: var(--bg-2);
+  border-color: transparent;
+}
+
+:root[data-theme="light"] .v2-basket-chip:hover {
+  background: var(--bg-3);
+}
+
+/* Capability pills in light: use soft tinted backgrounds. */
+:root[data-theme="light"] .v2-cap {
+  background: var(--bg-2);
+  color: var(--fg-2);
+}
+
+:root[data-theme="light"] .v2-cap-vision {
+  background: rgba(14, 124, 78, 0.1);
+  color: #0e7c4e;
+}
+
+:root[data-theme="light"] .v2-cap-audio {
+  background: rgba(180, 83, 9, 0.1);
+  color: #b45309;
+}
+
+:root[data-theme="light"] .v2-cap-reasoning {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+
+:root[data-theme="light"] .v2-cap-tool_use {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+:root[data-theme="light"] .v2-cap-function_calling {
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+}
+
+:root[data-theme="light"] .v2-cap-image_generation {
+  background: rgba(190, 24, 93, 0.1);
+  color: #be185d;
+}
+
+/* Primary offering row in light: soft tinted highlight instead of deep. */
+:root[data-theme="light"] .v2-offer.is-primary {
+  background: var(--accent-soft);
+  color: var(--fg-0);
+}
+
+/* Selected table row in light: accent-soft tint. */
+:root[data-theme="light"] .v2-row.is-selected {
+  background: var(--accent-soft);
+}
+
+:root[data-theme="light"] .v2-row:hover {
+  background: var(--bg-hover);
+}
+
+/* Offer primary tag: contrasting pill on accent. */
+:root[data-theme="light"] .v2-offer-tag {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Official links strip: soft warm panel. */
+:root[data-theme="light"] .v2-official-links {
+  background: var(--bg-2);
+  border-color: var(--border-subtle);
+}
+
+/* OSS badge in light: green tint. */
+:root[data-theme="light"] .v2-row-oss {
+  background: rgba(15, 155, 110, 0.1);
+  border-color: rgba(15, 155, 110, 0.3);
+  color: #0f9b6e;
 }
 
 /* ─── Base reset ─── */

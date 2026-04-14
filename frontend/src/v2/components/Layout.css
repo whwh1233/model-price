@@ -10,7 +10,7 @@
   gap: var(--sp-4);
   height: var(--header-h);
   padding: 0 var(--sp-6);
-  border-bottom: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-subtle);
   background: rgba(10, 11, 13, 0.72);
   backdrop-filter: saturate(150%) blur(12px);
   -webkit-backdrop-filter: saturate(150%) blur(12px);
@@ -20,8 +20,7 @@
 }
 
 :root[data-theme="light"] .v2-topbar {
-  background: rgba(255, 255, 255, 0.85);
-  border-bottom-color: var(--border-default);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .v2-brand {
@@ -143,7 +142,7 @@
   justify-content: center;
   gap: var(--sp-2);
   padding: var(--sp-6);
-  border-top: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-subtle);
   color: var(--fg-3);
   font-size: var(--text-xs);
 }
