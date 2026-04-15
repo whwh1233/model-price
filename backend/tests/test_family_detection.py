@@ -62,3 +62,30 @@ class TestFamilyOrdering:
         family, maker = detect_family_maker("some-obscure-fine-tune", "Some Obscure Fine Tune")
         assert family == "Other"
         assert maker == "Unknown"
+
+
+class TestEmbedBoundaryCollisions:
+    """Regression: substring-contains `"embed-"` used to collapse
+    TwelveLabs Marengo into Cohere Embed because the mid-slug `-embed-`
+    matched. The anchor variant `^embed-` fixes this while still
+    catching Cohere's own canonical ids."""
+
+    @pytest.mark.parametrize(
+        "canonical_id,expected_family,expected_maker",
+        [
+            # Cohere's own Cohere Embed canonicals — must still match.
+            ("embed-v4", "Cohere Embed", "Cohere"),
+            ("embed-english-v3", "Cohere Embed", "Cohere"),
+            ("embed-multilingual-light", "Cohere Embed", "Cohere"),
+            # AWS Bedrock form with `cohere-embed-` prefix.
+            ("cohere-embed-4-model", "Cohere Embed", "Cohere"),
+            ("cohere-embed-3-model-english", "Cohere Embed", "Cohere"),
+            # Must NOT be misclassified as Cohere — these are TwelveLabs.
+            ("twelvelabs-marengo-embed-2-7", "Marengo", "TwelveLabs"),
+            ("twelvelabs-marengo-embed-3-0", "Marengo", "TwelveLabs"),
+            ("twelvelabs-pegasus-1-2", "Pegasus", "TwelveLabs"),
+        ],
+    )
+    def test_embed_boundary(self, canonical_id, expected_family, expected_maker):
+        family, maker = detect_family_maker(canonical_id, canonical_id)
+        assert (family, maker) == (expected_family, expected_maker), canonical_id
