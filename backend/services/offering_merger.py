@@ -183,6 +183,33 @@ AUTHORITY_BY_MAKER: Dict[str, List[str]] = {
 }
 
 
+def _is_stub_offering_set(offerings: List[OfferingV2]) -> bool:
+    """True if the entity has only LiteLLM-fallback placeholder offerings.
+
+    A "stub" is an entity whose every offering is:
+    - sourced from litellm_fallback (no real provider ever confirmed
+      the pricing), AND
+    - has both input and output price equal to 0 or missing.
+
+    These come from LiteLLM stub entries for newly-announced models
+    (no price known yet) or per-request APIs like text-moderation /
+    rerank whose pricing model doesn't fit per-1M-token. Showing them
+    as "free $0" misleads users — we drop them entirely. Real free
+    models come in through OpenRouter's provider_api (e.g. the
+    *-free variants), which passes this check and is preserved.
+    """
+    if not offerings:
+        return False
+    for offering in offerings:
+        if offering.source != "litellm_fallback":
+            return False
+        input_price = offering.pricing.input or 0
+        output_price = offering.pricing.output or 0
+        if input_price != 0 or output_price != 0:
+            return False
+    return True
+
+
 class OfferingMerger:
     def __init__(
         self,
@@ -293,9 +320,26 @@ class OfferingMerger:
             synthesized += 1
 
         # ─── Pass 4: prune entities without any usable offering
-        final_slugs = {
-            slug for slug, offs in offerings_by_entity.items() if offs
-        }
+        # Also drop "stubs" — entities whose only offerings are
+        # litellm_fallback placeholders with no real price data
+        # ($0 input AND $0 output). LiteLLM routinely publishes empty
+        # entries for brand-new model releases before upstream pricing
+        # is known, and for per-request APIs (moderation, rerank)
+        # whose pricing model doesn't fit our per-token schema at all.
+        # Keeping them surfaces misleading "free" entries to users
+        # and creates phantom duplicates like kimi-k2-thinking-251104
+        # alongside the real kimi-k2-thinking. Real free models
+        # (OpenRouter's *-free variants) come through as provider_api
+        # offerings and are preserved.
+        final_slugs: set[str] = set()
+        stub_count = 0
+        for slug, offs in offerings_by_entity.items():
+            if not offs:
+                continue
+            if _is_stub_offering_set(offs):
+                stub_count += 1
+                continue
+            final_slugs.add(slug)
         pruned_entities = [entities[s] for s in sorted(final_slugs)]
         pruned_offerings: Dict[str, List[OfferingV2]] = {
             s: offerings_by_entity[s] for s in final_slugs
@@ -315,12 +359,14 @@ class OfferingMerger:
 
         logger.info(
             "OfferingMerger: %s entities kept (of %s canonical); "
-            "provider attach: %s; litellm_fallback: %s; v1_synthetic: %s",
+            "provider attach: %s; litellm_fallback: %s; v1_synthetic: %s; "
+            "stubs pruned: %s",
             len(pruned_entities),
             len(entities),
             attach_counts,
             synthesized,
             synthetic_count,
+            stub_count,
         )
 
         snapshot = EntityStoreSnapshot(

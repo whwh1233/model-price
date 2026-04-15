@@ -296,28 +296,6 @@
         "source": "provider_api"
       }
     ],
-    "learnlm-1-5-pro": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gemini/learnlm-1.5-pro-experimental",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": 0.0,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "hermes-3-llama-3-1-70b": [
       {
         "provider": "openrouter",
@@ -621,28 +599,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "glm-4-7-251222": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "glm-4-7-251222",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "phi-3-5": [
@@ -1710,28 +1666,6 @@
         "source": "provider_api"
       }
     ],
-    "text-moderation-stable": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "text-moderation-stable",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "gpt-54-pro": [
       {
         "provider": "openai",
@@ -1755,28 +1689,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:40.032041",
         "source": "provider_api"
-      }
-    ],
-    "doubao-embedding": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "doubao-embedding",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "qwen3-max": [
@@ -2087,28 +1999,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "nvidia-nv-rerankqa-mistral-4b-v3": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "nvidia_nim/nvidia/nv-rerankqa-mistral-4b-v3",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "qwen3-32b": [
@@ -2864,28 +2754,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "nvidia-llama-3-2-nv-rerankqa-1b-v2": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "nvidia_nim/nvidia/llama-3_2-nv-rerankqa-1b-v2",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "gemma-3-12b-it-free": [
@@ -3825,28 +3693,6 @@
         "source": "provider_api"
       }
     ],
-    "deepseek-v3-2-251201": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "deepseek-v3-2-251201",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "gemini-3-1-pro": [
       {
         "provider": "openrouter",
@@ -3940,28 +3786,6 @@
         "pricing": {
           "input": 15.0,
           "output": 15.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
-    "text-moderation-007": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "text-moderation-007",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
           "cache_read": null,
           "cache_write": null,
           "image_input": null,
@@ -4463,28 +4287,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "gemini-flash": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gemini-flash-experimental",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "stable-diffusion-3-large-v1-0": [
@@ -5225,28 +5027,6 @@
         "source": "litellm_fallback"
       }
     ],
-    "ranking-nvidia-llama-3-2-nv-rerankqa-1b-v2": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "nvidia_nim/ranking/nvidia/llama-3.2-nv-rerankqa-1b-v2",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "qwen-2-5-coder-32b-instruct": [
       {
         "provider": "openrouter",
@@ -5663,28 +5443,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "codestral-2405": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "codestral/codestral-2405",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "gpt-3-5-turbo-instruct-0914": [
@@ -7236,28 +6994,6 @@
         "source": "provider_api"
       }
     ],
-    "gemini-exp-1114": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gemini/gemini-exp-1114",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "voyage-code-3": [
       {
         "provider": "litellm",
@@ -7921,28 +7657,6 @@
         "source": "provider_api"
       }
     ],
-    "gemini-exp-1206": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gemini/gemini-exp-1206",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "gpt-4-turbo-vision": [
       {
         "provider": "azure_openai",
@@ -8116,28 +7830,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "embeddingsgigar": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gigachat/EmbeddingsGigaR",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "gpt-4o-transcribe": [
@@ -10354,28 +10046,6 @@
         "source": "provider_api"
       }
     ],
-    "gigachat-2-max": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gigachat/GigaChat-2-Max",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "gpt-oss-120b-free": [
       {
         "provider": "openrouter",
@@ -10979,28 +10649,6 @@
         "source": "provider_api"
       }
     ],
-    "rerank-english": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "rerank-english-v2.0",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "reka-edge": [
       {
         "provider": "openrouter",
@@ -11111,28 +10759,6 @@
         "source": "litellm_fallback"
       }
     ],
-    "omni-moderation": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "omni-moderation-2024-09-26",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "nvidia-nemotron-3-super-120b-a12b": [
       {
         "provider": "aws_bedrock",
@@ -11171,28 +10797,6 @@
           "audio_input": null,
           "audio_output": 12.0,
           "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
-    "embeddings": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gigachat/Embeddings",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
         },
         "batch_pricing": null,
         "availability": "ga",
@@ -11864,28 +11468,6 @@
         "source": "provider_api"
       }
     ],
-    "gigachat-2-pro": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gigachat/GigaChat-2-Pro",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "codestral-embed-2505": [
       {
         "provider": "litellm",
@@ -11928,28 +11510,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "glm-4-5-flash": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "zai/glm-4.5-flash",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "glm-4-7-flash": [
@@ -12922,28 +12482,6 @@
         "source": "provider_api"
       }
     ],
-    "kimi-k2-thinking-251104": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "kimi-k2-thinking-251104",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "moonshot-v1-128k-0430": [
       {
         "provider": "litellm",
@@ -13156,28 +12694,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "gemini-2-0-flash-exp-image-generation": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gemini-2.0-flash-exp-image-generation",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "claude-opus-4-5": [
@@ -13538,28 +13054,6 @@
         "source": "provider_api"
       }
     ],
-    "doubao-embedding-text-240715": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "doubao-embedding-text-240715",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "gpt-4o-mini-audio": [
       {
         "provider": "azure_openai",
@@ -13784,28 +13278,6 @@
         "source": "provider_api"
       }
     ],
-    "doubao-embedding-large": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "doubao-embedding-large",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "nova-micro-v1": [
       {
         "provider": "openrouter",
@@ -13985,28 +13457,6 @@
         "source": "litellm_fallback"
       }
     ],
-    "text-moderation": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "text-moderation-latest",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "nvidia-nemotron-nano-2": [
       {
         "provider": "aws_bedrock",
@@ -14098,28 +13548,6 @@
         "source": "provider_api"
       }
     ],
-    "codestral": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "codestral/codestral-latest",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "glm-4-5-x": [
       {
         "provider": "litellm",
@@ -14209,50 +13637,6 @@
         "notes": null,
         "last_updated": "2026-04-15T02:59:27.142983",
         "source": "provider_api"
-      }
-    ],
-    "doubao-embedding-large-text-240915": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "doubao-embedding-large-text-240915",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
-    "doubao-embedding-large-text-250515": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "doubao-embedding-large-text-250515",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
       }
     ],
     "gemini-3-pro-image": [
@@ -14938,28 +14322,6 @@
         "source": "litellm_fallback"
       }
     ],
-    "embeddings-2": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gigachat/Embeddings-2",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": 0.0
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
     "pixtral-large": [
       {
         "provider": "litellm",
@@ -14989,28 +14351,6 @@
         "pricing": {
           "input": 0.125,
           "output": 0.125,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
-    "rerank-multilingual": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "rerank-multilingual-v2.0",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
           "cache_read": null,
           "cache_write": null,
           "image_input": null,
@@ -15143,28 +14483,6 @@
         "pricing": {
           "input": 1.1,
           "output": 4.5,
-          "cache_read": null,
-          "cache_write": null,
-          "image_input": null,
-          "audio_input": null,
-          "audio_output": null,
-          "embedding": null
-        },
-        "batch_pricing": null,
-        "availability": "ga",
-        "region": null,
-        "notes": "Price inherited from LiteLLM registry (no first-party fetch)",
-        "last_updated": "2026-04-14T18:59:40.949872",
-        "source": "litellm_fallback"
-      }
-    ],
-    "gigachat-2-lite": [
-      {
-        "provider": "litellm",
-        "provider_model_id": "gigachat/GigaChat-2-Lite",
-        "pricing": {
-          "input": 0.0,
-          "output": 0.0,
           "cache_read": null,
           "cache_write": null,
           "image_input": null,

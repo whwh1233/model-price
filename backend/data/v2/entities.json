@@ -1067,58 +1067,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "codestral",
-      "slug": "codestral",
-      "name": "Codestral",
-      "family": "Mistral",
-      "maker": "Mistral",
-      "context_length": 32000,
-      "max_output_tokens": 8191,
-      "capabilities": [
-        "text",
-        "tool_use"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "codestral-2405",
-      "slug": "codestral-2405",
-      "name": "Codestral 2405",
-      "family": "Mistral",
-      "maker": "Mistral",
-      "context_length": 32000,
-      "max_output_tokens": 8191,
-      "capabilities": [
-        "text",
-        "tool_use"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "codestral-2508",
       "slug": "codestral-2508",
       "name": "Codestral 2508",
@@ -2153,34 +2101,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "deepseek-v3-2-251201",
-      "slug": "deepseek-v3-2-251201",
-      "name": "Deepseek V3.2.251201",
-      "family": "DeepSeek",
-      "maker": "DeepSeek",
-      "context_length": 98304,
-      "max_output_tokens": 32768,
-      "capabilities": [
-        "function_calling",
-        "reasoning",
-        "text",
-        "tool_use"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "deepseek-v3-2-speciale",
       "slug": "deepseek-v3-2-speciale",
       "name": "DeepSeek V3.2 Speciale",
@@ -2428,131 +2348,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "doubao-embedding",
-      "slug": "doubao-embedding",
-      "name": "Doubao Embedding",
-      "family": "Doubao",
-      "maker": "ByteDance",
-      "context_length": 4096,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "doubao-embedding-large",
-      "slug": "doubao-embedding-large",
-      "name": "Doubao Embedding Large",
-      "family": "Doubao",
-      "maker": "ByteDance",
-      "context_length": 4096,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "doubao-embedding-large-text-240915",
-      "slug": "doubao-embedding-large-text-240915",
-      "name": "Doubao Embedding Large Text 240915",
-      "family": "Doubao",
-      "maker": "ByteDance",
-      "context_length": 4096,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "doubao-embedding-large-text-250515",
-      "slug": "doubao-embedding-large-text-250515",
-      "name": "Doubao Embedding Large Text 250515",
-      "family": "Doubao",
-      "maker": "ByteDance",
-      "context_length": 4096,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "doubao-embedding-text-240715",
-      "slug": "doubao-embedding-text-240715",
-      "name": "Doubao Embedding Text 240715",
-      "family": "Doubao",
-      "maker": "ByteDance",
-      "context_length": 4096,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "elephant-alpha",
       "slug": "elephant-alpha",
       "name": "Elephant",
@@ -2700,81 +2495,6 @@
       ],
       "mode": "embedding",
       "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "embeddings",
-      "slug": "embeddings",
-      "name": "Embeddings",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 512,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "embeddings-2",
-      "slug": "embeddings-2",
-      "name": "Embeddings 2",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 512,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "embeddingsgigar",
-      "slug": "embeddingsgigar",
-      "name": "Embeddingsgigar",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 4096,
-      "max_output_tokens": null,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": null,
       "primary_offering_provider": "litellm",
       "sources": [
         "litellm"
@@ -3376,33 +3096,6 @@
       "sources": [
         "litellm",
         "openrouter"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "gemini-2-0-flash-exp-image-generation",
-      "slug": "gemini-2-0-flash-exp-image-generation",
-      "name": "Gemini 2.0 Flash EXP Image Generation",
-      "family": "Gemini",
-      "maker": "Google",
-      "context_length": 32768,
-      "max_output_tokens": 32768,
-      "capabilities": [
-        "image_generation",
-        "vision"
-      ],
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "output_modalities": [
-        "image"
-      ],
-      "mode": "image_generation",
-      "is_open_source": false,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
       ],
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
@@ -4210,89 +3903,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "gemini-exp-1114",
-      "slug": "gemini-exp-1114",
-      "name": "Gemini EXP 1114",
-      "family": "Gemini",
-      "maker": "Google",
-      "context_length": 1048576,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "function_calling",
-        "text",
-        "tool_use",
-        "vision"
-      ],
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": false,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "gemini-exp-1206",
-      "slug": "gemini-exp-1206",
-      "name": "Gemini EXP 1206",
-      "family": "Gemini",
-      "maker": "Google",
-      "context_length": 2097152,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "function_calling",
-        "text",
-        "tool_use",
-        "vision"
-      ],
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": false,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "gemini-flash",
-      "slug": "gemini-flash",
-      "name": "Gemini Flash",
-      "family": "Gemini",
-      "maker": "Google",
-      "context_length": 1000000,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "embedding"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "embedding"
-      ],
-      "mode": "embedding",
-      "is_open_source": false,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "gemini-flash-lite",
       "slug": "gemini-flash-lite",
       "name": "Gemini Flash Lite",
@@ -4932,88 +4542,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "gigachat-2-lite",
-      "slug": "gigachat-2-lite",
-      "name": "Gigachat 2 Lite",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 128000,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "function_calling",
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "gigachat-2-max",
-      "slug": "gigachat-2-max",
-      "name": "Gigachat 2 MAX",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 128000,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "function_calling",
-        "text",
-        "vision"
-      ],
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "gigachat-2-pro",
-      "slug": "gigachat-2-pro",
-      "name": "Gigachat 2 PRO",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 128000,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "function_calling",
-        "text",
-        "vision"
-      ],
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "glm-4-32b-0414-128k",
       "slug": "glm-4-32b-0414-128k",
       "name": "GLM 4 32B 0414 128k",
@@ -5128,33 +4656,6 @@
       "canonical_id": "glm-4-5-airx",
       "slug": "glm-4-5-airx",
       "name": "GLM 4.5 Airx",
-      "family": "GLM",
-      "maker": "Z.AI",
-      "context_length": 128000,
-      "max_output_tokens": 32000,
-      "capabilities": [
-        "function_calling",
-        "text",
-        "tool_use"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "glm-4-5-flash",
-      "slug": "glm-4-5-flash",
-      "name": "GLM 4.5 Flash",
       "family": "GLM",
       "maker": "Z.AI",
       "context_length": 128000,
@@ -5318,34 +4819,6 @@
         "aws_bedrock",
         "litellm",
         "openrouter"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "glm-4-7-251222",
-      "slug": "glm-4-7-251222",
-      "name": "GLM 4.7.251222",
-      "family": "GLM",
-      "maker": "Z.AI",
-      "context_length": 204800,
-      "max_output_tokens": 131072,
-      "capabilities": [
-        "function_calling",
-        "reasoning",
-        "text",
-        "tool_use"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
       ],
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
@@ -9563,34 +9036,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "kimi-k2-thinking-251104",
-      "slug": "kimi-k2-thinking-251104",
-      "name": "Kimi K2 Thinking 251104",
-      "family": "Kimi",
-      "maker": "Moonshot AI",
-      "context_length": 229376,
-      "max_output_tokens": 32768,
-      "capabilities": [
-        "function_calling",
-        "reasoning",
-        "text",
-        "tool_use"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "kimi-k2-thinking-turbo",
       "slug": "kimi-k2-thinking-turbo",
       "name": "Kimi K2 Thinking Turbo",
@@ -9930,35 +9375,6 @@
       ],
       "mode": "chat",
       "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "learnlm-1-5-pro",
-      "slug": "learnlm-1-5-pro",
-      "name": "Learnlm 1.5 PRO",
-      "family": "LearnLM",
-      "maker": "Google",
-      "context_length": 32767,
-      "max_output_tokens": 8192,
-      "capabilities": [
-        "function_calling",
-        "text",
-        "tool_use",
-        "vision"
-      ],
-      "input_modalities": [
-        "text",
-        "image"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "chat",
-      "is_open_source": false,
       "primary_offering_provider": "litellm",
       "sources": [
         "litellm"
@@ -13705,31 +13121,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "nvidia-llama-3-2-nv-rerankqa-1b-v2",
-      "slug": "nvidia-llama-3-2-nv-rerankqa-1b-v2",
-      "name": "Nvidia Llama 3.2 NV Rerankqa 1B V2",
-      "family": "Llama",
-      "maker": "Meta",
-      "context_length": null,
-      "max_output_tokens": null,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "rerank",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "nvidia-nemotron-3-super-120b-a12b",
       "slug": "nvidia-nemotron-3-super-120b-a12b",
       "name": "NVIDIA Nemotron 3 Super 120B A12B",
@@ -13805,31 +13196,6 @@
       "primary_offering_provider": "aws_bedrock",
       "sources": [
         "aws_bedrock",
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "nvidia-nv-rerankqa-mistral-4b-v3",
-      "slug": "nvidia-nv-rerankqa-mistral-4b-v3",
-      "name": "Nvidia NV Rerankqa Mistral 4B V3",
-      "family": "Mistral",
-      "maker": "Mistral",
-      "context_length": null,
-      "max_output_tokens": null,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "rerank",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
         "litellm"
       ],
       "last_refreshed": "2026-04-14T18:59:40.949872"
@@ -14249,31 +13615,6 @@
       "sources": [
         "litellm",
         "openrouter"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "omni-moderation",
-      "slug": "omni-moderation",
-      "name": "Omni Moderation",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 32768,
-      "max_output_tokens": 0,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "moderation",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
       ],
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
@@ -16132,31 +15473,6 @@
       "last_refreshed": "2026-04-14T18:59:40.949872"
     },
     {
-      "canonical_id": "ranking-nvidia-llama-3-2-nv-rerankqa-1b-v2",
-      "slug": "ranking-nvidia-llama-3-2-nv-rerankqa-1b-v2",
-      "name": "Ranking Nvidia Llama 3.2 NV Rerankqa 1B V2",
-      "family": "Llama",
-      "maker": "Meta",
-      "context_length": null,
-      "max_output_tokens": null,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "rerank",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
       "canonical_id": "reka-edge",
       "slug": "reka-edge",
       "name": "Reka Edge",
@@ -16371,56 +15687,6 @@
       "maker": "Cohere",
       "context_length": 8000,
       "max_output_tokens": 8000,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "rerank",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "rerank-english",
-      "slug": "rerank-english",
-      "name": "Rerank English",
-      "family": "Rerank",
-      "maker": "Cohere",
-      "context_length": 4096,
-      "max_output_tokens": 4096,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "rerank",
-      "is_open_source": true,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "rerank-multilingual",
-      "slug": "rerank-multilingual",
-      "name": "Rerank Multilingual",
-      "family": "Rerank",
-      "maker": "Cohere",
-      "context_length": 4096,
-      "max_output_tokens": 4096,
       "capabilities": [
         "text"
       ],
@@ -17189,81 +16455,6 @@
       ],
       "mode": "embedding",
       "is_open_source": false,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "text-moderation",
-      "slug": "text-moderation",
-      "name": "Text Moderation",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 32768,
-      "max_output_tokens": 0,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "moderation",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "text-moderation-007",
-      "slug": "text-moderation-007",
-      "name": "Text Moderation 007",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 32768,
-      "max_output_tokens": 0,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "moderation",
-      "is_open_source": null,
-      "primary_offering_provider": "litellm",
-      "sources": [
-        "litellm"
-      ],
-      "last_refreshed": "2026-04-14T18:59:40.949872"
-    },
-    {
-      "canonical_id": "text-moderation-stable",
-      "slug": "text-moderation-stable",
-      "name": "Text Moderation Stable",
-      "family": "Other",
-      "maker": "Unknown",
-      "context_length": 32768,
-      "max_output_tokens": 0,
-      "capabilities": [
-        "text"
-      ],
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "mode": "moderation",
-      "is_open_source": null,
       "primary_offering_provider": "litellm",
       "sources": [
         "litellm"

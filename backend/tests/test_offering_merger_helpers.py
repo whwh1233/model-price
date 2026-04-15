@@ -8,11 +8,43 @@ synthetic entity creation.
 from datetime import datetime
 
 from models import ModelPricing, Pricing
+from models.v2 import OfferingV2, PricingV2
 from services.offering_merger import (
+    _is_stub_offering_set,
     _maker_from_model_id,
     _round_price,
     _unmatched_cluster_key,
 )
+
+
+def _fallback_offering(input_price: float, output_price: float) -> OfferingV2:
+    return OfferingV2(
+        provider="litellm",
+        provider_model_id="whatever",
+        pricing=PricingV2(input=input_price, output=output_price),
+        batch_pricing=None,
+        availability="ga",
+        region=None,
+        notes=None,
+        last_updated=datetime.utcnow(),
+        source="litellm_fallback",
+    )
+
+
+def _api_offering(
+    provider: str, input_price: float, output_price: float
+) -> OfferingV2:
+    return OfferingV2(
+        provider=provider,
+        provider_model_id="whatever",
+        pricing=PricingV2(input=input_price, output=output_price),
+        batch_pricing=None,
+        availability="ga",
+        region=None,
+        notes=None,
+        last_updated=datetime.utcnow(),
+        source="provider_api",
+    )
 
 
 def _make_model(model_id: str, model_name: str = "") -> ModelPricing:
@@ -82,3 +114,54 @@ class TestMakerFromModelId:
 
     def test_returns_none_when_no_separator(self):
         assert _maker_from_model_id("justamodel") is None
+
+
+class TestIsStubOfferingSet:
+    """Regression coverage for the data bug that let phantom entries
+    like kimi-k2-thinking-251104 appear with $0 pricing."""
+
+    def test_empty_list_not_a_stub(self):
+        assert _is_stub_offering_set([]) is False
+
+    def test_fallback_zero_zero_is_stub(self):
+        """The exact shape kimi-k2-thinking-251104 had."""
+        assert _is_stub_offering_set([_fallback_offering(0.0, 0.0)]) is True
+
+    def test_fallback_with_none_prices_is_stub(self):
+        off = OfferingV2(
+            provider="litellm",
+            provider_model_id="x",
+            pricing=PricingV2(input=None, output=None),
+            batch_pricing=None,
+            availability="ga",
+            region=None,
+            notes=None,
+            last_updated=datetime.utcnow(),
+            source="litellm_fallback",
+        )
+        assert _is_stub_offering_set([off]) is True
+
+    def test_fallback_with_real_price_not_stub(self):
+        # e.g. kimi-latest with input=2.0 — real data, keep it
+        assert _is_stub_offering_set([_fallback_offering(2.0, 5.0)]) is False
+
+    def test_fallback_with_partial_price_not_stub(self):
+        # Non-zero input OR output keeps the entity
+        assert _is_stub_offering_set([_fallback_offering(0.0, 5.0)]) is False
+        assert _is_stub_offering_set([_fallback_offering(1.0, 0.0)]) is False
+
+    def test_real_provider_zero_zero_not_stub(self):
+        """OpenRouter's *-free variants are legitimately free.
+        They come through as provider_api, not litellm_fallback,
+        so they must be preserved."""
+        assert (
+            _is_stub_offering_set([_api_offering("openrouter", 0.0, 0.0)]) is False
+        )
+
+    def test_mixed_fallback_and_real_not_stub(self):
+        """A single non-fallback offering saves the whole entity."""
+        offs = [
+            _fallback_offering(0.0, 0.0),
+            _api_offering("openrouter", 0.1, 0.3),
+        ]
+        assert _is_stub_offering_set(offs) is False
