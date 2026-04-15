@@ -41,7 +41,7 @@ Type=simple
 User=root
 WorkingDirectory=${APP_DIR}/backend
 Environment=RELOAD=false
-Environment=CORS_ORIGINS=["https://${DOMAIN}"]
+Environment="CORS_ORIGINS=https://${DOMAIN}"
 ExecStart=${UV_BIN} run uvicorn main:app --host 127.0.0.1 --port ${BACKEND_PORT}
 Restart=on-failure
 RestartSec=5
