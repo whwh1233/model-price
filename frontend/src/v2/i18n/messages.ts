@@ -152,9 +152,8 @@ export const zh: Record<MessageKey, string> = {
   'footer.github': 'GitHub',
 
   'hero.title_prefix': '对比 ',
-  'hero.title_suffix': ' 个主流大模型,一站到底。',
-  'hero.subtitle':
-    '真实价格,真实能力。键盘优先,URL 可分享。为每天读 config 多过读官网的开发者打造。',
+  'hero.title_suffix': ' 款大模型，覆盖主流厂商。',
+  'hero.subtitle': '真实定价，真实能力。',
   'hero.search_placeholder': '按名称、系列或 model_id 搜索…',
   'hero.meta_matching_fmt': '{count} 个模型匹配 "{query}",共 {total}',
   'hero.meta_shown_fmt': '已显示 {count} / {total}',
