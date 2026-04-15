@@ -130,3 +130,41 @@ class TestComputeAlternatives:
         assert len(result) == 1
         assert result[0].canonical_id == "pricier"
         assert result[0].delta_input_pct > 0  # it's more expensive
+
+    def test_free_target_does_not_emit_infinite_delta(self):
+        """Regression: a target priced at $0 must not produce inf deltas.
+
+        When `_delta_pct(0, non_zero)` returned `inf`, the resulting
+        AlternativeV2 serialized to an invalid JSON float and crashed
+        `GET /api/v2/entities/{slug}` with a 500. Reproduced on
+        kimi-k2-thinking-251104 (litellm-fallback only, input=0,
+        output=0). See services/alternatives.py::_delta_pct.
+        """
+        import json
+        import math
+
+        free_target, free_off = _make_entity(
+            "free-target", ["text", "reasoning"], 0.0, 0.0
+        )
+        paid, paid_off = _make_entity(
+            "paid-rival", ["text", "reasoning"], 2.0, 6.0
+        )
+        offerings = {"free-target": [free_off], "paid-rival": [paid_off]}
+        result = compute_alternatives(free_target, [free_target, paid], offerings)
+
+        # Paid rivals must be filtered out (delta_in undefined, not inf).
+        for alt in result:
+            assert math.isfinite(alt.delta_input_pct), alt
+            assert math.isfinite(alt.delta_output_pct), alt
+            # Must round-trip through strict JSON (no inf/nan).
+            json.dumps(alt.model_dump())
+
+    def test_zero_priced_alternative_shows_as_cheapest(self):
+        """A free alternative to a non-free target ranks as -100%."""
+        paid_target, paid_off = _make_entity("paid", ["text"], 5.0, 15.0)
+        free_alt, free_alt_off = _make_entity("free", ["text"], 0.0, 0.0)
+        offerings = {"paid": [paid_off], "free": [free_alt_off]}
+        result = compute_alternatives(paid_target, [paid_target, free_alt], offerings)
+        assert len(result) == 1
+        assert result[0].canonical_id == "free"
+        assert result[0].delta_input_pct == -100.0

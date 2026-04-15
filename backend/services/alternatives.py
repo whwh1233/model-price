@@ -40,10 +40,17 @@ def _overlap(reference: set[str], candidate: set[str]) -> float:
 
 
 def _delta_pct(reference: float | None, candidate: float | None) -> float | None:
+    """Percent change from reference → candidate.
+
+    Returns None when the delta is undefined (reference is 0 and
+    candidate is not). Callers skip candidates with None delta, so
+    a free target yields only other free models as alternatives
+    instead of emitting non-JSON-compliant `inf` values.
+    """
     if reference is None or candidate is None:
         return None
     if reference == 0:
-        return 0.0 if candidate == 0 else float("inf")
+        return 0.0 if candidate == 0 else None
     return round(((candidate - reference) / reference) * 100.0, 1)
 
 

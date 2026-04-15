@@ -50,9 +50,14 @@ function primaryOffering(entity, offerings) {
   return primary ?? offerings[0];
 }
 
+// Percent change from reference → candidate. Returns null when the
+// delta is undefined (reference 0 and candidate non-zero), matching
+// backend/services/alternatives.py::_delta_pct so the fallback
+// snapshot never emits Infinity (which JSON.stringify coerces to
+// null quietly and corrupts the static data).
 function deltaPct(reference, candidate) {
   if (reference == null || candidate == null) return null;
-  if (reference === 0) return candidate === 0 ? 0 : Infinity;
+  if (reference === 0) return candidate === 0 ? 0 : null;
   return ((candidate - reference) / reference) * 100;
 }
 
