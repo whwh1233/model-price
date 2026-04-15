@@ -5,6 +5,18 @@ import { listFromFallback, loadFallback } from '../v2/fallbackLoader';
 
 const BACKEND_TIMEOUT_MS = 15000;
 
+const ALLOWED_SLUGS = new Set([
+  'claude-sonnet-4-6',
+  'claude-opus-4-6',
+  'claude-haiku-4-5',
+  'gpt-5-4',
+  'gpt-5-3-codex',
+]);
+
+function filterAllowed(entities: EntityListItemV2[]): EntityListItemV2[] {
+  return entities.filter((e) => ALLOWED_SLUGS.has(e.slug));
+}
+
 interface State {
   entities: EntityListItemV2[];
   loading: boolean;
@@ -48,7 +60,7 @@ export function useEntitiesV2(query: EntitiesListQuery): State & {
     const snapshot = await loadFallback();
     let paintedFallback = false;
     if (snapshot) {
-      const fallbackList = listFromFallback(snapshot, query);
+      const fallbackList = filterAllowed(listFromFallback(snapshot, query));
       setState({
         entities: fallbackList,
         loading: true,
@@ -71,7 +83,7 @@ export function useEntitiesV2(query: EntitiesListQuery): State & {
     try {
       const response = await fetch(url, { signal: controller.signal });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = (await response.json()) as EntityListItemV2[];
+      const data = filterAllowed((await response.json()) as EntityListItemV2[]);
       setState({
         entities: data,
         loading: false,

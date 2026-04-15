@@ -1,27 +1,27 @@
-/* Model Price v2 — design tokens
- * Dark-first, linear/raycast/stripe-inspired.
- * Numbers in mono, UI in sans, both kept tight. */
+/* Model Price — Claude Code aesthetic
+ * Terminal-inspired, monospace-first, warm terracotta accents.
+ * Utilitarian dev-tool feel with precise typography. */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 :root {
-  /* ─── Typography scale ─── */
-  --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont,
-    'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'SF Mono',
-    'Fira Code', Menlo, Consolas, 'Liberation Mono', monospace;
+  /* ─── Typography ─── */
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Fira Code', Menlo, Consolas, monospace;
 
-  --text-2xs: 11px;
-  --text-xs: 12px;
-  --text-sm: 13px;
+  --text-2xs: 10px;
+  --text-xs: 11px;
+  --text-sm: 12.5px;
   --text-base: 14px;
   --text-md: 15px;
   --text-lg: 17px;
   --text-xl: 20px;
   --text-2xl: 24px;
-  --text-3xl: 32px;
-  --text-4xl: 44px;
+  --text-3xl: 30px;
+  --text-4xl: 40px;
 
-  --lh-tight: 1.2;
-  --lh-normal: 1.5;
+  --lh-tight: 1.25;
+  --lh-normal: 1.55;
   --lh-loose: 1.7;
 
   --fw-regular: 400;
@@ -43,375 +43,352 @@
   --sp-16: 64px;
   --sp-20: 80px;
 
-  /* ─── Radius ─── */
-  --rad-sm: 4px;
-  --rad-md: 6px;
-  --rad-lg: 10px;
-  --rad-xl: 14px;
-  --rad-2xl: 20px;
+  /* ─── Radius — tighter, terminal-like ─── */
+  --rad-sm: 3px;
+  --rad-md: 5px;
+  --rad-lg: 8px;
+  --rad-xl: 10px;
+  --rad-2xl: 14px;
   --rad-full: 999px;
-
-  /* ─── Elevation ─── */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
-  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.65);
 
   /* ─── Motion ─── */
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast: 120ms;
-  --dur-normal: 180ms;
-  --dur-slow: 260ms;
+  --dur-fast: 100ms;
+  --dur-normal: 160ms;
+  --dur-slow: 240ms;
 
   /* ─── Density ─── */
-  --row-h: 36px;
-  --row-h-compact: 30px;
-  --header-h: 52px;
+  --row-h: 38px;
+  --row-h-compact: 32px;
+  --header-h: 48px;
 
-  /* ─── Dark theme colors (default) ─── */
-  color-scheme: dark;
-
-  --bg-0: #0a0b0d;
-  --bg-1: #111216;
-  --bg-2: #171920;
-  --bg-3: #1e2028;
-  --bg-4: #262933;
-  --bg-hover: rgba(255, 255, 255, 0.035);
-  --bg-active: rgba(255, 255, 255, 0.06);
-  --bg-glow: radial-gradient(
-    ellipse 60% 80% at 50% 0%,
-    rgba(100, 130, 255, 0.12),
-    transparent 70%
-  );
-
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-default: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-
-  --fg-0: #f5f6f8;
-  --fg-1: #dcdee4;
-  --fg-2: #9aa0ad;
-  --fg-3: #6a7180;
-  --fg-4: #474c58;
-
-  --accent: #7c9bff;
-  --accent-strong: #5e82ff;
-  --accent-soft: rgba(124, 155, 255, 0.15);
-  --accent-glow: rgba(124, 155, 255, 0.35);
-
-  --success: #4fd39a;
-  --warning: #f4a14c;
-  --danger: #ff6e7f;
-  --info: #64b5f6;
-
-  /* ─── Maker colors (low saturation, dark-friendly) ─── */
-  --maker-anthropic: #d97757;
-  --maker-openai: #10a37f;
-  --maker-google: #4285f4;
-  --maker-xai: #cfd2d6;
-  --maker-deepseek: #4e6bff;
-  --maker-meta: #0468e1;
-  --maker-mistral: #fa5c1f;
-  --maker-cohere: #ff7757;
-  --maker-default: #7c9bff;
-
-  /* ─── Capability colors ─── */
-  --cap-text: #8a94a6;
-  --cap-vision: #9ae6b4;
-  --cap-audio: #f6ad55;
-  --cap-tool: #7c9bff;
-  --cap-reason: #d6bcfa;
-  --cap-function: #63b3ed;
-  --cap-image-gen: #ff80c0;
-
-  /* ─── Focus ring ─── */
-  --ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
-}
-
-/* ─── Light theme ─── applied when <html data-theme="light">
- *
- * Design intent: warm off-white page, pure-white cards, very subtle
- * borders, and soft multi-layer shadows carrying elevation. Styled
- * after Linear / Vercel / Stripe / Notion — the weight comes from
- * typography and whitespace, NOT from hard borders. If it feels
- * tempting to bump a border value, bump a shadow instead. */
-:root[data-theme="light"] {
+  /* ─── Light theme colors (default — Claude Code parchment) ─── */
   color-scheme: light;
 
-  /* Warm off-white page so white cards gently lift above it. */
-  --bg-0: #fafaf8;          /* page */
-  --bg-1: #ffffff;          /* cards / panels */
-  --bg-2: #f5f5f3;          /* chrome surfaces (chips, selects, header rows) */
-  --bg-3: #ececea;          /* hover */
-  --bg-4: #dededb;          /* pressed */
-  --bg-hover: rgba(24, 24, 27, 0.045);
-  --bg-active: rgba(24, 24, 27, 0.075);
-  --bg-glow: none;          /* no aurora in light mode */
+  --bg-0: #F5F0E8;          /* warm parchment page */
+  --bg-1: #FDFBF7;          /* card / panel surfaces */
+  --bg-2: #EDE8DE;          /* chrome: chips, selects, table headers */
+  --bg-3: #E3DDD2;          /* hover */
+  --bg-4: #D6D0C5;          /* pressed / active bg */
+  --bg-hover: rgba(120, 90, 50, 0.05);
+  --bg-active: rgba(120, 90, 50, 0.09);
+  --bg-glow: none;
 
-  /* Borders are WHISPER-subtle. Shadows carry weight, not lines. */
-  --border-subtle: rgba(24, 24, 27, 0.06);
-  --border-default: rgba(24, 24, 27, 0.09);
-  --border-strong: rgba(24, 24, 27, 0.14);
+  /* Borders: thin, warm, barely there */
+  --border-subtle: rgba(100, 80, 50, 0.08);
+  --border-default: rgba(100, 80, 50, 0.13);
+  --border-strong: rgba(100, 80, 50, 0.22);
 
-  /* Warm near-black text — softer than pure black for long reads. */
-  --fg-0: #18181b;
-  --fg-1: #27272a;
-  --fg-2: #52525b;
-  --fg-3: #71717a;
-  --fg-4: #a1a1aa;
+  /* Text: warm near-blacks */
+  --fg-0: #1C1917;
+  --fg-1: #292524;
+  --fg-2: #57534E;
+  --fg-3: #78716C;
+  --fg-4: #A8A29E;
 
-  /* Restrained Tailwind blue-600 accent. */
-  --accent: #2563eb;
-  --accent-strong: #1d4ed8;
-  --accent-soft: rgba(37, 99, 235, 0.09);
-  --accent-glow: rgba(37, 99, 235, 0.22);
+  /* Accent: Claude terracotta/sienna */
+  --accent: #C2693D;
+  --accent-strong: #A8552B;
+  --accent-soft: rgba(194, 105, 61, 0.10);
+  --accent-glow: rgba(194, 105, 61, 0.25);
 
-  --success: #0f9b6e;
-  --warning: #d97706;
-  --danger: #dc2626;
-  --info: #2563eb;
+  --success: #2E7D5B;
+  --warning: #B8860B;
+  --danger: #C53030;
+  --info: #2563EB;
 
-  /* Layered soft shadows — Stripe/Linear-style depth. */
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  /* Elevation — minimal, warm-toned */
+  --shadow-sm: 0 1px 2px rgba(80, 60, 30, 0.06);
   --shadow-md:
-    0 1px 3px rgba(16, 24, 40, 0.05),
-    0 6px 16px rgba(16, 24, 40, 0.06);
+    0 1px 3px rgba(80, 60, 30, 0.06),
+    0 4px 12px rgba(80, 60, 30, 0.05);
   --shadow-lg:
-    0 4px 6px rgba(16, 24, 40, 0.05),
-    0 12px 28px rgba(16, 24, 40, 0.09);
+    0 2px 6px rgba(80, 60, 30, 0.06),
+    0 8px 24px rgba(80, 60, 30, 0.08);
   --shadow-xl:
-    0 6px 10px rgba(16, 24, 40, 0.05),
-    0 28px 56px rgba(16, 24, 40, 0.14);
+    0 4px 8px rgba(80, 60, 30, 0.06),
+    0 20px 48px rgba(80, 60, 30, 0.12);
 
-  /* Maker dots: balanced saturation on white. */
-  --maker-anthropic: #cc785c;
-  --maker-openai: #10a37f;
-  --maker-google: #4285f4;
-  --maker-xai: #27272a;
-  --maker-deepseek: #4f46e5;
-  --maker-meta: #0467df;
-  --maker-mistral: #f04e23;
-  --maker-cohere: #d25d00;
-  --maker-default: #2563eb;
+  /* ─── Maker colors ─── */
+  --maker-anthropic: #C2693D;
+  --maker-openai: #0D9A72;
+  --maker-google: #3B78E7;
+  --maker-xai: #292524;
+  --maker-deepseek: #4338CA;
+  --maker-meta: #0466D9;
+  --maker-mistral: #E04A1C;
+  --maker-cohere: #C45800;
+  --maker-default: #C2693D;
 
-  /* Capability label hues: saturated for legibility on light chips. */
-  --cap-text: #52525b;
-  --cap-vision: #0e7c4e;
-  --cap-audio: #b45309;
-  --cap-tool: #2563eb;
-  --cap-reason: #7c3aed;
-  --cap-function: #0284c7;
-  --cap-image-gen: #be185d;
+  /* ─── Capability colors — muted, earthy ─── */
+  --cap-text: #57534E;
+  --cap-vision: #2E7D5B;
+  --cap-audio: #996515;
+  --cap-tool: #A8552B;
+  --cap-reason: #6D28D9;
+  --cap-function: #0369A1;
+  --cap-image-gen: #A21CAF;
 
+  /* ─── Focus ring ─── */
   --ring: 0 0 0 2px var(--bg-1), 0 0 0 4px var(--accent);
 }
 
-/* Light-mode component tweaks. Kept in one place so we don't litter
- * component CSS files with [data-theme="light"] blocks. */
-:root[data-theme="light"] .v2-hero-title .num {
+/* ─── Dark theme ─── deep charcoal with warm amber */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-0: #1A1714;
+  --bg-1: #221F1B;
+  --bg-2: #2C2823;
+  --bg-3: #38332D;
+  --bg-4: #443E37;
+  --bg-hover: rgba(255, 220, 180, 0.04);
+  --bg-active: rgba(255, 220, 180, 0.07);
+  --bg-glow: radial-gradient(
+    ellipse 50% 60% at 50% 0%,
+    rgba(194, 105, 61, 0.06),
+    transparent 70%
+  );
+
+  --border-subtle: rgba(255, 220, 180, 0.06);
+  --border-default: rgba(255, 220, 180, 0.10);
+  --border-strong: rgba(255, 220, 180, 0.16);
+
+  --fg-0: #F5F0E8;
+  --fg-1: #DDD6CB;
+  --fg-2: #A39A8E;
+  --fg-3: #786F63;
+  --fg-4: #544C42;
+
+  --accent: #D9885A;
+  --accent-strong: #E8A070;
+  --accent-soft: rgba(217, 136, 90, 0.14);
+  --accent-glow: rgba(217, 136, 90, 0.30);
+
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --danger: #F87171;
+  --info: #60A5FA;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.55);
+
+  --maker-anthropic: #D9885A;
+  --maker-openai: #34D399;
+  --maker-google: #60A5FA;
+  --maker-xai: #D4D0C8;
+  --maker-deepseek: #818CF8;
+  --maker-meta: #3B82F6;
+  --maker-mistral: #FB923C;
+  --maker-cohere: #F59E0B;
+  --maker-default: #D9885A;
+
+  --cap-text: #A39A8E;
+  --cap-vision: #4ADE80;
+  --cap-audio: #FBBF24;
+  --cap-tool: #D9885A;
+  --cap-reason: #C4B5FD;
+  --cap-function: #67E8F9;
+  --cap-image-gen: #F0ABFC;
+
+  --ring: 0 0 0 2px var(--bg-0), 0 0 0 4px var(--accent);
+}
+
+/* ─── Light-mode component tweaks ─── */
+:root:not([data-theme="dark"]) .v2-hero-title .num {
   text-shadow: none;
 }
 
-:root[data-theme="light"] .v2-brand-mark {
+:root:not([data-theme="dark"]) .v2-brand-mark {
   text-shadow: none;
 }
 
-:root[data-theme="light"] body::before {
+:root:not([data-theme="dark"]) body::before {
   display: none;
 }
 
-/* Chips: flatter, no fake border — rely on soft bg against card white. */
-:root[data-theme="light"] .v2-chip,
-:root[data-theme="light"] .v2-select,
-:root[data-theme="light"] .v2-filters-sort {
-  border-color: transparent;
+:root:not([data-theme="dark"]) .v2-chip,
+:root:not([data-theme="dark"]) .v2-select,
+:root:not([data-theme="dark"]) .v2-filters-sort {
+  border-color: var(--border-default);
   background: var(--bg-2);
 }
 
-:root[data-theme="light"] .v2-chip:hover,
-:root[data-theme="light"] .v2-select:hover {
+:root:not([data-theme="dark"]) .v2-chip:hover,
+:root:not([data-theme="dark"]) .v2-select:hover {
   background: var(--bg-3);
 }
 
-:root[data-theme="light"] .v2-chip.is-active {
+:root:not([data-theme="dark"]) .v2-chip.is-active {
   background: var(--accent-soft);
   color: var(--accent-strong);
-  border-color: transparent;
+  border-color: var(--accent);
 }
 
-/* Buttons in light: subtle gray fill, no border, accent for primary. */
-:root[data-theme="light"] .v2-btn {
+:root:not([data-theme="dark"]) .v2-btn {
   background: var(--bg-2);
-  border-color: transparent;
+  border-color: var(--border-default);
   box-shadow: var(--shadow-sm);
 }
 
-:root[data-theme="light"] .v2-btn:hover:not(:disabled) {
+:root:not([data-theme="dark"]) .v2-btn:hover:not(:disabled) {
   background: var(--bg-3);
-  border-color: transparent;
 }
 
-:root[data-theme="light"] .v2-btn-primary {
+:root:not([data-theme="dark"]) .v2-btn-primary {
   background: var(--accent);
   color: #ffffff;
   border-color: transparent;
-  box-shadow: var(--shadow-sm);
 }
 
-:root[data-theme="light"] .v2-btn-primary:hover:not(:disabled) {
+:root:not([data-theme="dark"]) .v2-btn-primary:hover:not(:disabled) {
   background: var(--accent-strong);
 }
 
-/* Topbar chip controls in light: no hard border, rely on bg + shadow. */
-:root[data-theme="light"] .v2-topbar-chip {
-  border-color: transparent;
+:root:not([data-theme="dark"]) .v2-topbar-chip {
+  border-color: var(--border-default);
   background: var(--bg-2);
 }
 
-:root[data-theme="light"] .v2-topbar-chip:hover {
+:root:not([data-theme="dark"]) .v2-topbar-chip:hover {
   background: var(--bg-3);
 }
 
-:root[data-theme="light"] .v2-topbar-search {
-  border-color: transparent;
+:root:not([data-theme="dark"]) .v2-topbar-search {
+  border-color: var(--border-default);
   background: var(--bg-2);
 }
 
-:root[data-theme="light"] .v2-topbar-search:hover {
+:root:not([data-theme="dark"]) .v2-topbar-search:hover {
   background: var(--bg-3);
 }
 
-/* Tables / panels in light: lean on shadow, keep borders invisible. */
-:root[data-theme="light"] .v2-table,
-:root[data-theme="light"] .v2-compare-grid,
-:root[data-theme="light"] .v2-offerings,
-:root[data-theme="light"] .v2-alt {
-  border-color: var(--border-subtle);
+:root:not([data-theme="dark"]) .v2-table,
+:root:not([data-theme="dark"]) .v2-compare-grid,
+:root:not([data-theme="dark"]) .v2-offerings,
+:root:not([data-theme="dark"]) .v2-alt {
+  border-color: var(--border-default);
   box-shadow: var(--shadow-sm);
 }
 
-:root[data-theme="light"] .v2-row {
+:root:not([data-theme="dark"]) .v2-row {
   border-bottom-color: var(--border-subtle);
 }
 
-:root[data-theme="light"] .v2-table-head,
-:root[data-theme="light"] .v2-offer-head,
-:root[data-theme="light"] .v2-compare-label,
-:root[data-theme="light"] .v2-compare-col-head {
+:root:not([data-theme="dark"]) .v2-table-head,
+:root:not([data-theme="dark"]) .v2-offer-head,
+:root:not([data-theme="dark"]) .v2-compare-label,
+:root:not([data-theme="dark"]) .v2-compare-col-head {
   background: var(--bg-2);
+  border-bottom-color: var(--border-default);
+}
+
+:root:not([data-theme="dark"]) .v2-compare-grid > * {
   border-bottom-color: var(--border-subtle);
 }
 
-:root[data-theme="light"] .v2-compare-grid > * {
+:root:not([data-theme="dark"]) .v2-offer {
   border-bottom-color: var(--border-subtle);
 }
 
-:root[data-theme="light"] .v2-offer {
-  border-bottom-color: var(--border-subtle);
+:root:not([data-theme="dark"]) .v2-hero-search {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-md);
 }
 
-/* Hero search in light: pure white, whisper border, strong shadow. */
-:root[data-theme="light"] .v2-hero-search {
-  border-color: var(--border-subtle);
-  box-shadow: var(--shadow-lg);
+:root:not([data-theme="dark"]) .v2-hero-search:focus-within {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md), 0 0 0 3px var(--accent-soft);
 }
 
-:root[data-theme="light"] .v2-hero-search:focus-within {
-  box-shadow: var(--shadow-lg), 0 0 0 4px var(--accent-soft);
+:root:not([data-theme="dark"]) .v2-drawer {
+  border-left-color: var(--border-default);
 }
 
-/* Drawer / palette / basket in light: white surface + real shadow. */
-:root[data-theme="light"] .v2-drawer {
-  border-left-color: var(--border-subtle);
+:root:not([data-theme="dark"]) .v2-drawer-scrim {
+  background: rgba(28, 25, 23, 0.30);
 }
 
-:root[data-theme="light"] .v2-drawer-scrim {
-  background: rgba(24, 24, 27, 0.35);
+:root:not([data-theme="dark"]) .v2-palette,
+:root:not([data-theme="dark"]) .v2-basket {
+  border-color: var(--border-default);
 }
 
-:root[data-theme="light"] .v2-palette,
-:root[data-theme="light"] .v2-basket {
-  border-color: var(--border-subtle);
-}
-
-:root[data-theme="light"] .v2-basket-chip {
+:root:not([data-theme="dark"]) .v2-basket-chip {
   background: var(--bg-2);
-  border-color: transparent;
+  border-color: var(--border-default);
 }
 
-:root[data-theme="light"] .v2-basket-chip:hover {
+:root:not([data-theme="dark"]) .v2-basket-chip:hover {
   background: var(--bg-3);
 }
 
-/* Capability pills in light: use soft tinted backgrounds. */
-:root[data-theme="light"] .v2-cap {
+/* Capability pills — soft earthy tints */
+:root:not([data-theme="dark"]) .v2-cap {
   background: var(--bg-2);
   color: var(--fg-2);
 }
 
-:root[data-theme="light"] .v2-cap-vision {
-  background: rgba(14, 124, 78, 0.1);
-  color: #0e7c4e;
+:root:not([data-theme="dark"]) .v2-cap-vision {
+  background: rgba(46, 125, 91, 0.09);
+  color: #2E7D5B;
 }
 
-:root[data-theme="light"] .v2-cap-audio {
-  background: rgba(180, 83, 9, 0.1);
-  color: #b45309;
+:root:not([data-theme="dark"]) .v2-cap-audio {
+  background: rgba(153, 101, 21, 0.09);
+  color: #996515;
 }
 
-:root[data-theme="light"] .v2-cap-reasoning {
-  background: rgba(124, 58, 237, 0.1);
-  color: #7c3aed;
+:root:not([data-theme="dark"]) .v2-cap-reasoning {
+  background: rgba(109, 40, 217, 0.08);
+  color: #6D28D9;
 }
 
-:root[data-theme="light"] .v2-cap-tool_use {
-  background: rgba(37, 99, 235, 0.1);
-  color: #2563eb;
+:root:not([data-theme="dark"]) .v2-cap-tool_use {
+  background: rgba(168, 85, 43, 0.09);
+  color: #A8552B;
 }
 
-:root[data-theme="light"] .v2-cap-function_calling {
-  background: rgba(2, 132, 199, 0.1);
-  color: #0284c7;
+:root:not([data-theme="dark"]) .v2-cap-function_calling {
+  background: rgba(3, 105, 161, 0.09);
+  color: #0369A1;
 }
 
-:root[data-theme="light"] .v2-cap-image_generation {
-  background: rgba(190, 24, 93, 0.1);
-  color: #be185d;
+:root:not([data-theme="dark"]) .v2-cap-image_generation {
+  background: rgba(162, 28, 175, 0.08);
+  color: #A21CAF;
 }
 
-/* Primary offering row in light: soft tinted highlight instead of deep. */
-:root[data-theme="light"] .v2-offer.is-primary {
+:root:not([data-theme="dark"]) .v2-offer.is-primary {
   background: var(--accent-soft);
   color: var(--fg-0);
 }
 
-/* Selected table row in light: accent-soft tint. */
-:root[data-theme="light"] .v2-row.is-selected {
+:root:not([data-theme="dark"]) .v2-row.is-selected {
   background: var(--accent-soft);
 }
 
-:root[data-theme="light"] .v2-row:hover {
+:root:not([data-theme="dark"]) .v2-row:hover {
   background: var(--bg-hover);
 }
 
-/* Offer primary tag: contrasting pill on accent. */
-:root[data-theme="light"] .v2-offer-tag {
+:root:not([data-theme="dark"]) .v2-offer-tag {
   background: var(--accent);
   color: #ffffff;
 }
 
-/* Official links strip: soft warm panel. */
-:root[data-theme="light"] .v2-official-links {
+:root:not([data-theme="dark"]) .v2-official-links {
   background: var(--bg-2);
-  border-color: var(--border-subtle);
+  border-color: var(--border-default);
 }
 
-/* OSS badge in light: green tint. */
-:root[data-theme="light"] .v2-row-oss {
-  background: rgba(15, 155, 110, 0.1);
-  border-color: rgba(15, 155, 110, 0.3);
-  color: #0f9b6e;
+:root:not([data-theme="dark"]) .v2-row-oss {
+  background: rgba(46, 125, 91, 0.09);
+  border-color: rgba(46, 125, 91, 0.25);
+  color: #2E7D5B;
 }
 
 /* ─── Base reset ─── */
@@ -435,14 +412,13 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--text-base);
   line-height: var(--lh-normal);
   color: var(--fg-1);
   background: var(--bg-0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'ss01', 'cv11';
 }
 
 body::before {
@@ -511,12 +487,12 @@ kbd {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   font-feature-settings: 'zero';
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {

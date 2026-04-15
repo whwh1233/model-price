@@ -95,20 +95,6 @@ export function HomePage(_props: HomePageProps) {
         families={families}
       />
 
-      <div className="v2-actions-bar">
-        <button
-          type="button"
-          className="v2-export-btn"
-          onClick={() => exportEntitiesToCsv(entities)}
-          disabled={entities.length === 0}
-          title={t('export.csv_tooltip')}
-        >
-          <span aria-hidden="true">↓</span>
-          {t('export.csv')}
-          <span className="v2-export-count">({entities.length})</span>
-        </button>
-      </div>
-
       {error ? (
         <div className="v2-error">
           <p>Backend unreachable. Start uvicorn on :8000.</p>

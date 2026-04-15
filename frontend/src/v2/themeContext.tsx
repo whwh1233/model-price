@@ -23,12 +23,12 @@ function readInitial(): ThemeMode {
   } catch {
     // ignore
   }
-  return 'dark';
+  return 'light';
 }
 
 function resolveTheme(mode: ThemeMode): ResolvedTheme {
   if (mode === 'dark' || mode === 'light') return mode;
-  if (typeof window === 'undefined') return 'dark';
+  if (typeof window === 'undefined') return 'light';
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 

@@ -24,9 +24,7 @@ function detectInitial(): Locale {
   } catch {
     // ignore
   }
-  // Always default to English. Users toggle to Chinese explicitly
-  // via the topbar chip; the choice persists in localStorage.
-  return 'en';
+  return 'zh';
 }
 
 function interpolate(template: string, vars?: Record<string, string | number>): string {
