@@ -13,6 +13,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@tanstack/react-virtual": "^3.13.18",
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
