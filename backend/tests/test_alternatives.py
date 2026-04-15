@@ -168,3 +168,61 @@ class TestComputeAlternatives:
         assert len(result) == 1
         assert result[0].canonical_id == "free"
         assert result[0].delta_input_pct == -100.0
+
+
+class TestModeAwareOverlapThreshold:
+    """Embedding mode needs a higher overlap floor because
+    `{embedding}` vs `{embedding, vision}` already hits 0.5."""
+
+    def test_embedding_50_percent_overlap_rejected(self):
+        target, target_off = _make_entity(
+            "multi", ["embedding", "vision"], 0.12, 0.0, mode="embedding"
+        )
+        # Only `embedding` in common → overlap = 0.5 — below the 0.8 floor.
+        plain, plain_off = _make_entity(
+            "plain", ["embedding"], 0.02, 0.0, mode="embedding"
+        )
+        offerings = {"multi": [target_off], "plain": [plain_off]}
+        result = compute_alternatives(target, [target, plain], offerings)
+        assert result == []
+
+    def test_embedding_full_overlap_accepted(self):
+        target, target_off = _make_entity(
+            "a", ["embedding", "vision"], 0.12, 0.0, mode="embedding"
+        )
+        rival, rival_off = _make_entity(
+            "b", ["embedding", "vision"], 0.02, 0.0, mode="embedding"
+        )
+        offerings = {"a": [target_off], "b": [rival_off]}
+        result = compute_alternatives(target, [target, rival], offerings)
+        assert len(result) == 1
+        assert result[0].canonical_id == "b"
+
+    def test_embedding_output_delta_suppressed(self):
+        """Output token axis doesn't exist for embeddings. Report 0.0
+        rather than the meaningless `(0 - 0) / 0 → 0%` computation."""
+        target, target_off = _make_entity(
+            "a", ["embedding", "vision"], 0.12, 0.0, mode="embedding"
+        )
+        rival, rival_off = _make_entity(
+            "b", ["embedding", "vision"], 0.02, 5.0, mode="embedding"
+        )
+        offerings = {"a": [target_off], "b": [rival_off]}
+        result = compute_alternatives(target, [target, rival], offerings)
+        assert len(result) == 1
+        # Output delta suppressed even though candidate has a non-zero output price.
+        assert result[0].delta_output_pct == 0.0
+
+    def test_chat_mode_still_uses_default_threshold(self):
+        """Chat is the only high-arity vocabulary; the 0.5 floor stays."""
+        target, target_off = _make_entity(
+            "chat-target", ["text", "vision", "tool_use", "reasoning"], 5.0, 15.0
+        )
+        # 2/4 caps shared → overlap 0.5, exactly on the floor.
+        cheap, cheap_off = _make_entity(
+            "chat-cheap", ["text", "vision"], 1.0, 3.0
+        )
+        offerings = {"chat-target": [target_off], "chat-cheap": [cheap_off]}
+        result = compute_alternatives(target, [target, cheap], offerings)
+        assert len(result) == 1
+        assert result[0].canonical_id == "chat-cheap"
