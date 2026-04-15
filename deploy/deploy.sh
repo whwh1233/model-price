@@ -29,7 +29,14 @@ cd "${APP_DIR}/frontend"
 npm ci --prefer-offline 2>/dev/null || npm install
 VITE_PUBLIC_BASE_URL="https://${DOMAIN}" npm run build
 
-# ─── 3. Generate & install systemd service ───
+# ─── 3. Write backend .env ───
+echo "==> Writing backend .env..."
+cat > "${APP_DIR}/backend/.env" <<ENVFILE
+CORS_ORIGINS=["https://${DOMAIN}"]
+RELOAD=false
+ENVFILE
+
+# ─── 4. Generate & install systemd service ───
 echo "==> Installing systemd service..."
 cat > /tmp/model-price-backend.service <<UNIT
 [Unit]
@@ -41,7 +48,6 @@ Type=simple
 User=root
 WorkingDirectory=${APP_DIR}/backend
 Environment=RELOAD=false
-Environment="CORS_ORIGINS=https://${DOMAIN}"
 ExecStart=${UV_BIN} run uvicorn main:app --host 127.0.0.1 --port ${BACKEND_PORT}
 Restart=on-failure
 RestartSec=5
@@ -66,7 +72,7 @@ else
     exit 1
 fi
 
-# ─── 4. Generate & install Caddy site config ───
+# ─── 5. Generate & install Caddy site config ───
 echo "==> Configuring Caddy..."
 sudo mkdir -p /etc/caddy/sites
 
