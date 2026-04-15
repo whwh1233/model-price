@@ -183,6 +183,65 @@ AUTHORITY_BY_MAKER: Dict[str, List[str]] = {
 }
 
 
+def _is_stub_offering_set(offerings: List[OfferingV2]) -> bool:
+    """True if the entity has only LiteLLM-fallback placeholder offerings.
+
+    A "stub" is an entity whose every offering is:
+    - sourced from litellm_fallback (no real provider ever confirmed
+      the pricing), AND
+    - has both input and output price equal to 0 or missing.
+
+    These come from LiteLLM stub entries for newly-announced models
+    (no price known yet) or per-request APIs like text-moderation /
+    rerank whose pricing model doesn't fit per-1M-token. Showing them
+    as "free $0" misleads users — we drop them entirely. Real free
+    models come in through OpenRouter's provider_api (e.g. the
+    *-free variants), which passes this check and is preserved.
+    """
+    if not offerings:
+        return False
+    for offering in offerings:
+        if offering.source != "litellm_fallback":
+            return False
+        input_price = offering.pricing.input or 0
+        output_price = offering.pricing.output or 0
+        if input_price != 0 or output_price != 0:
+            return False
+    return True
+
+
+# Sanity envelope for embedding input prices, in $/M tokens.
+# Cheapest real embedding on the market is ~$0.01/M (Voyage Lite,
+# text-embedding-3-small). $100/M is 100x the most expensive real
+# embedding (Cohere embed-v4 at $0.12). Anything outside this range
+# almost always traces to a provider scraper unit bug (AWS returning
+# per-1k prices as per-token) or a stale LiteLLM entry that nobody
+# noticed. We null the price rather than dropping the offering so the
+# drift report keeps a record.
+EMBEDDING_INPUT_PRICE_MIN = 0.001   # $0.001 / M
+EMBEDDING_INPUT_PRICE_MAX = 10.0    # $10 / M
+
+
+def _is_embedding_price_outlier(
+    offering: OfferingV2, mode: str
+) -> bool:
+    """True if an embedding offering's input price is wildly out of range.
+
+    Embedding input prices cluster in a narrow band ($0.01 – $1 per
+    million tokens). Values far outside that band are almost always
+    data bugs — TwelveLabs Marengo scraped as $0.0001/M (AWS parser
+    unit error) and Cohere embed-multilingual-light stamped at $100/M
+    (stale/bogus LiteLLM entry). Both used to surface as "cheap
+    alternatives" for other embeddings, poisoning the alternatives list.
+    """
+    if mode != "embedding":
+        return False
+    inp = offering.pricing.input
+    if inp is None:
+        return False
+    return inp < EMBEDDING_INPUT_PRICE_MIN or inp > EMBEDDING_INPUT_PRICE_MAX
+
+
 class OfferingMerger:
     def __init__(
         self,
@@ -278,6 +337,33 @@ class OfferingMerger:
             ]
             synthetic_count += 1
 
+        # ─── Pass 2c: drop embedding price outliers
+        # Prices 1000x cheaper or 100x more expensive than the real
+        # market are almost always scraper unit bugs. We run this BEFORE
+        # Pass 3 so entities whose only provider offering was an outlier
+        # get a chance to fall back to the LiteLLM reference price, and
+        # the stub filter handles any that are left with nothing.
+        outlier_dropped = 0
+        outlier_log: List[tuple[str, str, float]] = []
+        for slug, offs in list(offerings_by_entity.items()):
+            entity = entities.get(slug)
+            if entity is None:
+                continue
+            kept: List[OfferingV2] = []
+            for offering in offs:
+                if _is_embedding_price_outlier(offering, entity.mode):
+                    outlier_dropped += 1
+                    outlier_log.append((slug, offering.provider, offering.pricing.input or 0.0))
+                    continue
+                kept.append(offering)
+            offerings_by_entity[slug] = kept
+        if outlier_log:
+            logger.warning(
+                "OfferingMerger: dropped %s embedding price outliers: %s",
+                outlier_dropped,
+                outlier_log[:10],
+            )
+
         # ─── Pass 3: synthesize LiteLLM-fallback offerings
         synthesized = 0
         for slug, entity in entities.items():
@@ -289,13 +375,41 @@ class OfferingMerger:
             fallback = self._offering_from_litellm(litellm_entry, now)
             if fallback is None:
                 continue
+            # Guard: don't synthesize a fallback whose LiteLLM price is
+            # itself an outlier (embed-multilingual-light at $100/M).
+            if (
+                entity.mode == "embedding"
+                and fallback.pricing.input is not None
+                and (
+                    fallback.pricing.input < EMBEDDING_INPUT_PRICE_MIN
+                    or fallback.pricing.input > EMBEDDING_INPUT_PRICE_MAX
+                )
+            ):
+                continue
             offerings_by_entity.setdefault(slug, []).append(fallback)
             synthesized += 1
 
         # ─── Pass 4: prune entities without any usable offering
-        final_slugs = {
-            slug for slug, offs in offerings_by_entity.items() if offs
-        }
+        # Also drop "stubs" — entities whose only offerings are
+        # litellm_fallback placeholders with no real price data
+        # ($0 input AND $0 output). LiteLLM routinely publishes empty
+        # entries for brand-new model releases before upstream pricing
+        # is known, and for per-request APIs (moderation, rerank)
+        # whose pricing model doesn't fit our per-token schema at all.
+        # Keeping them surfaces misleading "free" entries to users
+        # and creates phantom duplicates like kimi-k2-thinking-251104
+        # alongside the real kimi-k2-thinking. Real free models
+        # (OpenRouter's *-free variants) come through as provider_api
+        # offerings and are preserved.
+        final_slugs: set[str] = set()
+        stub_count = 0
+        for slug, offs in offerings_by_entity.items():
+            if not offs:
+                continue
+            if _is_stub_offering_set(offs):
+                stub_count += 1
+                continue
+            final_slugs.add(slug)
         pruned_entities = [entities[s] for s in sorted(final_slugs)]
         pruned_offerings: Dict[str, List[OfferingV2]] = {
             s: offerings_by_entity[s] for s in final_slugs
@@ -315,12 +429,14 @@ class OfferingMerger:
 
         logger.info(
             "OfferingMerger: %s entities kept (of %s canonical); "
-            "provider attach: %s; litellm_fallback: %s; v1_synthetic: %s",
+            "provider attach: %s; litellm_fallback: %s; v1_synthetic: %s; "
+            "stubs pruned: %s",
             len(pruned_entities),
             len(entities),
             attach_counts,
             synthesized,
             synthetic_count,
+            stub_count,
         )
 
         snapshot = EntityStoreSnapshot(

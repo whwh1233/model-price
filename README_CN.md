@@ -207,7 +207,7 @@ cd frontend && npm test
 - **Render** 每次 `release` push 重新构建后端 Docker 镜像。配置在 `backend/render.yaml`。Free 计划 15 分钟无活动后休眠 —— 前端的 SWR fallback snapshot 让这对用户不可见。
 - **GitHub Actions keepalive**（`.github/workflows/keepalive.yml`）每 10 分钟 ping `/api/health` 作为第二道防线。
 
-上一版（v1）生产 tip 打了 tag `release-v1-backup` 作为回滚点。v1 的 `/api/models`、`/api/providers`、`/api/families`、`/api/stats` 路由仍然和 v2 并行 serve，作为 2 周过渡期，之后会在一个清理 commit 里移除。
+上一版（v1）生产 tip 打了 tag `release-v1-backup` 作为回滚点。v1 路由（`/api/models`、`/api/providers`、`/api/families`、`/api/stats`、`/api/refresh/metadata`）已于 2026-04-15 移除。`POST /api/refresh` 保留为兼容别名，内部走 v2 的刷新管线。
 
 ## 设计文档
 

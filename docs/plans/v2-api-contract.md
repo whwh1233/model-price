@@ -219,9 +219,9 @@ Triggers the v2 refresh pipeline. Not exposed in the UI. Phase 1 wires this up; 
 
 ## Backwards compatibility
 
-- `v1` endpoints (`/api/models`, `/api/providers`, `/api/families`, `/api/stats`) remain available until **2026-04-28** (two weeks after v2 cutover).
-- `v2` endpoints are additive; they do not shadow or break `v1` routes.
-- Clients are expected to migrate during the window. After 2026-04-28, v1 routes return 410 Gone.
+- `v1` endpoints (`/api/models`, `/api/providers`, `/api/families`, `/api/stats`, `/api/refresh/metadata`) were removed on **2026-04-15**. Calling them returns 404.
+- `POST /api/refresh` remains as a compatibility alias that internally runs the v2 refresh pipeline. The `?provider=...` query parameter is accepted for backwards compatibility but ignored — v2 always refreshes the whole store atomically.
+- `GET /api/health` is preserved (with a v2-shaped payload) because `.github/workflows/keepalive.yml` depends on it.
 
 ---
 

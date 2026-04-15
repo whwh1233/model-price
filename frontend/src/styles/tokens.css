@@ -4,10 +4,10 @@
 
 :root {
   /* ─── Typography scale ─── */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text',
-    'Helvetica Neue', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, Consolas,
-    'Liberation Mono', monospace;
+  --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont,
+    'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'SF Mono',
+    'Fira Code', Menlo, Consolas, 'Liberation Mono', monospace;
 
   --text-2xs: 11px;
   --text-xs: 12px;

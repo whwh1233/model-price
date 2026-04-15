@@ -1,7 +1,14 @@
-"""Pydantic models for pricing data."""
+"""Pydantic models for per-provider scraped data.
+
+These types are the intermediate shape produced by backend/providers/*
+and consumed by services/offering_merger.py before being projected
+into the v2 entity/offering model. They are not serialized to disk or
+exposed on the API — models/v2.py is the API contract.
+"""
 
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import List, Optional
+
 from pydantic import BaseModel
 
 
@@ -27,7 +34,7 @@ class BatchPricing(BaseModel):
 
 
 class ModelPricing(BaseModel):
-    """Complete pricing info for a single model."""
+    """Complete pricing info for a single scraped model."""
 
     id: str  # Unique: "{provider}:{model_id}"
     provider: str  # aws_bedrock, openai, azure, etc.
@@ -42,45 +49,3 @@ class ModelPricing(BaseModel):
     input_modalities: List[str] = []  # ["text", "image", "audio", "video", "file"]
     output_modalities: List[str] = []  # ["text", "image", "audio", "video", "embedding"]
     last_updated: datetime
-
-
-class PricingDatabase(BaseModel):
-    """JSON file root structure."""
-
-    version: str = "1.0"
-    last_refresh: datetime
-    models: List[ModelPricing] = []
-
-
-class ProviderInfo(BaseModel):
-    """Provider metadata for API response."""
-
-    name: str
-    display_name: str
-    model_count: int
-    last_updated: Optional[datetime] = None
-
-
-class ProviderFile(BaseModel):
-    """Structure for per-provider JSON file (providers/*.json)."""
-
-    provider: str
-    last_updated: datetime
-    models: List[ModelPricing] = []
-
-
-class ProviderIndexEntry(BaseModel):
-    """Entry in the index file for a single provider."""
-
-    file: str  # Relative path like "providers/openai.json"
-    model_count: int
-    last_updated: datetime
-
-
-class IndexFile(BaseModel):
-    """Structure for index.json - tracks all provider files."""
-
-    version: str = "2.0"
-    last_refresh: datetime
-    providers: Dict[str, ProviderIndexEntry] = {}
-    total_models: int = 0

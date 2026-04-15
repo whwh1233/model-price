@@ -7,6 +7,13 @@ The top-3 strictly cheaper hits are returned. If fewer than 3 are
 strictly cheaper, the tail is filled with closest-capability matches
 that may be at-price or more expensive so the UI always has something
 to show for well-priced entries.
+
+Mode-specific overlap thresholds: embedding and completion use a
+higher bar (0.8) because their capability vocabularies are tiny —
+every embedding model shares `{embedding}` so the default 0.5 floor
+lets anything through, including genuinely incompatible products
+(text-only embeddings recommended as a "cheaper" multimodal embed).
+Chat models span 5+ caps so 0.5 remains meaningful there.
 """
 
 from __future__ import annotations
@@ -14,6 +21,17 @@ from __future__ import annotations
 from typing import Iterable, List
 
 from models.v2 import AlternativeV2, EntityCoreV2, OfferingV2
+
+MODE_OVERLAP_THRESHOLDS: dict[str, float] = {
+    "chat": 0.5,
+    "completion": 0.8,
+    "embedding": 0.8,
+    "audio_transcription": 0.8,
+    "audio_speech": 0.8,
+    "image_generation": 0.8,
+    "rerank": 0.8,
+}
+DEFAULT_OVERLAP_THRESHOLD = 0.5
 
 
 def _primary_price(
@@ -40,10 +58,17 @@ def _overlap(reference: set[str], candidate: set[str]) -> float:
 
 
 def _delta_pct(reference: float | None, candidate: float | None) -> float | None:
+    """Percent change from reference → candidate.
+
+    Returns None when the delta is undefined (reference is 0 and
+    candidate is not). Callers skip candidates with None delta, so
+    a free target yields only other free models as alternatives
+    instead of emitting non-JSON-compliant `inf` values.
+    """
     if reference is None or candidate is None:
         return None
     if reference == 0:
-        return 0.0 if candidate == 0 else float("inf")
+        return 0.0 if candidate == 0 else None
     return round(((candidate - reference) / reference) * 100.0, 1)
 
 
@@ -59,6 +84,11 @@ def compute_alternatives(
 
     target_caps = set(target.capabilities or [])
     target_mode = target.mode or "chat"
+    overlap_floor = MODE_OVERLAP_THRESHOLDS.get(target_mode, DEFAULT_OVERLAP_THRESHOLD)
+    # Embeddings, reranks, and other single-cap modes don't have an
+    # output-token axis, so suppress the output delta rather than
+    # reporting a meaningless "0%".
+    emit_output_delta = target_mode in {"chat", "completion"}
 
     scored: list[tuple[float, float, AlternativeV2]] = []
     for entity in all_entities:
@@ -67,13 +97,13 @@ def compute_alternatives(
         if (entity.mode or "chat") != target_mode:
             continue
         overlap = _overlap(target_caps, set(entity.capabilities or []))
-        if overlap < 0.5:
+        if overlap < overlap_floor:
             continue
         cand_input, cand_output = _primary_price(entity, offerings_by_entity)
         if cand_input is None:
             continue
         delta_in = _delta_pct(ref_input, cand_input)
-        delta_out = _delta_pct(ref_output, cand_output)
+        delta_out = _delta_pct(ref_output, cand_output) if emit_output_delta else None
         if delta_in is None:
             continue
         # Composite score: prefers cheaper + higher overlap

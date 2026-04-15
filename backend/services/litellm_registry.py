@@ -130,17 +130,27 @@ APP_PROVIDER_TO_LITELLM = {
 # are derived but NOT surfaced — they clutter list rows and don't drive
 # decisions. If a user needs pdf or web search they'll find it on the
 # provider page; pricing comparison isn't the place.
-CAPABILITY_FLAGS = [
-    ("supports_vision", "vision"),
-    ("supports_audio_input", "audio"),
-    ("supports_audio_output", "audio"),
-    ("supports_function_calling", "function_calling"),
-    ("supports_tool_choice", "tool_use"),
-    ("supports_parallel_function_calling", "tool_use"),
-    ("supports_response_schema", "function_calling"),
-    ("supports_reasoning", "reasoning"),
-    ("supports_embedding_image_input", "vision"),
-    ("supports_pdf_input", "vision"),  # PDFs read as vision
+#
+# Each flag maps to (capability, modality-hint). A modality hint of
+# "in:image" means "if this flag is set, the model accepts image
+# input". A value of None means the flag only contributes to the
+# capability set. Keeping the two dimensions glued here is the only
+# reliable way to prevent the two sides from drifting apart — the
+# original bug was exactly that: caps derived from one field list,
+# modalities from another, and embedding_image_input set vision
+# without ever touching input_modalities.
+CAPABILITY_FLAGS: List[tuple[str, Optional[str], Optional[str]]] = [
+    ("supports_vision", "vision", "in:image"),
+    ("supports_pdf_input", "vision", "in:image"),  # PDFs read as vision
+    ("supports_embedding_image_input", "vision", "in:image"),
+    ("supports_audio_input", "audio", "in:audio"),
+    ("supports_audio_output", "audio", "out:audio"),
+    ("supports_video_input", None, "in:video"),
+    ("supports_function_calling", "function_calling", None),
+    ("supports_tool_choice", "tool_use", None),
+    ("supports_parallel_function_calling", "tool_use", None),
+    ("supports_response_schema", "function_calling", None),
+    ("supports_reasoning", "reasoning", None),
 ]
 
 DISPLAY_CAPABILITIES = {
@@ -184,8 +194,16 @@ FAMILY_PATTERNS: List[tuple[str, str, List[str]]] = [
     ("Nova", "Amazon", ["nova-"]),
     ("Titan", "Amazon", ["titan"]),
     ("Command", "Cohere", ["command"]),
-    ("Cohere Embed", "Cohere", ["embed-", "cohere embed"]),
-    ("Rerank", "Cohere", ["rerank"]),
+    # `^embed-` only matches at the start of the target so TwelveLabs
+    # Marengo ("twelvelabs-marengo-embed-2-7") no longer gets
+    # misclassified as Cohere. The bare `cohere-embed` form picks up
+    # AWS Bedrock's canonical ids like `cohere-embed-4-model`.
+    ("Cohere Embed", "Cohere", ["^embed-", "cohere-embed", "cohere embed"]),
+    # TwelveLabs must come after Cohere so "marengo-embed" doesn't
+    # slip through, but still claims `twelvelabs-*` models.
+    ("Marengo", "TwelveLabs", ["twelvelabs-marengo", "marengo-embed"]),
+    ("Pegasus", "TwelveLabs", ["twelvelabs-pegasus", "pegasus-1"]),
+    ("Rerank", "Cohere", ["cohere-rerank", "cohere rerank", "^rerank"]),
     ("Grok", "xAI", ["grok"]),
     ("DeepSeek", "DeepSeek", ["deepseek", "r1-"]),
     ("Qwen", "Alibaba", ["qwen", "qwq", "tongyi"]),
@@ -239,25 +257,32 @@ def slugify(raw: str) -> str:
 
 
 _VARIANT_TAGS = (
-    "-instruct",
+    # Quantization / hardware packaging — same logical model, different
+    # storage format. Safe to strip.
     "-rlhf",
     "-fp8",
     "-fp16",
     "-bf16",
     "-int8",
     "-int4",
+    # MoE expert counts — same base model, different sparsity profile.
     "-128e",
     "-64e",
     "-32e",
     "-16e",
     "-8e",
-    "-latest",
-    "-preview",
-    "-experimental",
-    "-exp",
 )
-# -chat / -base are NOT stripped: they are legitimate product names
-# (deepseek-chat, qwen-base) rather than packaging variants.
+# Tags that look like packaging but actually carry product identity
+# and must NOT be stripped:
+#
+# -instruct : gpt-3.5-turbo-instruct is a separate OpenAI product
+#             from gpt-3.5-turbo with different pricing.
+# -preview  : gemini-2.5-pro-preview is a pinned snapshot that
+#             diverges from gemini-2.5-pro over time.
+# -exp / -experimental : DeepSeek v3.2-exp is a distinct product tier
+#             from deepseek-v3.2 (confirmed by $0.27 vs $0.26 pricing).
+# -latest   : an alias whose identity changes over time.
+# -chat / -base : legitimate product names (deepseek-chat, qwen-base).
 
 
 def strip_version_suffix(slug: str) -> str:
@@ -293,52 +318,90 @@ def strip_version_suffix(slug: str) -> str:
 
 
 def detect_family_maker(canonical_id: str, model_name: str) -> tuple[str, str]:
+    """Classify a model by family and maker via substring match.
+
+    Needles are matched against `"{canonical_id} {model_name}"`, lowered.
+    A needle prefixed with `^` must appear at the start of the target
+    (or right after the space separator between canonical_id and
+    model_name). Use the anchor for short identifiers that otherwise
+    collide across vendors — e.g. `"^embed-"` for Cohere Embed so it
+    does NOT grab `twelvelabs-marengo-embed-2-7`.
+    """
     target = f"{canonical_id} {model_name}".lower()
+    name_offset = len(canonical_id) + 1
     for family, maker, needles in FAMILY_PATTERNS:
         for needle in needles:
-            if needle in target:
+            if needle.startswith("^"):
+                bare = needle[1:]
+                if target.startswith(bare) or target.startswith(bare, name_offset):
+                    return family, maker
+            elif needle in target:
                 return family, maker
     return "Other", "Unknown"
 
 
-def derive_capabilities(raw_entry: Dict[str, Any]) -> List[str]:
-    caps = {"text"}
-    for flag, cap in CAPABILITY_FLAGS:
-        if raw_entry.get(flag):
+_MODALITY_ORDER = ["text", "image", "audio", "video", "embedding"]
+
+
+def _sorted_modalities(mods: set[str]) -> List[str]:
+    ordered = [m for m in _MODALITY_ORDER if m in mods]
+    # Preserve any custom modality outside the standard order.
+    ordered.extend(sorted(m for m in mods if m not in _MODALITY_ORDER))
+    return ordered
+
+
+def derive_capability_modality(
+    raw_entry: Dict[str, Any],
+) -> tuple[List[str], List[str], List[str]]:
+    """Derive capabilities, input modalities, and output modalities from
+    a single signal pass.
+
+    Caps and modalities used to live in two separate functions each
+    reading its own subset of `supports_*` flags, which silently drifted
+    (e.g. `supports_embedding_image_input` set `vision` but never
+    `input_modalities=[image]`). Keeping them in one pass is the
+    structural fix — any new flag must declare both sides here.
+    """
+    caps: set[str] = {"text"}
+    in_mods: set[str] = {"text"}
+    out_mods: set[str] = {"text"}
+
+    for flag, cap, modality_hint in CAPABILITY_FLAGS:
+        if not raw_entry.get(flag):
+            continue
+        if cap is not None:
             caps.add(cap)
+        if modality_hint is None:
+            continue
+        direction, value = modality_hint.split(":", 1)
+        if direction == "in":
+            in_mods.add(value)
+        elif direction == "out":
+            out_mods.add(value)
+
     mode = raw_entry.get("mode") or ""
     if mode == "image_generation":
         caps.add("image_generation")
-        caps.discard("text")  # image models rarely output text
-    if mode in ("audio_transcription", "audio_speech"):
-        caps.add("audio")
-    if mode == "embedding":
+        caps.discard("text")
+        in_mods.add("image")
+        out_mods = {"image"}
+    elif mode == "embedding":
         caps.add("embedding")
         caps.discard("text")
-    # Restrict to the user-facing whitelist so list and detail pages
-    # always display the same set.
-    return sorted(caps & DISPLAY_CAPABILITIES)
+        out_mods = {"embedding"}
+    elif mode == "audio_transcription":
+        caps.add("audio")
+        in_mods.add("audio")
+    elif mode == "audio_speech":
+        caps.add("audio")
+        out_mods.add("audio")
+    elif mode == "rerank":
+        # Rerank endpoints accept (query, documents) and return scores;
+        # the UI doesn't model a "rerank" cap, so leave it as text.
+        pass
 
-
-def derive_modalities(raw_entry: Dict[str, Any]) -> tuple[List[str], List[str]]:
-    in_mods = ["text"]
-    out_mods = ["text"]
-    if raw_entry.get("supports_vision") or raw_entry.get("supports_pdf_input"):
-        in_mods.append("image")
-    if raw_entry.get("supports_audio_input"):
-        in_mods.append("audio")
-    if raw_entry.get("supports_audio_output"):
-        out_mods.append("audio")
-    if raw_entry.get("supports_video_input"):
-        in_mods.append("video")
-    mode = raw_entry.get("mode") or ""
-    if mode == "image_generation":
-        out_mods = ["image"]
-        if "image" not in in_mods:
-            in_mods.append("image")
-    elif mode == "embedding":
-        out_mods = ["embedding"]
-    return in_mods, out_mods
+    display_caps = sorted(caps & DISPLAY_CAPABILITIES)
+    return display_caps, _sorted_modalities(in_mods), _sorted_modalities(out_mods)
 
 
 def convert_pricing_field(value: Any) -> Optional[float]:
@@ -354,6 +417,52 @@ def convert_pricing_field(value: Any) -> Optional[float]:
         return round(float(value) * PER_TOKEN_TO_PER_MTOKEN, 4)
     except (TypeError, ValueError):
         return None
+
+
+# Modes where an all-zero pricing row is a placeholder (not real free
+# pricing): LiteLLM routinely publishes $0 rows for new model releases
+# before upstream USD pricing is known, and for providers whose public
+# prices aren't in USD (volcengine Doubao, dashscope Qwen, etc.). For
+# these modes we null out the prices so downstream code can't mistake
+# the placeholder for a real "free" tier. Rerank / moderation are
+# excluded because their pricing model is per-request, not per-token,
+# so we legitimately have no per-token value to show.
+_STUB_CHECKED_MODES = frozenset(
+    {"chat", "completion", "embedding", "image_generation", "audio_transcription", "audio_speech"}
+)
+
+
+def _is_zero_stub_row(raw: Dict[str, Any]) -> bool:
+    """True if the LiteLLM entry looks like a $0 placeholder row.
+
+    Heuristic: both input and output cost are literal 0 (not missing),
+    no other per-token pricing signal is present, and the mode is one
+    where a true $0 is not plausible. Brand-new releases and non-USD
+    pricing from volcengine/dashscope land here.
+    """
+    mode = raw.get("mode") or ""
+    if mode not in _STUB_CHECKED_MODES:
+        return False
+
+    input_cost = raw.get("input_cost_per_token")
+    output_cost = raw.get("output_cost_per_token")
+    if input_cost != 0 or output_cost not in (0, None):
+        return False
+
+    # If the row at least has a cache, batch, or image cost, it's not a stub.
+    for field in (
+        "cache_read_input_token_cost",
+        "cache_creation_input_token_cost",
+        "input_cost_per_image",
+        "input_cost_per_audio_token",
+        "output_cost_per_audio_token",
+        "input_cost_per_token_batches",
+        "output_cost_per_token_batches",
+    ):
+        value = raw.get(field)
+        if value is not None and value != 0:
+            return False
+    return True
 
 
 @dataclass
@@ -645,12 +754,41 @@ class LiteLLMRegistry:
     ) -> LiteLLMEntry:
         name = str(raw.get("model_name") or raw_key.split("/")[-1])
         family, maker = detect_family_maker(canonical_id, name)
-        capabilities = derive_capabilities(raw)
-        input_mods, output_mods = derive_modalities(raw)
+        capabilities, input_mods, output_mods = derive_capability_modality(raw)
+        mode = str(raw.get("mode") or "chat")
 
-        batch = raw.get("batch_pricing") or {}
-        batch_in = convert_pricing_field(raw.get("input_cost_per_token_batches")) or convert_pricing_field(batch.get("input"))
-        batch_out = convert_pricing_field(raw.get("output_cost_per_token_batches")) or convert_pricing_field(batch.get("output"))
+        if _is_zero_stub_row(raw):
+            # LiteLLM placeholder: both input and output are literal 0
+            # with no other pricing signal. Null everything so downstream
+            # merger treats this entry as "no price known" instead of a
+            # "real $0" that pollutes alternatives / drift / comparisons.
+            input_price = output_price = None
+            cache_read = cache_write = None
+            image_in = audio_in = audio_out = None
+            embedding_price = None
+            batch_in = batch_out = None
+        else:
+            batch = raw.get("batch_pricing") or {}
+            batch_in = (
+                convert_pricing_field(raw.get("input_cost_per_token_batches"))
+                or convert_pricing_field(batch.get("input"))
+            )
+            batch_out = (
+                convert_pricing_field(raw.get("output_cost_per_token_batches"))
+                or convert_pricing_field(batch.get("output"))
+            )
+            input_price = convert_pricing_field(raw.get("input_cost_per_token"))
+            output_price = convert_pricing_field(raw.get("output_cost_per_token"))
+            cache_read = convert_pricing_field(raw.get("cache_read_input_token_cost"))
+            cache_write = convert_pricing_field(raw.get("cache_creation_input_token_cost"))
+            image_in = convert_pricing_field(raw.get("input_cost_per_image"))
+            audio_in = convert_pricing_field(raw.get("input_cost_per_audio_token"))
+            audio_out = convert_pricing_field(raw.get("output_cost_per_audio_token"))
+            embedding_price = (
+                convert_pricing_field(raw.get("input_cost_per_token"))
+                if mode == "embedding"
+                else None
+            )
 
         return LiteLLMEntry(
             raw_key=raw_key,
@@ -661,14 +799,14 @@ class LiteLLMRegistry:
             maker=maker,
             litellm_provider=litellm_provider,
             is_canonical=False,
-            input_price=convert_pricing_field(raw.get("input_cost_per_token")),
-            output_price=convert_pricing_field(raw.get("output_cost_per_token")),
-            cache_read_price=convert_pricing_field(raw.get("cache_read_input_token_cost")),
-            cache_write_price=convert_pricing_field(raw.get("cache_creation_input_token_cost")),
-            image_input_price=convert_pricing_field(raw.get("input_cost_per_image")),
-            audio_input_price=convert_pricing_field(raw.get("input_cost_per_audio_token")),
-            audio_output_price=convert_pricing_field(raw.get("output_cost_per_audio_token")),
-            embedding_price=convert_pricing_field(raw.get("input_cost_per_token")) if (raw.get("mode") == "embedding") else None,
+            input_price=input_price,
+            output_price=output_price,
+            cache_read_price=cache_read,
+            cache_write_price=cache_write,
+            image_input_price=image_in,
+            audio_input_price=audio_in,
+            audio_output_price=audio_out,
+            embedding_price=embedding_price,
             batch_input_price=batch_in,
             batch_output_price=batch_out,
             context_length=_safe_int(raw.get("max_input_tokens") or raw.get("max_tokens")),
@@ -676,7 +814,7 @@ class LiteLLMRegistry:
             capabilities=capabilities,
             input_modalities=input_mods,
             output_modalities=output_mods,
-            mode=str(raw.get("mode") or "chat"),
+            mode=mode,
             raw=raw,
         )
 

@@ -207,7 +207,7 @@ The `release` branch is the production branch.
 - **Render** rebuilds the backend Docker image on every `release` push. Config in `backend/render.yaml`. Free plan sleeps after 15 min of inactivity — the SWR fallback snapshot in the frontend makes this invisible to users.
 - **GitHub Actions keepalive** in `.github/workflows/keepalive.yml` pings `/api/health` every 10 min as a second line of defense against sleep.
 
-Previous v1 production is tagged `release-v1-backup` for rollback. The v1 `/api/models`, `/api/providers`, `/api/families`, `/api/stats` routes remain live alongside v2 for a 2-week deprecation window and will be removed in a cleanup commit afterwards.
+Previous v1 production is tagged `release-v1-backup` for rollback. The v1 routes (`/api/models`, `/api/providers`, `/api/families`, `/api/stats`, `/api/refresh/metadata`) were removed on 2026-04-15. `POST /api/refresh` remains as a compatibility alias that delegates to the v2 refresh pipeline.
 
 ## Design notes & philosophy
 

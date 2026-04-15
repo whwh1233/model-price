@@ -51,20 +51,44 @@ class TestStripVersionSuffix:
     def test_yyyy_mm_dd(self):
         assert strip_version_suffix("gpt-4o-2024-11-20") == "gpt-4o"
 
-    def test_preview_and_latest(self):
-        assert strip_version_suffix("gemini-3-pro-preview") == "gemini-3-pro"
-        assert strip_version_suffix("claude-sonnet-4-5-latest") == "claude-sonnet-4-5"
-        assert strip_version_suffix("claude-3-5-sonnet-experimental") == "claude-3-5-sonnet"
+    def test_preview_latest_exp_carry_identity(self):
+        """Regression: -preview / -latest / -exp / -experimental / -instruct
+        used to be stripped as "packaging variants" but they carry real
+        product identity. Stripping them collapsed gpt-3.5-turbo-instruct
+        → gpt-3-5-turbo and gemini-2.5-pro-preview → gemini-2.5-pro,
+        producing entities with mixed pricing from genuinely distinct
+        products. They must survive normalization unchanged."""
+        assert strip_version_suffix("gemini-3-pro-preview") == "gemini-3-pro-preview"
+        assert strip_version_suffix("claude-sonnet-4-5-latest") == "claude-sonnet-4-5-latest"
+        assert strip_version_suffix("claude-3-5-sonnet-experimental") == "claude-3-5-sonnet-experimental"
+        assert strip_version_suffix("deepseek-v3-2-exp") == "deepseek-v3-2-exp"
+        assert strip_version_suffix("gpt-3-5-turbo-instruct") == "gpt-3-5-turbo-instruct"
 
-    def test_variant_tags_stripped(self):
-        assert strip_version_suffix("llama-4-maverick-17b-128e-instruct") == "llama-4-maverick-17b"
+    def test_quantization_tags_stripped(self):
+        """Pure storage/hardware variants ARE the same logical model
+        and still strip — fp8/fp16/bf16/int4/int8/rlhf and the MoE
+        expert-count tags."""
         assert strip_version_suffix("llama-3-70b-fp8") == "llama-3-70b"
         assert strip_version_suffix("llama-3-70b-bf16") == "llama-3-70b"
+        assert strip_version_suffix("llama-3-70b-int4") == "llama-3-70b"
+        # MoE expert counts
+        assert strip_version_suffix("llama-4-maverick-17b-128e") == "llama-4-maverick-17b"
 
-    def test_chained_suffixes_collapse(self):
+    def test_chained_quantization_and_version_collapse(self):
+        """Storage variant + Bedrock version suffix should both strip."""
+        assert (
+            strip_version_suffix("llama-4-maverick-17b-128e-v1-0")
+            == "llama-4-maverick-17b"
+        )
+
+    def test_instruct_no_longer_stripped_in_chain(self):
+        """The -instruct tag carries identity (gpt-3.5-turbo-instruct
+        is a separate product), so a chain like 128e-instruct-v1-0 only
+        strips the -v1-0, leaving -instruct intact for downstream
+        canonical lookup."""
         assert (
             strip_version_suffix("llama-4-maverick-17b-128e-instruct-v1-0")
-            == "llama-4-maverick-17b"
+            == "llama-4-maverick-17b-128e-instruct"
         )
 
     def test_preserves_bare_version_in_name(self):
