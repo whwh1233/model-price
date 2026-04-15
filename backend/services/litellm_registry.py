@@ -239,25 +239,32 @@ def slugify(raw: str) -> str:
 
 
 _VARIANT_TAGS = (
-    "-instruct",
+    # Quantization / hardware packaging — same logical model, different
+    # storage format. Safe to strip.
     "-rlhf",
     "-fp8",
     "-fp16",
     "-bf16",
     "-int8",
     "-int4",
+    # MoE expert counts — same base model, different sparsity profile.
     "-128e",
     "-64e",
     "-32e",
     "-16e",
     "-8e",
-    "-latest",
-    "-preview",
-    "-experimental",
-    "-exp",
 )
-# -chat / -base are NOT stripped: they are legitimate product names
-# (deepseek-chat, qwen-base) rather than packaging variants.
+# Tags that look like packaging but actually carry product identity
+# and must NOT be stripped:
+#
+# -instruct : gpt-3.5-turbo-instruct is a separate OpenAI product
+#             from gpt-3.5-turbo with different pricing.
+# -preview  : gemini-2.5-pro-preview is a pinned snapshot that
+#             diverges from gemini-2.5-pro over time.
+# -exp / -experimental : DeepSeek v3.2-exp is a distinct product tier
+#             from deepseek-v3.2 (confirmed by $0.27 vs $0.26 pricing).
+# -latest   : an alias whose identity changes over time.
+# -chat / -base : legitimate product names (deepseek-chat, qwen-base).
 
 
 def strip_version_suffix(slug: str) -> str:

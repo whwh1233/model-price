@@ -7,19 +7,23 @@ Resolution cascade (first hit wins):
 2. Strip common provider prefix (bedrock/, azure/, openrouter/, openai/,
    google/, anthropic/, x-ai/, deepseek/, mistralai/) then retry
 3. Strip provider-dot-prefix form (anthropic.claude-sonnet-4-5-v1:0)
-4. Strip version suffixes (-20250929, -v1:0, -latest, :beta)
-5. Substring contains inside any canonical slug (last resort)
-6. None — caller logs to drift report
+4. Strip version suffixes (-20250929, -v1:0, -latest, :beta) and
+   check against the exact canonical slug set
+5. None — caller logs to drift report; offering_merger Pass 2b
+   promotes it into a synthetic entity from the raw data
 
-The resolver never invents a canonical id. If none of the above matches,
-it returns None and lets the merger decide whether to synthesize a
-new entity from the raw data or skip it.
+The resolver never invents a canonical id and never accepts a
+prefix/suffix boundary match ("kimi-k2" is NOT a match for
+"kimi-k2-5"). Those heuristic matches routinely collapsed distinct
+models (kimi-k2 vs kimi-k2.5, qwen3-coder vs qwen3-coder-plus,
+veo-3 vs veo-3.1) into a single entity with mixed pricing. Anything
+that needs fuzzy matching belongs in the LiteLLM registry's own
+alias table, not here.
 """
 
 from __future__ import annotations
 
 import logging
-import re
 from dataclasses import dataclass
 from typing import List, Optional
 
@@ -66,11 +70,6 @@ DOT_PREFIXES = (
     "ai21.",
     "stability.",
     "deepseek.",
-)
-
-# Version / date / tag suffixes stripped during normalization.
-VERSION_SUFFIX_RE = re.compile(
-    r"(?:-v\d+(?:[-:]\d+)?|-\d{8}|-\d{4}-\d{2}-\d{2}|-latest|:beta|:free|:nitro|:extended)$"
 )
 
 
@@ -127,14 +126,6 @@ class CanonicalResolver:
             if hit:
                 return Resolution(hit, tried, "version_strip_alias")
 
-        # Step 4: contains-match inside any canonical slug
-        normalized = slugify(raw)
-        if normalized:
-            contains_hit = self._contains_match(normalized)
-            if contains_hit:
-                tried.append(f"contains:{normalized}")
-                return Resolution(contains_hit, tried, "contains")
-
         return Resolution(None, tried, "miss")
 
     # ─── Internals ───────────────────────────────────────────
@@ -190,24 +181,6 @@ class CanonicalResolver:
                 ordered.append(v)
                 seen.add(v)
         return ordered
-
-    def _contains_match(self, needle: str) -> Optional[str]:
-        """Fallback: find a canonical slug that contains the needle exactly.
-
-        This is a last-resort match. To avoid false positives we only accept
-        matches where the needle is either (a) the full slug, (b) a prefix
-        ending at a dash boundary, or (c) a suffix after a dash.
-        """
-        needle = needle.strip("-")
-        if len(needle) < 4:
-            return None
-        for slug in self._canonical_slugs:
-            if slug == needle:
-                return slug
-            if slug.startswith(f"{needle}-") or slug.endswith(f"-{needle}"):
-                return slug
-        return None
-
 
 def build_resolver(registry: LiteLLMRegistry) -> CanonicalResolver:
     return CanonicalResolver(registry)

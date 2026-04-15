@@ -108,14 +108,97 @@ class TestCanonicalResolver:
         assert not result.matched()
         assert result.strategy == "empty"
 
-    def test_contains_fallback_last_resort(self):
-        """When nothing else matches, a needle that's a full slug suffix
-        (after dash boundary) should contain-match as last resort."""
-        reg = _make_registry_with(
-            {"llama-4-maverick-17b": _make_entry("llama-4-maverick-17b", maker="Meta", family="Llama")}
-        )
+    def test_exact_match_only_no_prefix_boundary(self):
+        """Exact slug match resolves; prefix-boundary heuristics must NOT.
+
+        Regression for the bug that collapsed kimi-k2 → kimi-k2-5,
+        qwen3-coder → qwen3-coder-plus, veo-3 → veo-3-1-fast-generate-001,
+        and bare 'claude' → claude-opus-4-1. The old _contains_match
+        accepted slug.startswith(needle + '-') which non-deterministically
+        merged distinct models into whichever k2/coder/veo variant Python's
+        set iteration happened to surface first.
+        """
+        reg = _make_registry_with({
+            "kimi-k2-5": _make_entry("kimi-k2-5", maker="Moonshot AI", family="Kimi"),
+            "kimi-k2-thinking": _make_entry("kimi-k2-thinking", maker="Moonshot AI", family="Kimi"),
+            "qwen3-coder-plus": _make_entry("qwen3-coder-plus", maker="Alibaba", family="Qwen"),
+            "claude-opus-4-1": _make_entry("claude-opus-4-1"),
+            "veo-3-1-lite-generate": _make_entry("veo-3-1-lite-generate", maker="Google", family="Veo"),
+        })
         resolver = CanonicalResolver(reg)
-        # Passing an exact match should still resolve
-        result = resolver.resolve("meta", "llama-4-maverick-17b")
-        assert result.matched()
-        assert result.canonical_id == "llama-4-maverick-17b"
+
+        # These must miss — none of them is in the canonical set, and
+        # each one is a structurally distinct model from the prefix-
+        # matching candidates above.
+        for raw in [
+            "moonshotai/kimi-k2",       # not kimi-k2-5
+            "qwen/qwen3-coder",         # not qwen3-coder-plus
+            "claude",                   # not claude-opus-4-1
+            "veo-3",                    # not veo-3-1-lite-generate
+            "veo-3.1",
+        ]:
+            result = resolver.resolve("openrouter", raw)
+            assert not result.matched(), (
+                f"{raw!r} must NOT match a prefix sibling; got {result.canonical_id}"
+            )
+
+        # Exact matches still work
+        result = resolver.resolve("openrouter", "moonshotai/kimi-k2.5")
+        assert result.canonical_id == "kimi-k2-5"
+
+    def test_variant_tags_no_longer_strip_identity_carrying_suffixes(self):
+        """Regression for the LiteLLM-inherited alias bug.
+
+        Tags like -instruct, -preview, -exp, -experimental, -latest
+        were once in _VARIANT_TAGS and got stripped during version
+        normalization. That collapsed gpt-3.5-turbo-instruct →
+        gpt-3-5-turbo (different products, different prices),
+        gemini-2.5-pro-preview → gemini-2-5-pro, and
+        deepseek-v3.2-exp → deepseek-v3-2.
+
+        These suffixes carry product identity and must survive.
+        """
+        reg = _make_registry_with({
+            "gpt-3-5-turbo": _make_entry("gpt-3-5-turbo", maker="OpenAI", family="GPT"),
+            "gpt-3-5-turbo-instruct": _make_entry(
+                "gpt-3-5-turbo-instruct", maker="OpenAI", family="GPT"
+            ),
+            "gemini-2-5-pro": _make_entry("gemini-2-5-pro", maker="Google", family="Gemini"),
+            "gemini-2-5-pro-preview": _make_entry(
+                "gemini-2-5-pro-preview", maker="Google", family="Gemini"
+            ),
+            "deepseek-v3-2": _make_entry("deepseek-v3-2", maker="DeepSeek", family="DeepSeek"),
+        })
+        resolver = CanonicalResolver(reg)
+
+        # -instruct must reach its OWN canonical, not the parent
+        r = resolver.resolve("openrouter", "openai/gpt-3.5-turbo-instruct")
+        assert r.canonical_id == "gpt-3-5-turbo-instruct"
+
+        # Parent still resolves correctly
+        r = resolver.resolve("openrouter", "openai/gpt-3.5-turbo")
+        assert r.canonical_id == "gpt-3-5-turbo"
+
+        # -preview must reach its own canonical
+        r = resolver.resolve("openrouter", "google/gemini-2.5-pro-preview")
+        assert r.canonical_id == "gemini-2-5-pro-preview"
+
+        # -exp must NOT silently collapse into the parent when no
+        # canonical exists for the exp variant. With no entry for
+        # deepseek-v3-2-exp, the resolver returns miss so the merger
+        # promotes it as a synthetic entity instead of merging into
+        # deepseek-v3-2 with mixed pricing.
+        r = resolver.resolve("openrouter", "deepseek/deepseek-v3.2-exp")
+        assert r.canonical_id is None
+
+    def test_quantization_tags_still_strip(self):
+        """Hardware/quantization variants are genuinely the same logical
+        model with different storage formats — these MUST still strip."""
+        reg = _make_registry_with({
+            "llama-3-8b": _make_entry("llama-3-8b", maker="Meta", family="Llama"),
+        })
+        resolver = CanonicalResolver(reg)
+        for raw in ["meta-llama/llama-3-8b-fp8", "meta-llama/llama-3-8b-int4",
+                    "meta-llama/llama-3-8b-bf16"]:
+            r = resolver.resolve("openrouter", raw)
+            assert r.canonical_id == "llama-3-8b", f"{raw} should strip to llama-3-8b"
