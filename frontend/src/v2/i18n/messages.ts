@@ -135,6 +135,11 @@ export const en = {
   'share.link_copied': '✓ Link copied',
   'share.x_button': 'Share on X',
   'share.x_text_fmt': '{name} — {maker}. Compare LLM pricing at',
+
+  // Export
+  'export.csv': 'Export CSV',
+  'export.csv_tooltip': 'Download current filtered list as CSV (opens in Excel)',
+  'export.count_fmt': 'Export {count} models',
 } as const;
 
 export type MessageKey = keyof typeof en;
@@ -258,6 +263,10 @@ export const zh: Record<MessageKey, string> = {
   'share.link_copied': '✓ 链接已复制',
   'share.x_button': '分享到 X',
   'share.x_text_fmt': '{name} — {maker}。对比 LLM 价格',
+
+  'export.csv': '导出 CSV',
+  'export.csv_tooltip': '导出当前筛选结果为 CSV（Excel 可直接打开）',
+  'export.count_fmt': '导出 {count} 个模型',
 };
 
 export const MESSAGES = { en, zh } as const;
