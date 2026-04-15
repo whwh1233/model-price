@@ -72,6 +72,24 @@ DOT_PREFIXES = (
     "deepseek.",
 )
 
+# Explicit aliases where a provider's internal model id has no
+# resemblance to the LiteLLM canonical slug. AWS Bedrock is the main
+# offender: it publishes Cohere embeds as `cohere-embed-<N>-model[-variant]`
+# while LiteLLM canonicalizes them as `embed[-variant]`. Without this
+# map they go through Pass 2b as synthetic entities and we end up with
+# two "Cohere Embed v4" cards (embed + cohere-embed-4-model). The map
+# registers these as first-class aliases into the LiteLLM registry at
+# resolver construction time so the merger sees them as one entity.
+KNOWN_AGGREGATOR_ALIASES: dict[str, str] = {
+    # AWS Bedrock Cohere embeds.
+    "cohere-embed-4-model": "embed",
+    "cohere-embed-3-model-english": "embed-english",
+    "cohere-embed-3-model-multilingual": "embed-multilingual",
+    # The aws api occasionally collapses dashes — accept both forms.
+    "cohere-embed-model-3-multilingual": "embed-multilingual",
+    "cohere-embed-model-3-english": "embed-english",
+}
+
 
 @dataclass
 class Resolution:
@@ -183,4 +201,13 @@ class CanonicalResolver:
         return ordered
 
 def build_resolver(registry: LiteLLMRegistry) -> CanonicalResolver:
+    """Construct a resolver and register known aggregator aliases.
+
+    The aliases live outside LiteLLM's published data but are stable
+    enough to hard-code here. Registering them up front means the
+    offering merger sees provider-native model ids (e.g. AWS Bedrock's
+    `cohere-embed-4-model`) as members of the right canonical entity.
+    """
+    for alias, canonical_id in KNOWN_AGGREGATOR_ALIASES.items():
+        registry.register_alias(alias, canonical_id)
     return CanonicalResolver(registry)

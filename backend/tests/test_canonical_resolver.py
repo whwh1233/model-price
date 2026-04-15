@@ -5,7 +5,7 @@ cascade: direct alias → prefix strip → version strip → contains.
 Each test covers a specific resolution strategy.
 """
 
-from services.canonical import CanonicalResolver
+from services.canonical import CanonicalResolver, build_resolver
 from services.litellm_registry import LiteLLMEntry, LiteLLMRegistry
 
 
@@ -190,6 +190,21 @@ class TestCanonicalResolver:
         # deepseek-v3-2 with mixed pricing.
         r = resolver.resolve("openrouter", "deepseek/deepseek-v3.2-exp")
         assert r.canonical_id is None
+
+    def test_known_aggregator_alias_registered_by_build_resolver(self):
+        """AWS Bedrock publishes Cohere embeds as `cohere-embed-4-model`
+        etc. build_resolver must register these into the registry so the
+        merger attaches the offering to the existing LiteLLM canonical
+        (`embed`) instead of spawning a synthetic duplicate entity."""
+        reg = _make_registry_with({
+            "embed": _make_entry("embed", maker="Cohere", family="Cohere Embed"),
+            "embed-english": _make_entry("embed-english", maker="Cohere", family="Cohere Embed"),
+            "embed-multilingual": _make_entry("embed-multilingual", maker="Cohere", family="Cohere Embed"),
+        })
+        resolver = build_resolver(reg)
+        assert resolver.resolve("aws_bedrock", "cohere-embed-4-model").canonical_id == "embed"
+        assert resolver.resolve("aws_bedrock", "cohere-embed-3-model-english").canonical_id == "embed-english"
+        assert resolver.resolve("aws_bedrock", "cohere-embed-model-3-multilingual").canonical_id == "embed-multilingual"
 
     def test_quantization_tags_still_strip(self):
         """Hardware/quantization variants are genuinely the same logical
