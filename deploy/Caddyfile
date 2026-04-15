@@ -1,0 +1,20 @@
+price.pubwhere.cn {
+	# API requests -> backend
+	handle /api/* {
+		reverse_proxy 127.0.0.1:8090
+	}
+
+	# Frontend static files
+	handle {
+		root * /root/model-price/frontend/dist
+		try_files {path} /index.html
+		file_server
+	}
+
+	# Compression
+	encode gzip zstd
+
+	# Cache static assets
+	@static path *.js *.css *.png *.jpg *.svg *.ico *.woff2
+	header @static Cache-Control "public, max-age=31536000, immutable"
+}
