@@ -3,12 +3,10 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import type { EntitiesListQuery } from '../../types/v2';
 import { useEntitiesV2 } from '../../hooks/useEntitiesV2';
 import { useCompareBasket } from '../compareBasketContext';
-import { useI18n } from '../i18n/localeContext';
 import { HeroSearch } from '../components/HeroSearch';
 import { FilterBar } from '../components/FilterBar';
 import { EntityTable } from '../components/EntityTable';
 import { EntityDrawer } from '../components/EntityDrawer';
-import { exportEntitiesToCsv } from '../utils/exportCsv';
 import './HomePage.css';
 
 function cleanLabel(raw: string | null | undefined): string {
@@ -27,7 +25,6 @@ export function HomePage(_props: HomePageProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const basket = useCompareBasket();
-  const { t } = useI18n();
 
   const drawerSlug = searchParams.get('m');
 
