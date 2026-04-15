@@ -3,10 +3,12 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import type { EntitiesListQuery } from '../../types/v2';
 import { useEntitiesV2 } from '../../hooks/useEntitiesV2';
 import { useCompareBasket } from '../compareBasketContext';
+import { useI18n } from '../i18n/localeContext';
 import { HeroSearch } from '../components/HeroSearch';
 import { FilterBar } from '../components/FilterBar';
 import { EntityTable } from '../components/EntityTable';
 import { EntityDrawer } from '../components/EntityDrawer';
+import { exportEntitiesToCsv } from '../utils/exportCsv';
 import './HomePage.css';
 
 function cleanLabel(raw: string | null | undefined): string {
@@ -25,6 +27,7 @@ export function HomePage(_props: HomePageProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const basket = useCompareBasket();
+  const { t } = useI18n();
 
   const drawerSlug = searchParams.get('m');
 
@@ -91,6 +94,20 @@ export function HomePage(_props: HomePageProps) {
         makers={makers}
         families={families}
       />
+
+      <div className="v2-actions-bar">
+        <button
+          type="button"
+          className="v2-export-btn"
+          onClick={() => exportEntitiesToCsv(entities)}
+          disabled={entities.length === 0}
+          title={t('export.csv_tooltip')}
+        >
+          <span aria-hidden="true">↓</span>
+          {t('export.csv')}
+          <span className="v2-export-count">({entities.length})</span>
+        </button>
+      </div>
 
       {error ? (
         <div className="v2-error">
