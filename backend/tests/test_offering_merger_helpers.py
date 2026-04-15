@@ -10,6 +10,7 @@ from datetime import datetime
 from models import ModelPricing, Pricing
 from models.v2 import OfferingV2, PricingV2
 from services.offering_merger import (
+    _is_embedding_price_outlier,
     _is_stub_offering_set,
     _maker_from_model_id,
     _round_price,
@@ -165,3 +166,46 @@ class TestIsStubOfferingSet:
             _api_offering("openrouter", 0.1, 0.3),
         ]
         assert _is_stub_offering_set(offs) is False
+
+
+class TestIsEmbeddingPriceOutlier:
+    """Regression: scraper unit bugs and stale LiteLLM entries used to
+    poison the embedding alternatives list with prices 1000x off the
+    real market (TwelveLabs Marengo at $0.0001/M from an AWS parser
+    bug, Cohere embed-multilingual-light at $100/M from an unchecked
+    LiteLLM update)."""
+
+    def test_normal_embedding_price_not_outlier(self):
+        # Cohere embed-v4 at $0.12 / M — in range.
+        off = _api_offering("aws_bedrock", 0.12, 0.0)
+        assert _is_embedding_price_outlier(off, "embedding") is False
+
+    def test_cheap_embedding_outlier(self):
+        # AWS scraper returning $0.0001 / M — clearly a unit bug.
+        off = _api_offering("aws_bedrock", 0.0001, 0.0)
+        assert _is_embedding_price_outlier(off, "embedding") is True
+
+    def test_expensive_embedding_outlier(self):
+        # LiteLLM stale $100 / M entry for embed-multilingual-light.
+        off = _api_offering("litellm", 100.0, 0.0)
+        assert _is_embedding_price_outlier(off, "embedding") is True
+
+    def test_non_embedding_mode_not_checked(self):
+        # Chat models are free to be $0.0001 / M (they aren't today,
+        # but we don't want to flag legitimately cheap chat offerings).
+        off = _api_offering("openai", 0.0001, 0.0)
+        assert _is_embedding_price_outlier(off, "chat") is False
+
+    def test_null_input_price_not_outlier(self):
+        off = OfferingV2(
+            provider="x",
+            provider_model_id="x",
+            pricing=PricingV2(input=None, output=None),
+            batch_pricing=None,
+            availability="ga",
+            region=None,
+            notes=None,
+            last_updated=datetime.utcnow(),
+            source="litellm_fallback",
+        )
+        assert _is_embedding_price_outlier(off, "embedding") is False
