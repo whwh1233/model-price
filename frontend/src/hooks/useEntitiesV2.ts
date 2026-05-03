@@ -8,8 +8,11 @@ const BACKEND_TIMEOUT_MS = 15000;
 const ALLOWED_SLUGS = new Set([
   'claude-sonnet-4-6',
   'claude-opus-4-6',
+  'claude-opus-4-7',
   'claude-haiku-4-5',
   'gpt-5-4',
+  'gpt-5-5',
+  'gpt-5-5-pro',
   'gpt-5-3-codex',
 ]);
 
