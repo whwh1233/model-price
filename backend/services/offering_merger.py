@@ -636,12 +636,23 @@ class OfferingMerger:
     ) -> str:
         if not offerings:
             return "litellm"
-        providers_present = {o.provider for o in offerings}
+        by_provider = {o.provider: o for o in offerings}
         preference = AUTHORITY_BY_MAKER.get(entity.maker, [])
+
+        def has_token_price(off: OfferingV2) -> bool:
+            return off.pricing.input is not None and off.pricing.output is not None
+
+        # Prefer the highest-authority provider with complete token pricing,
+        # so a partial upstream entry (e.g. Bedrock's pricing API publishing
+        # output but not input for a freshly-launched model) doesn't shadow
+        # a sibling offering that does have both numbers.
         for candidate in preference:
-            if candidate in providers_present:
+            off = by_provider.get(candidate)
+            if off and has_token_price(off):
                 return candidate
-        # Fallback: prefer a non-fallback offering, else first
+        for candidate in preference:
+            if candidate in by_provider:
+                return candidate
         non_fallback = [o for o in offerings if o.source != "litellm_fallback"]
         return (non_fallback[0] if non_fallback else offerings[0]).provider
 
