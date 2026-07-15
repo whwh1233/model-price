@@ -114,7 +114,7 @@ def main() -> None:
     draw_centered(draw, families, 528, families_font, FG_3)
 
     # URL at the very bottom
-    draw_centered(draw, "modelprice.boxtech.icu", 582, url_font, ACCENT)
+    draw_centered(draw, "modelprice.closeai.space", 582, url_font, ACCENT)
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     img.save(OUTPUT, "PNG", optimize=True)

@@ -79,12 +79,7 @@ async def root():
 
 @app.get("/api/health")
 async def health_check():
-    """Health check endpoint.
-
-    Pinged every 10 minutes by .github/workflows/keepalive.yml to keep
-    the Render free-tier backend warm. Do not remove or rename without
-    updating the workflow.
-    """
+    """Health check endpoint for local API debugging."""
     stats = get_store().stats()
     return {
         "status": "healthy",

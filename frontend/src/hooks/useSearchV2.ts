@@ -11,11 +11,8 @@ interface State {
 
 /**
  * Cmd+K search runs entirely client-side against the v2 fallback
- * snapshot. At ~650 entities substring matching is sub-millisecond
- * per keystroke, and it avoids a network round-trip — which matters
- * most when the Render free-tier backend is cold. The backend
- * /api/v2/search endpoint remains part of the public contract for
- * API consumers, but the UI no longer calls it.
+ * snapshot. At this scale substring matching is sub-millisecond per
+ * keystroke and keeps the deployed app fully static.
  */
 export function useSearchV2(query: string, limit = 10): State {
   const [state, setState] = useState<State>({ results: [], loading: false });

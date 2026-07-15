@@ -2,13 +2,12 @@
 //
 // The snapshot is a 100KB-ish gzipped JSON shipped in the Vite
 // bundle (generated at build time from backend/data/v2/*.json).
-// Hooks call loadFallback() on mount; while the cold Render
-// backend warms up, the UI stays fully interactive from the
-// snapshot alone. Once the backend responds, hooks swap in the
-// live data on top of the snapshot-first paint.
+// The UI reads this snapshot directly; the backend is only used as
+// an offline refresh tool when regenerating the bundled data.
 
 import type {
   AlternativeV2,
+  CompareResultV2,
   EntitiesListQuery,
   EntityCoreV2,
   EntityDetailV2,
@@ -28,6 +27,28 @@ interface V2Snapshot {
 }
 
 const FALLBACK_URL = '/v2-fallback.json';
+
+const VISIBLE_MODEL_SLUGS = new Set([
+  // Existing curated public set.
+  'claude-sonnet-4-6',
+  'claude-opus-4-6',
+  'claude-opus-4-7',
+  'claude-haiku-4-5',
+  'gpt-5-4',
+  'gpt-5-5',
+  'gpt-5-3-codex',
+
+  // GPT-5.6: keep only the three OpenRouter variants that have sane prices.
+  'gpt-5-6-luna',
+  'gpt-5-6-sol',
+  'gpt-5-6-terra',
+
+  // Newly added Claude models from the latest snapshot.
+  'claude-fable-5',
+  'claude-mythos-5',
+  'claude-opus-4-8',
+  'claude-sonnet-5',
+]);
 
 let cached: V2Snapshot | null = null;
 let loading: Promise<V2Snapshot | null> | null = null;
@@ -79,13 +100,17 @@ function toListItem(
   };
 }
 
-// ─── Query replicas of the backend endpoints ────────────────
+function isVisible(slug: string): boolean {
+  return VISIBLE_MODEL_SLUGS.has(slug);
+}
+
+// ─── Snapshot query helpers ─────────────────────────────────
 
 export function listFromFallback(
   snapshot: V2Snapshot,
   query: EntitiesListQuery,
 ): EntityListItemV2[] {
-  let list = snapshot.entities as EntityCoreV2[];
+  let list = snapshot.entities.filter((entity) => isVisible(entity.slug));
 
   if (query.q) {
     const ql = query.q.toLowerCase();
@@ -139,11 +164,47 @@ export function detailFromFallback(
   slug: string,
 ): EntityDetailV2 | null {
   const entity = snapshot.entities.find((e) => e.slug === slug);
-  if (!entity) return null;
+  if (!entity || !isVisible(entity.slug)) return null;
   return {
     entity,
     offerings: snapshot.offerings_by_entity[slug] ?? [],
-    alternatives: snapshot.alternatives_by_entity[slug] ?? [],
+    alternatives: (snapshot.alternatives_by_entity[slug] ?? []).filter((alt) =>
+      isVisible(alt.canonical_id),
+    ),
+  };
+}
+
+export function compareFromFallback(
+  snapshot: V2Snapshot,
+  ids: string[],
+): CompareResultV2 {
+  const requested = ids.map((s) => s.trim()).filter(Boolean);
+  const entities: EntityDetailV2[] = [];
+  const missing: string[] = [];
+  const capSets: Array<Set<string>> = [];
+
+  for (const slug of requested) {
+    const detail = detailFromFallback(snapshot, slug);
+    if (!detail) {
+      missing.push(slug);
+      continue;
+    }
+    entities.push(detail);
+    capSets.push(new Set(detail.entity.capabilities ?? []));
+  }
+
+  const common =
+    capSets.length > 0
+      ? [...capSets.reduce((acc, set) => {
+          return new Set([...acc].filter((cap) => set.has(cap)));
+        })].sort()
+      : [];
+
+  return {
+    entities,
+    common_capabilities: common,
+    requested_ids: requested,
+    missing_ids: missing,
   };
 }
 
@@ -155,7 +216,7 @@ export function searchFallback(
   const ql = query.toLowerCase().trim();
   if (!ql) return [];
   const scored: Array<[number, SearchResultV2]> = [];
-  for (const entity of snapshot.entities) {
+  for (const entity of snapshot.entities.filter((item) => isVisible(item.slug))) {
     const name = (entity.name ?? '').toLowerCase();
     const canon = (entity.canonical_id ?? '').toLowerCase();
     const family = (entity.family ?? '').toLowerCase();

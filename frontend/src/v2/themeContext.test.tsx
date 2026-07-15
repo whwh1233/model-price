@@ -30,17 +30,17 @@ describe('ThemeProvider', () => {
     }));
   });
 
-  it('defaults to dark', () => {
+  it('defaults to light', () => {
     render(
       <ThemeProvider>
         <Probe />
       </ThemeProvider>,
     );
-    expect(screen.getByTestId('mode').textContent).toBe('dark');
-    expect(screen.getByTestId('resolved').textContent).toBe('dark');
+    expect(screen.getByTestId('mode').textContent).toBe('light');
+    expect(screen.getByTestId('resolved').textContent).toBe('light');
   });
 
-  it('cycles dark → light → system → dark', async () => {
+  it('cycles light → system → dark → light', async () => {
     const user = userEvent.setup();
     render(
       <ThemeProvider>
@@ -48,13 +48,13 @@ describe('ThemeProvider', () => {
       </ThemeProvider>,
     );
     const btn = screen.getByText('cycle');
-    expect(screen.getByTestId('mode').textContent).toBe('dark');
-    await user.click(btn);
     expect(screen.getByTestId('mode').textContent).toBe('light');
     await user.click(btn);
     expect(screen.getByTestId('mode').textContent).toBe('system');
     await user.click(btn);
     expect(screen.getByTestId('mode').textContent).toBe('dark');
+    await user.click(btn);
+    expect(screen.getByTestId('mode').textContent).toBe('light');
   });
 
   it('persists the mode to localStorage', async () => {
@@ -64,8 +64,8 @@ describe('ThemeProvider', () => {
         <Probe />
       </ThemeProvider>,
     );
-    await user.click(screen.getByText('cycle')); // → light
-    expect(localStorage.getItem('model-price-v2:theme')).toBe('light');
+    await user.click(screen.getByText('cycle')); // → system
+    expect(localStorage.getItem('model-price-v2:theme')).toBe('system');
   });
 
   it('reflects theme on <html data-theme>', () => {
@@ -74,6 +74,6 @@ describe('ThemeProvider', () => {
         <Probe />
       </ThemeProvider>,
     );
-    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+    expect(document.documentElement.getAttribute('data-theme')).toBe('light');
   });
 });

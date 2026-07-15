@@ -6,7 +6,7 @@
 
 **Compare 650+ LLMs side by side — real pricing, real capabilities.**
 
-[modelprice.boxtech.icu](https://modelprice.boxtech.icu) · built for devs who read configs more than marketing pages
+[modelprice.closeai.space](https://modelprice.closeai.space) · built for devs who read configs more than marketing pages
 
 [![Python](https://img.shields.io/badge/Python-3.12+-3776ab?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.128+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -31,7 +31,7 @@ Model Price collapses that into **one keyboard-first page** that:
 
 - Knows about **650+ models** across Anthropic, OpenAI, Google, xAI, Meta, DeepSeek, Moonshot AI, Alibaba, Z.AI, MiniMax, Mistral, Cohere and 40+ other labs
 - Normalizes everything to **per 1M tokens** so side-by-side numbers are actually comparable
-- Sources data from the community-maintained **LiteLLM registry** + direct provider scrapes — so new models land within days of release without manual curation
+- Sources data from the community-maintained **LiteLLM registry** + direct provider scrapes; refresh it manually when needed, without a long-running backend service
 - Deduplicates across providers: *"Claude Sonnet 4.5"* is **one** entity with multiple offerings (Anthropic / Bedrock / OpenRouter), not three confusing rows
 - Is **shareable**: every model has `/m/:slug`, every comparison has `/compare/:ids`, both are proper URLs you can paste in a tweet
 
@@ -65,7 +65,7 @@ Model Price collapses that into **one keyboard-first page** that:
 ## Highlights
 
 - **Keyboard first** — `⌘K` opens a fuzzy search palette, `↑↓` to navigate, `Enter` to open, `⌘C` to copy the `model_id`, `⌘D` to add to compare. Runs entirely client-side.
-- **Cold-start resilient** — every visit renders instantly from a bundled `v2-fallback.json` snapshot (≈90 KB gzipped); the live backend refreshes in the background and silently swaps in once ready. No blank page, ever — even if the Render free-tier backend is cold-starting.
+- **Static by default** — every visit renders directly from the bundled `v2-fallback.json` snapshot; browsing, search, detail pages, and comparisons do not need a backend service.
 - **"Same tier, cheaper" recommendations** — every detail view surfaces 3 alternatives ranked by `capability_overlap × savings` (Jaccard over capability sets, weighted by input-price delta). The algorithm lives in `backend/services/alternatives.py` and is mirrored in the build-time fallback generator.
 - **Drift report** — every refresh emits a `drift.json` listing unmatched provider models, price deltas > 5%, new/removed entities. Self-healing data quality.
 - **Official source links** — every detail page links out to the maker's official pricing and docs. We provide the index, vendors provide the truth.
@@ -107,9 +107,8 @@ Model Price collapses that into **one keyboard-first page** that:
                   └──────────────┬───────────────────┘
                                  ▼
                   ┌──────────────────────────────────┐
-                  │  /api/v2/* endpoints             │
-                  │  + v2-fallback.json snapshot     │
-                  │    shipped inside the Vite bundle│
+                  │  v2-fallback.json snapshot       │
+                  │  shipped inside the static app   │
                   └──────────────────────────────────┘
 ```
 
@@ -119,23 +118,20 @@ Two-layer data model: **Entity** (logical model like `claude-sonnet-4-5`) + **Of
 
 | Layer | Tech |
 |-------|------|
-| **Backend** | Python 3.12, FastAPI, Pydantic v2, httpx, Playwright (for provider scrapes), Pillow (OG image generation), pytest |
+| **Data generation** | Python 3.12, Pydantic v2, httpx, Playwright (for provider scrapes), pytest; FastAPI remains available as a development/debug tool |
 | **Frontend** | React 19, TypeScript 5.9, Vite 7, React Router 7, vitest + @testing-library/react + happy-dom |
 | **Data** | LiteLLM `model_prices_and_context_window.json` + direct provider APIs / scrapes, merged into entity/offering JSON files, shipped as a static snapshot alongside the SPA |
-| **Hosting** | Vercel (frontend, auto-deploy on `release` push) · Render free tier (backend, Docker) · GitHub Actions keepalive cron |
+| **Hosting** | Vercel static frontend, auto-deploy on `release` push |
 
 ## Local development
 
-### Backend
+### Update pricing snapshot
 
 ```bash
-cd backend
-uv sync
-uv run playwright install chromium   # first time only
-
-uv run main.py                        # http://localhost:8000
-uv run pytest                         # 86 backend tests
+./scripts/update-prices.sh
 ```
+
+This re-fetches LiteLLM and provider pricing, writes `backend/data/v2/entities.json` / `offerings.json` / `drift.json`, then regenerates `frontend/public/v2-fallback.json`.
 
 ### Frontend
 
@@ -148,15 +144,7 @@ npm test                              # 32 frontend tests
 npm run build                         # prod bundle into dist/
 ```
 
-The frontend proxies `/api/*` → `http://localhost:8000` in dev. Use `VITE_PUBLIC_BASE_URL` to override the canonical public origin used by Copy Link / Share on X (defaults to `https://modelprice.boxtech.icu`).
-
-### Refresh the data
-
-```bash
-curl -X POST http://localhost:8000/api/v2/refresh
-```
-
-This re-fetches LiteLLM, re-runs all provider scrapes, writes fresh `entities.json` / `offerings.json` / `drift.json`. Check `GET /api/v2/drift` for unmatched models and price-drift items.
+The frontend reads only `frontend/public/v2-fallback.json`. Use `VITE_PUBLIC_BASE_URL` to override the canonical public origin used by Copy Link / Share on X (defaults to `https://modelprice.closeai.space`).
 
 ### Sanity check
 
@@ -187,9 +175,9 @@ Uses the Playwright Chromium to capture the production site into `docs/screensho
 
 ## Testing
 
-**118 tests total**, all hermetic, ~3 seconds to run the whole suite:
+**168 tests total**, all hermetic, ~3 seconds to run the whole suite:
 
-- **Backend (pytest, 86)** — `slugify` / `strip_version_suffix`, family-detection ordering (guards the "Codex before GPT" and "Cogito before Llama" regressions), canonical resolver cascade, offering merger helpers, `compute_alternatives` ranking math, `/api/v2/*` contract tests via FastAPI `TestClient`.
+- **Data generation (pytest, 136)** — `slugify` / `strip_version_suffix`, family-detection ordering (guards the "Codex before GPT" and "Cogito before Llama" regressions), canonical resolver cascade, offering merger helpers, `compute_alternatives` ranking math, `/api/v2/*` contract tests via FastAPI `TestClient`.
 - **Frontend (vitest + @testing-library/react + happy-dom, 32)** — `formatPrice` / `formatContext` / `formatPct`, `CompareBasketProvider` (capacity cap, sessionStorage persistence, provider-scoping error), `ThemeProvider` (dark/light/system cycle, `matchMedia` listener, `<html data-theme>` reflection), `LocaleProvider` (default EN, `{name}` interpolation, `<html lang>` sync).
 
 Run them:
@@ -203,11 +191,10 @@ cd frontend && npm test
 
 The `release` branch is the production branch.
 
-- **Vercel** auto-builds and deploys the frontend on every `release` push. Config lives in `frontend/vercel.json`: it proxies `/api/*` → Render and has a catch-all rewrite to `index.html` so React Router deep links work.
-- **Render** rebuilds the backend Docker image on every `release` push. Config in `backend/render.yaml`. Free plan sleeps after 15 min of inactivity — the SWR fallback snapshot in the frontend makes this invisible to users.
-- **GitHub Actions keepalive** in `.github/workflows/keepalive.yml` pings `/api/health` every 10 min as a second line of defense against sleep.
+- **Vercel** auto-builds and deploys the frontend on every `release` push. Config lives in `frontend/vercel.json` and has a catch-all rewrite to `index.html` so React Router deep links work.
+- Production no longer needs Render or a keepalive cron. Price updates are generated manually with `./scripts/update-prices.sh` and shipped as a static snapshot with the frontend.
 
-Previous v1 production is tagged `release-v1-backup` for rollback. The v1 routes (`/api/models`, `/api/providers`, `/api/families`, `/api/stats`, `/api/refresh/metadata`) were removed on 2026-04-15. `POST /api/refresh` remains as a compatibility alias that delegates to the v2 refresh pipeline.
+Previous v1 production is tagged `release-v1-backup` for rollback. The v1 routes (`/api/models`, `/api/providers`, `/api/families`, `/api/stats`, `/api/refresh/metadata`) were removed on 2026-04-15.
 
 ## Design notes & philosophy
 

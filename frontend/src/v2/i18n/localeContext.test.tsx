@@ -18,17 +18,17 @@ function Probe() {
 }
 
 describe('LocaleProvider', () => {
-  it('defaults to English (no auto zh detection)', () => {
+  it('defaults to Chinese', () => {
     render(
       <LocaleProvider>
         <Probe />
       </LocaleProvider>,
     );
-    expect(screen.getByTestId('locale').textContent).toBe('en');
-    expect(screen.getByTestId('sample').textContent).toBe('Search models…');
+    expect(screen.getByTestId('locale').textContent).toBe('zh');
+    expect(screen.getByTestId('sample').textContent).toBe('搜索模型…');
   });
 
-  it('toggles to Chinese and persists', async () => {
+  it('toggles to English and persists', async () => {
     const user = userEvent.setup();
     render(
       <LocaleProvider>
@@ -36,9 +36,9 @@ describe('LocaleProvider', () => {
       </LocaleProvider>,
     );
     await user.click(screen.getByText('toggle'));
-    expect(screen.getByTestId('locale').textContent).toBe('zh');
-    expect(screen.getByTestId('sample').textContent).toBe('搜索模型…');
-    expect(localStorage.getItem('model-price-v2:locale')).toBe('zh');
+    expect(screen.getByTestId('locale').textContent).toBe('en');
+    expect(screen.getByTestId('sample').textContent).toBe('Search models…');
+    expect(localStorage.getItem('model-price-v2:locale')).toBe('en');
   });
 
   it('interpolates {name} placeholders', () => {
@@ -47,7 +47,7 @@ describe('LocaleProvider', () => {
         <Probe />
       </LocaleProvider>,
     );
-    expect(screen.getByTestId('hero').textContent).toBe('3 matching "gpt" of 10');
+    expect(screen.getByTestId('hero').textContent).toBe('3 个模型匹配 "gpt",共 10');
   });
 
   it('updates <html lang>', async () => {
@@ -57,8 +57,8 @@ describe('LocaleProvider', () => {
         <Probe />
       </LocaleProvider>,
     );
-    expect(document.documentElement.lang).toBe('en');
-    await user.click(screen.getByText('toggle'));
     expect(document.documentElement.lang).toBe('zh-CN');
+    await user.click(screen.getByText('toggle'));
+    expect(document.documentElement.lang).toBe('en');
   });
 });

@@ -116,7 +116,7 @@ export const en = {
   'palette.compare': 'compare',
 
   // Errors
-  'error.backend_unreachable': 'Backend unreachable. Start uvicorn on :8000.',
+  'error.backend_unreachable': 'Snapshot unavailable. Rebuild v2-fallback.json.',
 
   // Theme toggle
   'theme.dark': 'Dark',
@@ -246,7 +246,7 @@ export const zh: Record<MessageKey, string> = {
   'palette.copy_id': '复制 ID',
   'palette.compare': '加入对比',
 
-  'error.backend_unreachable': '后端无法连接,请在 :8000 启动 uvicorn。',
+  'error.backend_unreachable': '静态快照不可用,请重新生成 v2-fallback.json。',
 
   'theme.dark': '暗色',
   'theme.light': '亮色',

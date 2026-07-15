@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { API_V2_BASE } from '../../config';
 import type { CompareResultV2 } from '../../types/v2';
 import { useCompareBasket } from '../compareBasketContext';
 import { useI18n } from '../i18n/localeContext';
 import type { MessageKey } from '../i18n/messages';
+import { compareFromFallback, loadFallback } from '../fallbackLoader';
 import {
   formatContext,
   formatPrice,
@@ -28,21 +28,24 @@ export function ComparePage() {
     if (!ids) return;
     let cancelled = false;
     setState({ data: null, loading: true, error: null });
-    fetch(`${API_V2_BASE}/compare?ids=${encodeURIComponent(ids)}`)
-      .then(async (response) => {
-        if (cancelled) return;
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = (await response.json()) as CompareResultV2;
-        setState({ data, loading: false, error: null });
-      })
-      .catch((err) => {
+    (async () => {
+      const snapshot = await loadFallback();
+      if (cancelled) return;
+      if (!snapshot) {
         if (cancelled) return;
         setState({
           data: null,
           loading: false,
-          error: err instanceof Error ? err.message : 'fetch failed',
+          error: 'Unable to load v2-fallback.json',
         });
+        return;
+      }
+      setState({
+        data: compareFromFallback(snapshot, ids.split(',')),
+        loading: false,
+        error: null,
       });
+    })();
     return () => {
       cancelled = true;
     };

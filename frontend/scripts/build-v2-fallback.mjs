@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 // Generates frontend/public/v2-fallback.json at build time.
 //
-// This is the cold-start defense: when a user opens the site and
-// Render's free-tier backend is asleep, the v2 frontend hydrates
-// instantly from this static snapshot and then silently upgrades to
-// live backend data once it's warm.
+// This is the production data bundle: the frontend is static and
+// reads this snapshot directly at runtime.
 //
 // The snapshot shape mirrors what /api/v2 returns:
 //   - entities: EntityCoreV2[]                 (for /api/v2/entities)

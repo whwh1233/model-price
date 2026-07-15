@@ -1,4 +1,4 @@
-// Frozen contract types for /api/v2/*.
+// Frozen contract types for the bundled v2 pricing snapshot.
 // Mirrors backend/data/v2/fixtures/sample.json and
 // docs/plans/v2-api-contract.md. Keep field names byte-for-byte.
 // All prices are per 1,000,000 tokens.

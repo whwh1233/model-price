@@ -94,7 +94,7 @@ export function HomePage(_props: HomePageProps) {
 
       {error ? (
         <div className="v2-error">
-          <p>Backend unreachable. Start uvicorn on :8000.</p>
+          <p>Snapshot unavailable. Rebuild v2-fallback.json.</p>
           <pre>{error}</pre>
         </div>
       ) : loading && entities.length === 0 ? (

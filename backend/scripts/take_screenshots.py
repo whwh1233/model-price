@@ -19,7 +19,7 @@ from pathlib import Path
 
 from playwright.async_api import async_playwright
 
-BASE = "https://modelprice.boxtech.icu"
+BASE = "https://modelprice.closeai.space"
 OUT_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "screenshots"
 
 DESKTOP = {"width": 1440, "height": 900}
