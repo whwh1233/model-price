@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T12:14:26.737150",
+  "generated_at": "2026-07-27T11:25:25.957670",
   "counts": {
-    "entities_total": 709,
-    "entities_new": 73,
-    "entities_removed": 59,
-    "offerings_total": 792,
-    "unmatched_provider_models": 346,
+    "entities_total": 708,
+    "entities_new": 11,
+    "entities_removed": 12,
+    "offerings_total": 794,
+    "unmatched_provider_models": 342,
     "orphan_entities": 212,
     "price_drift_items": 83
   },
@@ -866,6 +866,74 @@
     },
     {
       "provider": "openrouter",
+      "model_id": "anthropic/claude-opus-5-fast",
+      "tried_aliases": [
+        "anthropic/claude-opus-5-fast",
+        "claude-opus-5-fast"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "inclusionai/ling-3.0-flash:free",
+      "tried_aliases": [
+        "inclusionai/ling-3.0-flash:free",
+        "ling-3-0-flash-free",
+        "ling-3.0-flash:free"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "poolside/laguna-s-2.1",
+      "tried_aliases": [
+        "poolside/laguna-s-2.1",
+        "laguna-s-2-1",
+        "laguna-s-2.1"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "poolside/laguna-s-2.1:free",
+      "tried_aliases": [
+        "poolside/laguna-s-2.1:free",
+        "laguna-s-2-1-free",
+        "laguna-s-2.1:free"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "meituan/longcat-2.0",
+      "tried_aliases": [
+        "meituan/longcat-2.0",
+        "longcat-2-0",
+        "longcat-2.0"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "thinkingmachines/inkling",
+      "tried_aliases": [
+        "thinkingmachines/inkling",
+        "inkling"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "openrouter/auto-beta",
+      "tried_aliases": [
+        "openrouter/auto-beta",
+        "auto-beta"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "moonshotai/kimi-k3",
+      "tried_aliases": [
+        "moonshotai/kimi-k3",
+        "kimi-k3"
+      ]
+    },
+    {
+      "provider": "openrouter",
       "model_id": "kwaipilot/kat-coder-air-v2.5",
       "tried_aliases": [
         "kwaipilot/kat-coder-air-v2.5",
@@ -942,15 +1010,6 @@
       "tried_aliases": [
         "tencent/hy3",
         "hy3"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "tencent/hy3:free",
-      "tried_aliases": [
-        "tencent/hy3:free",
-        "hy3-free",
-        "hy3:free"
       ]
     },
     {
@@ -1816,15 +1875,6 @@
     },
     {
       "provider": "openrouter",
-      "model_id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-      "tried_aliases": [
-        "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-        "llama-3-3-nemotron-super-49b-v1-5",
-        "llama-3.3-nemotron-super-49b-v1.5"
-      ]
-    },
-    {
-      "provider": "openrouter",
       "model_id": "qwen/qwen3-vl-30b-a3b-thinking",
       "tried_aliases": [
         "qwen/qwen3-vl-30b-a3b-thinking",
@@ -1872,15 +1922,6 @@
         "deepseek/deepseek-v3.1-terminus",
         "deepseek-v3-1-terminus",
         "deepseek-v3.1-terminus"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
-      "tried_aliases": [
-        "qwen/qwen3-next-80b-a3b-instruct:free",
-        "qwen3-next-80b-a3b-instruct-free",
-        "qwen3-next-80b-a3b-instruct:free"
       ]
     },
     {
@@ -2008,15 +2049,6 @@
     },
     {
       "provider": "openrouter",
-      "model_id": "qwen/qwen3-coder:free",
-      "tried_aliases": [
-        "qwen/qwen3-coder:free",
-        "qwen3-coder-free",
-        "qwen3-coder:free"
-      ]
-    },
-    {
-      "provider": "openrouter",
       "model_id": "bytedance/ui-tars-1.5-7b",
       "tried_aliases": [
         "bytedance/ui-tars-1.5-7b",
@@ -2046,15 +2078,6 @@
       "tried_aliases": [
         "cognitivecomputations/dolphin-mistral-24b-venice-edition",
         "dolphin-mistral-24b-venice-edition"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-      "tried_aliases": [
-        "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-        "dolphin-mistral-24b-venice-edition-free",
-        "dolphin-mistral-24b-venice-edition:free"
       ]
     },
     {
@@ -2151,14 +2174,6 @@
       "tried_aliases": [
         "arcee-ai/virtuoso-large",
         "virtuoso-large"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "arcee-ai/coder-large",
-      "tried_aliases": [
-        "arcee-ai/coder-large",
-        "coder-large"
       ]
     },
     {
@@ -2381,15 +2396,6 @@
     },
     {
       "provider": "openrouter",
-      "model_id": "meta-llama/llama-3.3-70b-instruct:free",
-      "tried_aliases": [
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "llama-3-3-70b-instruct-free",
-        "llama-3.3-70b-instruct:free"
-      ]
-    },
-    {
-      "provider": "openrouter",
       "model_id": "amazon/nova-lite-v1",
       "tried_aliases": [
         "amazon/nova-lite-v1"
@@ -2445,33 +2451,10 @@
     },
     {
       "provider": "openrouter",
-      "model_id": "inflection/inflection-3-pi",
-      "tried_aliases": [
-        "inflection/inflection-3-pi",
-        "inflection-3-pi"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "inflection/inflection-3-productivity",
-      "tried_aliases": [
-        "inflection/inflection-3-productivity",
-        "inflection-3-productivity"
-      ]
-    },
-    {
-      "provider": "openrouter",
       "model_id": "thedrummer/rocinante-12b",
       "tried_aliases": [
         "thedrummer/rocinante-12b",
         "rocinante-12b"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "meta-llama/llama-3.2-11b-vision-instruct",
-      "tried_aliases": [
-        "meta-llama/llama-3.2-11b-vision-instruct"
       ]
     },
     {
@@ -2490,15 +2473,6 @@
         "meta-llama/llama-3.2-3b-instruct",
         "llama-3-2-3b-instruct",
         "llama-3.2-3b-instruct"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "meta-llama/llama-3.2-3b-instruct:free",
-      "tried_aliases": [
-        "meta-llama/llama-3.2-3b-instruct:free",
-        "llama-3-2-3b-instruct-free",
-        "llama-3.2-3b-instruct:free"
       ]
     },
     {
@@ -2535,15 +2509,6 @@
         "nousresearch/hermes-3-llama-3.1-405b",
         "hermes-3-llama-3-1-405b",
         "hermes-3-llama-3.1-405b"
-      ]
-    },
-    {
-      "provider": "openrouter",
-      "model_id": "nousresearch/hermes-3-llama-3.1-405b:free",
-      "tried_aliases": [
-        "nousresearch/hermes-3-llama-3.1-405b:free",
-        "hermes-3-llama-3-1-405b-free",
-        "hermes-3-llama-3.1-405b:free"
       ]
     },
     {
@@ -2787,6 +2752,14 @@
       "delta_pct": 10.0
     },
     {
+      "entity": "claude-opus-5",
+      "provider": "aws_bedrock",
+      "field": "output",
+      "provider_value": 27.5,
+      "litellm_value": 25.0,
+      "delta_pct": 10.0
+    },
+    {
       "entity": "claude-sonnet-5",
       "provider": "aws_bedrock",
       "field": "output",
@@ -2907,22 +2880,6 @@
       "delta_pct": 68.18
     },
     {
-      "entity": "deepseek-v4-flash",
-      "provider": "openrouter",
-      "field": "input",
-      "provider_value": 0.098,
-      "litellm_value": 0.14,
-      "delta_pct": -30.0
-    },
-    {
-      "entity": "deepseek-v4-flash",
-      "provider": "openrouter",
-      "field": "output",
-      "provider_value": 0.196,
-      "litellm_value": 0.28,
-      "delta_pct": -30.0
-    },
-    {
       "entity": "gemini-2-5-flash-image",
       "provider": "google_gemini",
       "field": "output",
@@ -2974,9 +2931,9 @@
       "entity": "gemini-flash-latest",
       "provider": "openrouter",
       "field": "output",
-      "provider_value": 9.0,
+      "provider_value": 7.5,
       "litellm_value": 2.5,
-      "delta_pct": 260.0
+      "delta_pct": 200.0
     },
     {
       "entity": "gemini-pro-latest",
@@ -3049,6 +3006,14 @@
       "provider_value": 0.95,
       "litellm_value": 1.0,
       "delta_pct": -5.0
+    },
+    {
+      "entity": "glm-5",
+      "provider": "openrouter",
+      "field": "output",
+      "provider_value": 2.55,
+      "litellm_value": 3.2,
+      "delta_pct": -20.31
     },
     {
       "entity": "glm-5-1",
@@ -3190,33 +3155,33 @@
       "entity": "kimi-k2-6",
       "provider": "openrouter",
       "field": "input",
-      "provider_value": 0.66,
+      "provider_value": 0.646,
       "litellm_value": 0.95,
-      "delta_pct": -30.53
+      "delta_pct": -32.0
     },
     {
       "entity": "kimi-k2-6",
       "provider": "openrouter",
       "field": "output",
-      "provider_value": 3.41,
+      "provider_value": 2.72,
       "litellm_value": 4.0,
-      "delta_pct": -14.75
+      "delta_pct": -32.0
     },
     {
       "entity": "kimi-latest",
       "provider": "openrouter",
       "field": "input",
-      "provider_value": 0.66,
+      "provider_value": 3.0,
       "litellm_value": 2.0,
-      "delta_pct": -67.0
+      "delta_pct": 50.0
     },
     {
       "entity": "kimi-latest",
       "provider": "openrouter",
       "field": "output",
-      "provider_value": 3.41,
+      "provider_value": 15.0,
       "litellm_value": 5.0,
-      "delta_pct": -31.8
+      "delta_pct": 200.0
     },
     {
       "entity": "minimax-m2",
@@ -3412,140 +3377,31 @@
     }
   ],
   "new_entities": [
-    "aion-3-0",
-    "aion-3-0-mini",
-    "anthropic-claude-fable-latest",
-    "claude-fable-5",
-    "claude-mythos-5",
-    "claude-opus-4-7-fast",
-    "claude-opus-4-8",
-    "claude-opus-4-8-fast",
-    "claude-sonnet-5",
-    "dolphin-mistral-24b-venice-edition",
-    "fugu-ultra",
-    "gemini-3-1-flash-image",
-    "gemini-3-1-flash-lite",
-    "gemini-3-1-flash-lite-image",
-    "gemini-3-5-flash",
-    "gemini-3-5-live-translate",
-    "gemini-3-pro-image",
-    "gemini-omni-flash-preview",
-    "glm-5-2",
-    "google-gemma-4-26b-a4b",
-    "google-gemma-4-31b",
-    "google-gemma-4-e2b",
-    "gpt-5-6",
-    "gpt-5-6-luna",
-    "gpt-5-6-luna-pro",
-    "gpt-5-6-sol",
-    "gpt-5-6-sol-pro",
-    "gpt-5-6-terra",
-    "gpt-5-6-terra-pro",
-    "gpt-56-luna",
-    "gpt-56-sol",
-    "gpt-56-terra",
-    "gpt-chat-latest",
-    "gpt-realtime-2",
-    "gpt-realtime-2-1",
-    "gpt-realtime-2-1-mini",
-    "gpt-realtime-21",
-    "gpt-realtime-21-mini",
-    "gpt-realtime-translate",
-    "gpt-realtime-whisper",
-    "grok-4-3-latest",
-    "grok-4-5",
-    "grok-4-5-latest",
-    "grok-build-0-1",
-    "hy3-free",
-    "hy3-preview",
-    "kat-coder-air-v2-5",
-    "kat-coder-pro-v2-5",
-    "kimi-k2-7-code",
-    "laguna-m-1",
-    "laguna-xs-2-1",
-    "laguna-xs-2-1-free",
-    "ling-2-6-1t",
-    "minimax-m3",
-    "ministral-8b-latest",
-    "mistral-medium-2508",
-    "mistral-medium-2604",
-    "mistral-medium-3-5",
-    "muse-spark-1-1",
-    "nemotron-3-5-content-safety-free",
-    "nemotron-3-ultra-550b-a55b",
-    "nemotron-3-ultra-550b-a55b-free",
-    "nex-n2-mini",
-    "nex-n2-pro",
-    "north-mini-code-free",
-    "openrouter-fusion",
-    "perceptron-mk1",
-    "qwen3-7-max",
-    "qwen3-7-plus",
-    "ring-2-6-1t",
-    "step-3-7-flash",
-    "tencent-hy3",
-    "x-ai-grok-latest"
+    "auto-beta",
+    "claude-opus-5",
+    "claude-opus-5-fast",
+    "gemini-3-5-flash-lite",
+    "gemini-3-6-flash",
+    "kimi-k3",
+    "laguna-s-2-1",
+    "laguna-s-2-1-free",
+    "ling-3-0-flash-free",
+    "longcat-2-0",
+    "thinking-machines-inkling"
   ],
   "removed_entities": [
-    "aion-1-0",
-    "aion-1-0-mini",
-    "arcee-ai-spotlight",
-    "claude-3-7-sonnet-thinking",
-    "claude-opus-4-6-fast",
-    "codellama-7b-instruct-solidity",
-    "deepseek-r1-distill-qwen-32b",
-    "deepseek-r1t2-chimera",
-    "deepseek-v3-1-nex-n1",
-    "deepseek-v3-2-speciale",
-    "devstral-medium",
-    "devstral-small",
-    "ernie-4-5-21b-a3b",
-    "ernie-4-5-21b-a3b-thinking",
-    "ernie-4-5-300b-a47b",
-    "ernie-4-5-vl-28b-a3b",
-    "gemma-3-12b-it-free",
-    "gemma-3-27b-it-free",
-    "gemma-3-4b-it-free",
-    "gemma-3n-e2b-it-free",
-    "gemma-3n-e4b-it-free",
-    "glm-4-32b",
-    "glm-4-5-air-free",
-    "goliath-120b",
-    "gpt-oss-120b-free",
-    "gpt-realtime-15",
-    "hermes-2-pro-llama-3-8b",
-    "hy3-preview-free",
-    "intellect-3",
-    "l3-1-70b-hanami-x1",
-    "l3-euryale-70b",
-    "laguna-xs-2-free",
-    "lfm-2-24b-a2b",
-    "lfm-2-5-1-2b-instruct-free",
-    "lfm-2-5-1-2b-thinking-free",
-    "ling-2-6-1t-free",
-    "llama-3-1-nemotron-70b-instruct",
-    "llama-3-70b-instruct",
-    "llama-3-8b-instruct",
-    "llama-guard-3-8b",
-    "maestro-reasoning",
-    "mimo-v2-flash",
-    "mimo-v2-omni",
-    "mimo-v2-pro",
-    "minimax-m2-5-free",
-    "mistral-7b-instruct-v0-1",
-    "mixtral-8x7b-instruct",
-    "nemotron-nano-12b-v2-vl",
-    "nemotron-nano-9b-v2",
-    "olmo-3-1-32b-instruct",
-    "owl-alpha",
-    "qianfan-ocr-fast-free",
-    "qwen-vl-max",
-    "qwen-vl-plus",
-    "rnj-1-instruct",
-    "switchpoint-router",
-    "tongyi-deepresearch-30b-a3b",
-    "trinity-large-preview",
-    "trinity-mini"
+    "coder-large",
+    "dolphin-mistral-24b-venice-edition-free",
+    "hermes-3-llama-3-1-405b-free",
+    "hy3-free",
+    "inflection-3-pi",
+    "inflection-3-productivity",
+    "llama-3-2-11b-vision-instruct",
+    "llama-3-2-3b-instruct-free",
+    "llama-3-3-70b-instruct-free",
+    "llama-3-3-nemotron-super-49b-v1-5",
+    "qwen3-coder-free",
+    "qwen3-next-80b-a3b-instruct-free"
   ],
   "orphan_entities": [
     "chat-bison",
@@ -3618,6 +3474,7 @@
     "gpt-4o-audio-preview",
     "gpt-4o-mini-audio-preview",
     "gpt-4o-mini-realtime-preview",
+    "gpt-4o-mini-search-preview",
     "gpt-4o-mini-tts",
     "gpt-4o-realtime-preview",
     "gpt-4o-transcribe-diarize",
@@ -3717,7 +3574,6 @@
     "moonshot-v1-8k-0430",
     "moonshot-v1-8k-vision-preview",
     "moonshot-v1-auto",
-    "muse-spark-1-1",
     "open-codestral-mamba",
     "open-mistral-7b",
     "open-mistral-nemo",
@@ -3771,6 +3627,7 @@
     "anthropic-claude-haiku-latest",
     "anthropic-claude-opus-latest",
     "anthropic-claude-sonnet-latest",
+    "auto-beta",
     "auto-router",
     "babbage-002",
     "body-builder-beta",
@@ -3805,11 +3662,12 @@
     "claude-opus-4-7-fast",
     "claude-opus-4-8",
     "claude-opus-4-8-fast",
+    "claude-opus-5",
+    "claude-opus-5-fast",
     "claude-sonnet-4",
     "claude-sonnet-4-5",
     "claude-sonnet-4-6",
     "claude-sonnet-5",
-    "coder-large",
     "codestral-2508",
     "codestral-embed",
     "codestral-embed-2505",
@@ -3857,7 +3715,6 @@
     "devstral-small-2507",
     "devstral-small-latest",
     "dolphin-mistral-24b-venice-edition",
-    "dolphin-mistral-24b-venice-edition-free",
     "embed",
     "embed-english",
     "embed-english-light",
@@ -3911,7 +3768,9 @@
     "gemini-3-1-pro-preview",
     "gemini-3-1-pro-preview-customtools",
     "gemini-3-5-flash",
+    "gemini-3-5-flash-lite",
     "gemini-3-5-live-translate",
+    "gemini-3-6-flash",
     "gemini-3-flash-preview",
     "gemini-3-pro-image",
     "gemini-3-pro-image-preview",
@@ -4117,16 +3976,12 @@
     "grok-code-fast-1-0825",
     "grok-vision-beta",
     "hermes-3-llama-3-1-405b",
-    "hermes-3-llama-3-1-405b-free",
     "hermes-3-llama-3-1-70b",
     "hermes-4-405b",
     "hermes-4-70b",
     "hunyuan-a13b-instruct",
-    "hy3-free",
     "hy3-preview",
     "imagen-4",
-    "inflection-3-pi",
-    "inflection-3-productivity",
     "j2-light",
     "j2-mid",
     "j2-ultra",
@@ -4156,6 +4011,7 @@
     "kimi-k2-thinking",
     "kimi-k2-thinking-turbo",
     "kimi-k2-turbo-preview",
+    "kimi-k3",
     "kimi-latest",
     "kimi-latest-128k",
     "kimi-latest-32k",
@@ -4167,27 +4023,26 @@
     "labs-devstral-small-2512",
     "laguna-m-1",
     "laguna-m-1-free",
+    "laguna-s-2-1",
+    "laguna-s-2-1-free",
     "laguna-xs-2-1",
     "laguna-xs-2-1-free",
     "ling-2-6-1t",
     "ling-2-6-flash",
+    "ling-3-0-flash-free",
     "llama-3-1-405b",
     "llama-3-1-70b",
     "llama-3-1-70b-instruct",
     "llama-3-1-8b",
     "llama-3-1-8b-instruct",
     "llama-3-2-11b",
-    "llama-3-2-11b-vision-instruct",
     "llama-3-2-1b",
     "llama-3-2-1b-instruct",
     "llama-3-2-3b",
     "llama-3-2-3b-instruct",
-    "llama-3-2-3b-instruct-free",
     "llama-3-2-90b",
     "llama-3-3-70b",
     "llama-3-3-70b-instruct",
-    "llama-3-3-70b-instruct-free",
-    "llama-3-3-nemotron-super-49b-v1-5",
     "llama-3-70b",
     "llama-3-8b",
     "llama-4-maverick",
@@ -4195,6 +4050,7 @@
     "llama-4-scout",
     "llama-4-scout-17b",
     "llama-guard-4-12b",
+    "longcat-2-0",
     "lyria-3-clip-preview",
     "lyria-3-pro-preview",
     "magistral-medium-1-2-2509",
@@ -4383,14 +4239,12 @@
     "qwen3-coder-30b-a3b-instruct",
     "qwen3-coder-480b-a35b",
     "qwen3-coder-flash",
-    "qwen3-coder-free",
     "qwen3-coder-next",
     "qwen3-coder-plus",
     "qwen3-max",
     "qwen3-max-thinking",
     "qwen3-next-80b-a3b",
     "qwen3-next-80b-a3b-instruct",
-    "qwen3-next-80b-a3b-instruct-free",
     "qwen3-next-80b-a3b-thinking",
     "qwen3-vl-235b-a22b",
     "qwen3-vl-235b-a22b-instruct",
@@ -4441,6 +4295,7 @@
     "text-embedding-3-small",
     "text-embedding-ada-002",
     "text-embedding-ada-002-v2",
+    "thinking-machines-inkling",
     "trinity-large-thinking",
     "twelvelabs-marengo-embed-2-7",
     "twelvelabs-marengo-embed-3-0",

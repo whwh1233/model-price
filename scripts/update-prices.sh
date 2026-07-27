@@ -7,7 +7,7 @@ NODE_BIN="/Users/wh/.nvm/versions/node/v22.22.2/bin"
 cd "$ROOT_DIR/backend"
 uv sync
 uv run playwright install chromium
-uv run python scripts/refresh_snapshot.py
+uv run python -m scripts.refresh_snapshot
 
 cd "$ROOT_DIR/frontend"
 PATH="$NODE_BIN:$PATH" npm install
